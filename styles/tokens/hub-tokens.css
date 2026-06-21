@@ -6,16 +6,18 @@
  * Defines all `ref` (primitive) and `sys` (semantic) CSS custom properties.
  *
  * Layer structure:
- *   Layer 1 — ref  : Raw values — colors, spacing, radii, typography, etc.
- *   Layer 2 — sys  : Semantic assignments — surfaces, text, borders, states.
+ *   Layer 1 — ref       : Raw values — colors, spacing, radii, typography, etc.
+ *   Base   — container  : Inheritable base scope bridging sys to containers/slots.
+ *   Layer 2 — sys       : Semantic assignments — surfaces, text, borders, states.
  *
- * Semantic colors:
- *   The semantic color families (primary / success / danger / warning / info)
- *   are generated from a per-theme map by the `hub-semantic-colors` mixin, so
- *   each variant exposes a uniform set of tokens — base, `-subtle`, `-dark`,
- *   `-border-subtle` and `-emphasis` — without per-color boilerplate. A theme
- *   only lists the values it overrides; `-border-subtle` and `-emphasis` are
- *   derived from the accent when a theme does not provide them explicitly.
+ * Semantic colors (CSS-variable-first):
+ *   A theme sets only ONE accent per variant (--hub-sys-color-{variant}).
+ *   The role family — `-subtle`, `-border-subtle`, `-emphasis` (and `-dark`,
+ *   a back-compat alias of `-emphasis`) — is derived ONCE in :root with
+ *   color-mix(), against the contextual --hub-sys-surface-page and
+ *   --hub-sys-color-ink. Because the derivations reference live CSS variables,
+ *   overriding a single accent — even on a subtree — recomputes the whole
+ *   family at runtime, with no recompilation and no per-theme boilerplate.
  *
  * Theming:
  *   Light values are defined on :root and [data-theme='light'].
@@ -36,13 +38,13 @@
    ============================================================ */
 :root {
   /* ----------------------------------------------------------
-     Colors — white and black
-  ---------------------------------------------------------- */
+      Colors — white and black
+   ---------------------------------------------------------- */
   --hub-ref-color-white: #ffffff;
   --hub-ref-color-black: #000000;
   /* ----------------------------------------------------------
-     Colors — gray scale
-  ---------------------------------------------------------- */
+      Colors — gray scale
+   ---------------------------------------------------------- */
   --hub-ref-color-gray-100: #f8f9fa;
   --hub-ref-color-gray-200: #e9ecef;
   --hub-ref-color-gray-300: #dee2e6;
@@ -53,8 +55,8 @@
   --hub-ref-color-gray-800: #343a40;
   --hub-ref-color-gray-900: #212529;
   /* ----------------------------------------------------------
-     Colors — blue palette (primary)
-  ---------------------------------------------------------- */
+      Colors — blue palette (primary)
+   ---------------------------------------------------------- */
   --hub-ref-color-blue-100: #cfe2ff;
   --hub-ref-color-blue-200: #9ec5fe;
   --hub-ref-color-blue-300: #6ea8fe;
@@ -65,8 +67,8 @@
   --hub-ref-color-blue-800: #052c65;
   --hub-ref-color-blue-900: #031633;
   /* ----------------------------------------------------------
-     Colors — green palette (success)
-  ---------------------------------------------------------- */
+      Colors — green palette (success)
+   ---------------------------------------------------------- */
   --hub-ref-color-green-100: #d1e7dd;
   --hub-ref-color-green-200: #a3cfbb;
   --hub-ref-color-green-300: #75b798;
@@ -77,8 +79,8 @@
   --hub-ref-color-green-800: #0a3622;
   --hub-ref-color-green-900: #051b11;
   /* ----------------------------------------------------------
-     Colors — red palette (danger)
-  ---------------------------------------------------------- */
+      Colors — red palette (danger)
+   ---------------------------------------------------------- */
   --hub-ref-color-red-100: #f8d7da;
   --hub-ref-color-red-200: #f1aeb5;
   --hub-ref-color-red-300: #ea868f;
@@ -89,8 +91,8 @@
   --hub-ref-color-red-800: #58151c;
   --hub-ref-color-red-900: #2c0b0e;
   /* ----------------------------------------------------------
-     Colors — yellow palette (warning)
-  ---------------------------------------------------------- */
+      Colors — yellow palette (warning)
+   ---------------------------------------------------------- */
   --hub-ref-color-yellow-100: #fff3cd;
   --hub-ref-color-yellow-200: #ffe69c;
   --hub-ref-color-yellow-300: #ffda6a;
@@ -101,8 +103,8 @@
   --hub-ref-color-yellow-800: #664d03;
   --hub-ref-color-yellow-900: #332701;
   /* ----------------------------------------------------------
-     Colors — cyan palette (info)
-  ---------------------------------------------------------- */
+      Colors — cyan palette (info)
+   ---------------------------------------------------------- */
   --hub-ref-color-cyan-100: #cff4fc;
   --hub-ref-color-cyan-200: #9eeaf9;
   --hub-ref-color-cyan-300: #6edff6;
@@ -113,13 +115,13 @@
   --hub-ref-color-cyan-800: #055160;
   --hub-ref-color-cyan-900: #032830;
   /* ----------------------------------------------------------
-     Surfaces (ref-level aliases for common backgrounds)
-  ---------------------------------------------------------- */
+      Surfaces (ref-level aliases for common backgrounds)
+   ---------------------------------------------------------- */
   --hub-ref-surface-1: #ffffff;
   --hub-ref-surface-2: #f8f9fa;
   /* ----------------------------------------------------------
-     Spacing scale
-  ---------------------------------------------------------- */
+      Spacing scale
+   ---------------------------------------------------------- */
   --hub-ref-space-0: 0;
   --hub-ref-space-1: 0.25rem;
   --hub-ref-space-2: 0.5rem;
@@ -127,46 +129,94 @@
   --hub-ref-space-4: 1.5rem;
   --hub-ref-space-5: 3rem;
   /* ----------------------------------------------------------
-     Border radius
-  ---------------------------------------------------------- */
+      Border radius
+   ---------------------------------------------------------- */
   --hub-ref-radius-none: 0;
   --hub-ref-radius-sm: 0.25rem;
   --hub-ref-radius-md: 0.375rem;
   --hub-ref-radius-lg: 0.5rem;
   --hub-ref-radius-pill: 50rem;
   /* ----------------------------------------------------------
-     Border width
-  ---------------------------------------------------------- */
+      Border width
+   ---------------------------------------------------------- */
   --hub-ref-border-width: 1px;
   /* ----------------------------------------------------------
-     Typography
-  ---------------------------------------------------------- */
-  --hub-ref-font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --hub-ref-font-family-display: 'Sora', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --hub-ref-font-family-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      Typography
+   ---------------------------------------------------------- */
+  --hub-ref-font-family-base: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --hub-ref-font-family-display: 'Sora', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --hub-ref-font-family-mono: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   --hub-ref-font-size-base: 1rem;
+  --hub-ref-font-size-xs: 0.75rem;
   --hub-ref-font-size-sm: 0.875rem;
   --hub-ref-font-size-lg: 1.25rem;
   --hub-ref-font-weight-light: 300;
   --hub-ref-font-weight-base: 400;
   --hub-ref-font-weight-medium: 500;
+  --hub-ref-font-weight-semibold: 600;
   --hub-ref-font-weight-bold: 700;
   --hub-ref-line-height-base: 1.5;
   --hub-ref-line-height-sm: 1.25;
   --hub-ref-line-height-lg: 2;
   /* ----------------------------------------------------------
-     Icons
-  ---------------------------------------------------------- */
+      Icons
+   ---------------------------------------------------------- */
   --hub-ref-icon-size: 1em;
 }
 
 /* ============================================================
-   Semantic color generation
-   Per-theme ramp maps + a mixin that emits the full token family
-   (base, -subtle, -dark, -border-subtle, -emphasis) for each
-   variant. A theme lists only the values it sets; -border-subtle
-   and -emphasis are derived from the accent when omitted, so every
-   theme exposes a complete, uniform family with no boilerplate.
+   BASE — container
+   Cross-cutting inheritable base scope: a re-base hook layer that
+   bridges sys tokens to concrete containers/slots. Components read
+   these as the default for their outer container chrome (surface,
+   border, padding, typography). Because they are live CSS variables
+   with real defaults, overriding ONE container token on a subtree
+   re-bases every descendant container that reads it — no recompile.
+   ============================================================ */
+:root {
+  /* Typography */
+  --hub-container-font-family: var(--hub-ref-font-family-base);
+  --hub-container-font-size: var(--hub-ref-font-size-base);
+  --hub-container-font-weight: var(--hub-ref-font-weight-base);
+  --hub-container-font-style: normal;
+  --hub-container-text-color: var(--hub-sys-text-primary);
+  --hub-container-text-align: start;
+  --hub-container-text-decoration: none;
+  --hub-container-text-transform: none;
+  /* Visual */
+  --hub-container-bg: var(--hub-sys-surface-page);
+  --hub-container-border-color: var(--hub-sys-border-color-default);
+  --hub-container-border-style: solid;
+  --hub-container-border-width: var(--hub-ref-border-width);
+  --hub-container-border-radius: var(--hub-ref-radius-md);
+  /* Layout — real spacing defaults (re-basable per subtree) */
+  --hub-container-width: 100%;
+  --hub-container-margin-x: 0;
+  --hub-container-margin-y: 0;
+  --hub-container-padding-x: var(--hub-ref-space-3);
+  --hub-container-padding-y: var(--hub-ref-space-3);
+  --hub-container-flex-direction: row;
+  --hub-container-flex-wrap: nowrap;
+  --hub-container-justify-content: flex-start;
+  --hub-container-align-items: stretch;
+  --hub-container-row-gap: var(--hub-ref-space-2);
+  --hub-container-column-gap: var(--hub-ref-space-2);
+}
+
+/* ============================================================
+   Semantic color generation (CSS-variable-first)
+   A theme sets only ONE accent per variant (--hub-sys-color-{v}).
+   The role family (-subtle, -border-subtle, -emphasis, -dark) is
+   derived ONCE in :root with color-mix(), against the contextual
+   --hub-sys-surface-page and --hub-sys-color-ink. Because the
+   derivations reference the live CSS variables, overriding a single
+   accent — even on a subtree — recomputes the whole family at
+   runtime, with zero recompilation and no per-theme boilerplate.
+
+     -subtle        = 12% accent over surface   (tinted background)
+     -border-subtle = 35% accent over surface   (hairline border)
+     -emphasis      = 80% accent over ink        (text / strong)
+     -dark          = alias of -emphasis         (back-compat)
    ============================================================ */
 /* ============================================================
    LAYER 2 — sys (light theme / default)
@@ -175,85 +225,164 @@
 :root,
 [data-theme=light] {
   /* ----------------------------------------------------------
-     Brand / action colors
-  ---------------------------------------------------------- */
+      Brand / action colors
+   ---------------------------------------------------------- */
   --hub-sys-color-primary: var(--hub-ref-color-blue-500, #0d6efd);
-  --hub-sys-color-primary-subtle: var(--hub-ref-color-blue-100, #cfe2ff);
-  --hub-sys-color-primary-dark: var(--hub-ref-color-blue-600, #0a58ca);
-  --hub-sys-color-primary-border-subtle: var(--hub-ref-color-blue-200, #9ec5fe);
-  --hub-sys-color-primary-emphasis: var(--hub-ref-color-blue-600, #0a58ca);
   --hub-sys-color-success: var(--hub-ref-color-green-500, #198754);
-  --hub-sys-color-success-subtle: var(--hub-ref-color-green-100, #d1e7dd);
-  --hub-sys-color-success-dark: var(--hub-ref-color-green-800, #0a3622);
-  --hub-sys-color-success-border-subtle: var(--hub-ref-color-green-200, #a3cfbb);
-  --hub-sys-color-success-emphasis: var(--hub-ref-color-green-800, #0a3622);
   --hub-sys-color-danger: var(--hub-ref-color-red-500, #dc3545);
-  --hub-sys-color-danger-subtle: var(--hub-ref-color-red-100, #f8d7da);
-  --hub-sys-color-danger-dark: var(--hub-ref-color-red-800, #58151c);
-  --hub-sys-color-danger-border-subtle: var(--hub-ref-color-red-200, #f1aeb5);
-  --hub-sys-color-danger-emphasis: var(--hub-ref-color-red-800, #58151c);
   --hub-sys-color-warning: var(--hub-ref-color-yellow-500, #ffc107);
-  --hub-sys-color-warning-subtle: var(--hub-ref-color-yellow-100, #fff3cd);
-  --hub-sys-color-warning-dark: var(--hub-ref-color-yellow-800, #664d03);
-  --hub-sys-color-warning-border-subtle: var(--hub-ref-color-yellow-200, #ffe69c);
-  --hub-sys-color-warning-emphasis: var(--hub-ref-color-yellow-800, #664d03);
   --hub-sys-color-info: var(--hub-ref-color-cyan-500, #0dcaf0);
-  --hub-sys-color-info-subtle: var(--hub-ref-color-cyan-100, #cff4fc);
-  --hub-sys-color-info-dark: var(--hub-ref-color-cyan-800, #055160);
-  --hub-sys-color-info-border-subtle: var(--hub-ref-color-cyan-200, #9eeaf9);
-  --hub-sys-color-info-emphasis: var(--hub-ref-color-cyan-800, #055160);
+  --hub-sys-color-primary-subtle: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-primary) 12%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-primary-border-subtle: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-primary) 35%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-primary-emphasis: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-primary) 80%,
+  	var(--hub-sys-color-ink, #212529)
+  );
+  --hub-sys-color-primary-dark: var(--hub-sys-color-primary-emphasis);
+  --hub-sys-color-success-subtle: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-success) 12%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-success-border-subtle: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-success) 35%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-success-emphasis: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-success) 80%,
+  	var(--hub-sys-color-ink, #212529)
+  );
+  --hub-sys-color-success-dark: var(--hub-sys-color-success-emphasis);
+  --hub-sys-color-danger-subtle: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-danger) 12%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-danger-border-subtle: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-danger) 35%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-danger-emphasis: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-danger) 80%,
+  	var(--hub-sys-color-ink, #212529)
+  );
+  --hub-sys-color-danger-dark: var(--hub-sys-color-danger-emphasis);
+  --hub-sys-color-warning-subtle: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-warning) 12%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-warning-border-subtle: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-warning) 35%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-warning-emphasis: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-warning) 80%,
+  	var(--hub-sys-color-ink, #212529)
+  );
+  --hub-sys-color-warning-dark: var(--hub-sys-color-warning-emphasis);
+  --hub-sys-color-info-subtle: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-info) 12%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-info-border-subtle: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-info) 35%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-info-emphasis: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-info) 80%,
+  	var(--hub-sys-color-ink, #212529)
+  );
+  --hub-sys-color-info-dark: var(--hub-sys-color-info-emphasis);
+  --hub-sys-color-ink: var(--hub-ref-color-gray-900, #212529);
   --hub-sys-color-secondary: var(--hub-ref-color-gray-600, #6c757d);
   --hub-sys-color-light: var(--hub-ref-color-gray-100, #f8f9fa);
   --hub-sys-color-dark: var(--hub-ref-color-gray-900, #212529);
   /* ----------------------------------------------------------
-     Expressive gradient — theme-aware accent used by the home
-     page (gradient headlines, glows, mesh background blobs).
-     Every theme overrides the three stops; the composed
-     gradient resolves at usage time, so it re-colors itself
-     automatically when data-theme changes.
-  ---------------------------------------------------------- */
+      Expressive gradient — theme-aware accent used by the home
+      page (gradient headlines, glows, mesh background blobs).
+      Every theme overrides the three stops; the composed
+      gradient resolves at usage time, so it re-colors itself
+      automatically when data-theme changes.
+   ---------------------------------------------------------- */
   --hub-sys-gradient-1: #7c3aed;
   --hub-sys-gradient-2: #db2777;
   --hub-sys-gradient-3: #d97706;
-  --hub-sys-gradient-accent: linear-gradient(135deg, var(--hub-sys-gradient-1) 0%, var(--hub-sys-gradient-2) 50%, var(--hub-sys-gradient-3) 100%);
+  --hub-sys-gradient-accent: linear-gradient(
+  	135deg,
+  	var(--hub-sys-gradient-1) 0%,
+  	var(--hub-sys-gradient-2) 50%,
+  	var(--hub-sys-gradient-3) 100%
+  );
   /* ----------------------------------------------------------
-     Surfaces
-  ---------------------------------------------------------- */
+      Surfaces
+   ---------------------------------------------------------- */
   --hub-sys-surface-page: var(--hub-ref-surface-1, #ffffff);
   --hub-sys-surface-elevated: var(--hub-ref-surface-2, #f8f9fa);
+  --hub-sys-color-surface-default: var(--hub-sys-surface-page, #ffffff);
+  --hub-sys-color-surface-subtle: var(--hub-sys-surface-elevated, #f8f9fa);
   /* ----------------------------------------------------------
-     Text
-  ---------------------------------------------------------- */
+      Text
+   ---------------------------------------------------------- */
   --hub-sys-text-primary: var(--hub-ref-color-gray-900, #212529);
   --hub-sys-text-muted: var(--hub-ref-color-gray-600, #6c757d);
+  --hub-sys-color-text-subtle: var(--hub-sys-text-muted, #6c757d);
   --hub-sys-link-color: var(--hub-sys-color-primary, #0d6efd);
   --hub-sys-link-hover-color: var(--hub-ref-color-blue-600, #0a58ca);
   /* ----------------------------------------------------------
-     Borders
-  ---------------------------------------------------------- */
+      Borders
+   ---------------------------------------------------------- */
   --hub-sys-border-color-default: var(--hub-ref-color-gray-300, #dee2e6);
+  --hub-sys-color-border-subtle: var(--hub-sys-border-color-default, #dee2e6);
   /* ----------------------------------------------------------
-     Shadows
-  ---------------------------------------------------------- */
+      Shadows
+   ---------------------------------------------------------- */
   --hub-sys-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   --hub-sys-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   --hub-sys-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
   --hub-sys-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
   --hub-sys-shadow-none: none;
+  --hub-sys-shadow-md: var(--hub-sys-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15));
   /* ----------------------------------------------------------
-     Focus ring
-  ---------------------------------------------------------- */
+      Radius
+   ---------------------------------------------------------- */
+  --hub-sys-radius-none: var(--hub-ref-radius-none, 0);
+  --hub-sys-radius-sm: var(--hub-ref-radius-sm, 0.25rem);
+  --hub-sys-radius-md: var(--hub-ref-radius-md, 0.375rem);
+  --hub-sys-radius-lg: var(--hub-ref-radius-lg, 0.5rem);
+  --hub-sys-radius-pill: var(--hub-ref-radius-pill, 9999px);
+  /* ----------------------------------------------------------
+      Focus ring
+   ---------------------------------------------------------- */
   --hub-sys-focus-ring-width: 0.25rem;
   --hub-sys-focus-ring-color: rgba(13, 110, 253, 0.25);
   --hub-sys-focus-ring-offset: 2px;
   /* ----------------------------------------------------------
-     Accessibility
-  ---------------------------------------------------------- */
+      Accessibility
+   ---------------------------------------------------------- */
   --hub-sys-hit-area-min-size: 44px;
   --hub-sys-text-contrast-min: 4.5;
   /* ----------------------------------------------------------
-     Z-index layers
-  ---------------------------------------------------------- */
+      Z-index layers
+   ---------------------------------------------------------- */
   --hub-sys-zindex-dropdown: 1000;
   --hub-sys-zindex-sticky: 1020;
   --hub-sys-zindex-fixed: 1030;
@@ -263,10 +392,10 @@
   --hub-sys-zindex-tooltip: 1080;
   --hub-sys-zindex-toast: 1090;
   /* ----------------------------------------------------------
-     Breakpoints
-     Note: CSS custom properties cannot be used inside @media rules.
-     These are provided as reference values only (e.g. for JS).
-  ---------------------------------------------------------- */
+      Breakpoints
+      Note: CSS custom properties cannot be used inside @media rules.
+      These are provided as reference values only (e.g. for JS).
+   ---------------------------------------------------------- */
   --hub-sys-breakpoint-xs: 0;
   --hub-sys-breakpoint-sm: 576px;
   --hub-sys-breakpoint-md: 768px;
@@ -274,8 +403,8 @@
   --hub-sys-breakpoint-xl: 1200px;
   --hub-sys-breakpoint-xxl: 1400px;
   /* ----------------------------------------------------------
-     Opacity
-  ---------------------------------------------------------- */
+      Opacity
+   ---------------------------------------------------------- */
   --hub-sys-opacity-0: 0;
   --hub-sys-opacity-25: 0.25;
   --hub-sys-opacity-50: 0.5;
@@ -283,14 +412,14 @@
   --hub-sys-opacity-100: 1;
   --hub-sys-opacity-disabled: 0.65;
   /* ----------------------------------------------------------
-     Interactive state overlays
-  ---------------------------------------------------------- */
+      Interactive state overlays
+   ---------------------------------------------------------- */
   --hub-sys-state-hover-bg: rgba(0, 0, 0, 0.075);
   --hub-sys-state-active-bg: rgba(0, 0, 0, 0.1);
   --hub-sys-state-striped-bg: rgba(0, 0, 0, 0.05);
   /* ----------------------------------------------------------
-     Transitions
-  ---------------------------------------------------------- */
+      Transitions
+   ---------------------------------------------------------- */
   --hub-sys-transition-fast: all 0.15s ease-in-out;
   --hub-sys-transition-base: all 0.2s ease-in-out;
   --hub-sys-transition-slow: all 0.3s ease-in-out;
@@ -332,30 +461,10 @@
    ============================================================ */
 [data-theme=base] {
   --hub-sys-color-primary: var(--hub-ref-color-blue-500, #0d6efd);
-  --hub-sys-color-primary-subtle: var(--hub-ref-color-blue-100, #cfe2ff);
-  --hub-sys-color-primary-dark: var(--hub-ref-color-blue-600, #0a58ca);
-  --hub-sys-color-primary-border-subtle: var(--hub-ref-color-blue-200, #9ec5fe);
-  --hub-sys-color-primary-emphasis: var(--hub-ref-color-blue-600, #0a58ca);
   --hub-sys-color-success: var(--hub-ref-color-green-500, #198754);
-  --hub-sys-color-success-subtle: var(--hub-ref-color-green-100, #d1e7dd);
-  --hub-sys-color-success-dark: var(--hub-ref-color-green-800, #0a3622);
-  --hub-sys-color-success-border-subtle: var(--hub-ref-color-green-200, #a3cfbb);
-  --hub-sys-color-success-emphasis: var(--hub-ref-color-green-800, #0a3622);
   --hub-sys-color-danger: var(--hub-ref-color-red-500, #dc3545);
-  --hub-sys-color-danger-subtle: var(--hub-ref-color-red-100, #f8d7da);
-  --hub-sys-color-danger-dark: var(--hub-ref-color-red-800, #58151c);
-  --hub-sys-color-danger-border-subtle: var(--hub-ref-color-red-200, #f1aeb5);
-  --hub-sys-color-danger-emphasis: var(--hub-ref-color-red-800, #58151c);
   --hub-sys-color-warning: var(--hub-ref-color-yellow-500, #ffc107);
-  --hub-sys-color-warning-subtle: var(--hub-ref-color-yellow-100, #fff3cd);
-  --hub-sys-color-warning-dark: var(--hub-ref-color-yellow-800, #664d03);
-  --hub-sys-color-warning-border-subtle: var(--hub-ref-color-yellow-200, #ffe69c);
-  --hub-sys-color-warning-emphasis: var(--hub-ref-color-yellow-800, #664d03);
   --hub-sys-color-info: var(--hub-ref-color-cyan-500, #0dcaf0);
-  --hub-sys-color-info-subtle: var(--hub-ref-color-cyan-100, #cff4fc);
-  --hub-sys-color-info-dark: var(--hub-ref-color-cyan-800, #055160);
-  --hub-sys-color-info-border-subtle: var(--hub-ref-color-cyan-200, #9eeaf9);
-  --hub-sys-color-info-emphasis: var(--hub-ref-color-cyan-800, #055160);
   --hub-sys-color-secondary: var(--hub-ref-color-gray-600, #6c757d);
   --hub-sys-color-dark: var(--hub-ref-color-gray-900, #212529);
   --hub-sys-surface-page: var(--hub-ref-surface-1, #ffffff);
@@ -374,26 +483,10 @@
    ============================================================ */
 [data-theme=bootstrap] {
   --hub-sys-color-primary: var(--bs-primary, #0d6efd);
-  --hub-sys-color-primary-subtle: var(--bs-primary-bg-subtle, #cfe2ff);
-  --hub-sys-color-primary-dark: var(--bs-primary-text-emphasis, #0a58ca);
-  --hub-sys-color-primary-border-subtle: var(--bs-primary-border-subtle, #9ec5fe);
-  --hub-sys-color-primary-emphasis: var(--bs-primary-text-emphasis, #0a58ca);
   --hub-sys-color-success: var(--bs-success, #198754);
-  --hub-sys-color-success-subtle: var(--bs-success-bg-subtle, #d1e7dd);
-  --hub-sys-color-success-border-subtle: var(--bs-success-border-subtle, #a3cfbb);
-  --hub-sys-color-success-emphasis: var(--bs-success-text-emphasis, #0a3622);
   --hub-sys-color-danger: var(--bs-danger, #dc3545);
-  --hub-sys-color-danger-subtle: var(--bs-danger-bg-subtle, #f8d7da);
-  --hub-sys-color-danger-border-subtle: var(--bs-danger-border-subtle, #f1aeb5);
-  --hub-sys-color-danger-emphasis: var(--bs-danger-text-emphasis, #58151c);
   --hub-sys-color-warning: var(--bs-warning, #ffc107);
-  --hub-sys-color-warning-subtle: var(--bs-warning-bg-subtle, #fff3cd);
-  --hub-sys-color-warning-border-subtle: var(--bs-warning-border-subtle, #ffe69c);
-  --hub-sys-color-warning-emphasis: var(--bs-warning-text-emphasis, #664d03);
   --hub-sys-color-info: var(--bs-info, #0dcaf0);
-  --hub-sys-color-info-subtle: var(--bs-info-bg-subtle, #cff4fc);
-  --hub-sys-color-info-border-subtle: var(--bs-info-border-subtle, #9eeaf9);
-  --hub-sys-color-info-emphasis: var(--bs-info-text-emphasis, #055160);
   --hub-sys-color-secondary: var(--bs-secondary, #6c757d);
   --hub-sys-color-dark: var(--bs-dark, #212529);
   --hub-sys-surface-page: var(--bs-body-bg, #ffffff);
@@ -422,69 +515,51 @@
    ============================================================ */
 [data-theme=dark] {
   /* ----------------------------------------------------------
-     Brand / action colors — dark variants
-  ---------------------------------------------------------- */
+      Brand / action colors — dark variants
+      Light ink flips -emphasis toward white on dark surfaces.
+   ---------------------------------------------------------- */
   --hub-sys-color-primary: var(--hub-ref-color-blue-300, #6ea8fe);
-  --hub-sys-color-primary-subtle: var(--hub-ref-color-blue-900, #031633);
-  --hub-sys-color-primary-dark: var(--hub-ref-color-blue-300, #6ea8fe);
-  --hub-sys-color-primary-border-subtle: var(--hub-ref-color-blue-600, #0a58ca);
-  --hub-sys-color-primary-emphasis: var(--hub-ref-color-blue-300, #6ea8fe);
   --hub-sys-color-success: var(--hub-ref-color-green-300, #75b798);
-  --hub-sys-color-success-subtle: var(--hub-ref-color-green-900, #051b11);
-  --hub-sys-color-success-dark: var(--hub-ref-color-green-300, #75b798);
-  --hub-sys-color-success-border-subtle: var(--hub-ref-color-green-600, #146c43);
-  --hub-sys-color-success-emphasis: var(--hub-ref-color-green-300, #75b798);
   --hub-sys-color-danger: var(--hub-ref-color-red-300, #ea868f);
-  --hub-sys-color-danger-subtle: var(--hub-ref-color-red-900, #2c0b0e);
-  --hub-sys-color-danger-dark: var(--hub-ref-color-red-300, #ea868f);
-  --hub-sys-color-danger-border-subtle: var(--hub-ref-color-red-600, #b02a37);
-  --hub-sys-color-danger-emphasis: var(--hub-ref-color-red-300, #ea868f);
   --hub-sys-color-warning: var(--hub-ref-color-yellow-300, #ffda6a);
-  --hub-sys-color-warning-subtle: var(--hub-ref-color-yellow-900, #332701);
-  --hub-sys-color-warning-dark: var(--hub-ref-color-yellow-300, #ffda6a);
-  --hub-sys-color-warning-border-subtle: var(--hub-ref-color-yellow-700, #997404);
-  --hub-sys-color-warning-emphasis: var(--hub-ref-color-yellow-300, #ffda6a);
   --hub-sys-color-info: var(--hub-ref-color-cyan-300, #6edff6);
-  --hub-sys-color-info-subtle: var(--hub-ref-color-cyan-900, #032830);
-  --hub-sys-color-info-dark: var(--hub-ref-color-cyan-300, #6edff6);
-  --hub-sys-color-info-border-subtle: var(--hub-ref-color-cyan-700, #087990);
-  --hub-sys-color-info-emphasis: var(--hub-ref-color-cyan-300, #6edff6);
+  --hub-sys-color-ink: var(--hub-ref-color-gray-100, #f8f9fa);
   /* ----------------------------------------------------------
-     Expressive gradient — brighter stops for dark surfaces
-  ---------------------------------------------------------- */
+      Expressive gradient — brighter stops for dark surfaces
+   ---------------------------------------------------------- */
   --hub-sys-gradient-1: #a78bfa;
   --hub-sys-gradient-2: #f472b6;
   --hub-sys-gradient-3: #fbbf24;
   /* ----------------------------------------------------------
-     Surfaces
-  ---------------------------------------------------------- */
+      Surfaces
+   ---------------------------------------------------------- */
   --hub-sys-surface-page: #121212;
   --hub-sys-surface-elevated: #1e1e1e;
   /* ----------------------------------------------------------
-     Text
-  ---------------------------------------------------------- */
+      Text
+   ---------------------------------------------------------- */
   --hub-sys-text-primary: var(--hub-ref-color-gray-100, #f8f9fa);
   --hub-sys-text-muted: var(--hub-ref-color-gray-500, #adb5bd);
   --hub-sys-link-color: var(--hub-ref-color-blue-300, #6ea8fe);
   --hub-sys-link-hover-color: var(--hub-ref-color-blue-200, #9ec5fe);
   /* ----------------------------------------------------------
-     Borders
-  ---------------------------------------------------------- */
+      Borders
+   ---------------------------------------------------------- */
   --hub-sys-border-color-default: var(--hub-ref-color-gray-800, #343a40);
   /* ----------------------------------------------------------
-     Shadows — stronger on dark backgrounds
-  ---------------------------------------------------------- */
+      Shadows — stronger on dark backgrounds
+   ---------------------------------------------------------- */
   --hub-sys-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
   --hub-sys-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
   --hub-sys-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.3);
   --hub-sys-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.3);
   /* ----------------------------------------------------------
-     Focus ring
-  ---------------------------------------------------------- */
+      Focus ring
+   ---------------------------------------------------------- */
   --hub-sys-focus-ring-color: rgba(110, 168, 254, 0.35);
   /* ----------------------------------------------------------
-     Interactive state overlays — lighter on dark
-  ---------------------------------------------------------- */
+      Interactive state overlays — lighter on dark
+   ---------------------------------------------------------- */
   --hub-sys-state-hover-bg: rgba(255, 255, 255, 0.075);
   --hub-sys-state-active-bg: rgba(255, 255, 255, 0.1);
   --hub-sys-state-striped-bg: rgba(255, 255, 255, 0.05);
@@ -496,26 +571,10 @@
    ============================================================ */
 [data-theme=sunset] {
   --hub-sys-color-primary: #ea580c;
-  --hub-sys-color-primary-subtle: #ffedd5;
-  --hub-sys-color-primary-dark: #c2410c;
-  --hub-sys-color-primary-border-subtle: color-mix(in srgb, var(--hub-sys-color-primary) 35%, transparent);
-  --hub-sys-color-primary-emphasis: #c2410c;
   --hub-sys-color-success: #16a34a;
-  --hub-sys-color-success-subtle: #dcfce7;
-  --hub-sys-color-success-border-subtle: color-mix(in srgb, var(--hub-sys-color-success) 35%, transparent);
-  --hub-sys-color-success-emphasis: var(--hub-sys-color-success);
   --hub-sys-color-danger: #dc2626;
-  --hub-sys-color-danger-subtle: #fee2e2;
-  --hub-sys-color-danger-border-subtle: color-mix(in srgb, var(--hub-sys-color-danger) 35%, transparent);
-  --hub-sys-color-danger-emphasis: var(--hub-sys-color-danger);
   --hub-sys-color-warning: #f59e0b;
-  --hub-sys-color-warning-subtle: #fef3c7;
-  --hub-sys-color-warning-border-subtle: color-mix(in srgb, var(--hub-sys-color-warning) 35%, transparent);
-  --hub-sys-color-warning-emphasis: var(--hub-sys-color-warning);
   --hub-sys-color-info: #0284c7;
-  --hub-sys-color-info-subtle: #e0f2fe;
-  --hub-sys-color-info-border-subtle: color-mix(in srgb, var(--hub-sys-color-info) 35%, transparent);
-  --hub-sys-color-info-emphasis: var(--hub-sys-color-info);
   --hub-sys-color-secondary: #9a3412;
   --hub-sys-color-dark: #431407;
   --hub-sys-surface-page: #fff7ed;
@@ -544,26 +603,10 @@
    ============================================================ */
 [data-theme=forest] {
   --hub-sys-color-primary: #15803d;
-  --hub-sys-color-primary-subtle: #dcfce7;
-  --hub-sys-color-primary-dark: #166534;
-  --hub-sys-color-primary-border-subtle: color-mix(in srgb, var(--hub-sys-color-primary) 35%, transparent);
-  --hub-sys-color-primary-emphasis: #166534;
   --hub-sys-color-success: #22c55e;
-  --hub-sys-color-success-subtle: #dcfce7;
-  --hub-sys-color-success-border-subtle: color-mix(in srgb, var(--hub-sys-color-success) 35%, transparent);
-  --hub-sys-color-success-emphasis: var(--hub-sys-color-success);
   --hub-sys-color-danger: #b91c1c;
-  --hub-sys-color-danger-subtle: #fee2e2;
-  --hub-sys-color-danger-border-subtle: color-mix(in srgb, var(--hub-sys-color-danger) 35%, transparent);
-  --hub-sys-color-danger-emphasis: var(--hub-sys-color-danger);
   --hub-sys-color-warning: #ca8a04;
-  --hub-sys-color-warning-subtle: #fef9c3;
-  --hub-sys-color-warning-border-subtle: color-mix(in srgb, var(--hub-sys-color-warning) 35%, transparent);
-  --hub-sys-color-warning-emphasis: var(--hub-sys-color-warning);
   --hub-sys-color-info: #0f766e;
-  --hub-sys-color-info-subtle: #ccfbf1;
-  --hub-sys-color-info-border-subtle: color-mix(in srgb, var(--hub-sys-color-info) 35%, transparent);
-  --hub-sys-color-info-emphasis: var(--hub-sys-color-info);
   --hub-sys-color-secondary: #3f6212;
   --hub-sys-color-dark: #052e16;
   --hub-sys-surface-page: #f0fdf4;
@@ -592,26 +635,10 @@
    ============================================================ */
 [data-theme=mono] {
   --hub-sys-color-primary: #1f2937;
-  --hub-sys-color-primary-subtle: #e5e7eb;
-  --hub-sys-color-primary-dark: #111827;
-  --hub-sys-color-primary-border-subtle: color-mix(in srgb, var(--hub-sys-color-primary) 35%, transparent);
-  --hub-sys-color-primary-emphasis: #111827;
   --hub-sys-color-success: #374151;
-  --hub-sys-color-success-subtle: #f3f4f6;
-  --hub-sys-color-success-border-subtle: color-mix(in srgb, var(--hub-sys-color-success) 35%, transparent);
-  --hub-sys-color-success-emphasis: var(--hub-sys-color-success);
   --hub-sys-color-danger: #4b5563;
-  --hub-sys-color-danger-subtle: #e5e7eb;
-  --hub-sys-color-danger-border-subtle: color-mix(in srgb, var(--hub-sys-color-danger) 35%, transparent);
-  --hub-sys-color-danger-emphasis: var(--hub-sys-color-danger);
   --hub-sys-color-warning: #6b7280;
-  --hub-sys-color-warning-subtle: #f3f4f6;
-  --hub-sys-color-warning-border-subtle: color-mix(in srgb, var(--hub-sys-color-warning) 35%, transparent);
-  --hub-sys-color-warning-emphasis: var(--hub-sys-color-warning);
   --hub-sys-color-info: #4b5563;
-  --hub-sys-color-info-subtle: #f3f4f6;
-  --hub-sys-color-info-border-subtle: color-mix(in srgb, var(--hub-sys-color-info) 35%, transparent);
-  --hub-sys-color-info-emphasis: var(--hub-sys-color-info);
   --hub-sys-color-secondary: #4b5563;
   --hub-sys-color-dark: #111827;
   --hub-sys-surface-page: #f9fafb;
@@ -645,75 +672,60 @@
    ============================================================ */
 [data-theme=terminal] {
   /* ----------------------------------------------------------
-     Square everything — terminals have no rounded corners
-  ---------------------------------------------------------- */
+      Square everything — terminals have no rounded corners
+   ---------------------------------------------------------- */
   --hub-ref-radius-none: 0;
   --hub-ref-radius-sm: 0;
   --hub-ref-radius-md: 0;
   --hub-ref-radius-lg: 0;
   --hub-ref-radius-pill: 0;
   /* ----------------------------------------------------------
-     Monospace typography everywhere
-  ---------------------------------------------------------- */
+      Monospace typography everywhere
+   ---------------------------------------------------------- */
   --hub-ref-font-family-base: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   --hub-ref-font-family-display: 'VT323', 'JetBrains Mono', ui-monospace, monospace;
   /* ----------------------------------------------------------
-     Brand / action colors — phosphor green + amber/cyan/red
-  ---------------------------------------------------------- */
+      Brand / action colors — phosphor green + amber/cyan/red
+   ---------------------------------------------------------- */
   --hub-sys-color-primary: #4af07a;
-  --hub-sys-color-primary-subtle: #0c2417;
-  --hub-sys-color-primary-dark: #2fd862;
-  --hub-sys-color-primary-border-subtle: color-mix(in srgb, var(--hub-sys-color-primary) 35%, transparent);
-  --hub-sys-color-primary-emphasis: #2fd862;
   --hub-sys-color-success: #4af07a;
-  --hub-sys-color-success-subtle: #0c2417;
-  --hub-sys-color-success-border-subtle: color-mix(in srgb, var(--hub-sys-color-success) 35%, transparent);
-  --hub-sys-color-success-emphasis: var(--hub-sys-color-success);
   --hub-sys-color-danger: #ff6b63;
-  --hub-sys-color-danger-subtle: #2a0d0c;
-  --hub-sys-color-danger-border-subtle: color-mix(in srgb, var(--hub-sys-color-danger) 35%, transparent);
-  --hub-sys-color-danger-emphasis: var(--hub-sys-color-danger);
   --hub-sys-color-warning: #ffb454;
-  --hub-sys-color-warning-subtle: #2a1c08;
-  --hub-sys-color-warning-border-subtle: color-mix(in srgb, var(--hub-sys-color-warning) 35%, transparent);
-  --hub-sys-color-warning-emphasis: var(--hub-sys-color-warning);
   --hub-sys-color-info: #56e1e6;
-  --hub-sys-color-info-subtle: #062a2b;
-  --hub-sys-color-info-border-subtle: color-mix(in srgb, var(--hub-sys-color-info) 35%, transparent);
-  --hub-sys-color-info-emphasis: var(--hub-sys-color-info);
+  --hub-sys-color-ink: #d8ffe4;
   --hub-sys-color-secondary: #2f9d56;
   --hub-sys-color-light: #0e150e;
   --hub-sys-color-dark: #050805;
   /* ----------------------------------------------------------
-     Surfaces — near-black green-tinted
-  ---------------------------------------------------------- */
+      Surfaces — near-black green-tinted
+   ---------------------------------------------------------- */
   --hub-sys-surface-page: #0a0e0a;
   --hub-sys-surface-elevated: #0e150e;
   /* ----------------------------------------------------------
-     Text — green phosphor, cyan links
-  ---------------------------------------------------------- */
+      Text — green phosphor, cyan links
+   ---------------------------------------------------------- */
   --hub-sys-text-primary: #66f08f;
   --hub-sys-text-muted: #3f9e63;
   --hub-sys-link-color: #56e1e6;
   --hub-sys-link-hover-color: #8dffb0;
   /* ----------------------------------------------------------
-     Borders
-  ---------------------------------------------------------- */
+      Borders
+   ---------------------------------------------------------- */
   --hub-sys-border-color-default: #205c39;
   /* ----------------------------------------------------------
-     Shadows — green glow instead of drop shadow
-  ---------------------------------------------------------- */
+      Shadows — green glow instead of drop shadow
+   ---------------------------------------------------------- */
   --hub-sys-shadow-sm: 0 0 0.5rem rgba(74, 240, 122, 0.12);
   --hub-sys-shadow: 0 0 1rem rgba(74, 240, 122, 0.16);
   --hub-sys-shadow-lg: 0 0 2rem rgba(74, 240, 122, 0.22);
   --hub-sys-shadow-inset: inset 0 0 0.5rem rgba(0, 0, 0, 0.6);
   /* ----------------------------------------------------------
-     Focus ring
-  ---------------------------------------------------------- */
+      Focus ring
+   ---------------------------------------------------------- */
   --hub-sys-focus-ring-color: rgba(74, 240, 122, 0.4);
   /* ----------------------------------------------------------
-     Interactive state overlays
-  ---------------------------------------------------------- */
+      Interactive state overlays
+   ---------------------------------------------------------- */
   --hub-sys-state-hover-bg: rgba(74, 240, 122, 0.1);
   --hub-sys-state-active-bg: rgba(74, 240, 122, 0.16);
   --hub-sys-state-striped-bg: rgba(74, 240, 122, 0.05);
