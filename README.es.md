@@ -136,12 +136,13 @@ propios estilos:
 
 ## 🧱 Arquitectura: las dos capas
 
-Los tokens siguen un sistema de **dos capas**:
+Los tokens siguen un sistema por capas:
 
-| Capa           | Prefijo       | Qué es                                                       | Ejemplos                                                                |
-| -------------- | ------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| **Referencia** | `--hub-ref-*` | Valores crudos, sin contexto                                 | `--hub-ref-color-blue-500`, `--hub-ref-space-3`, `--hub-ref-radius-md`  |
-| **Sistema**    | `--hub-sys-*` | Asignaciones con significado que consumen los componentes    | `--hub-sys-color-primary`, `--hub-sys-surface-page`, `--hub-sys-text-primary` |
+| Capa            | Prefijo             | Qué es                                                       | Ejemplos                                                                |
+| --------------- | ------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| **Referencia**  | `--hub-ref-*`       | Valores crudos, sin contexto                                 | `--hub-ref-color-blue-500`, `--hub-ref-space-3`, `--hub-ref-radius-md`  |
+| **Sistema**     | `--hub-sys-*`       | Asignaciones con significado que consumen los componentes    | `--hub-sys-color-primary`, `--hub-sys-surface-page`, `--hub-sys-text-primary` |
+| **Container**   | `--hub-container-*` | Puente heredable de `sys` a contenedores/slots concretos — un **re-base hook** | `--hub-container-bg`, `--hub-container-padding-x`, `--hub-container-gap` |
 
 Regla de oro: **los componentes referencian solo tokens `sys`**. Los `sys`
 apuntan a los `ref`. Así, cambiar un `sys` re-tematiza; cambiar un `ref` ajusta
@@ -150,6 +151,12 @@ la paleta base.
 ```text
 --hub-ref-color-blue-500  →  --hub-sys-color-primary  →  (lo usan los componentes)
 ```
+
+La capa opcional `container` se apoya sobre `sys` como **re-base hook**:
+sobrescribir un token `--hub-container-*` en un subárbol re-basa cada contenedor
+descendiente que lo lee (p. ej. `ng-hub-ui-panels`), sin tocar `sys`. El espaciado
+emparejado usa solo la forma direccional `-x` / `-y` (`--hub-container-padding-x/-y`,
+`--hub-container-margin-x/-y`) — sin atajo.
 
 ---
 
@@ -250,37 +257,53 @@ Reúne tus overrides bajo un atributo de tema y actívalo cuando quieras:
 
 ## 🧩 Funciones SCSS (cómo se genera por dentro)
 
-Las familias de color semántico **no se escriben a mano**: se generan desde un
-**mapa por tema** con un `@each`, vía el mixin `hub-semantic-colors`. Así, añadir
-un color o un tema es uniforme y sin _boilerplate_.
+Las familias de color semántico **no se escriben a mano**, y un tema solo fija el
+**acento** de cada variante — `-subtle`, `-border-subtle` y `-emphasis` se derivan
+**una sola vez** en `:root` con `color-mix()` a partir del acento, la superficie y
+el _ink_ vivos. Así, añadir un color o un tema es uniforme y sin _boilerplate_.
 
 ```scss
-// Un mapa por tema: variante → (base, subtle, dark, border, emphasis)
-$hub-sem-light: (
-	primary: (base: var(--hub-ref-color-blue-500), subtle: var(--hub-ref-color-blue-100), dark: var(--hub-ref-color-blue-600), border: var(--hub-ref-color-blue-200), emphasis: var(--hub-ref-color-blue-600)),
-	success: (base: var(--hub-ref-color-green-500), subtle: var(--hub-ref-color-green-100), /* … */),
-	/* danger · warning · info … */
+$hub-variants: primary, success, danger, warning, info;
+
+// Un acento por variante, por tema — solo el color base.
+$hub-accents-light: (
+	primary: var(--hub-ref-color-blue-500, #0d6efd),
+	success: var(--hub-ref-color-green-500, #198754),
+	danger:  var(--hub-ref-color-red-500, #dc3545),
+	warning: var(--hub-ref-color-yellow-500, #ffc107),
+	info:    var(--hub-ref-color-cyan-500, #0dcaf0)
 );
 
-// El mixin emite la familia completa de cada variante. `-border-subtle` y
-// `-emphasis` se derivan del acento cuando un tema no los define.
-@mixin hub-semantic-colors($ramp) {
-	@each $name, $roles in $ramp {
-		--hub-sys-color-#{$name}: #{map.get($roles, base)};
-		// … subtle / dark / border-subtle / emphasis …
+// Fija SOLO --hub-sys-color-<variante> (el acento). Se llama en cada tema.
+@mixin hub-color-accents($accents) {
+	@each $name in $hub-variants {
+		--hub-sys-color-#{$name}: #{map.get($accents, $name)};
+	}
+}
+
+// Deriva la familia de roles del acento + superficie + ink vivos. Se emite UNA
+// vez en :root; los temas solo cambian las entradas y la familia se recalcula.
+@mixin hub-color-derive() {
+	@each $name in $hub-variants {
+		--hub-sys-color-#{$name}-subtle:        color-mix(in srgb, var(--hub-sys-color-#{$name}) 12%, var(--hub-sys-surface-page, #fff));
+		--hub-sys-color-#{$name}-border-subtle: color-mix(in srgb, var(--hub-sys-color-#{$name}) 35%, var(--hub-sys-surface-page, #fff));
+		--hub-sys-color-#{$name}-emphasis:      color-mix(in srgb, var(--hub-sys-color-#{$name}) 80%, var(--hub-sys-color-ink, #212529));
+		--hub-sys-color-#{$name}-dark:          var(--hub-sys-color-#{$name}-emphasis); // alias retrocompatible
 	}
 }
 
 :root,
 [data-theme='light'] {
-	@include hub-semantic-colors($hub-sem-light);
+	@include hub-color-accents($hub-accents-light);
+	@include hub-color-derive();
 }
 ```
 
-> Para la mayoría de casos **no necesitas tocar el SCSS**: la sobrescritura de
-> variables CSS (sección anterior) cubre re-tematizar y añadir acentos. El mapa +
-> mixin es la mecánica interna, útil si contribuyes al paquete o compilas tu
-> propia variante de la paleta.
+> Casi nunca necesitas tocar el SCSS: como la familia se deriva del **acento
+> único** en tiempo de ejecución, sobrescribir `--hub-sys-color-<variante>` en CSS
+> plano — incluso en un subárbol — recalcula `-subtle` / `-border-subtle` /
+> `-emphasis` automáticamente. Los mapas + mixins son solo la mecánica interna,
+> útil si contribuyes al paquete o compilas tu propia variante de la paleta.
 
 ---
 

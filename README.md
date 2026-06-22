@@ -137,12 +137,13 @@ own styles too:
 
 ## 🧱 Architecture: the two layers
 
-The tokens follow a **two-layer** system:
+The tokens follow a layered system:
 
-| Layer         | Prefix        | What it is                                                    | Examples                                                                |
-| ------------- | ------------- | ------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| **Reference** | `--hub-ref-*` | Raw, context-free values                                      | `--hub-ref-color-blue-500`, `--hub-ref-space-3`, `--hub-ref-radius-md`  |
-| **System**    | `--hub-sys-*` | Meaningful assignments that components consume                | `--hub-sys-color-primary`, `--hub-sys-surface-page`, `--hub-sys-text-primary` |
+| Layer          | Prefix              | What it is                                                    | Examples                                                                |
+| -------------- | ------------------- | ------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| **Reference**  | `--hub-ref-*`       | Raw, context-free values                                      | `--hub-ref-color-blue-500`, `--hub-ref-space-3`, `--hub-ref-radius-md`  |
+| **System**     | `--hub-sys-*`       | Meaningful assignments that components consume                | `--hub-sys-color-primary`, `--hub-sys-surface-page`, `--hub-sys-text-primary` |
+| **Container**  | `--hub-container-*` | Inheritable bridge from `sys` to concrete containers/slots — a **re-base hook** | `--hub-container-bg`, `--hub-container-padding-x`, `--hub-container-gap` |
 
 Golden rule: **components reference `sys` tokens only**. The `sys` tokens point
 at the `ref` tokens. So changing a `sys` token re-themes; changing a `ref`
@@ -151,6 +152,12 @@ token adjusts the base palette.
 ```text
 --hub-ref-color-blue-500  →  --hub-sys-color-primary  →  (consumed by components)
 ```
+
+The optional `container` layer sits on top of `sys` as a **re-base hook**:
+overriding one `--hub-container-*` token on a subtree re-bases every descendant
+container that reads it (e.g. `ng-hub-ui-panels`), without touching `sys`. Paired
+spacing uses the directional `-x` / `-y` form only (`--hub-container-padding-x/-y`,
+`--hub-container-margin-x/-y`) — no shorthand.
 
 ---
 
@@ -252,37 +259,53 @@ Group your overrides under a theme attribute and activate it whenever you want:
 
 ## 🧩 SCSS functions (how it is generated internally)
 
-The semantic colour families are **not written by hand**: they are generated
-from a **per-theme map** with an `@each`, via the `hub-semantic-colors` mixin.
-This makes adding a colour or a theme uniform and boilerplate-free.
+The semantic colour families are **not written by hand**, and a theme only ever
+sets the **accent** of each variant — `-subtle`, `-border-subtle` and `-emphasis`
+are derived **once** in `:root` with `color-mix()` from the live accent, surface
+and ink CSS variables. Adding a colour or a theme is uniform and boilerplate-free.
 
 ```scss
-// One map per theme: variant → (base, subtle, dark, border, emphasis)
-$hub-sem-light: (
-	primary: (base: var(--hub-ref-color-blue-500), subtle: var(--hub-ref-color-blue-100), dark: var(--hub-ref-color-blue-600), border: var(--hub-ref-color-blue-200), emphasis: var(--hub-ref-color-blue-600)),
-	success: (base: var(--hub-ref-color-green-500), subtle: var(--hub-ref-color-green-100), /* … */),
-	/* danger · warning · info … */
+$hub-variants: primary, success, danger, warning, info;
+
+// One accent per variant, per theme — just the base colour.
+$hub-accents-light: (
+	primary: var(--hub-ref-color-blue-500, #0d6efd),
+	success: var(--hub-ref-color-green-500, #198754),
+	danger:  var(--hub-ref-color-red-500, #dc3545),
+	warning: var(--hub-ref-color-yellow-500, #ffc107),
+	info:    var(--hub-ref-color-cyan-500, #0dcaf0)
 );
 
-// The mixin emits the full family for each variant. `-border-subtle` and
-// `-emphasis` are derived from the accent when a theme does not define them.
-@mixin hub-semantic-colors($ramp) {
-	@each $name, $roles in $ramp {
-		--hub-sys-color-#{$name}: #{map.get($roles, base)};
-		// … subtle / dark / border-subtle / emphasis …
+// Sets ONLY --hub-sys-color-<variant> (the accent). Called in every theme block.
+@mixin hub-color-accents($accents) {
+	@each $name in $hub-variants {
+		--hub-sys-color-#{$name}: #{map.get($accents, $name)};
+	}
+}
+
+// Derives the role family from the live accent + surface + ink. Emitted ONCE in
+// :root; themes only override the inputs, so the family recomputes contextually.
+@mixin hub-color-derive() {
+	@each $name in $hub-variants {
+		--hub-sys-color-#{$name}-subtle:        color-mix(in srgb, var(--hub-sys-color-#{$name}) 12%, var(--hub-sys-surface-page, #fff));
+		--hub-sys-color-#{$name}-border-subtle: color-mix(in srgb, var(--hub-sys-color-#{$name}) 35%, var(--hub-sys-surface-page, #fff));
+		--hub-sys-color-#{$name}-emphasis:      color-mix(in srgb, var(--hub-sys-color-#{$name}) 80%, var(--hub-sys-color-ink, #212529));
+		--hub-sys-color-#{$name}-dark:          var(--hub-sys-color-#{$name}-emphasis); // back-compat alias
 	}
 }
 
 :root,
 [data-theme='light'] {
-	@include hub-semantic-colors($hub-sem-light);
+	@include hub-color-accents($hub-accents-light);
+	@include hub-color-derive();
 }
 ```
 
-> For most cases you **do not need to touch the SCSS**: overriding CSS variables
-> (previous section) covers re-theming and adding accents. The map + mixin is
-> the internal mechanism, useful if you contribute to the package or compile
-> your own palette variant.
+> You almost never need to touch the SCSS: because the family is derived from the
+> **single accent** at runtime, overriding `--hub-sys-color-<variant>` in plain CSS
+> — even on a subtree — recomputes `-subtle` / `-border-subtle` / `-emphasis`
+> automatically. The maps + mixins are just the internal mechanism, useful if you
+> contribute to the package or compile your own palette variant.
 
 ---
 
