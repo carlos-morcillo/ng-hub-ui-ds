@@ -55,7 +55,7 @@ ecosystem reads from:
 1. [🧩 What is it and what is it for?](#-what-is-it-and-what-is-it-for)
 2. [📦 Installation](#-installation)
 3. [🚀 Import](#-import)
-4. [🧱 Architecture: the two layers](#-architecture-the-two-layers)
+4. [🧱 Architecture: the layers](#-architecture-the-layers)
 5. [🎨 Semantic colours](#-semantic-colours)
 6. [🌗 Themes](#-themes)
 7. [🛠️ How to customise it](#️-how-to-customise-it)
@@ -135,7 +135,7 @@ own styles too:
 
 ---
 
-## 🧱 Architecture: the two layers
+## 🧱 Architecture: the layers
 
 The tokens follow a layered system:
 
@@ -144,6 +144,7 @@ The tokens follow a layered system:
 | **Reference**  | `--hub-ref-*`       | Raw, context-free values                                      | `--hub-ref-color-blue-500`, `--hub-ref-space-3`, `--hub-ref-radius-md`  |
 | **System**     | `--hub-sys-*`       | Meaningful assignments that components consume                | `--hub-sys-color-primary`, `--hub-sys-surface-page`, `--hub-sys-text-primary` |
 | **Container**  | `--hub-container-*` | Inheritable bridge from `sys` to concrete containers/slots — a **re-base hook** | `--hub-container-bg`, `--hub-container-padding-x`, `--hub-container-gap` |
+| **Base / shell** | `--hub-body-*` · `--hub-main-*` · `--hub-main-wrapper-*` | Application-shell layout: the outer page wrapper, the content region and its centered wrapper. `--hub-body-*` **inherits the matching `--hub-container-*` defaults** | `--hub-body-padding-x`, `--hub-main-bg`, `--hub-main-wrapper-max-width` (`1200px`) |
 
 Golden rule: **components reference `sys` tokens only**. The `sys` tokens point
 at the `ref` tokens. So changing a `sys` token re-themes; changing a `ref`
@@ -158,6 +159,20 @@ overriding one `--hub-container-*` token on a subtree re-bases every descendant
 container that reads it (e.g. `ng-hub-ui-panels`), without touching `sys`. Paired
 spacing uses the directional `-x` / `-y` form only (`--hub-container-padding-x/-y`,
 `--hub-container-margin-x/-y`) — no shorthand.
+
+The `base` / shell layer standardises the **application-shell layout** so a
+vertical or horizontal aside reads one consistent token set:
+
+- `--hub-body-*` — the outer app/page wrapper. It **inherits the matching
+  `--hub-container-*` defaults** (`--hub-body-padding-x` falls back to
+  `--hub-container-padding-x`, and so on), so the container spacing system drives
+  the whole page.
+- `--hub-main-*` — the content region (`bg`, `border-radius`, `padding-x/-y`).
+- `--hub-main-wrapper-*` — the centered wrapper around the content region, with a
+  default `--hub-main-wrapper-max-width: 1200px`.
+
+These are live, re-basable CSS variables too, using the same directional
+`-x` / `-y` spacing convention.
 
 ---
 

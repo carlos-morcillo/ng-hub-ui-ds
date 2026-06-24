@@ -55,7 +55,7 @@ Este paquete es la base de design tokens de la que lee el resto del ecosistema
 1. [🧩 ¿Qué es y para qué sirve?](#-qué-es-y-para-qué-sirve)
 2. [📦 Instalación](#-instalación)
 3. [🚀 Importación](#-importación)
-4. [🧱 Arquitectura: las dos capas](#-arquitectura-las-dos-capas)
+4. [🧱 Arquitectura: las capas](#-arquitectura-las-capas)
 5. [🎨 Los colores semánticos](#-los-colores-semánticos)
 6. [🌗 Temas](#-temas)
 7. [🛠️ Cómo modificarlo](#️-cómo-modificarlo)
@@ -134,7 +134,7 @@ propios estilos:
 
 ---
 
-## 🧱 Arquitectura: las dos capas
+## 🧱 Arquitectura: las capas
 
 Los tokens siguen un sistema por capas:
 
@@ -143,6 +143,7 @@ Los tokens siguen un sistema por capas:
 | **Referencia**  | `--hub-ref-*`       | Valores crudos, sin contexto                                 | `--hub-ref-color-blue-500`, `--hub-ref-space-3`, `--hub-ref-radius-md`  |
 | **Sistema**     | `--hub-sys-*`       | Asignaciones con significado que consumen los componentes    | `--hub-sys-color-primary`, `--hub-sys-surface-page`, `--hub-sys-text-primary` |
 | **Container**   | `--hub-container-*` | Puente heredable de `sys` a contenedores/slots concretos — un **re-base hook** | `--hub-container-bg`, `--hub-container-padding-x`, `--hub-container-gap` |
+| **Base / shell** | `--hub-body-*` · `--hub-main-*` · `--hub-main-wrapper-*` | Layout del _application shell_: el wrapper exterior de la página, la región de contenido y su wrapper centrado. `--hub-body-*` **hereda los valores por defecto de `--hub-container-*`** | `--hub-body-padding-x`, `--hub-main-bg`, `--hub-main-wrapper-max-width` (`1200px`) |
 
 Regla de oro: **los componentes referencian solo tokens `sys`**. Los `sys`
 apuntan a los `ref`. Así, cambiar un `sys` re-tematiza; cambiar un `ref` ajusta
@@ -157,6 +158,20 @@ sobrescribir un token `--hub-container-*` en un subárbol re-basa cada contenedo
 descendiente que lo lee (p. ej. `ng-hub-ui-panels`), sin tocar `sys`. El espaciado
 emparejado usa solo la forma direccional `-x` / `-y` (`--hub-container-padding-x/-y`,
 `--hub-container-margin-x/-y`) — sin atajo.
+
+La capa `base` / shell estandariza el **layout del _application shell_** para que
+un aside vertical u horizontal lea un único conjunto de tokens coherente:
+
+- `--hub-body-*` — el wrapper exterior de la app/página. **Hereda los valores por
+  defecto de `--hub-container-*`** (`--hub-body-padding-x` recurre a
+  `--hub-container-padding-x`, y así sucesivamente), de modo que el sistema de
+  espaciado del container gobierna toda la página.
+- `--hub-main-*` — la región de contenido (`bg`, `border-radius`, `padding-x/-y`).
+- `--hub-main-wrapper-*` — el wrapper centrado alrededor de la región de contenido,
+  con un `--hub-main-wrapper-max-width: 1200px` por defecto.
+
+También son variables CSS vivas y re-basables, con la misma convención de
+espaciado direccional `-x` / `-y`.
 
 ---
 

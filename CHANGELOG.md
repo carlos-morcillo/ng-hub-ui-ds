@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [22.1.0] - 2026-06-22
+## [22.2.0] - 2026-06-24
+
+### Added
+
+- **`body` / `main` base (shell) layer**: new inheritable tokens that standardise the application-shell layout so a vertical or horizontal aside reads one consistent token set.
+    - **`--hub-body-*`** — the outer app/page wrapper. Twelve tokens (`width`, `margin-x/-y`, `padding-x/-y`, `row-gap`, `column-gap`, `bg`, `border-color`, `border-style`, `border-width`, `border-radius`) that **inherit from the matching `--hub-container-*` tokens** (with `sys`/`ref` fallbacks), so the container spacing system drives the whole page.
+    - **`--hub-main-*`** — the content region: `bg`, `border-radius`, `padding-x`, `padding-y`.
+    - **`--hub-main-wrapper-*`** — the centered wrapper around the content region: `bg`, `border-radius`, `gap`, `padding-x`, `padding-y` and `max-width` (default `1200px`).
+- All tokens are live, re-basable CSS custom properties; paired spacing uses the canonical directional `-x` / `-y` form only (no `padding`/`margin` shorthand).
 
 ### Added
 

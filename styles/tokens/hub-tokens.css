@@ -204,6 +204,42 @@
 }
 
 /* ============================================================
+   BASE — body / main (application shell layout)
+   `body` is the outer app/page wrapper — it inherits the container
+   layout defaults so the same spacing system drives the whole page.
+   `main` is the content region (and its centered wrapper). Both are
+   live, re-basable CSS variables, standardised here so an app shell
+   (vertical or horizontal aside) reads one consistent token set.
+   ============================================================ */
+:root {
+  /* body — outer app/page wrapper (inherits the container layout) */
+  --hub-body-width: var(--hub-container-width, 100%);
+  --hub-body-margin-x: var(--hub-container-margin-x, 0);
+  --hub-body-margin-y: var(--hub-container-margin-y, 0);
+  --hub-body-padding-x: var(--hub-container-padding-x, 0);
+  --hub-body-padding-y: var(--hub-container-padding-y, 0);
+  --hub-body-row-gap: var(--hub-container-row-gap, 0);
+  --hub-body-column-gap: var(--hub-container-column-gap, 0);
+  --hub-body-bg: var(--hub-container-bg, var(--hub-sys-surface-page));
+  --hub-body-border-color: var(--hub-container-border-color, var(--hub-sys-border-color-default));
+  --hub-body-border-style: var(--hub-container-border-style, solid);
+  --hub-body-border-width: var(--hub-container-border-width, var(--hub-ref-border-width, 1px));
+  --hub-body-border-radius: var(--hub-container-border-radius, var(--hub-ref-radius-md, 0.375rem));
+  /* main — content region */
+  --hub-main-bg: var(--hub-sys-surface-page);
+  --hub-main-border-radius: var(--hub-ref-radius-lg, 0.5rem);
+  --hub-main-padding-x: var(--hub-ref-space-4, 1.5rem);
+  --hub-main-padding-y: var(--hub-ref-space-4, 1.5rem);
+  /* main — centered wrapper around the content region */
+  --hub-main-wrapper-bg: var(--hub-sys-surface-page);
+  --hub-main-wrapper-border-radius: var(--hub-ref-radius-lg, 0.5rem);
+  --hub-main-wrapper-gap: var(--hub-ref-space-4, 1.5rem);
+  --hub-main-wrapper-max-width: 1200px;
+  --hub-main-wrapper-padding-x: var(--hub-ref-space-4, 1.5rem);
+  --hub-main-wrapper-padding-y: var(--hub-ref-space-4, 1.5rem);
+}
+
+/* ============================================================
    Semantic color generation (CSS-variable-first)
    A theme sets only ONE accent per variant (--hub-sys-color-{v}).
    The role family (-subtle, -border-subtle, -emphasis, -dark) is
