@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [22.3.0] - 2026-06-24
+
+### Added
+
+- `--hub-sys-color-brand-default` and `--hub-sys-color-brand-on-default` semantic tokens. `brand` is the default accent consumed by component theme mixins (e.g. `ng-hub-ui-buttons` / `ng-hub-ui-badges`); it aliases the active theme's `primary`, so it re-colours automatically per theme.
+
 ## [22.2.0] - 2026-06-24
 
 ### Added

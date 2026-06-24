@@ -382,6 +382,10 @@ $hub-accents-terminal: (
 	--hub-sys-color-secondary: var(--hub-ref-color-gray-600, #6c757d);
 	--hub-sys-color-light: var(--hub-ref-color-gray-100, #f8f9fa);
 	--hub-sys-color-dark: var(--hub-ref-color-gray-900, #212529);
+	/* Brand alias — the default accent consumed by component theme mixins
+	   (e.g. ng-hub-ui-buttons / -badges). Follows the active theme's primary. */
+	--hub-sys-color-brand-default: var(--hub-sys-color-primary, #0d6efd);
+	--hub-sys-color-brand-on-default: var(--hub-ref-color-white, #fff);
 
 	/* ----------------------------------------------------------
      Expressive gradient — theme-aware accent used by the home
