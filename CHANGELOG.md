@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [22.3.1] - 2026-06-25
+
+### Fixed
+
+- The default / `light` theme accents are no longer silently overridden by the Bootstrap bridge: `:root` and `[data-theme='light']` now re-assert the ref-based accents (and surfaces/text/border) after the bridge block, instead of resolving through `--bs-*` when Bootstrap is present.
+- Removed the stray `--hub-sys-color-primary-dark` Bootstrap override so all five variants derive `-dark` from the canonical `-emphasis` alias.
+
 ## [22.3.0] - 2026-06-24
 
 ### Added

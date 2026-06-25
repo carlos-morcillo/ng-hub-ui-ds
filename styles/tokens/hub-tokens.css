@@ -482,7 +482,6 @@
 [data-theme=forest],
 [data-theme=mono] {
   --hub-sys-color-primary: var(--bs-primary, #0d6efd);
-  --hub-sys-color-primary-dark: var(--bs-primary-text-emphasis, #0a58ca);
   --hub-sys-color-secondary: var(--bs-secondary, #6c757d);
   --hub-sys-color-success: var(--bs-success, #198754);
   --hub-sys-color-danger: var(--bs-danger, #dc3545);
@@ -498,8 +497,14 @@
 /* ============================================================
    LAYER 2 — sys (base alias)
    Base is equivalent to light theme and works as explicit default.
+   Also re-asserted for :root / [data-theme='light'] AFTER the Bootstrap
+   bridge above (whose selector also matches :root/light), so the default
+   and light themes keep their ref-based accents/surfaces instead of being
+   silently overridden by --bs-* when Bootstrap is present.
    ============================================================ */
-[data-theme=base] {
+:root,
+[data-theme=base],
+[data-theme=light] {
   --hub-sys-color-primary: var(--hub-ref-color-blue-500, #0d6efd);
   --hub-sys-color-success: var(--hub-ref-color-green-500, #198754);
   --hub-sys-color-danger: var(--hub-ref-color-red-500, #dc3545);
