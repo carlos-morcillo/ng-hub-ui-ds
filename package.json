@@ -11,7 +11,7 @@
   "homepage": "https://hubui.dev/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/carlos-morcillo/ng-hub-ui-ds.git"
+    "url": "git+https://github.com/carlos-morcillo/ng-hub-ui-ds.git"
   },
   "keywords": [
     "design-tokens",
