@@ -1,10 +1,12 @@
 {
   "name": "ng-hub-ui-ds",
-  "version": "22.3.1",
+  "version": "22.4.0",
   "license": "MIT",
   "scripts": {
     "build:tokens": "sass styles/tokens/hub-tokens.scss styles/tokens/hub-tokens.css --style=expanded --no-source-map",
-    "prepublishOnly": "npm run build:tokens"
+    "build:utilities": "sass styles/utilities/layout.hub.scss:styles/utilities/layout.hub.css styles/utilities/layout.scss:styles/utilities/layout.css --style=expanded --no-source-map",
+    "build:styles": "npm run build:tokens && npm run build:utilities",
+    "prepublishOnly": "npm run build:styles"
   },
   "description": "Design tokens for the ng-hub-ui family \u2014 the canonical `--hub-ref-*` (primitive) and `--hub-sys-*` (semantic) CSS custom properties, with light/dark and 8 built-in themes. Framework-agnostic: ship the compiled CSS or the SCSS source. Import once and every ng-hub-ui library reads the same palette.",
   "author": "Carlos Morcillo <carlos.morcillo@me.com> (https://www.carlosmorcillo.com)",
@@ -28,12 +30,22 @@
     "**/*.scss"
   ],
   "exports": {
+    ".": "./styles/index.scss",
+    "./styles": "./styles/index.scss",
+    "./styles/index.scss": "./styles/index.scss",
     "./styles/tokens/hub-tokens.css": "./styles/tokens/hub-tokens.css",
     "./styles/tokens/hub-tokens": "./styles/tokens/hub-tokens.scss",
-    "./styles/tokens/hub-tokens.scss": "./styles/tokens/hub-tokens.scss"
+    "./styles/tokens/hub-tokens.scss": "./styles/tokens/hub-tokens.scss",
+    "./styles/mixins/layout": "./styles/mixins/_layout.scss",
+    "./styles/mixins/bridges": "./styles/mixins/_bridges.scss",
+    "./styles/utilities/layout.hub": "./styles/utilities/layout.hub.scss",
+    "./styles/utilities/layout.hub.css": "./styles/utilities/layout.hub.css",
+    "./styles/utilities/layout": "./styles/utilities/layout.scss",
+    "./styles/utilities/layout.css": "./styles/utilities/layout.css"
   },
   "files": [
     "styles",
+    "docs",
     "README.md",
     "README.es.md",
     "CHANGELOG.md"

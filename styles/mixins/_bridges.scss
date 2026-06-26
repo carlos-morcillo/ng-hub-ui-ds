@@ -1,0 +1,170 @@
+/**
+ * _bridges.scss — opt-in bridge mixins to external systems (Phase E).
+ *
+ * Generalises the legacy passive Bootstrap bridge into invokable mixins, one per
+ * system, namespaced via `@use 'ng-hub-ui-ds' as hub`. Nothing is emitted unless
+ * a mixin is called, so the bridges cost zero by default.
+ *
+ * Direction ($mode):
+ *   adopt   — hub TAKES the host's tokens:   --hub-sys-color-primary: var(--bs-primary)
+ *   project — hub PROJECTS its theme onto the host: --bs-primary: var(--hub-sys-color-primary)
+ *   both    — adopt + project where safe.
+ *
+ * Usage (emit inside a selector you control, usually :root):
+ *   @use 'ng-hub-ui-ds' as hub;
+ *   :root { @include hub.bridge-bootstrap($mode: adopt); }
+ *   :root { @include hub.bridge-material($mode: project); }
+ */
+
+@use 'sass:list';
+
+/// True when $mode requests the "adopt" direction.
+@function _adopts($mode) {
+	@return $mode == adopt or $mode == both;
+}
+
+/// True when $mode requests the "project" direction.
+@function _projects($mode) {
+	@return $mode == project or $mode == both;
+}
+
+/* ============================================================
+   Bootstrap 5.3+  (--bs-*)
+   ============================================================ */
+
+// hub accent name -> bootstrap variable suffix
+$_bootstrap-colors: (
+	primary: primary,
+	secondary: secondary,
+	success: success,
+	danger: danger,
+	warning: warning,
+	info: info,
+	light: light,
+	dark: dark
+);
+
+@mixin bridge-bootstrap($mode: adopt, $color: true, $structure: true) {
+	@if $color {
+		@each $hub, $bs in $_bootstrap-colors {
+			@if _adopts($mode) {
+				--hub-sys-color-#{$hub}: var(--bs-#{$bs});
+			}
+			@if _projects($mode) {
+				--bs-#{$bs}: var(--hub-sys-color-#{$hub});
+				--bs-#{$bs}-rgb: var(--hub-sys-color-#{$hub});
+			}
+		}
+		@if _adopts($mode) {
+			--hub-sys-surface-page: var(--bs-body-bg);
+			--hub-sys-text-primary: var(--bs-body-color);
+			--hub-sys-border-color-default: var(--bs-border-color);
+		}
+		@if _projects($mode) {
+			--bs-body-bg: var(--hub-sys-surface-page);
+			--bs-body-color: var(--hub-sys-text-primary);
+			--bs-border-color: var(--hub-sys-border-color-default);
+		}
+	}
+	@if $structure {
+		@if _adopts($mode) {
+			--hub-sys-grid-gutter-x: var(--bs-gutter-x);
+			--hub-sys-grid-gutter-y: var(--bs-gutter-y);
+		}
+		@if _projects($mode) {
+			--bs-gutter-x: var(--hub-sys-grid-gutter-x);
+			--bs-gutter-y: var(--hub-sys-grid-gutter-y);
+			--bs-border-radius: var(--hub-sys-radius-md);
+			--bs-border-radius-sm: var(--hub-sys-radius-sm);
+			--bs-border-radius-lg: var(--hub-sys-radius-lg);
+		}
+	}
+}
+
+/* ============================================================
+   Tailwind CSS v4  (@theme  --color-*)
+   Note: `@theme` is a Tailwind at-rule resolved in Tailwind's own build.
+   `project` emits a :root mapping block the dev references from @theme;
+   it is NOT injected inside @theme automatically.
+   ============================================================ */
+
+$_tailwind-colors: (primary, secondary, success, danger, warning, info, light, dark);
+
+@mixin bridge-tailwind($mode: project) {
+	@each $name in $_tailwind-colors {
+		@if _adopts($mode) {
+			--hub-sys-color-#{$name}: var(--color-#{$name});
+		}
+		@if _projects($mode) {
+			--color-#{$name}: var(--hub-sys-color-#{$name});
+		}
+	}
+	@if _projects($mode) {
+		--spacing: var(--hub-ref-space-1);
+	}
+}
+
+/* ============================================================
+   Angular Material 3  (--mat-sys-*)
+   Maps the hub color/`-on` pair to Material's color/on-color roles.
+   `adopt` requires `use-system-variables: true` in the M3 theme.
+   ============================================================ */
+
+// hub name -> (mat role, mat on-role | null)
+$_material-roles: (
+	primary: (primary, on-primary),
+	secondary: (secondary, on-secondary),
+	danger: (error, on-error),
+	success: (tertiary, on-tertiary)
+);
+
+@mixin bridge-material($mode: project) {
+	@each $hub, $roles in $_material-roles {
+		$role: list.nth($roles, 1);
+		$on: list.nth($roles, 2);
+		@if _adopts($mode) {
+			--hub-sys-color-#{$hub}: var(--mat-sys-#{$role});
+			--hub-sys-color-#{$hub}-on: var(--mat-sys-#{$on});
+		}
+		@if _projects($mode) {
+			--mat-sys-#{$role}: var(--hub-sys-color-#{$hub});
+			--mat-sys-#{$on}: var(--hub-sys-color-#{$hub}-on);
+		}
+	}
+	@if _adopts($mode) {
+		--hub-sys-surface-page: var(--mat-sys-surface);
+		--hub-sys-text-primary: var(--mat-sys-on-surface);
+		--hub-sys-border-color-default: var(--mat-sys-outline);
+	}
+	@if _projects($mode) {
+		--mat-sys-surface: var(--hub-sys-surface-page);
+		--mat-sys-on-surface: var(--hub-sys-text-primary);
+		--mat-sys-outline: var(--hub-sys-border-color-default);
+	}
+}
+
+/* ============================================================
+   Open Props  (--{hue}-*, --size-*, --radius-*)
+   Open Props has no semantic accents, so `adopt` aliases ramp steps.
+   ============================================================ */
+
+// hub name -> open-props ramp step
+$_openprops-colors: (
+	primary: --blue-7,
+	success: --green-7,
+	danger: --red-7,
+	warning: --yellow-5,
+	info: --cyan-7
+);
+
+@mixin bridge-open-props($mode: adopt) {
+	@each $hub, $prop in $_openprops-colors {
+		@if _adopts($mode) {
+			--hub-sys-color-#{$hub}: var(#{$prop});
+		}
+	}
+	@if _adopts($mode) {
+		--hub-ref-radius-md: var(--radius-2);
+		--hub-ref-radius-lg: var(--radius-3);
+	}
+}

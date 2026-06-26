@@ -12,10 +12,10 @@
  *
  * Semantic colors (CSS-variable-first):
  *   A theme sets only ONE accent per variant (--hub-sys-color-{variant}).
- *   The role family — `-subtle`, `-border-subtle`, `-emphasis` (and `-dark`,
- *   a back-compat alias of `-emphasis`) — is derived ONCE in :root with
- *   color-mix(), against the contextual --hub-sys-surface-page and
- *   --hub-sys-color-ink. Because the derivations reference live CSS variables,
+ *   The role family — `-subtle`, `-border-subtle`, `-emphasis`, `-on` — is
+ *   derived ONCE in :root with color-mix() / relative color, against the
+ *   contextual --hub-sys-surface-page and --hub-sys-color-ink. The variant set
+ *   is open: see `$hub-accents`. Because the derivations reference live CSS variables,
  *   overriding a single accent — even on a subtree — recomputes the whole
  *   family at runtime, with no recompilation and no per-theme boilerplate.
  *
@@ -128,6 +128,8 @@
   --hub-ref-space-3: 1rem;
   --hub-ref-space-4: 1.5rem;
   --hub-ref-space-5: 3rem;
+  --hub-ref-space-6: 4.5rem;
+  --hub-ref-space-7: 6rem;
   /* ----------------------------------------------------------
       Border radius
    ---------------------------------------------------------- */
@@ -242,9 +244,9 @@
 /* ============================================================
    Semantic color generation (CSS-variable-first)
    A theme sets only ONE accent per variant (--hub-sys-color-{v}).
-   The role family (-subtle, -border-subtle, -emphasis, -dark) is
-   derived ONCE in :root with color-mix(), against the contextual
-   --hub-sys-surface-page and --hub-sys-color-ink. Because the
+   The role family (-subtle, -border-subtle, -emphasis, -on) is
+   derived ONCE in :root with color-mix() / relative color, against the
+   contextual --hub-sys-surface-page and --hub-sys-color-ink. Because the
    derivations reference the live CSS variables, overriding a single
    accent — even on a subtree — recomputes the whole family at
    runtime, with zero recompilation and no per-theme boilerplate.
@@ -252,7 +254,7 @@
      -subtle        = 12% accent over surface   (tinted background)
      -border-subtle = 35% accent over surface   (hairline border)
      -emphasis      = 80% accent over ink        (text / strong)
-     -dark          = alias of -emphasis         (back-compat)
+     -on            = grayscale contrast flip    (text on the accent)
    ============================================================ */
 /* ============================================================
    LAYER 2 — sys (light theme / default)
@@ -264,94 +266,161 @@
       Brand / action colors
    ---------------------------------------------------------- */
   --hub-sys-color-primary: var(--hub-ref-color-blue-500, #0d6efd);
+  --hub-sys-color-secondary: var(--hub-ref-color-gray-600, #6c757d);
   --hub-sys-color-success: var(--hub-ref-color-green-500, #198754);
   --hub-sys-color-danger: var(--hub-ref-color-red-500, #dc3545);
   --hub-sys-color-warning: var(--hub-ref-color-yellow-500, #ffc107);
   --hub-sys-color-info: var(--hub-ref-color-cyan-500, #0dcaf0);
+  --hub-sys-color-neutral: var(--hub-ref-color-gray-600, #6c757d);
+  --hub-sys-color-light: var(--hub-ref-color-gray-100, #f8f9fa);
+  --hub-sys-color-dark: var(--hub-ref-color-gray-900, #212529);
   --hub-sys-color-primary-subtle: color-mix(
-  	in srgb,
+  	in oklch,
   	var(--hub-sys-color-primary) 12%,
   	var(--hub-sys-surface-page, #fff)
   );
   --hub-sys-color-primary-border-subtle: color-mix(
-  	in srgb,
+  	in oklch,
   	var(--hub-sys-color-primary) 35%,
   	var(--hub-sys-surface-page, #fff)
   );
   --hub-sys-color-primary-emphasis: color-mix(
-  	in srgb,
+  	in oklch,
   	var(--hub-sys-color-primary) 80%,
   	var(--hub-sys-color-ink, #212529)
   );
-  --hub-sys-color-primary-dark: var(--hub-sys-color-primary-emphasis);
+  --hub-sys-color-primary-on: oklch(from var(--hub-sys-color-primary) clamp(0, (0.62 - l) * 1000, 1) 0 h);
+  --hub-sys-color-secondary-subtle: color-mix(
+  	in oklch,
+  	var(--hub-sys-color-secondary) 12%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-secondary-border-subtle: color-mix(
+  	in oklch,
+  	var(--hub-sys-color-secondary) 35%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-secondary-emphasis: color-mix(
+  	in oklch,
+  	var(--hub-sys-color-secondary) 80%,
+  	var(--hub-sys-color-ink, #212529)
+  );
+  --hub-sys-color-secondary-on: oklch(from var(--hub-sys-color-secondary) clamp(0, (0.62 - l) * 1000, 1) 0 h);
   --hub-sys-color-success-subtle: color-mix(
-  	in srgb,
+  	in oklch,
   	var(--hub-sys-color-success) 12%,
   	var(--hub-sys-surface-page, #fff)
   );
   --hub-sys-color-success-border-subtle: color-mix(
-  	in srgb,
+  	in oklch,
   	var(--hub-sys-color-success) 35%,
   	var(--hub-sys-surface-page, #fff)
   );
   --hub-sys-color-success-emphasis: color-mix(
-  	in srgb,
+  	in oklch,
   	var(--hub-sys-color-success) 80%,
   	var(--hub-sys-color-ink, #212529)
   );
-  --hub-sys-color-success-dark: var(--hub-sys-color-success-emphasis);
+  --hub-sys-color-success-on: oklch(from var(--hub-sys-color-success) clamp(0, (0.62 - l) * 1000, 1) 0 h);
   --hub-sys-color-danger-subtle: color-mix(
-  	in srgb,
+  	in oklch,
   	var(--hub-sys-color-danger) 12%,
   	var(--hub-sys-surface-page, #fff)
   );
   --hub-sys-color-danger-border-subtle: color-mix(
-  	in srgb,
+  	in oklch,
   	var(--hub-sys-color-danger) 35%,
   	var(--hub-sys-surface-page, #fff)
   );
   --hub-sys-color-danger-emphasis: color-mix(
-  	in srgb,
+  	in oklch,
   	var(--hub-sys-color-danger) 80%,
   	var(--hub-sys-color-ink, #212529)
   );
-  --hub-sys-color-danger-dark: var(--hub-sys-color-danger-emphasis);
+  --hub-sys-color-danger-on: oklch(from var(--hub-sys-color-danger) clamp(0, (0.62 - l) * 1000, 1) 0 h);
   --hub-sys-color-warning-subtle: color-mix(
-  	in srgb,
+  	in oklch,
   	var(--hub-sys-color-warning) 12%,
   	var(--hub-sys-surface-page, #fff)
   );
   --hub-sys-color-warning-border-subtle: color-mix(
-  	in srgb,
+  	in oklch,
   	var(--hub-sys-color-warning) 35%,
   	var(--hub-sys-surface-page, #fff)
   );
   --hub-sys-color-warning-emphasis: color-mix(
-  	in srgb,
+  	in oklch,
   	var(--hub-sys-color-warning) 80%,
   	var(--hub-sys-color-ink, #212529)
   );
-  --hub-sys-color-warning-dark: var(--hub-sys-color-warning-emphasis);
+  --hub-sys-color-warning-on: oklch(from var(--hub-sys-color-warning) clamp(0, (0.62 - l) * 1000, 1) 0 h);
   --hub-sys-color-info-subtle: color-mix(
-  	in srgb,
+  	in oklch,
   	var(--hub-sys-color-info) 12%,
   	var(--hub-sys-surface-page, #fff)
   );
   --hub-sys-color-info-border-subtle: color-mix(
-  	in srgb,
+  	in oklch,
   	var(--hub-sys-color-info) 35%,
   	var(--hub-sys-surface-page, #fff)
   );
   --hub-sys-color-info-emphasis: color-mix(
-  	in srgb,
+  	in oklch,
   	var(--hub-sys-color-info) 80%,
   	var(--hub-sys-color-ink, #212529)
   );
-  --hub-sys-color-info-dark: var(--hub-sys-color-info-emphasis);
+  --hub-sys-color-info-on: oklch(from var(--hub-sys-color-info) clamp(0, (0.62 - l) * 1000, 1) 0 h);
+  --hub-sys-color-neutral-subtle: color-mix(
+  	in oklch,
+  	var(--hub-sys-color-neutral) 12%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-neutral-border-subtle: color-mix(
+  	in oklch,
+  	var(--hub-sys-color-neutral) 35%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-neutral-emphasis: color-mix(
+  	in oklch,
+  	var(--hub-sys-color-neutral) 80%,
+  	var(--hub-sys-color-ink, #212529)
+  );
+  --hub-sys-color-neutral-on: oklch(from var(--hub-sys-color-neutral) clamp(0, (0.62 - l) * 1000, 1) 0 h);
+  --hub-sys-color-light-subtle: color-mix(
+  	in oklch,
+  	var(--hub-sys-color-light) 12%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-light-border-subtle: color-mix(
+  	in oklch,
+  	var(--hub-sys-color-light) 35%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-light-emphasis: color-mix(
+  	in oklch,
+  	var(--hub-sys-color-light) 80%,
+  	var(--hub-sys-color-ink, #212529)
+  );
+  --hub-sys-color-light-on: oklch(from var(--hub-sys-color-light) clamp(0, (0.62 - l) * 1000, 1) 0 h);
+  --hub-sys-color-dark-subtle: color-mix(
+  	in oklch,
+  	var(--hub-sys-color-dark) 12%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-dark-border-subtle: color-mix(
+  	in oklch,
+  	var(--hub-sys-color-dark) 35%,
+  	var(--hub-sys-surface-page, #fff)
+  );
+  --hub-sys-color-dark-emphasis: color-mix(
+  	in oklch,
+  	var(--hub-sys-color-dark) 80%,
+  	var(--hub-sys-color-ink, #212529)
+  );
+  --hub-sys-color-dark-on: oklch(from var(--hub-sys-color-dark) clamp(0, (0.62 - l) * 1000, 1) 0 h);
   --hub-sys-color-ink: var(--hub-ref-color-gray-900, #212529);
-  --hub-sys-color-secondary: var(--hub-ref-color-gray-600, #6c757d);
-  --hub-sys-color-light: var(--hub-ref-color-gray-100, #f8f9fa);
-  --hub-sys-color-dark: var(--hub-ref-color-gray-900, #212529);
+  /* secondary / neutral / light / dark are emitted by the open accent map above,
+     each with its own derived role family (-subtle, -border-subtle, -emphasis, -on). */
   /* Brand alias — the default accent consumed by component theme mixins
      (e.g. ng-hub-ui-buttons / -badges). Follows the active theme's primary. */
   --hub-sys-color-brand-default: var(--hub-sys-color-primary, #0d6efd);
@@ -409,6 +478,41 @@
   --hub-sys-radius-md: var(--hub-ref-radius-md, 0.375rem);
   --hub-sys-radius-lg: var(--hub-ref-radius-lg, 0.5rem);
   --hub-sys-radius-pill: var(--hub-ref-radius-pill, 9999px);
+  /* ----------------------------------------------------------
+      Structure — sizing
+      Canonical width/height keywords, fractional widths and the
+      responsive page-wrapper max-widths. Bootstrap-compatible.
+   ---------------------------------------------------------- */
+  --hub-sys-size-full: 100%;
+  --hub-sys-size-auto: auto;
+  --hub-sys-size-min: min-content;
+  --hub-sys-size-max: max-content;
+  --hub-sys-size-fit: fit-content;
+  --hub-sys-size-1-2: 50%;
+  --hub-sys-size-1-3: 33.333333%;
+  --hub-sys-size-2-3: 66.666667%;
+  --hub-sys-size-1-4: 25%;
+  --hub-sys-size-3-4: 75%;
+  --hub-sys-container-max-width-sm: 540px;
+  --hub-sys-container-max-width-md: 720px;
+  --hub-sys-container-max-width-lg: 960px;
+  --hub-sys-container-max-width-xl: 1140px;
+  --hub-sys-container-max-width-xxl: 1320px;
+  /* ----------------------------------------------------------
+      Structure — grid
+   ---------------------------------------------------------- */
+  --hub-sys-grid-columns: 12;
+  --hub-sys-grid-gutter-x: var(--hub-ref-space-4, 1.5rem);
+  --hub-sys-grid-gutter-y: var(--hub-ref-space-0, 0);
+  /* ----------------------------------------------------------
+      Structure — gap scale (semantic aliases of the spacing scale)
+   ---------------------------------------------------------- */
+  --hub-sys-gap-0: var(--hub-ref-space-0, 0);
+  --hub-sys-gap-1: var(--hub-ref-space-1, 0.25rem);
+  --hub-sys-gap-2: var(--hub-ref-space-2, 0.5rem);
+  --hub-sys-gap-3: var(--hub-ref-space-3, 1rem);
+  --hub-sys-gap-4: var(--hub-ref-space-4, 1.5rem);
+  --hub-sys-gap-5: var(--hub-ref-space-5, 3rem);
   /* ----------------------------------------------------------
       Focus ring
    ---------------------------------------------------------- */
@@ -506,11 +610,13 @@
 [data-theme=base],
 [data-theme=light] {
   --hub-sys-color-primary: var(--hub-ref-color-blue-500, #0d6efd);
+  --hub-sys-color-secondary: var(--hub-ref-color-gray-600, #6c757d);
   --hub-sys-color-success: var(--hub-ref-color-green-500, #198754);
   --hub-sys-color-danger: var(--hub-ref-color-red-500, #dc3545);
   --hub-sys-color-warning: var(--hub-ref-color-yellow-500, #ffc107);
   --hub-sys-color-info: var(--hub-ref-color-cyan-500, #0dcaf0);
-  --hub-sys-color-secondary: var(--hub-ref-color-gray-600, #6c757d);
+  --hub-sys-color-neutral: var(--hub-ref-color-gray-600, #6c757d);
+  --hub-sys-color-light: var(--hub-ref-color-gray-100, #f8f9fa);
   --hub-sys-color-dark: var(--hub-ref-color-gray-900, #212529);
   --hub-sys-surface-page: var(--hub-ref-surface-1, #ffffff);
   --hub-sys-surface-elevated: var(--hub-ref-surface-2, #f8f9fa);

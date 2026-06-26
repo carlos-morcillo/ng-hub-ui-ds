@@ -1,0 +1,16 @@
+/**
+ * ng-hub-ui-ds — Sass API entry point.
+ *
+ * Forwards the layout mixins and the external-system bridge mixins so consumers
+ * can pull the whole helper API with a single namespaced import:
+ *
+ *   @use 'ng-hub-ui-ds' as hub;
+ *   .page { @include hub.center($max: xl); }
+ *   :root { @include hub.bridge-bootstrap($mode: adopt); }
+ *
+ * The design tokens themselves are emitted separately (they are CSS, not Sass):
+ *   @use 'ng-hub-ui-ds/styles/tokens/hub-tokens' with ($hub-accents-extra: (...));
+ */
+
+@forward 'mixins/layout';
+@forward 'mixins/bridges';

@@ -1,0 +1,489 @@
+@charset "UTF-8";
+/**
+ * layout.scss — opt-in canonical layout utilities (UNPREFIXED).
+ *
+ * Same utilities as `layout.hub.scss` but without the `hub-` prefix, for a
+ * framework-style ergonomics (`.stack`, `.gap-3`). USE AT YOUR OWN RISK: these
+ * class names can collide with Bootstrap/Tailwind utilities. Per the project
+ * naming rule, utilities are either `hub-`-prefixed or unprefixed — never an
+ * intermediate prefix. Import explicitly:
+ *   @use 'ng-hub-ui-ds/styles/utilities/layout';
+ */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hub-sys-gap-3);
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--hub-sys-gap-2);
+}
+
+.grid-auto {
+  display: grid;
+  gap: var(--hub-sys-gap-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(var(--hub-sys-grid-columns, 12), minmax(0, 1fr));
+  gap: var(--hub-sys-gap-3);
+}
+
+.col-1 {
+  grid-column: span 1;
+}
+
+.col-2 {
+  grid-column: span 2;
+}
+
+.col-3 {
+  grid-column: span 3;
+}
+
+.col-4 {
+  grid-column: span 4;
+}
+
+.col-5 {
+  grid-column: span 5;
+}
+
+.col-6 {
+  grid-column: span 6;
+}
+
+.col-7 {
+  grid-column: span 7;
+}
+
+.col-8 {
+  grid-column: span 8;
+}
+
+.col-9 {
+  grid-column: span 9;
+}
+
+.col-10 {
+  grid-column: span 10;
+}
+
+.col-11 {
+  grid-column: span 11;
+}
+
+.col-12 {
+  grid-column: span 12;
+}
+
+.center {
+  width: 100%;
+  max-width: var(--hub-sys-container-max-width-xl);
+  margin-inline: auto;
+  padding-inline: var(--hub-sys-gap-3);
+}
+
+/* ── Display ── */
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-none {
+  display: none;
+}
+
+/* ── Flex direction / wrap ── */
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+/* ── Justify content (main axis) ── */
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* ── Align items (cross axis) ── */
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+/* ── Align self ── */
+.self-auto {
+  align-self: auto;
+}
+
+.self-start {
+  align-self: flex-start;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.self-baseline {
+  align-self: baseline;
+}
+
+.self-stretch {
+  align-self: stretch;
+}
+
+/* ── Flex grow / shrink / fill ── */
+.flex-fill {
+  flex: 1 1 auto;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.flex-initial {
+  flex: 0 1 auto;
+}
+
+.flex-none {
+  flex: none;
+}
+
+.flex-grow-0 {
+  flex-grow: 0;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.flex-shrink-1 {
+  flex-shrink: 1;
+}
+
+.gap-0 {
+  gap: var(--hub-sys-gap-0);
+}
+
+.p-0 {
+  padding: var(--hub-ref-space-0);
+}
+
+.px-0 {
+  padding-inline: var(--hub-ref-space-0);
+}
+
+.py-0 {
+  padding-block: var(--hub-ref-space-0);
+}
+
+.m-0 {
+  margin: var(--hub-ref-space-0);
+}
+
+.mx-0 {
+  margin-inline: var(--hub-ref-space-0);
+}
+
+.my-0 {
+  margin-block: var(--hub-ref-space-0);
+}
+
+.gap-1 {
+  gap: var(--hub-sys-gap-1);
+}
+
+.p-1 {
+  padding: var(--hub-ref-space-1);
+}
+
+.px-1 {
+  padding-inline: var(--hub-ref-space-1);
+}
+
+.py-1 {
+  padding-block: var(--hub-ref-space-1);
+}
+
+.m-1 {
+  margin: var(--hub-ref-space-1);
+}
+
+.mx-1 {
+  margin-inline: var(--hub-ref-space-1);
+}
+
+.my-1 {
+  margin-block: var(--hub-ref-space-1);
+}
+
+.gap-2 {
+  gap: var(--hub-sys-gap-2);
+}
+
+.p-2 {
+  padding: var(--hub-ref-space-2);
+}
+
+.px-2 {
+  padding-inline: var(--hub-ref-space-2);
+}
+
+.py-2 {
+  padding-block: var(--hub-ref-space-2);
+}
+
+.m-2 {
+  margin: var(--hub-ref-space-2);
+}
+
+.mx-2 {
+  margin-inline: var(--hub-ref-space-2);
+}
+
+.my-2 {
+  margin-block: var(--hub-ref-space-2);
+}
+
+.gap-3 {
+  gap: var(--hub-sys-gap-3);
+}
+
+.p-3 {
+  padding: var(--hub-ref-space-3);
+}
+
+.px-3 {
+  padding-inline: var(--hub-ref-space-3);
+}
+
+.py-3 {
+  padding-block: var(--hub-ref-space-3);
+}
+
+.m-3 {
+  margin: var(--hub-ref-space-3);
+}
+
+.mx-3 {
+  margin-inline: var(--hub-ref-space-3);
+}
+
+.my-3 {
+  margin-block: var(--hub-ref-space-3);
+}
+
+.gap-4 {
+  gap: var(--hub-sys-gap-4);
+}
+
+.p-4 {
+  padding: var(--hub-ref-space-4);
+}
+
+.px-4 {
+  padding-inline: var(--hub-ref-space-4);
+}
+
+.py-4 {
+  padding-block: var(--hub-ref-space-4);
+}
+
+.m-4 {
+  margin: var(--hub-ref-space-4);
+}
+
+.mx-4 {
+  margin-inline: var(--hub-ref-space-4);
+}
+
+.my-4 {
+  margin-block: var(--hub-ref-space-4);
+}
+
+.gap-5 {
+  gap: var(--hub-sys-gap-5);
+}
+
+.p-5 {
+  padding: var(--hub-ref-space-5);
+}
+
+.px-5 {
+  padding-inline: var(--hub-ref-space-5);
+}
+
+.py-5 {
+  padding-block: var(--hub-ref-space-5);
+}
+
+.m-5 {
+  margin: var(--hub-ref-space-5);
+}
+
+.mx-5 {
+  margin-inline: var(--hub-ref-space-5);
+}
+
+.my-5 {
+  margin-block: var(--hub-ref-space-5);
+}
+
+/* ── Sizing — width / height / viewport (Bootstrap-compatible names) ── */
+.w-auto {
+  width: auto;
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.mw-100 {
+  max-width: 100%;
+}
+
+.vw-100 {
+  width: 100vw;
+}
+
+.min-vw-100 {
+  min-width: 100vw;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.h-25 {
+  height: 25%;
+}
+
+.h-50 {
+  height: 50%;
+}
+
+.h-75 {
+  height: 75%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.mh-100 {
+  max-height: 100%;
+}
+
+.vh-100 {
+  height: 100vh;
+}
+
+.min-vh-100 {
+  min-height: 100vh;
+}

@@ -1,0 +1,69 @@
+/**
+ * _layout.scss — canonical layout mixins for ng-hub-ui.
+ *
+ * Thin, token-driven helpers built on the `--hub-sys-gap-*`, `--hub-sys-grid-*`
+ * and `--hub-sys-container-max-width-*` structural tokens. They emit no colour
+ * and hard-code no spacing: every value resolves to a canonical CSS variable, so
+ * overriding the token re-flows the layout without touching the helper.
+ *
+ * Usage:
+ *   @use 'ng-hub-ui-ds' as hub;
+ *   .toolbar { @include hub.cluster($gap: 2); }
+ *   .page    { @include hub.center($max: xl); }
+ */
+
+/// Vertical stack — column flex with a token-driven gap.
+/// @param {Number} $gap  Step of the canonical gap scale (0–5).
+/// @param {String} $align  `align-items` value.
+@mixin stack($gap: 3, $align: stretch) {
+	display: flex;
+	flex-direction: column;
+	gap: var(--hub-sys-gap-#{$gap});
+	align-items: $align;
+}
+
+/// Horizontal cluster — wraps, token-driven gap.
+@mixin cluster($gap: 2, $align: center, $justify: flex-start) {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--hub-sys-gap-#{$gap});
+	align-items: $align;
+	justify-content: $justify;
+}
+
+/// Responsive auto-fit grid — items never narrower than $min.
+@mixin grid($min: 16rem, $gap: 4) {
+	display: grid;
+	gap: var(--hub-sys-gap-#{$gap});
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, #{$min}), 1fr));
+}
+
+/// Fixed N-column grid driven by the canonical column count.
+@mixin grid-fixed($cols: 12, $gap: 4) {
+	display: grid;
+	gap: var(--hub-sys-gap-#{$gap});
+	grid-template-columns: repeat(#{$cols}, minmax(0, 1fr));
+}
+
+/// 12-column row (driven by `--hub-sys-grid-columns`) for span-based columns.
+/// Pair with `col($span)` on the children.
+@mixin row($gap: 3) {
+	display: grid;
+	grid-template-columns: repeat(var(--hub-sys-grid-columns, 12), minmax(0, 1fr));
+	gap: var(--hub-sys-gap-#{$gap});
+}
+
+/// A column spanning $span of the 12 tracks of a `row()`.
+@mixin col($span: 12) {
+	grid-column: span #{$span};
+}
+
+/// Centered page wrapper constrained to a container max-width.
+/// @param {String} $max  Breakpoint key: sm | md | lg | xl | xxl.
+/// @param {Number} $pad  Inline padding step of the gap scale.
+@mixin center($max: xl, $pad: 3) {
+	width: 100%;
+	max-width: var(--hub-sys-container-max-width-#{$max});
+	margin-inline: auto;
+	padding-inline: var(--hub-sys-gap-#{$pad});
+}
