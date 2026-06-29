@@ -978,6 +978,7 @@ The `detail` token set is defined as a single, standardized collection that supp
 | `--hub-badge-focus-ring-width` | `var(--hub-sys-focus-ring-width, 0.25rem)` | Badge focus ring width | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:30` |
 | `--hub-badge-font-family` | `var(--hub-ref-font-family-base, inherit)` | Badge font family | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:14` |
 | `--hub-badge-font-size` | `0.875rem` | Badge font size | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:15` |
+| `--hub-badge-max-width` | `100%` | Badge max width (truncation bound for the content ellipsis) | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:40` |
 | `--hub-badge-font-weight` | `600` | Badge font weight | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:16` |
 | `--hub-badge-gap` | `0.375rem` | Badge gap | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:21` |
 | `--hub-badge-letter-spacing` | `0.01em` | Badge letter spacing | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:18` |
