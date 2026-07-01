@@ -2066,6 +2066,19 @@ The navigation strip is **semantic-accent aware**: a single `--hub-panels-accent
 | `--hub-milestone-pending-color` | `var(--hub-sys-text-muted, #6c757d)` | Pending node text color | `IN_USE` | `milestones/src/lib/milestones.component.scss:14` |
 | `--hub-milestone-spacing` | `1.75rem` | Spacing between node and content | `IN_USE` | `milestones/src/lib/milestones.component.scss:21` |
 
+### `icons`
+
+Agnostic icon renderer (`ng-hub-ui-icons`). One token set themes any icon pack (Font Awesome, Bootstrap Icons, Material Symbols, Solar, custom SVG) uniformly. The variable-font axes (`fill`/`weight`/`grade`/`optical-size`) are applied via `font-variation-settings` and only affect variable icon fonts such as Material Symbols.
+
+| Token | Initial value | Usage | Status | Source |
+| ----- | ------------- | ----- | ------ | ------ |
+| `--hub-icon-size` | `1em` | Icon size (font-size for glyphs; width/height for SVG/img) | `IN_USE` | `icons/src/lib/styles/_icon-base.scss:11` |
+| `--hub-icon-color` | `currentColor` | Icon color (color for glyphs; fill for SVG) | `IN_USE` | `icons/src/lib/styles/_icon-base.scss:12` |
+| `--hub-icon-fill` | `0` | Variable-font `FILL` axis (Material Symbols) | `IN_USE` | `icons/src/lib/styles/_icon-base.scss:16` |
+| `--hub-icon-weight` | `400` | Variable-font `wght` axis (Material Symbols) | `IN_USE` | `icons/src/lib/styles/_icon-base.scss:17` |
+| `--hub-icon-grade` | `0` | Variable-font `GRAD` axis (Material Symbols) | `IN_USE` | `icons/src/lib/styles/_icon-base.scss:18` |
+| `--hub-icon-optical-size` | `24` | Variable-font `opsz` axis (Material Symbols) | `IN_USE` | `icons/src/lib/styles/_icon-base.scss:19` |
+
 ## Appendix
 
 ### Glossary
