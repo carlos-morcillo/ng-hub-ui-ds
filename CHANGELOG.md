@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.4.4] - 2026-07-01
+
+### Changed
+
+- Token-spec MD: documented the `<hub-input>` affix and clear-button tokens added in `ng-hub-ui-forms` 22.3.0 — `--hub-input-icon-color` / `--hub-input-icon-size`, `--hub-input-affix-inset` / `--hub-input-affix-gap`, and `--hub-input-clear-icon` / `--hub-input-clear-size` / `--hub-input-clear-color` / `--hub-input-clear-hover-color`. Docs only — no change to the emitted tokens.
+
 ## [22.4.3] - 2026-07-01
 
 ### Changed
