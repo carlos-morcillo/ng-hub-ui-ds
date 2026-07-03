@@ -1,0 +1,149 @@
+@charset "UTF-8";
+/**
+ * reset.scss — opt-in reboot of native HTML elements.
+ *
+ * Normalizes the browser defaults so components render on a predictable base,
+ * in the spirit of Bootstrap's Reboot but driven by the canonical tokens:
+ * typography, page surface, link colors and spacing all resolve to
+ * `--hub-ref-*` / `--hub-sys-*` custom properties. Load it once, before the
+ * component styles, only when the host app does not already ship a reset
+ * (loading it alongside Bootstrap would double-reboot the document):
+ *   @use 'ng-hub-ui-ds/styles/base/reset';
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--hub-ref-font-family-base);
+  font-size: var(--hub-ref-font-size-base);
+  font-weight: var(--hub-ref-font-weight-base);
+  line-height: var(--hub-ref-line-height-base);
+  color: var(--hub-sys-text-primary);
+  background-color: var(--hub-sys-surface-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block: 0 var(--hub-ref-space-2);
+  line-height: var(--hub-ref-line-height-sm);
+}
+
+p,
+ul,
+ol,
+dl,
+figure,
+blockquote,
+pre {
+  margin-block: 0 var(--hub-ref-space-3);
+}
+
+ul,
+ol {
+  padding-inline-start: 2rem;
+}
+
+dd {
+  margin-inline-start: 0;
+  margin-block-end: var(--hub-ref-space-2);
+}
+
+blockquote,
+figure {
+  margin-inline: 0;
+}
+
+a {
+  color: var(--hub-sys-link-color);
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--hub-sys-link-hover-color);
+}
+
+hr {
+  margin-block: var(--hub-ref-space-3);
+  border: 0;
+  border-block-start: 1px solid currentcolor;
+  opacity: 0.25;
+}
+
+img,
+svg,
+video,
+canvas {
+  vertical-align: middle;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--hub-ref-font-family-mono);
+  font-size: 0.875em;
+}
+
+table {
+  border-collapse: collapse;
+  caption-side: bottom;
+}
+
+th {
+  text-align: inherit;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[role=button] {
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+[hidden] {
+  display: none !important;
+}

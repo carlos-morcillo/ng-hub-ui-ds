@@ -1,0 +1,189 @@
+/**
+ * surfaces.scss — opt-in background / border / radius / shadow utilities.
+ *
+ * Helper class names mirror Bootstrap's EXACTLY (`.bg-primary`,
+ * `.bg-danger-subtle`, `.text-bg-success`, `.border`, `.border-primary`,
+ * `.rounded-pill`, `.shadow-sm`, `.opacity-50` …) and every value resolves to
+ * the canonical tokens through the surface mixins — override a token and the
+ * utilities re-theme. Do not load this sheet AND Bootstrap globally in the
+ * same document (the names overlap by design). Import explicitly:
+ *   @use 'ng-hub-ui-ds/styles/utilities/surfaces';
+ *
+ * The same mixins are the public Sass API — consumers can mint their own
+ * variants: `.card--brand { @include hub.text-bg(brand); }`.
+ */
+
+@use '../mixins/surfaces' as surfaces;
+
+$_accents: primary, secondary, success, danger, warning, info, neutral, light, dark;
+
+/* ── Backgrounds ── */
+@each $variant in $_accents {
+	.bg-#{$variant} {
+		@include surfaces.bg($variant);
+	}
+	.bg-#{$variant}-subtle {
+		@include surfaces.bg($variant, $subtle: true);
+	}
+}
+.bg-body {
+	@include surfaces.bg(body);
+}
+.bg-transparent {
+	@include surfaces.bg(transparent);
+}
+.bg-white {
+	background-color: #fff;
+}
+.bg-black {
+	background-color: #000;
+}
+.bg-gradient {
+	background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+}
+
+/* ── Background opacity (feeds the --hub-bg-opacity hook of .bg-* / .text-bg-*) ── */
+.bg-opacity-10 {
+	--hub-bg-opacity: 0.1;
+}
+.bg-opacity-25 {
+	--hub-bg-opacity: 0.25;
+}
+.bg-opacity-50 {
+	--hub-bg-opacity: 0.5;
+}
+.bg-opacity-75 {
+	--hub-bg-opacity: 0.75;
+}
+.bg-opacity-100 {
+	--hub-bg-opacity: 1;
+}
+
+/* ── Background + guaranteed-contrast text ── */
+@each $variant in $_accents {
+	.text-bg-#{$variant} {
+		@include surfaces.text-bg($variant);
+	}
+}
+
+/* ── Borders — additive sides ── */
+.border {
+	@include surfaces.border();
+}
+.border-0 {
+	border: 0;
+}
+.border-top {
+	border-block-start: 1px solid var(--hub-sys-border-color-default);
+}
+.border-top-0 {
+	border-block-start: 0;
+}
+.border-bottom {
+	border-block-end: 1px solid var(--hub-sys-border-color-default);
+}
+.border-bottom-0 {
+	border-block-end: 0;
+}
+.border-start {
+	border-inline-start: 1px solid var(--hub-sys-border-color-default);
+}
+.border-start-0 {
+	border-inline-start: 0;
+}
+.border-end {
+	border-inline-end: 1px solid var(--hub-sys-border-color-default);
+}
+.border-end-0 {
+	border-inline-end: 0;
+}
+
+/* ── Border colours ── */
+@each $variant in $_accents {
+	.border-#{$variant} {
+		@include surfaces.border-color($variant);
+	}
+}
+
+/* ── Border widths ── */
+@for $i from 1 through 5 {
+	.border-#{$i} {
+		border-width: #{$i}px;
+	}
+}
+
+/* ── Radius ── */
+.rounded {
+	@include surfaces.radius(md);
+}
+.rounded-0 {
+	@include surfaces.radius(none);
+}
+.rounded-1 {
+	@include surfaces.radius(sm);
+}
+.rounded-2 {
+	@include surfaces.radius(md);
+}
+.rounded-3 {
+	@include surfaces.radius(lg);
+}
+.rounded-4 {
+	@include surfaces.radius(xl);
+}
+.rounded-5 {
+	@include surfaces.radius(xxl);
+}
+.rounded-circle {
+	@include surfaces.radius(circle);
+}
+.rounded-pill {
+	@include surfaces.radius(pill);
+}
+.rounded-top {
+	border-start-start-radius: var(--hub-sys-radius-md);
+	border-start-end-radius: var(--hub-sys-radius-md);
+}
+.rounded-bottom {
+	border-end-start-radius: var(--hub-sys-radius-md);
+	border-end-end-radius: var(--hub-sys-radius-md);
+}
+.rounded-start {
+	border-start-start-radius: var(--hub-sys-radius-md);
+	border-end-start-radius: var(--hub-sys-radius-md);
+}
+.rounded-end {
+	border-start-end-radius: var(--hub-sys-radius-md);
+	border-end-end-radius: var(--hub-sys-radius-md);
+}
+
+/* ── Shadows ── */
+.shadow {
+	@include surfaces.shadow(md);
+}
+.shadow-sm {
+	@include surfaces.shadow(sm);
+}
+.shadow-lg {
+	@include surfaces.shadow(lg);
+}
+.shadow-none {
+	@include surfaces.shadow(none);
+}
+
+/* ── Opacity ── */
+.opacity-0 {
+	opacity: 0;
+}
+.opacity-25 {
+	opacity: 0.25;
+}
+.opacity-50 {
+	opacity: 0.5;
+}
+.opacity-75 {
+	opacity: 0.75;
+}
+.opacity-100 {
+	opacity: 1;
+}

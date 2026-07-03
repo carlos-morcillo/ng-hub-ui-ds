@@ -1,0 +1,411 @@
+@charset "UTF-8";
+/**
+ * text.scss — opt-in text & typography utilities.
+ *
+ * Helper class names mirror Bootstrap's EXACTLY (`.text-center`, `.fw-bold`,
+ * `.fs-1…6`, `.lh-sm`, `.text-truncate`, `.text-primary` …) and every value
+ * resolves to the canonical tokens through the typography mixins — override a
+ * token and the utilities re-theme. Do not load this sheet AND Bootstrap
+ * globally in the same document (the names overlap by design). Import
+ * explicitly:
+ *   @use 'ng-hub-ui-ds/styles/utilities/text';
+ *
+ * The same mixins are the public Sass API — consumers can mint their own
+ * variants: `.text-brand { @include hub.text-color(brand); }`.
+ */
+/**
+ * _typography.scss — canonical typography mixins for ng-hub-ui.
+ *
+ * Thin, token-driven helpers built on the `--hub-ref-font-*`,
+ * `--hub-ref-line-height-*` and `--hub-sys-color-*` / `--hub-sys-text-*`
+ * tokens. They hard-code no size, weight or colour: every value resolves to a
+ * canonical CSS variable, so overriding the token re-themes the text without
+ * touching the helper. The text utility sheet (`utilities/text.scss`) is built
+ * from these same mixins — consumers can mint their own variants with them.
+ *
+ * Usage:
+ *   @use 'ng-hub-ui-ds' as hub;
+ *   .card__title { @include hub.font-size(4); @include hub.font-weight(semibold); }
+ *   .card__meta  { @include hub.text-color(muted); @include hub.text-truncate(); }
+ */
+/* ── Alignment ── */
+.text-start {
+  text-align: start;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+/* ── Wrapping / breaking / truncation ── */
+.text-wrap {
+  white-space: normal;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-break {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Transform ── */
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+/* ── Decoration ── */
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-underline {
+  text-decoration: underline;
+}
+
+.text-decoration-line-through {
+  text-decoration: line-through;
+}
+
+/* ── Weight & style ── */
+.fw-lighter {
+  font-weight: lighter;
+}
+
+.fw-light {
+  font-weight: var(--hub-ref-font-weight-light);
+}
+
+.fw-normal {
+  font-weight: var(--hub-ref-font-weight-base);
+}
+
+.fw-medium {
+  font-weight: var(--hub-ref-font-weight-medium);
+}
+
+.fw-semibold {
+  font-weight: var(--hub-ref-font-weight-semibold);
+}
+
+.fw-bold {
+  font-weight: var(--hub-ref-font-weight-bold);
+}
+
+.fw-bolder {
+  font-weight: bolder;
+}
+
+.fst-italic {
+  font-style: italic;
+}
+
+.fst-normal {
+  font-style: normal;
+}
+
+/* ── Size (Bootstrap's heading scale, derived from the base token) ── */
+.fs-1 {
+  font-size: calc(var(--hub-ref-font-size-base) * 2.5);
+}
+
+.fs-2 {
+  font-size: calc(var(--hub-ref-font-size-base) * 2);
+}
+
+.fs-3 {
+  font-size: calc(var(--hub-ref-font-size-base) * 1.75);
+}
+
+.fs-4 {
+  font-size: calc(var(--hub-ref-font-size-base) * 1.5);
+}
+
+.fs-5 {
+  font-size: calc(var(--hub-ref-font-size-base) * 1.25);
+}
+
+.fs-6 {
+  font-size: calc(var(--hub-ref-font-size-base) * 1);
+}
+
+/* ── Line height ── */
+.lh-1 {
+  line-height: 1;
+}
+
+.lh-sm {
+  line-height: var(--hub-ref-line-height-sm);
+}
+
+.lh-base {
+  line-height: var(--hub-ref-line-height-base);
+}
+
+.lh-lg {
+  line-height: var(--hub-ref-line-height-lg);
+}
+
+/* ── Family ── */
+.font-monospace {
+  font-family: var(--hub-ref-font-family-mono);
+}
+
+/* ── Semantic text colours ── */
+.text-primary {
+  color: color-mix(in srgb, var(--hub-sys-color-primary) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+.text-secondary {
+  color: color-mix(in srgb, var(--hub-sys-color-secondary) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+.text-success {
+  color: color-mix(in srgb, var(--hub-sys-color-success) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+.text-danger {
+  color: color-mix(in srgb, var(--hub-sys-color-danger) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+.text-warning {
+  color: color-mix(in srgb, var(--hub-sys-color-warning) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+.text-info {
+  color: color-mix(in srgb, var(--hub-sys-color-info) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+.text-neutral {
+  color: color-mix(in srgb, var(--hub-sys-color-neutral) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+.text-light {
+  color: color-mix(in srgb, var(--hub-sys-color-light) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+.text-dark {
+  color: color-mix(in srgb, var(--hub-sys-color-dark) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+.text-body {
+  color: color-mix(in srgb, var(--hub-sys-text-primary) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+.text-muted {
+  color: color-mix(in srgb, var(--hub-sys-text-muted) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-black {
+  color: #000;
+}
+
+.text-reset {
+  color: inherit;
+}
+
+/* ── Text opacity (feeds the --hub-text-opacity hook of .text-*) ── */
+.text-opacity-25 {
+  --hub-text-opacity: 0.25;
+}
+
+.text-opacity-50 {
+  --hub-text-opacity: 0.5;
+}
+
+.text-opacity-75 {
+  --hub-text-opacity: 0.75;
+}
+
+.text-opacity-100 {
+  --hub-text-opacity: 1;
+}
+
+/* ── Link utilities ── */
+.link-primary {
+  color: var(--hub-sys-color-primary);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-primary) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+.link-primary:hover, .link-primary:focus {
+  color: var(--hub-sys-color-primary-emphasis);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-primary-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-secondary {
+  color: var(--hub-sys-color-secondary);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-secondary) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+.link-secondary:hover, .link-secondary:focus {
+  color: var(--hub-sys-color-secondary-emphasis);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-secondary-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-success {
+  color: var(--hub-sys-color-success);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-success) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+.link-success:hover, .link-success:focus {
+  color: var(--hub-sys-color-success-emphasis);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-success-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-danger {
+  color: var(--hub-sys-color-danger);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-danger) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+.link-danger:hover, .link-danger:focus {
+  color: var(--hub-sys-color-danger-emphasis);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-danger-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-warning {
+  color: var(--hub-sys-color-warning);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-warning) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+.link-warning:hover, .link-warning:focus {
+  color: var(--hub-sys-color-warning-emphasis);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-warning-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-info {
+  color: var(--hub-sys-color-info);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-info) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+.link-info:hover, .link-info:focus {
+  color: var(--hub-sys-color-info-emphasis);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-info-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-neutral {
+  color: var(--hub-sys-color-neutral);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-neutral) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+.link-neutral:hover, .link-neutral:focus {
+  color: var(--hub-sys-color-neutral-emphasis);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-neutral-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-light {
+  color: var(--hub-sys-color-light);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-light) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+.link-light:hover, .link-light:focus {
+  color: var(--hub-sys-color-light-emphasis);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-light-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-dark {
+  color: var(--hub-sys-color-dark);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-dark) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+.link-dark:hover, .link-dark:focus {
+  color: var(--hub-sys-color-dark-emphasis);
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-dark-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-underline {
+  text-decoration: underline;
+}
+
+.link-underline-primary {
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-primary) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-underline-secondary {
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-secondary) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-underline-success {
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-success) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-underline-danger {
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-danger) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-underline-warning {
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-warning) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-underline-info {
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-info) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-underline-neutral {
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-neutral) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-underline-light {
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-light) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-underline-dark {
+  text-decoration-color: color-mix(in srgb, var(--hub-sys-color-dark) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+.link-underline-opacity-0 {
+  --hub-link-underline-opacity: 0;
+}
+
+.link-underline-opacity-10 {
+  --hub-link-underline-opacity: 0.1;
+}
+
+.link-underline-opacity-25 {
+  --hub-link-underline-opacity: 0.25;
+}
+
+.link-underline-opacity-50 {
+  --hub-link-underline-opacity: 0.5;
+}
+
+.link-underline-opacity-75 {
+  --hub-link-underline-opacity: 0.75;
+}
+
+.link-underline-opacity-100 {
+  --hub-link-underline-opacity: 1;
+}
+
+.link-offset-1 {
+  text-underline-offset: 0.125em;
+}
+
+.link-offset-2 {
+  text-underline-offset: 0.25em;
+}
+
+.link-offset-3 {
+  text-underline-offset: 0.375em;
+}
+
+.icon-link {
+  display: inline-flex;
+  gap: var(--hub-sys-gap-1);
+  align-items: center;
+  text-underline-offset: 0.25em;
+}

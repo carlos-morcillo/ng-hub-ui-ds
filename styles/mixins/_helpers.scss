@@ -1,0 +1,62 @@
+/**
+ * _helpers.scss — canonical helper mixins for ng-hub-ui.
+ *
+ * Multi-property behaviour helpers (accessibility, media ratios, link reach,
+ * float clearing) mirroring Bootstrap's helper set. The utility sheets expose
+ * them as classes; consumers can also apply them directly to their own
+ * selectors.
+ *
+ * Usage:
+ *   @use 'ng-hub-ui-ds' as hub;
+ *   .sr-label   { @include hub.visually-hidden(); }
+ *   .card__link { @include hub.stretched-link(); }
+ *   .thumb      { @include hub.ratio(16, 9); }
+ */
+
+/// Hides content visually while keeping it available to assistive technology.
+/// `!important` is deliberate: hiding for accessibility must win any cascade.
+@mixin visually-hidden() {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip-path: inset(50%) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+/// Stretches the link's clickable area over its nearest positioned ancestor.
+@mixin stretched-link() {
+	&::after {
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		content: '';
+	}
+}
+
+/// Locks an element to a fixed aspect ratio (native `aspect-ratio`).
+/// @param {Number} $x  Horizontal proportion.
+/// @param {Number} $y  Vertical proportion.
+@mixin ratio($x: 16, $y: 9) {
+	aspect-ratio: #{$x} / #{$y};
+}
+
+/// Clears floated children (classic clearfix).
+@mixin clearfix() {
+	&::after {
+		display: block;
+		clear: both;
+		content: '';
+	}
+}
+
+/// Bootstrap-style focus ring driven by the canonical focus tokens
+/// (`--hub-sys-focus-ring-width` / `--hub-sys-focus-ring-color`). Apply it on
+/// the `:focus` / `:focus-visible` state of interactive elements.
+@mixin focus-ring() {
+	outline: 0;
+	box-shadow: 0 0 0 var(--hub-sys-focus-ring-width) var(--hub-sys-focus-ring-color);
+}

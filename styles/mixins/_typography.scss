@@ -1,0 +1,111 @@
+/**
+ * _typography.scss — canonical typography mixins for ng-hub-ui.
+ *
+ * Thin, token-driven helpers built on the `--hub-ref-font-*`,
+ * `--hub-ref-line-height-*` and `--hub-sys-color-*` / `--hub-sys-text-*`
+ * tokens. They hard-code no size, weight or colour: every value resolves to a
+ * canonical CSS variable, so overriding the token re-themes the text without
+ * touching the helper. The text utility sheet (`utilities/text.scss`) is built
+ * from these same mixins — consumers can mint their own variants with them.
+ *
+ * Usage:
+ *   @use 'ng-hub-ui-ds' as hub;
+ *   .card__title { @include hub.font-size(4); @include hub.font-weight(semibold); }
+ *   .card__meta  { @include hub.text-color(muted); @include hub.text-truncate(); }
+ */
+
+@use 'sass:map';
+
+/// Bootstrap's heading scale, derived from the base font-size token so
+/// retheming `--hub-ref-font-size-base` rescales every level.
+$_heading-scale: (
+	1: 2.5,
+	2: 2,
+	3: 1.75,
+	4: 1.5,
+	5: 1.25,
+	6: 1
+);
+
+/// Single-line truncation with an ellipsis.
+@mixin text-truncate() {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/// Breaks long words/URLs so they never overflow their container.
+@mixin text-break() {
+	word-wrap: break-word;
+	word-break: break-word;
+}
+
+/// Font family from the canonical stacks.
+/// @param {String} $family  base | display | mono.
+@mixin font-family($family: base) {
+	font-family: var(--hub-ref-font-family-#{$family});
+}
+
+/// Font size — a heading level (1–6, Bootstrap's scale) or a step of the
+/// canonical token scale (xs | sm | base | lg).
+/// @param {Number|String} $size  1–6 or xs | sm | base | lg.
+@mixin font-size($size: base) {
+	@if map.has-key($_heading-scale, $size) {
+		font-size: calc(var(--hub-ref-font-size-base) * #{map.get($_heading-scale, $size)});
+	} @else {
+		font-size: var(--hub-ref-font-size-#{$size});
+	}
+}
+
+/// Font weight from the canonical scale.
+/// @param {String} $weight  light | base | medium | semibold | bold.
+@mixin font-weight($weight: base) {
+	font-weight: var(--hub-ref-font-weight-#{$weight});
+}
+
+/// Line height from the canonical scale, or `1` for solid leading.
+/// @param {Number|String} $height  1 | sm | base | lg.
+@mixin line-height($height: base) {
+	@if $height == 1 {
+		line-height: 1;
+	} @else {
+		line-height: var(--hub-ref-line-height-#{$height});
+	}
+}
+
+/// Semantic text colour — any accent of the open map (`primary`, `danger`,
+/// `brand`…) or the document roles `body` / `muted`. The colour is emitted
+/// through `--hub-text-opacity` (default 1), so `.text-opacity-*` (or a local
+/// override of that property) fades it without extra classes.
+/// @param {String} $variant  Accent name, or body | muted.
+@mixin text-color($variant: body) {
+	$color: var(--hub-sys-color-#{$variant});
+	@if $variant == body {
+		$color: var(--hub-sys-text-primary);
+	} @else if $variant == muted {
+		$color: var(--hub-sys-text-muted);
+	}
+	color: color-mix(in srgb, #{$color} calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+/// Accent-coloured link with its `-emphasis` hover/focus treatment. The
+/// underline colour honours `--hub-link-underline-opacity` (default 1).
+/// @param {String} $variant  Accent name of the open map.
+@mixin link-color($variant: primary) {
+	color: var(--hub-sys-color-#{$variant});
+	text-decoration-color: color-mix(
+		in srgb,
+		var(--hub-sys-color-#{$variant}) calc(var(--hub-link-underline-opacity, 1) * 100%),
+		transparent
+	);
+
+	&:hover,
+	&:focus {
+		color: var(--hub-sys-color-#{$variant}-emphasis);
+		text-decoration-color: color-mix(
+			in srgb,
+			var(--hub-sys-color-#{$variant}-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%),
+			transparent
+		);
+	}
+}

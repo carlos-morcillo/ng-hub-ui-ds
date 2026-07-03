@@ -1,47 +1,49 @@
 /**
  * layout.scss — opt-in canonical layout utilities (UNPREFIXED).
  *
- * Same utilities as `layout.hub.scss` but without the `hub-` prefix, for a
- * framework-style ergonomics (`.stack`, `.gap-3`). USE AT YOUR OWN RISK: these
- * class names can collide with Bootstrap/Tailwind utilities. Per the project
- * naming rule, utilities are either `hub-`-prefixed or unprefixed — never an
- * intermediate prefix. Import explicitly:
+ * The single utility sheet of the ds. Helper class names mirror Bootstrap's
+ * EXACTLY (`.d-flex`, `.align-items-center`, `.justify-content-between`,
+ * `.gap-3`, `.w-50` …) and the spacing scale matches Bootstrap's, so the sheet
+ * is a drop-in replacement — but do not load it AND Bootstrap globally in the
+ * same document. Every value resolves to canonical structural tokens. The only
+ * ds-specific additions are the layout primitives that mirror the mixins
+ * (`.stack`, `.cluster`, `.grid-auto`, `.center`). Import explicitly:
  *   @use 'ng-hub-ui-ds/styles/utilities/layout';
+ *
+ * Includes a 12-column grid (`.row` + `.col-1…12`), width/height sizing,
+ * directional padding/margin (`.p-*` / `.pt-*` / `.mx-*` / `.ms-auto` …),
+ * display/flex helpers, gap, position/inset, overflow, order, float,
+ * visibility, z-index, object-fit, vertical-align, interaction helpers and
+ * the accessibility/behaviour helpers (`.visually-hidden`, `.stretched-link`,
+ * `.ratio-*`, `.clearfix`).
  */
+
+@use '../mixins/breakpoints' as bp;
+@use '../mixins/layout' as layout;
+@use '../mixins/helpers' as helpers;
 
 $_steps: 0 1 2 3 4 5;
 
+/* ── Layout primitives — thin wrappers over the canonical mixins ── */
 .stack {
-	display: flex;
-	flex-direction: column;
-	gap: var(--hub-sys-gap-3);
+	@include layout.stack();
 }
 .cluster {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: var(--hub-sys-gap-2);
+	@include layout.cluster();
 }
 .grid-auto {
-	display: grid;
-	gap: var(--hub-sys-gap-4);
-	grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+	@include layout.grid();
 }
 .row {
-	display: grid;
-	grid-template-columns: repeat(var(--hub-sys-grid-columns, 12), minmax(0, 1fr));
-	gap: var(--hub-sys-gap-3);
+	@include layout.row();
 }
 @for $i from 1 through 12 {
 	.col-#{$i} {
-		grid-column: span #{$i};
+		@include layout.col($i);
 	}
 }
 .center {
-	width: 100%;
-	max-width: var(--hub-sys-container-max-width-xl);
-	margin-inline: auto;
-	padding-inline: var(--hub-sys-gap-3);
+	@include layout.center();
 }
 
 /* ── Display ── */
@@ -62,6 +64,15 @@ $_steps: 0 1 2 3 4 5;
 }
 .d-inline {
 	display: inline;
+}
+.d-table {
+	display: table;
+}
+.d-table-row {
+	display: table-row;
+}
+.d-table-cell {
+	display: table-cell;
 }
 .d-none {
 	display: none;
@@ -91,77 +102,65 @@ $_steps: 0 1 2 3 4 5;
 }
 
 /* ── Justify content (main axis) ── */
-.justify-start {
+.justify-content-start {
 	justify-content: flex-start;
 }
-.justify-end {
+.justify-content-end {
 	justify-content: flex-end;
 }
-.justify-center {
+.justify-content-center {
 	justify-content: center;
 }
-.justify-between {
+.justify-content-between {
 	justify-content: space-between;
 }
-.justify-around {
+.justify-content-around {
 	justify-content: space-around;
 }
-.justify-evenly {
+.justify-content-evenly {
 	justify-content: space-evenly;
 }
 
 /* ── Align items (cross axis) ── */
-.items-start {
+.align-items-start {
 	align-items: flex-start;
 }
-.items-end {
+.align-items-end {
 	align-items: flex-end;
 }
-.items-center {
+.align-items-center {
 	align-items: center;
 }
-.items-baseline {
+.align-items-baseline {
 	align-items: baseline;
 }
-.items-stretch {
+.align-items-stretch {
 	align-items: stretch;
 }
 
 /* ── Align self ── */
-.self-auto {
+.align-self-auto {
 	align-self: auto;
 }
-.self-start {
+.align-self-start {
 	align-self: flex-start;
 }
-.self-end {
+.align-self-end {
 	align-self: flex-end;
 }
-.self-center {
+.align-self-center {
 	align-self: center;
 }
-.self-baseline {
+.align-self-baseline {
 	align-self: baseline;
 }
-.self-stretch {
+.align-self-stretch {
 	align-self: stretch;
 }
 
 /* ── Flex grow / shrink / fill ── */
 .flex-fill {
 	flex: 1 1 auto;
-}
-.flex-1 {
-	flex: 1 1 0%;
-}
-.flex-auto {
-	flex: 1 1 auto;
-}
-.flex-initial {
-	flex: 0 1 auto;
-}
-.flex-none {
-	flex: none;
 }
 .flex-grow-0 {
 	flex-grow: 0;
@@ -180,6 +179,12 @@ $_steps: 0 1 2 3 4 5;
 	.gap-#{$i} {
 		gap: var(--hub-sys-gap-#{$i});
 	}
+	.row-gap-#{$i} {
+		row-gap: var(--hub-sys-gap-#{$i});
+	}
+	.column-gap-#{$i} {
+		column-gap: var(--hub-sys-gap-#{$i});
+	}
 	.p-#{$i} {
 		padding: var(--hub-ref-space-#{$i});
 	}
@@ -188,6 +193,18 @@ $_steps: 0 1 2 3 4 5;
 	}
 	.py-#{$i} {
 		padding-block: var(--hub-ref-space-#{$i});
+	}
+	.pt-#{$i} {
+		padding-block-start: var(--hub-ref-space-#{$i});
+	}
+	.pb-#{$i} {
+		padding-block-end: var(--hub-ref-space-#{$i});
+	}
+	.ps-#{$i} {
+		padding-inline-start: var(--hub-ref-space-#{$i});
+	}
+	.pe-#{$i} {
+		padding-inline-end: var(--hub-ref-space-#{$i});
 	}
 	.m-#{$i} {
 		margin: var(--hub-ref-space-#{$i});
@@ -198,6 +215,41 @@ $_steps: 0 1 2 3 4 5;
 	.my-#{$i} {
 		margin-block: var(--hub-ref-space-#{$i});
 	}
+	.mt-#{$i} {
+		margin-block-start: var(--hub-ref-space-#{$i});
+	}
+	.mb-#{$i} {
+		margin-block-end: var(--hub-ref-space-#{$i});
+	}
+	.ms-#{$i} {
+		margin-inline-start: var(--hub-ref-space-#{$i});
+	}
+	.me-#{$i} {
+		margin-inline-end: var(--hub-ref-space-#{$i});
+	}
+}
+
+/* ── Auto margins — centring and flex pushing ── */
+.m-auto {
+	margin: auto;
+}
+.mx-auto {
+	margin-inline: auto;
+}
+.my-auto {
+	margin-block: auto;
+}
+.mt-auto {
+	margin-block-start: auto;
+}
+.mb-auto {
+	margin-block-end: auto;
+}
+.ms-auto {
+	margin-inline-start: auto;
+}
+.me-auto {
+	margin-inline-end: auto;
 }
 
 /* ── Sizing — width / height / viewport (Bootstrap-compatible names) ── */
@@ -248,4 +300,418 @@ $_steps: 0 1 2 3 4 5;
 }
 .min-vh-100 {
 	min-height: 100vh;
+}
+
+/* ── Position ── */
+.position-static {
+	position: static;
+}
+.position-relative {
+	position: relative;
+}
+.position-absolute {
+	position: absolute;
+}
+.position-fixed {
+	position: fixed;
+}
+.position-sticky {
+	position: sticky;
+}
+
+/* ── Inset (for positioned elements) ── */
+.top-0 {
+	top: 0;
+}
+.top-50 {
+	top: 50%;
+}
+.top-100 {
+	top: 100%;
+}
+.bottom-0 {
+	bottom: 0;
+}
+.bottom-50 {
+	bottom: 50%;
+}
+.bottom-100 {
+	bottom: 100%;
+}
+.start-0 {
+	inset-inline-start: 0;
+}
+.start-50 {
+	inset-inline-start: 50%;
+}
+.start-100 {
+	inset-inline-start: 100%;
+}
+.end-0 {
+	inset-inline-end: 0;
+}
+.end-50 {
+	inset-inline-end: 50%;
+}
+.end-100 {
+	inset-inline-end: 100%;
+}
+.translate-middle {
+	transform: translate(-50%, -50%);
+}
+.translate-middle-x {
+	transform: translateX(-50%);
+}
+.translate-middle-y {
+	transform: translateY(-50%);
+}
+
+/* ── Viewport-pinned helpers ── */
+.fixed-top {
+	position: fixed;
+	top: 0;
+	inset-inline: 0;
+	z-index: 1030;
+}
+.fixed-bottom {
+	position: fixed;
+	bottom: 0;
+	inset-inline: 0;
+	z-index: 1030;
+}
+.sticky-top {
+	position: sticky;
+	top: 0;
+	z-index: 1020;
+}
+.sticky-bottom {
+	position: sticky;
+	bottom: 0;
+	z-index: 1020;
+}
+
+/* ── Overflow ── */
+.overflow-auto {
+	overflow: auto;
+}
+.overflow-hidden {
+	overflow: hidden;
+}
+.overflow-visible {
+	overflow: visible;
+}
+.overflow-scroll {
+	overflow: scroll;
+}
+.overflow-x-auto {
+	overflow-x: auto;
+}
+.overflow-x-hidden {
+	overflow-x: hidden;
+}
+.overflow-x-visible {
+	overflow-x: visible;
+}
+.overflow-x-scroll {
+	overflow-x: scroll;
+}
+.overflow-y-auto {
+	overflow-y: auto;
+}
+.overflow-y-hidden {
+	overflow-y: hidden;
+}
+.overflow-y-visible {
+	overflow-y: visible;
+}
+.overflow-y-scroll {
+	overflow-y: scroll;
+}
+
+/* ── Order (flex / grid children) ── */
+.order-first {
+	order: -1;
+}
+@for $i from 0 through 5 {
+	.order-#{$i} {
+		order: #{$i};
+	}
+}
+.order-last {
+	order: 6;
+}
+
+/* ── Align content (multi-line flex / grid tracks) ── */
+.align-content-start {
+	align-content: flex-start;
+}
+.align-content-end {
+	align-content: flex-end;
+}
+.align-content-center {
+	align-content: center;
+}
+.align-content-between {
+	align-content: space-between;
+}
+.align-content-around {
+	align-content: space-around;
+}
+.align-content-stretch {
+	align-content: stretch;
+}
+
+/* ── Float ── */
+.float-start {
+	float: inline-start;
+}
+.float-end {
+	float: inline-end;
+}
+.float-none {
+	float: none;
+}
+.clearfix {
+	@include helpers.clearfix();
+}
+
+/* ── Visibility ── */
+.visible {
+	visibility: visible;
+}
+.invisible {
+	visibility: hidden;
+}
+
+/* ── Z-index ── */
+.z-n1 {
+	z-index: -1;
+}
+.z-0 {
+	z-index: 0;
+}
+.z-1 {
+	z-index: 1;
+}
+.z-2 {
+	z-index: 2;
+}
+.z-3 {
+	z-index: 3;
+}
+
+/* ── Object fit (replaced elements: img, video…) ── */
+.object-fit-contain {
+	object-fit: contain;
+}
+.object-fit-cover {
+	object-fit: cover;
+}
+.object-fit-fill {
+	object-fit: fill;
+}
+.object-fit-scale {
+	object-fit: scale-down;
+}
+.object-fit-none {
+	object-fit: none;
+}
+
+/* ── Vertical align (inline / table-cell elements) ── */
+.align-baseline {
+	vertical-align: baseline;
+}
+.align-top {
+	vertical-align: top;
+}
+.align-middle {
+	vertical-align: middle;
+}
+.align-bottom {
+	vertical-align: bottom;
+}
+.align-text-top {
+	vertical-align: text-top;
+}
+.align-text-bottom {
+	vertical-align: text-bottom;
+}
+
+/* ── Interactions ── */
+.user-select-all {
+	user-select: all;
+}
+.user-select-auto {
+	user-select: auto;
+}
+.user-select-none {
+	user-select: none;
+}
+.pe-none {
+	pointer-events: none;
+}
+.pe-auto {
+	pointer-events: auto;
+}
+
+/* ── Accessibility / behaviour helpers ── */
+.focus-ring:focus {
+	@include helpers.focus-ring();
+}
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+	@include helpers.visually-hidden();
+}
+.stretched-link {
+	@include helpers.stretched-link();
+}
+.ratio {
+	position: relative;
+	width: 100%;
+
+	> * {
+		width: 100%;
+		height: 100%;
+	}
+}
+.ratio-1x1 {
+	@include helpers.ratio(1, 1);
+}
+.ratio-4x3 {
+	@include helpers.ratio(4, 3);
+}
+.ratio-16x9 {
+	@include helpers.ratio(16, 9);
+}
+.ratio-21x9 {
+	@include helpers.ratio(21, 9);
+}
+
+/* ── Print display ── */
+@media print {
+	.d-print-none {
+		display: none;
+	}
+	.d-print-inline {
+		display: inline;
+	}
+	.d-print-inline-block {
+		display: inline-block;
+	}
+	.d-print-block {
+		display: block;
+	}
+	.d-print-grid {
+		display: grid;
+	}
+	.d-print-table {
+		display: table;
+	}
+	.d-print-table-row {
+		display: table-row;
+	}
+	.d-print-table-cell {
+		display: table-cell;
+	}
+	.d-print-flex {
+		display: flex;
+	}
+	.d-print-inline-flex {
+		display: inline-flex;
+	}
+}
+
+/* ── Responsive variants (mobile-first, Bootstrap-exact names) ──
+   Generated for the highest-traffic groups: display, columns, spacing and gap.
+   Any other utility gets its responsive variant the same way in consumer code:
+     @use 'ng-hub-ui-ds' as hub;
+     @include hub.media-breakpoint-up(md) { .justify-content-md-center { justify-content: center; } } */
+@each $bp-name, $bp-width in bp.$hub-breakpoints {
+	@include bp.media-breakpoint-up($bp-name) {
+		/* display */
+		@each $d in (flex, inline-flex, grid, block, inline-block, inline, table, table-row, table-cell, none) {
+			.d-#{$bp-name}-#{$d} {
+				display: $d;
+			}
+		}
+
+		/* 12-column spans */
+		@for $i from 1 through 12 {
+			.col-#{$bp-name}-#{$i} {
+				@include layout.col($i);
+			}
+		}
+
+		/* spacing + gap */
+		@each $i in $_steps {
+			.gap-#{$bp-name}-#{$i} {
+				gap: var(--hub-sys-gap-#{$i});
+			}
+			.p-#{$bp-name}-#{$i} {
+				padding: var(--hub-ref-space-#{$i});
+			}
+			.px-#{$bp-name}-#{$i} {
+				padding-inline: var(--hub-ref-space-#{$i});
+			}
+			.py-#{$bp-name}-#{$i} {
+				padding-block: var(--hub-ref-space-#{$i});
+			}
+			.pt-#{$bp-name}-#{$i} {
+				padding-block-start: var(--hub-ref-space-#{$i});
+			}
+			.pb-#{$bp-name}-#{$i} {
+				padding-block-end: var(--hub-ref-space-#{$i});
+			}
+			.ps-#{$bp-name}-#{$i} {
+				padding-inline-start: var(--hub-ref-space-#{$i});
+			}
+			.pe-#{$bp-name}-#{$i} {
+				padding-inline-end: var(--hub-ref-space-#{$i});
+			}
+			.m-#{$bp-name}-#{$i} {
+				margin: var(--hub-ref-space-#{$i});
+			}
+			.mx-#{$bp-name}-#{$i} {
+				margin-inline: var(--hub-ref-space-#{$i});
+			}
+			.my-#{$bp-name}-#{$i} {
+				margin-block: var(--hub-ref-space-#{$i});
+			}
+			.mt-#{$bp-name}-#{$i} {
+				margin-block-start: var(--hub-ref-space-#{$i});
+			}
+			.mb-#{$bp-name}-#{$i} {
+				margin-block-end: var(--hub-ref-space-#{$i});
+			}
+			.ms-#{$bp-name}-#{$i} {
+				margin-inline-start: var(--hub-ref-space-#{$i});
+			}
+			.me-#{$bp-name}-#{$i} {
+				margin-inline-end: var(--hub-ref-space-#{$i});
+			}
+		}
+
+		/* auto margins */
+		.m-#{$bp-name}-auto {
+			margin: auto;
+		}
+		.mx-#{$bp-name}-auto {
+			margin-inline: auto;
+		}
+		.my-#{$bp-name}-auto {
+			margin-block: auto;
+		}
+		.mt-#{$bp-name}-auto {
+			margin-block-start: auto;
+		}
+		.mb-#{$bp-name}-auto {
+			margin-block-end: auto;
+		}
+		.ms-#{$bp-name}-auto {
+			margin-inline-start: auto;
+		}
+		.me-#{$bp-name}-auto {
+			margin-inline-end: auto;
+		}
+	}
 }

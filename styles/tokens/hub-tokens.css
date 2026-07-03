@@ -120,7 +120,7 @@
   --hub-ref-surface-1: #ffffff;
   --hub-ref-surface-2: #f8f9fa;
   /* ----------------------------------------------------------
-      Spacing scale
+      Spacing scale (generated from $hub-space-scale)
    ---------------------------------------------------------- */
   --hub-ref-space-0: 0;
   --hub-ref-space-1: 0.25rem;
@@ -131,12 +131,14 @@
   --hub-ref-space-6: 4.5rem;
   --hub-ref-space-7: 6rem;
   /* ----------------------------------------------------------
-      Border radius
+      Border radius (generated from $hub-radius-scale)
    ---------------------------------------------------------- */
   --hub-ref-radius-none: 0;
   --hub-ref-radius-sm: 0.25rem;
   --hub-ref-radius-md: 0.375rem;
   --hub-ref-radius-lg: 0.5rem;
+  --hub-ref-radius-xl: 1rem;
+  --hub-ref-radius-xxl: 2rem;
   --hub-ref-radius-pill: 50rem;
   /* ----------------------------------------------------------
       Border width
@@ -477,7 +479,9 @@
   --hub-sys-radius-sm: var(--hub-ref-radius-sm, 0.25rem);
   --hub-sys-radius-md: var(--hub-ref-radius-md, 0.375rem);
   --hub-sys-radius-lg: var(--hub-ref-radius-lg, 0.5rem);
-  --hub-sys-radius-pill: var(--hub-ref-radius-pill, 9999px);
+  --hub-sys-radius-xl: var(--hub-ref-radius-xl, 1rem);
+  --hub-sys-radius-xxl: var(--hub-ref-radius-xxl, 2rem);
+  --hub-sys-radius-pill: var(--hub-ref-radius-pill, 50rem);
   /* ----------------------------------------------------------
       Structure — sizing
       Canonical width/height keywords, fractional widths and the

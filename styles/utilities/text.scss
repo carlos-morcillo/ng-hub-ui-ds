@@ -1,0 +1,208 @@
+/**
+ * text.scss — opt-in text & typography utilities.
+ *
+ * Helper class names mirror Bootstrap's EXACTLY (`.text-center`, `.fw-bold`,
+ * `.fs-1…6`, `.lh-sm`, `.text-truncate`, `.text-primary` …) and every value
+ * resolves to the canonical tokens through the typography mixins — override a
+ * token and the utilities re-theme. Do not load this sheet AND Bootstrap
+ * globally in the same document (the names overlap by design). Import
+ * explicitly:
+ *   @use 'ng-hub-ui-ds/styles/utilities/text';
+ *
+ * The same mixins are the public Sass API — consumers can mint their own
+ * variants: `.text-brand { @include hub.text-color(brand); }`.
+ */
+
+@use '../mixins/typography' as typo;
+
+/* ── Alignment ── */
+.text-start {
+	text-align: start;
+}
+.text-center {
+	text-align: center;
+}
+.text-end {
+	text-align: end;
+}
+
+/* ── Wrapping / breaking / truncation ── */
+.text-wrap {
+	white-space: normal;
+}
+.text-nowrap {
+	white-space: nowrap;
+}
+.text-break {
+	@include typo.text-break();
+}
+.text-truncate {
+	@include typo.text-truncate();
+}
+
+/* ── Transform ── */
+.text-lowercase {
+	text-transform: lowercase;
+}
+.text-uppercase {
+	text-transform: uppercase;
+}
+.text-capitalize {
+	text-transform: capitalize;
+}
+
+/* ── Decoration ── */
+.text-decoration-none {
+	text-decoration: none;
+}
+.text-decoration-underline {
+	text-decoration: underline;
+}
+.text-decoration-line-through {
+	text-decoration: line-through;
+}
+
+/* ── Weight & style ── */
+.fw-lighter {
+	font-weight: lighter;
+}
+.fw-light {
+	@include typo.font-weight(light);
+}
+.fw-normal {
+	@include typo.font-weight(base);
+}
+.fw-medium {
+	@include typo.font-weight(medium);
+}
+.fw-semibold {
+	@include typo.font-weight(semibold);
+}
+.fw-bold {
+	@include typo.font-weight(bold);
+}
+.fw-bolder {
+	font-weight: bolder;
+}
+.fst-italic {
+	font-style: italic;
+}
+.fst-normal {
+	font-style: normal;
+}
+
+/* ── Size (Bootstrap's heading scale, derived from the base token) ── */
+@for $i from 1 through 6 {
+	.fs-#{$i} {
+		@include typo.font-size($i);
+	}
+}
+
+/* ── Line height ── */
+.lh-1 {
+	@include typo.line-height(1);
+}
+.lh-sm {
+	@include typo.line-height(sm);
+}
+.lh-base {
+	@include typo.line-height(base);
+}
+.lh-lg {
+	@include typo.line-height(lg);
+}
+
+/* ── Family ── */
+.font-monospace {
+	@include typo.font-family(mono);
+}
+
+/* ── Semantic text colours ── */
+$_accents: primary, secondary, success, danger, warning, info, neutral, light, dark;
+
+@each $variant in $_accents {
+	.text-#{$variant} {
+		@include typo.text-color($variant);
+	}
+}
+.text-body {
+	@include typo.text-color(body);
+}
+.text-muted {
+	@include typo.text-color(muted);
+}
+.text-white {
+	color: #fff;
+}
+.text-black {
+	color: #000;
+}
+.text-reset {
+	color: inherit;
+}
+
+/* ── Text opacity (feeds the --hub-text-opacity hook of .text-*) ── */
+.text-opacity-25 {
+	--hub-text-opacity: 0.25;
+}
+.text-opacity-50 {
+	--hub-text-opacity: 0.5;
+}
+.text-opacity-75 {
+	--hub-text-opacity: 0.75;
+}
+.text-opacity-100 {
+	--hub-text-opacity: 1;
+}
+
+/* ── Link utilities ── */
+@each $variant in $_accents {
+	.link-#{$variant} {
+		@include typo.link-color($variant);
+	}
+}
+.link-underline {
+	text-decoration: underline;
+}
+@each $variant in $_accents {
+	.link-underline-#{$variant} {
+		text-decoration-color: color-mix(
+			in srgb,
+			var(--hub-sys-color-#{$variant}) calc(var(--hub-link-underline-opacity, 1) * 100%),
+			transparent
+		);
+	}
+}
+.link-underline-opacity-0 {
+	--hub-link-underline-opacity: 0;
+}
+.link-underline-opacity-10 {
+	--hub-link-underline-opacity: 0.1;
+}
+.link-underline-opacity-25 {
+	--hub-link-underline-opacity: 0.25;
+}
+.link-underline-opacity-50 {
+	--hub-link-underline-opacity: 0.5;
+}
+.link-underline-opacity-75 {
+	--hub-link-underline-opacity: 0.75;
+}
+.link-underline-opacity-100 {
+	--hub-link-underline-opacity: 1;
+}
+.link-offset-1 {
+	text-underline-offset: 0.125em;
+}
+.link-offset-2 {
+	text-underline-offset: 0.25em;
+}
+.link-offset-3 {
+	text-underline-offset: 0.375em;
+}
+.icon-link {
+	display: inline-flex;
+	gap: var(--hub-sys-gap-1);
+	align-items: center;
+	text-underline-offset: 0.25em;
+}

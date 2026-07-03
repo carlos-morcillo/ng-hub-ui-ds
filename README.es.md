@@ -58,13 +58,14 @@ Este paquete es la base de design tokens de la que lee el resto del ecosistema
 4. [🧱 Arquitectura: las capas](#-arquitectura-las-capas)
 5. [🎨 Los colores semánticos](#-los-colores-semánticos)
 6. [🌗 Temas](#-temas)
-7. [🛠️ Cómo modificarlo](#️-cómo-modificarlo)
-8. [🧩 Funciones SCSS (cómo se genera por dentro)](#-funciones-scss-cómo-se-genera-por-dentro)
-9. [📋 Tabla de referencia rápida](#-tabla-de-referencia-rápida)
-10. [📊 Changelog](#-changelog)
-11. [🤝 Contribución](#-contribución)
-12. [☕ Apoyo](#-apoyo)
-13. [📄 Licencia](#-licencia)
+7. [🧰 Utilidades y mixins opt-in](#-utilidades-y-mixins-opt-in)
+8. [🛠️ Cómo modificarlo](#️-cómo-modificarlo)
+9. [🧩 Funciones SCSS (cómo se genera por dentro)](#-funciones-scss-cómo-se-genera-por-dentro)
+10. [📋 Tabla de referencia rápida](#-tabla-de-referencia-rápida)
+11. [📊 Changelog](#-changelog)
+12. [🤝 Contribución](#-contribución)
+13. [☕ Apoyo](#-apoyo)
+14. [📄 Licencia](#-licencia)
 
 ---
 
@@ -216,6 +217,43 @@ Como cada tema **redefine los mismos tokens** con sus valores, todo lo que lee
 
 ---
 
+## 🧰 Utilidades y mixins opt-in
+
+Además de los tokens, el paquete incluye una capa de estilos opt-in — no se emite nada salvo que la importes.
+
+**Hojas de utilidades** — los nombres de clase son **exactamente los de Bootstrap** y cada valor resuelve a los tokens canónicos. No cargues estas hojas Y Bootstrap globalmente en el mismo documento. Cada hoja tiene además su gemela `.css` compilada para apps sin Sass:
+
+```scss
+@use 'ng-hub-ui-ds/styles/utilities/layout';    // display/flex, grid de 12 col, spacing, sizing, position, overflow, order, .ratio-*, .visually-hidden…
+@use 'ng-hub-ui-ds/styles/utilities/text';      // .fs-1…6, .fw-*, .lh-*, .text-truncate, colores de texto semánticos
+@use 'ng-hub-ui-ds/styles/utilities/surfaces';  // .bg-* (+ -subtle), .text-bg-*, .border*, .rounded*, .shadow*, .opacity-*
+```
+
+Los únicos nombres fuera de Bootstrap son los primitivos de layout que reflejan los mixins: `.stack`, `.cluster`, `.grid-auto`, `.center`.
+
+**Reset de elementos nativos** — una normalización estilo reboot, dirigida por tokens, para apps que no traigan ya un reset (p. ej. el Reboot de Bootstrap):
+
+```scss
+@use 'ng-hub-ui-ds/styles/base/reset';
+```
+
+**Mixins Sass** — las utilidades son wrappers finos sobre ellos; úsalos para acuñar tus propias variantes con los mismos primitivos:
+
+```scss
+@use 'ng-hub-ui-ds' as hub;
+
+.toolbar     { @include hub.cluster($gap: 2); }
+.card__title { @include hub.font-size(4); @include hub.font-weight(semibold); }
+.card--brand { @include hub.text-bg(brand); @include hub.radius(lg); @include hub.shadow(sm); }
+.sr-label    { @include hub.visually-hidden(); }
+```
+
+Grupos: **tema** (`theme()` — tematización parcial en una llamada: pásale solo las escalas/acentos cambiados como mapas), **breakpoints** (`media-breakpoint-up/down` sobre el mapa `$hub-breakpoints` — de él se generan las variantes responsive `.d-md-*`, `.col-lg-*`, `.p-sm-*`…), **layout** (`stack`, `cluster`, `grid`, `grid-fixed`, `row`, `col`, `center`), **tipografía** (`font-family`, `font-size`, `font-weight`, `line-height`, `text-color`, `link-color`, `text-truncate`, `text-break`), **superficies** (`bg`, `text-bg`, `border`, `border-color`, `radius`, `shadow`), **helpers** (`focus-ring`, `visually-hidden`, `stretched-link`, `ratio`, `clearfix`) y los **puentes** (`bridge-bootstrap` / `bridge-material` / `bridge-tailwind` / `bridge-open-props`).
+
+El catálogo completo con demos en vivo está documentado en [hubui.dev/design-system](https://hubui.dev/design-system).
+
+---
+
 ## 🛠️ Cómo modificarlo
 
 Hay tres mecanismos, de más simple a más avanzado.
@@ -300,9 +338,9 @@ $hub-accents-light: (
 // vez en :root; los temas solo cambian las entradas y la familia se recalcula.
 @mixin hub-color-derive() {
 	@each $name in $hub-variants {
-		--hub-sys-color-#{$name}-subtle:        color-mix(in srgb, var(--hub-sys-color-#{$name}) 12%, var(--hub-sys-surface-page, #fff));
-		--hub-sys-color-#{$name}-border-subtle: color-mix(in srgb, var(--hub-sys-color-#{$name}) 35%, var(--hub-sys-surface-page, #fff));
-		--hub-sys-color-#{$name}-emphasis:      color-mix(in srgb, var(--hub-sys-color-#{$name}) 80%, var(--hub-sys-color-ink, #212529));
+		--hub-sys-color-#{$name}-subtle:        color-mix(in oklch, var(--hub-sys-color-#{$name}) 12%, var(--hub-sys-surface-page, #fff));
+		--hub-sys-color-#{$name}-border-subtle: color-mix(in oklch, var(--hub-sys-color-#{$name}) 35%, var(--hub-sys-surface-page, #fff));
+		--hub-sys-color-#{$name}-emphasis:      color-mix(in oklch, var(--hub-sys-color-#{$name}) 80%, var(--hub-sys-color-ink, #212529));
 		--hub-sys-color-#{$name}-dark:          var(--hub-sys-color-#{$name}-emphasis); // alias retrocompatible
 	}
 }

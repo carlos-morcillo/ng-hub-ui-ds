@@ -1,11 +1,12 @@
 {
   "name": "ng-hub-ui-ds",
-  "version": "22.4.4",
+  "version": "22.5.0",
   "license": "MIT",
   "scripts": {
     "build:tokens": "sass styles/tokens/hub-tokens.scss styles/tokens/hub-tokens.css --style=expanded --no-source-map",
-    "build:utilities": "sass styles/utilities/layout.hub.scss:styles/utilities/layout.hub.css styles/utilities/layout.scss:styles/utilities/layout.css --style=expanded --no-source-map",
-    "build:styles": "npm run build:tokens && npm run build:utilities",
+    "build:utilities": "sass styles/utilities/layout.scss:styles/utilities/layout.css styles/utilities/text.scss:styles/utilities/text.css styles/utilities/surfaces.scss:styles/utilities/surfaces.css --style=expanded --no-source-map",
+    "build:reset": "sass styles/base/reset.scss:styles/base/reset.css --style=expanded --no-source-map",
+    "build:styles": "npm run build:tokens && npm run build:utilities && npm run build:reset",
     "prepublishOnly": "npm run build:styles"
   },
   "description": "Design tokens for the ng-hub-ui family \u2014 the canonical `--hub-ref-*` (primitive) and `--hub-sys-*` (semantic) CSS custom properties, with light/dark and 8 built-in themes. Framework-agnostic: ship the compiled CSS or the SCSS source. Import once and every ng-hub-ui library reads the same palette.",
@@ -36,12 +37,21 @@
     "./styles/tokens/hub-tokens.css": "./styles/tokens/hub-tokens.css",
     "./styles/tokens/hub-tokens": "./styles/tokens/hub-tokens.scss",
     "./styles/tokens/hub-tokens.scss": "./styles/tokens/hub-tokens.scss",
+    "./styles/mixins/theme": "./styles/mixins/_theme.scss",
+    "./styles/mixins/breakpoints": "./styles/mixins/_breakpoints.scss",
     "./styles/mixins/layout": "./styles/mixins/_layout.scss",
+    "./styles/mixins/typography": "./styles/mixins/_typography.scss",
+    "./styles/mixins/surfaces": "./styles/mixins/_surfaces.scss",
+    "./styles/mixins/helpers": "./styles/mixins/_helpers.scss",
     "./styles/mixins/bridges": "./styles/mixins/_bridges.scss",
-    "./styles/utilities/layout.hub": "./styles/utilities/layout.hub.scss",
-    "./styles/utilities/layout.hub.css": "./styles/utilities/layout.hub.css",
+    "./styles/base/reset": "./styles/base/reset.scss",
+    "./styles/base/reset.css": "./styles/base/reset.css",
     "./styles/utilities/layout": "./styles/utilities/layout.scss",
-    "./styles/utilities/layout.css": "./styles/utilities/layout.css"
+    "./styles/utilities/layout.css": "./styles/utilities/layout.css",
+    "./styles/utilities/text": "./styles/utilities/text.scss",
+    "./styles/utilities/text.css": "./styles/utilities/text.css",
+    "./styles/utilities/surfaces": "./styles/utilities/surfaces.scss",
+    "./styles/utilities/surfaces.css": "./styles/utilities/surfaces.css"
   },
   "files": [
     "styles",

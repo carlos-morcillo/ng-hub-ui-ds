@@ -1,0 +1,82 @@
+/**
+ * _theme.scss — one-call partial theming for ng-hub-ui.
+ *
+ * Pass ONLY the overrides you want as partial maps and the mixin emits the
+ * matching custom properties with the canonical names. Everything derived
+ * follows at runtime through the var() chain — override one spacing step and
+ * every sys alias, utility and component hanging from it re-derives; override
+ * one accent and its whole role family (-subtle, -border-subtle, -emphasis,
+ * -on) recomputes via color-mix. Works on :root, on a [data-theme] block or
+ * scoped to any subtree:
+ *
+ *   @use 'ng-hub-ui-ds' as hub;
+ *   :root { @include hub.theme($space: (3: 1.25rem)); }
+ *   [data-theme='compact'] {
+ *     @include hub.theme(
+ *       $space: (3: 0.75rem, 4: 1rem),
+ *       $radius: (md: 0.25rem),
+ *       $accents: (primary: #0f766e, brand: #ff6b00)
+ *     );
+ *   }
+ *
+ * NOTE — runtime vs compile time: this re-themes the emitted CSS variables.
+ * Compile-time artifacts (breakpoints, which utility steps exist, var()
+ * fallbacks baked into the sheets) are configured instead through the module
+ * system: `@use '…/hub-tokens' with ($hub-space-scale: …, $hub-accents-extra: …)`.
+ */
+
+/// Emits only the custom properties for the overrides passed; omitted keys
+/// emit nothing, so the mixin composes with the base tokens and other themes.
+/// @param {Map} $accents      Accent name → base colour (`--hub-sys-color-*`; the role family derives at runtime).
+/// @param {Map} $space        Spacing step (0–7…) → value (`--hub-ref-space-*`; gap aliases and utilities follow).
+/// @param {Map} $gap          Gap step → value (`--hub-sys-gap-*`) — only to decouple gap from the spacing scale.
+/// @param {Map} $radius       Radius step (none…xxl|pill) → value (`--hub-ref-radius-*`).
+/// @param {Map} $shadow       Shadow size (sm|md|lg|inset) → value (`--hub-sys-shadow-*`).
+/// @param {Map} $font-family  Family (base|display|mono) → stack (`--hub-ref-font-family-*`).
+/// @param {Map} $font-size    Size step (xs|sm|base|lg) → value (`--hub-ref-font-size-*`; the fs-1…6 heading scale re-derives from base).
+/// @param {Map} $font-weight  Weight (light|base|medium|semibold|bold) → value (`--hub-ref-font-weight-*`).
+/// @param {Map} $line-height  Step (sm|base|lg) → value (`--hub-ref-line-height-*`).
+/// @param {Map} $tokens       Escape hatch — token name without the `--hub-` prefix → value (e.g. `(sys-focus-ring-width: 2px)`).
+@mixin theme(
+	$accents: (),
+	$space: (),
+	$gap: (),
+	$radius: (),
+	$shadow: (),
+	$font-family: (),
+	$font-size: (),
+	$font-weight: (),
+	$line-height: (),
+	$tokens: ()
+) {
+	@each $name, $value in $accents {
+		--hub-sys-color-#{$name}: #{$value};
+	}
+	@each $step, $value in $space {
+		--hub-ref-space-#{$step}: #{$value};
+	}
+	@each $step, $value in $gap {
+		--hub-sys-gap-#{$step}: #{$value};
+	}
+	@each $step, $value in $radius {
+		--hub-ref-radius-#{$step}: #{$value};
+	}
+	@each $size, $value in $shadow {
+		--hub-sys-shadow-#{$size}: #{$value};
+	}
+	@each $family, $value in $font-family {
+		--hub-ref-font-family-#{$family}: #{$value};
+	}
+	@each $step, $value in $font-size {
+		--hub-ref-font-size-#{$step}: #{$value};
+	}
+	@each $weight, $value in $font-weight {
+		--hub-ref-font-weight-#{$weight}: #{$value};
+	}
+	@each $step, $value in $line-height {
+		--hub-ref-line-height-#{$step}: #{$value};
+	}
+	@each $token, $value in $tokens {
+		--hub-#{$token}: #{$value};
+	}
+}

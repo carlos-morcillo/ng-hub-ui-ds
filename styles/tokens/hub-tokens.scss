@@ -34,6 +34,34 @@
  *     :root { --hub-sys-color-primary: #7c3aed; }
  */
 
+// Canonical size scales — the SINGLE source for the `ref` blocks and their
+// `sys` aliases below (same pattern as `$hub-accents` for the color families).
+// Retune or extend a scale here — or through
+// `@use '…/hub-tokens' with ($hub-radius-scale: (…))` — and both layers,
+// including every var() fallback, pick it up.
+$hub-space-scale: (
+	0: 0,
+	1: 0.25rem,
+	2: 0.5rem,
+	3: 1rem,
+	4: 1.5rem,
+	5: 3rem,
+	6: 4.5rem,
+	7: 6rem
+) !default;
+$hub-radius-scale: (
+	none: 0,
+	sm: 0.25rem,
+	md: 0.375rem,
+	lg: 0.5rem,
+	xl: 1rem,
+	xxl: 2rem,
+	pill: 50rem
+) !default;
+
+// Spacing steps surfaced as the semantic gap scale (--hub-sys-gap-*).
+$hub-gap-steps: (0, 1, 2, 3, 4, 5) !default;
+
 /* ============================================================
    LAYER 1 — ref
    Primitive, context-free values. Never reference sys here.
@@ -131,25 +159,18 @@
 	--hub-ref-surface-2: #f8f9fa;
 
 	/* ----------------------------------------------------------
-     Spacing scale
+     Spacing scale (generated from $hub-space-scale)
   ---------------------------------------------------------- */
-	--hub-ref-space-0: 0;
-	--hub-ref-space-1: 0.25rem;
-	--hub-ref-space-2: 0.5rem;
-	--hub-ref-space-3: 1rem;
-	--hub-ref-space-4: 1.5rem;
-	--hub-ref-space-5: 3rem;
-	--hub-ref-space-6: 4.5rem;
-	--hub-ref-space-7: 6rem;
+	@each $step, $value in $hub-space-scale {
+		--hub-ref-space-#{$step}: #{$value};
+	}
 
 	/* ----------------------------------------------------------
-     Border radius
+     Border radius (generated from $hub-radius-scale)
   ---------------------------------------------------------- */
-	--hub-ref-radius-none: 0;
-	--hub-ref-radius-sm: 0.25rem;
-	--hub-ref-radius-md: 0.375rem;
-	--hub-ref-radius-lg: 0.5rem;
-	--hub-ref-radius-pill: 50rem;
+	@each $step, $value in $hub-radius-scale {
+		--hub-ref-radius-#{$step}: #{$value};
+	}
 
 	/* ----------------------------------------------------------
      Border width
@@ -466,11 +487,9 @@ $hub-accents-terminal: (
 	/* ----------------------------------------------------------
      Radius
   ---------------------------------------------------------- */
-	--hub-sys-radius-none: var(--hub-ref-radius-none, 0);
-	--hub-sys-radius-sm: var(--hub-ref-radius-sm, 0.25rem);
-	--hub-sys-radius-md: var(--hub-ref-radius-md, 0.375rem);
-	--hub-sys-radius-lg: var(--hub-ref-radius-lg, 0.5rem);
-	--hub-sys-radius-pill: var(--hub-ref-radius-pill, 9999px);
+	@each $step, $value in $hub-radius-scale {
+		--hub-sys-radius-#{$step}: var(--hub-ref-radius-#{$step}, #{$value});
+	}
 
 	/* ----------------------------------------------------------
      Structure — sizing
@@ -503,12 +522,9 @@ $hub-accents-terminal: (
 	/* ----------------------------------------------------------
      Structure — gap scale (semantic aliases of the spacing scale)
   ---------------------------------------------------------- */
-	--hub-sys-gap-0: var(--hub-ref-space-0, 0);
-	--hub-sys-gap-1: var(--hub-ref-space-1, 0.25rem);
-	--hub-sys-gap-2: var(--hub-ref-space-2, 0.5rem);
-	--hub-sys-gap-3: var(--hub-ref-space-3, 1rem);
-	--hub-sys-gap-4: var(--hub-ref-space-4, 1.5rem);
-	--hub-sys-gap-5: var(--hub-ref-space-5, 3rem);
+	@each $step in $hub-gap-steps {
+		--hub-sys-gap-#{$step}: var(--hub-ref-space-#{$step}, #{map.get($hub-space-scale, $step)});
+	}
 
 	/* ----------------------------------------------------------
      Focus ring

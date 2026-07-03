@@ -1,0 +1,38 @@
+/**
+ * _breakpoints.scss — canonical responsive breakpoints for ng-hub-ui.
+ *
+ * A Bootstrap-compatible breakpoint map plus the media-query mixins the
+ * responsive utility variants are generated from. Media queries cannot read
+ * CSS custom properties, so the breakpoints live as Sass values — retune them
+ * via the module system and every responsive utility regenerates:
+ *
+ *   @use 'ng-hub-ui-ds' as hub with ($hub-breakpoints: (md: 700px, lg: 1000px, …));
+ *   .sidebar { @include hub.media-breakpoint-up(lg) { width: 18rem; } }
+ */
+
+@use 'sass:map';
+
+/// Breakpoint map (Bootstrap-compatible names and defaults).
+$hub-breakpoints: (
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px
+) !default;
+
+/// Applies @content from the given breakpoint upwards (mobile-first).
+/// @param {String} $name  sm | md | lg | xl | xxl (or any key of $breakpoints).
+@mixin media-breakpoint-up($name, $breakpoints: $hub-breakpoints) {
+	@media (min-width: #{map.get($breakpoints, $name)}) {
+		@content;
+	}
+}
+
+/// Applies @content strictly below the given breakpoint.
+/// @param {String} $name  sm | md | lg | xl | xxl (or any key of $breakpoints).
+@mixin media-breakpoint-down($name, $breakpoints: $hub-breakpoints) {
+	@media (max-width: #{map.get($breakpoints, $name) - 0.02px}) {
+		@content;
+	}
+}

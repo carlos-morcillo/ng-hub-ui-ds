@@ -58,13 +58,14 @@ ecosystem reads from:
 4. [🧱 Architecture: the layers](#-architecture-the-layers)
 5. [🎨 Semantic colours](#-semantic-colours)
 6. [🌗 Themes](#-themes)
-7. [🛠️ How to customise it](#️-how-to-customise-it)
-8. [🧩 SCSS functions (how it is generated internally)](#-scss-functions-how-it-is-generated-internally)
-9. [📋 Quick reference table](#-quick-reference-table)
-10. [📊 Changelog](#-changelog)
-11. [🤝 Contribution](#-contribution)
-12. [☕ Support](#-support)
-13. [📄 License](#-license)
+7. [🧰 Opt-in utilities & mixins](#-opt-in-utilities--mixins)
+8. [🛠️ How to customise it](#️-how-to-customise-it)
+9. [🧩 SCSS functions (how it is generated internally)](#-scss-functions-how-it-is-generated-internally)
+10. [📋 Quick reference table](#-quick-reference-table)
+11. [📊 Changelog](#-changelog)
+12. [🤝 Contribution](#-contribution)
+13. [☕ Support](#-support)
+14. [📄 License](#-license)
 
 ---
 
@@ -218,6 +219,43 @@ own CSS.
 
 ---
 
+## 🧰 Opt-in utilities & mixins
+
+Besides the tokens, the package ships an opt-in styling layer — nothing is emitted unless you import it.
+
+**Utility sheets** — class names mirror Bootstrap's **exactly** and every value resolves to the canonical tokens. Do not load them AND Bootstrap globally in the same document. Each sheet also has a compiled `.css` twin for Sass-less apps:
+
+```scss
+@use 'ng-hub-ui-ds/styles/utilities/layout';    // display/flex, 12-col grid, spacing, sizing, position, overflow, order, .ratio-*, .visually-hidden…
+@use 'ng-hub-ui-ds/styles/utilities/text';      // .fs-1…6, .fw-*, .lh-*, .text-truncate, semantic text colours
+@use 'ng-hub-ui-ds/styles/utilities/surfaces';  // .bg-* (+ -subtle), .text-bg-*, .border*, .rounded*, .shadow*, .opacity-*
+```
+
+The only non-Bootstrap names are the layout primitives that mirror the mixins: `.stack`, `.cluster`, `.grid-auto`, `.center`.
+
+**Native-element reset** — a reboot-style, token-driven normalisation for apps that do not already ship one (e.g. Bootstrap's Reboot):
+
+```scss
+@use 'ng-hub-ui-ds/styles/base/reset';
+```
+
+**Sass mixins** — the utilities are thin wrappers over these; use them to mint your own variants with the same primitives:
+
+```scss
+@use 'ng-hub-ui-ds' as hub;
+
+.toolbar     { @include hub.cluster($gap: 2); }
+.card__title { @include hub.font-size(4); @include hub.font-weight(semibold); }
+.card--brand { @include hub.text-bg(brand); @include hub.radius(lg); @include hub.shadow(sm); }
+.sr-label    { @include hub.visually-hidden(); }
+```
+
+Groups: **theme** (`theme()` — partial theming in one call: pass only the changed scales/accents as maps), **breakpoints** (`media-breakpoint-up/down` over the `$hub-breakpoints` map — the responsive variants `.d-md-*`, `.col-lg-*`, `.p-sm-*`… are generated from it), **layout** (`stack`, `cluster`, `grid`, `grid-fixed`, `row`, `col`, `center`), **typography** (`font-family`, `font-size`, `font-weight`, `line-height`, `text-color`, `link-color`, `text-truncate`, `text-break`), **surfaces** (`bg`, `text-bg`, `border`, `border-color`, `radius`, `shadow`), **helpers** (`focus-ring`, `visually-hidden`, `stretched-link`, `ratio`, `clearfix`) and the **bridges** (`bridge-bootstrap` / `bridge-material` / `bridge-tailwind` / `bridge-open-props`).
+
+The full catalogue with live demos is documented at [hubui.dev/design-system](https://hubui.dev/design-system).
+
+---
+
 ## 🛠️ How to customise it
 
 There are three mechanisms, from simplest to most advanced.
@@ -302,9 +340,9 @@ $hub-accents-light: (
 // :root; themes only override the inputs, so the family recomputes contextually.
 @mixin hub-color-derive() {
 	@each $name in $hub-variants {
-		--hub-sys-color-#{$name}-subtle:        color-mix(in srgb, var(--hub-sys-color-#{$name}) 12%, var(--hub-sys-surface-page, #fff));
-		--hub-sys-color-#{$name}-border-subtle: color-mix(in srgb, var(--hub-sys-color-#{$name}) 35%, var(--hub-sys-surface-page, #fff));
-		--hub-sys-color-#{$name}-emphasis:      color-mix(in srgb, var(--hub-sys-color-#{$name}) 80%, var(--hub-sys-color-ink, #212529));
+		--hub-sys-color-#{$name}-subtle:        color-mix(in oklch, var(--hub-sys-color-#{$name}) 12%, var(--hub-sys-surface-page, #fff));
+		--hub-sys-color-#{$name}-border-subtle: color-mix(in oklch, var(--hub-sys-color-#{$name}) 35%, var(--hub-sys-surface-page, #fff));
+		--hub-sys-color-#{$name}-emphasis:      color-mix(in oklch, var(--hub-sys-color-#{$name}) 80%, var(--hub-sys-color-ink, #212529));
 		--hub-sys-color-#{$name}-dark:          var(--hub-sys-color-#{$name}-emphasis); // back-compat alias
 	}
 }
