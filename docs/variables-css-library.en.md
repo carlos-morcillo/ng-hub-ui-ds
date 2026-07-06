@@ -983,50 +983,76 @@ The `detail` token set is defined as a single, standardized collection that supp
 | Token | Initial value | Usage | Status | Source |
 | --- | --- | --- | --- | --- |
 | `--hub-badge-accent` | `var(--hub-sys-color-primary, #0d6efd)` | Badge accent | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:17` |
-| `--hub-badge-accent-border` | `color-mix(in oklch, var(--hub-badge-accent) 35%, var(--hub-sys-surface-page, #fff))` | Badge accent border | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:20` |
-| `--hub-badge-accent-on` | `oklch(from var(--hub-badge-accent) clamp(0, (0.62 - l) * 1000, 1) 0 h)` | Badge accent contrast (on-color) | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:23` |
-| `--hub-badge-accent-emphasis` | `color-mix(in oklch, var(--hub-badge-accent) 80%, var(--hub-sys-color-ink, #212529))` | Badge accent emphasis | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:18` |
-| `--hub-badge-accent-subtle` | `color-mix(in oklch, var(--hub-badge-accent) 12%, var(--hub-sys-surface-page, #fff))` | Badge accent subtle | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:19` |
-| `--hub-badge-align` | `center` | Badge align | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:37` |
-| `--hub-badge-bg` | `var(--hub-badge-accent)` | Badge bg | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:24` |
-| `--hub-badge-border-color` | `var(--hub-badge-accent)` | Badge border color | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:26` |
-| `--hub-badge-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Badge border radius | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:39` |
-| `--hub-badge-border-width` | `var(--hub-ref-border-width, 1px)` | Badge border width | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:38` |
-| `--hub-badge-color` | `var(--hub-badge-accent-on)` | Badge color | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:25` |
-| `--hub-badge-direction` | `row` | Badge direction | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:36` |
-| `--hub-badge-dot-color` | `currentColor` | Badge dot color | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:27` |
-| `--hub-badge-dot-size` | `var(--hub-ref-space-2, 0.5rem)` | Badge dot size | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:41` |
-| `--hub-badge-focus-ring-color` | `var(--hub-sys-focus-ring-color, rgba(13, 110, 253, 0.25))` | Badge focus ring color | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:46` |
-| `--hub-badge-focus-ring-width` | `var(--hub-sys-focus-ring-width, 0.25rem)` | Badge focus ring width | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:45` |
-| `--hub-badge-font-family` | `var(--hub-ref-font-family-base, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif)` | Badge font family | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:28` |
-| `--hub-badge-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Badge font size | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:29` |
-| `--hub-badge-max-width` | `100%` | Badge max width (truncation bound for the content ellipsis) | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:40` |
-| `--hub-badge-font-weight` | `var(--hub-ref-font-weight-semibold, 600)` | Badge font weight | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:30` |
-| `--hub-badge-gap` | `var(--hub-ref-space-1, 0.25rem)` | Badge gap | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:35` |
-| `--hub-badge-letter-spacing` | `0.01em` | Badge letter spacing | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:32` |
-| `--hub-badge-line-height` | `1` | Badge line height | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:31` |
-| `--hub-badge-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | Badge padding x | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:33` |
-| `--hub-badge-padding-y` | `var(--hub-ref-space-1, 0.25rem)` | Badge padding y | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:34` |
-| `--hub-badge-remove-gap` | `0.125rem` | Badge remove gap | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:43` |
-| `--hub-badge-remove-hover-bg` | `color-mix(in oklch, currentColor 12%, transparent)` | Badge remove hover bg | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:44` |
-| `--hub-badge-remove-size` | `1rem` | Badge remove size | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:42` |
-| `--hub-badge-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Badge transition | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:47` |
-| `--hub-badge-group-align` | runtime (`center`) | Cross-axis alignment of grouped badges — written from the `align` input | `INTERNAL` | `badges/src/lib/components/badge-group/badge-group.component.ts:25` |
-| `--hub-badge-group-gap` | runtime (`0.5rem`) | Spacing between grouped badges — written from the `gap` input | `INTERNAL` | `badges/src/lib/components/badge-group/badge-group.component.ts:24` |
+| `--hub-badge-accent-border` | `color-mix(in oklch, var(--hub-badge-accent) 35%, var(--hub-sys-surface-page, #fff))` | Badge accent border | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:166` |
+| `--hub-badge-accent-on` | `oklch(from var(--hub-badge-accent) clamp(0, (0.62 - l) * 1000, 1) 0 h)` | Badge accent contrast (on-color) | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:22` |
+| `--hub-badge-accent-emphasis` | `color-mix(in oklch, var(--hub-badge-accent) 80%, var(--hub-sys-color-ink, #212529))` | Badge accent emphasis | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:46` |
+| `--hub-badge-accent-subtle` | `color-mix(in oklch, var(--hub-badge-accent) 12%, var(--hub-sys-surface-page, #fff))` | Badge accent subtle | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:143` |
+| `--hub-badge-align` | `center` | Badge align | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:34` |
+| `--hub-badge-bg` | `var(--hub-badge-accent)` | Badge bg | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:21` |
+| `--hub-badge-border-color` | `var(--hub-badge-accent)` | Badge border color | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:23` |
+| `--hub-badge-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Badge border radius | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:36` |
+| `--hub-badge-border-width` | `var(--hub-ref-border-width, 1px)` | Badge border width | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:35` |
+| `--hub-badge-color` | `var(--hub-badge-accent-on)` | Badge color | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:22` |
+| `--hub-badge-direction` | `row` | Badge direction | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:33` |
+| `--hub-badge-dot-color` | `currentColor` | Badge dot color | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:24` |
+| `--hub-badge-dot-size` | `var(--hub-ref-space-2, 0.5rem)` | Badge dot size | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:38` |
+| `--hub-badge-focus-ring-color` | `var(--hub-sys-focus-ring-color, rgba(13, 110, 253, 0.25))` | Badge focus ring color | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:43` |
+| `--hub-badge-focus-ring-width` | `var(--hub-sys-focus-ring-width, 0.25rem)` | Badge focus ring width | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:42` |
+| `--hub-badge-font-family` | `var(--hub-ref-font-family-base, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif)` | Badge font family | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:25` |
+| `--hub-badge-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Badge font size | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:26` |
+| `--hub-badge-max-width` | `100%` | Badge max width (truncation bound for the content ellipsis) | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:37` |
+| `--hub-badge-font-weight` | `var(--hub-ref-font-weight-semibold, 600)` | Badge font weight | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:27` |
+| `--hub-badge-gap` | `var(--hub-ref-space-1, 0.25rem)` | Badge gap | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:32` |
+| `--hub-badge-letter-spacing` | `0.01em` | Badge letter spacing | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:29` |
+| `--hub-badge-line-height` | `1` | Badge line height | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:28` |
+| `--hub-badge-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | Badge padding x | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:30` |
+| `--hub-badge-padding-y` | `var(--hub-ref-space-1, 0.25rem)` | Badge padding y | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:31` |
+| `--hub-badge-remove-gap` | `0.125rem` | Badge remove gap | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:40` |
+| `--hub-badge-remove-hover-bg` | `color-mix(in oklch, currentColor 12%, transparent)` | Badge remove hover bg | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:41` |
+| `--hub-badge-remove-size` | `1rem` | Badge remove size | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:39` |
+| `--hub-badge-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Badge transition | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:44` |
+| `--hub-badge-active-bg` | `var(--hub-badge-accent-emphasis)` | Active (pressed) background of an interactive badge (.hub-badge--active) | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:46` |
+| `--hub-badge-overlay-offset` | `-0.25rem` | Corner inset of the overlay status dot (dotOverlay) | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:48` |
+| `--hub-chip-set-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gap between chips inside a hub-chip-set | `IN_USE` | `badges/src/lib/components/chip-set/chip-set.component.scss:2` |
+| `--hub-chip-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Chip transition | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:30` |
+| `--hub-chip-focus-ring-width` | `var(--hub-sys-focus-ring-width, 0.25rem)` | Chip focus ring width | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:29` |
+| `--hub-chip-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Chip shell radius | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:28` |
+| `--hub-chip-border-width` | `var(--hub-ref-border-width, 1px)` | Chip border width | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:27` |
+| `--hub-chip-padding-y` | `var(--hub-ref-space-1, 0.25rem)` | Chip vertical padding | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:26` |
+| `--hub-chip-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | Chip horizontal padding | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:25` |
+| `--hub-chip-font-weight` | `var(--hub-ref-font-weight-medium, 500)` | Chip font weight | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:24` |
+| `--hub-chip-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Chip font size | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:23` |
+| `--hub-chip-font-family` | `var(--hub-ref-font-family-base, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif)` | Chip font family | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:22` |
+| `--hub-chip-focus-ring` | `var(--hub-sys-focus-ring-color, rgba(13, 110, 253, 0.25))` | Chip focus ring colour | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:20` |
+| `--hub-chip-gap` | `var(--hub-ref-space-1, 0.25rem)` | Gap between leading slot, label and dismiss button | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:19` |
+| `--hub-chip-hover-bg` | `color-mix(in oklch, var(--hub-badge-accent) 20%, var(--hub-sys-surface-page, #fff))` | Hover surface for an unselected, enabled chip | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:18` |
+| `--hub-chip-selected-color` | `var(--hub-badge-accent-on)` | Selected chip text colour (on-accent contrast) | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:17` |
+| `--hub-chip-selected-bg` | `var(--hub-badge-accent)` | Selected chip background | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:16` |
+| `--hub-chip-border-color` | `var(--hub-badge-accent-border)` | Resting chip border colour | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:15` |
+| `--hub-chip-color` | `var(--hub-badge-accent-emphasis)` | Resting chip text colour | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:14` |
+| `--hub-chip-bg` | `var(--hub-badge-accent-subtle)` | Resting chip background (shared badge accent family) | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:13` |
 ### `buttons`
 
 | Token | Initial value | Usage | Status | Source |
 | --- | --- | --- | --- | --- |
 | `--hub-button-border-radius` | `var(--hub-sys-radius-md, 0.375rem)` | Button border radius | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:7` |
 | `--hub-button-border-width` | `1.5px` | Button border width | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:8` |
-| `--hub-button-disabled-opacity` | `var(--hub-sys-opacity-disabled, 0.65)` | Button disabled opacity | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:14` |
+| `--hub-button-disabled-opacity` | `var(--hub-sys-opacity-disabled, 0.65)` | Button disabled opacity | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:20` |
 | `--hub-button-font-size` | `var(--hub-ref-font-size-base, 1rem)` | Button font size | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:9` |
 | `--hub-button-font-weight` | `var(--hub-ref-font-weight-medium, 500)` | Button font weight | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:10` |
 | `--hub-button-gap` | `var(--hub-ref-space-2, 0.5rem)` | Button gap | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:11` |
 | `--hub-button-padding-x` | `var(--hub-ref-space-3, 1rem)` | Button padding x | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:5` |
 | `--hub-button-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Button padding y | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:6` |
 | `--hub-button-spinner-size` | `0.875em` | Button spinner size | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:13` |
+| `--hub-button-spinner-duration` | `0.7s` | Button loading spinner spin duration | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:14` |
+| `--hub-button-spinner` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' d='M12 3a9 9 0 1 0 9 9'/%3E%3C/svg%3E")` | Button loading spinner glyph (swappable SVG) | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:19` |
 | `--hub-button-transition` | `var(--hub-sys-transition-fast, all 0.15s ease-in-out)` | Button transition | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:12` |
+| `--hub-btn-active-color` | `var(--hub-btn-accent-on)` | Pressed (:active) button text-color slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:52` |
+| `--hub-btn-active-border` | `transparent` | Pressed (:active) button border-color slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:51` |
+| `--hub-btn-active-bg` | `color-mix(in oklch, var(--hub-btn-accent) 70%, var(--hub-sys-color-ink, #212529))` | Pressed (:active) button background slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:50` |
+| `--hub-btn-hover-color` | `var(--hub-btn-accent-emphasis)` | Overridable button hover text-color slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:49` |
+| `--hub-btn-hover-border` | `transparent` | Overridable button hover border-color slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:48` |
+| `--hub-btn-hover-bg` | `var(--hub-btn-accent-subtle)` | Overridable button hover background slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:47` |
 | `--hub-dropdown-item-border-radius` | `var(--hub-sys-radius-sm, 0.25rem)` | Dropdown item border radius | `IN_USE` | `buttons/src/lib/components/dropdown-item/dropdown-item.component.scss:8` |
 | `--hub-dropdown-item-disabled-opacity` | `0.45` | Dropdown item disabled opacity | `IN_USE` | `buttons/src/lib/components/dropdown-item/dropdown-item.component.scss:9` |
 | `--hub-dropdown-item-hover-bg` | `var(--hub-sys-color-surface-subtle, #f8f9fa)` | Dropdown item hover bg | `IN_USE` | `buttons/src/lib/components/dropdown-item/dropdown-item.component.scss:7` |
@@ -1089,43 +1115,44 @@ The `detail` token set is defined as a single, standardized collection that supp
 
 | Token                                              | Initial value                                                                                                                                                                                                                     | Usage                                                                                                                                                                                                                                                          | Status    | Source                                    |
 | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
-| `--hub-select-arrow-color` | `var(--hub-sys-text-muted, #6c757d)` | Select arrow color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:147` |
-| `--hub-select-bg` | `var(--hub-input-bg)` | Select bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:137` |
-| `--hub-select-border-color` | `var( --hub-input-border-color )` | Select border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:140` |
-| `--hub-select-border-radius` | `var( --hub-input-border-radius )` | Select border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:141` |
-| `--hub-select-border-width` | `var( --hub-input-border-width )` | Select border width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:139` |
-| `--hub-select-clear-color` | `var(--hub-sys-text-muted, #6c757d)` | Select clear color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:148` |
-| `--hub-select-clear-hover-color` | `var(--hub-sys-color-danger, #dc3545)` | Select clear hover color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:149` |
-| `--hub-select-color` | `var(--hub-input-color)` | Select color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:136` |
-| `--hub-select-dropdown-bg` | `var(--hub-sys-surface-page, #fff)` | Select dropdown bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:162` |
-| `--hub-select-dropdown-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Select dropdown border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:163` |
-| `--hub-select-dropdown-border-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Select dropdown border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:164` |
-| `--hub-select-dropdown-box-shadow` | `var(--hub-sys-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15))` | Select dropdown box shadow | `IN_USE` | `forms/src/lib/styles/_tokens.scss:165` |
-| `--hub-select-focus-border-color` | `var( --hub-input-focus-border-color )` | Select focus border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:142` |
-| `--hub-select-focus-box-shadow` | `var( --hub-input-focus-box-shadow )` | Select focus box shadow | `IN_USE` | `forms/src/lib/styles/_tokens.scss:143` |
-| `--hub-select-font-size` | `var(--hub-input-font-size)` | Select font size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:138` |
-| `--hub-select-option-color` | `var(--hub-sys-text-primary, #212529)` | Select option color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:150` |
-| `--hub-select-option-marked-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Select option marked bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:153` |
-| `--hub-select-option-padding-x` | `var(--hub-ref-space-3, 1rem)` | Select option padding x | `IN_USE` | `forms/src/lib/styles/_tokens.scss:151` |
-| `--hub-select-option-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Select option padding y | `IN_USE` | `forms/src/lib/styles/_tokens.scss:152` |
-| `--hub-select-option-selected-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Select option selected bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:154` |
-| `--hub-select-option-selected-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Select option selected color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:157` |
-| `--hub-select-padding-x` | `var(--hub-input-padding-x)` | Select padding x | `IN_USE` | `forms/src/lib/styles/_tokens.scss:145` |
-| `--hub-select-placeholder-color` | `var( --hub-input-placeholder-color )` | Select placeholder color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:144` |
-| `--hub-select-value-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Select value bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:159` |
-| `--hub-select-value-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Select value border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:161` |
-| `--hub-select-value-color` | `var(--hub-sys-text-primary, #212529)` | Select value color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:160` |
-| `--hub-select-button-bg` | `var(--hub-sys-surface-page, #fff)` | Segmented select button background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:196` |
-| `--hub-select-button-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Segmented select button border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:198` |
-| `--hub-select-button-color` | `var(--hub-sys-text-primary, #212529)` | Segmented select button text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:197` |
-| `--hub-select-button-gap` | `var(--hub-ref-space-2, 0.5rem)` | Segmented select button gap | `IN_USE` | `forms/src/lib/styles/_tokens.scss:201` |
-| `--hub-select-button-padding-x` | `var(--hub-ref-space-3, 1rem)` | Segmented select button horizontal padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:199` |
-| `--hub-select-button-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Segmented select button vertical padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:200` |
-| `--hub-select-button-selected-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Selected segmented button background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:202` |
-| `--hub-select-button-selected-border-color` | `var(--hub-sys-color-primary, #0d6efd)` | Selected segmented button border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:205` |
-| `--hub-select-button-selected-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Selected segmented button text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:204` |
-| `--hub-select-min-height` | `2.5rem` | Select control minimum height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:146` |
-| `--hub-select-optgroup-color` | `var(--hub-sys-text-muted, #6c757d)` | Select option group label color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:158` |
+| `--hub-select-arrow-color` | `var(--hub-sys-text-muted, #6c757d)` | Select arrow color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:157` |
+| `--hub-select-bg` | `var(--hub-input-bg)` | Select bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:147` |
+| `--hub-select-border-color` | `var( --hub-input-border-color )` | Select border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:150` |
+| `--hub-select-border-radius` | `var( --hub-input-border-radius )` | Select border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:151` |
+| `--hub-select-border-width` | `var( --hub-input-border-width )` | Select border width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:149` |
+| `--hub-select-clear-color` | `var(--hub-sys-text-muted, #6c757d)` | Select clear color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:158` |
+| `--hub-select-clear-hover-color` | `var(--hub-sys-color-danger, #dc3545)` | Select clear hover color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:159` |
+| `--hub-select-color` | `var(--hub-input-color)` | Select color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:146` |
+| `--hub-select-dropdown-bg` | `var(--hub-sys-surface-page, #fff)` | Select dropdown bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:172` |
+| `--hub-select-dropdown-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Select dropdown border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:173` |
+| `--hub-select-dropdown-border-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Select dropdown border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:174` |
+| `--hub-select-dropdown-box-shadow` | `var(--hub-sys-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15))` | Select dropdown box shadow | `IN_USE` | `forms/src/lib/styles/_tokens.scss:175` |
+| `--hub-select-focus-border-color` | `var( --hub-input-focus-border-color )` | Select focus border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:152` |
+| `--hub-select-focus-box-shadow` | `var( --hub-input-focus-box-shadow )` | Select focus box shadow | `IN_USE` | `forms/src/lib/styles/_tokens.scss:153` |
+| `--hub-select-font-size` | `var(--hub-input-font-size)` | Select font size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:148` |
+| `--hub-select-option-color` | `var(--hub-sys-text-primary, #212529)` | Select option color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:160` |
+| `--hub-select-option-marked-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Select option marked bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:163` |
+| `--hub-select-option-padding-x` | `var(--hub-ref-space-3, 1rem)` | Select option padding x | `IN_USE` | `forms/src/lib/styles/_tokens.scss:161` |
+| `--hub-select-option-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Select option padding y | `IN_USE` | `forms/src/lib/styles/_tokens.scss:162` |
+| `--hub-select-option-selected-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Select option selected bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:164` |
+| `--hub-select-option-selected-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Select option selected color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:167` |
+| `--hub-select-padding-x` | `var(--hub-input-padding-x)` | Select padding x | `IN_USE` | `forms/src/lib/styles/_tokens.scss:155` |
+| `--hub-select-placeholder-color` | `var( --hub-input-placeholder-color )` | Select placeholder color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:154` |
+| `--hub-select-value-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Select value bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:169` |
+| `--hub-select-value-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Select value border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:171` |
+| `--hub-select-value-color` | `var(--hub-sys-text-primary, #212529)` | Select value color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:170` |
+| `--hub-select-button-bg` | `var(--hub-sys-surface-page, #fff)` | Segmented select button background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:211` |
+| `--hub-select-button-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Segmented select button border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:213` |
+| `--hub-select-button-color` | `var(--hub-sys-text-primary, #212529)` | Segmented select button text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:212` |
+| `--hub-select-button-gap` | `var(--hub-ref-space-2, 0.5rem)` | Segmented select button gap | `IN_USE` | `forms/src/lib/styles/_tokens.scss:216` |
+| `--hub-select-button-padding-x` | `var(--hub-ref-space-3, 1rem)` | Segmented select button horizontal padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:214` |
+| `--hub-select-button-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Segmented select button vertical padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:215` |
+| `--hub-select-button-selected-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Selected segmented button background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:217` |
+| `--hub-select-button-selected-border-color` | `var(--hub-sys-color-primary, #0d6efd)` | Selected segmented button border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:220` |
+| `--hub-select-button-selected-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Selected segmented button text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:219` |
+| `--hub-select-min-height` | `2.5rem` | Select control minimum height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:156` |
+| `--hub-select-optgroup-color` | `var(--hub-sys-text-muted, #6c757d)` | Select option group label color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:168` |
+| `--hub-select-dropdown-z-index` | `calc(var(--hub-sys-zindex-modal, 1055) + 5)` | Stacking of the ng-select dropdown panel; sits above HubModal so a select inside a modal is not clipped | `IN_USE` | `forms/src/lib/styles/_tokens.scss:180` |
 
 > **Superseded proposals (removed):** the former `--hub-select-btn-*` PENDING block shipped as the `--hub-select-button-*` tokens listed above, and the `--hub-select-checkbox-input-*` / `--hub-select-radio-input-*` proposals were dropped — option checkboxes/radios in the dropdown reuse the `check` component tokens (`--hub-check-*`, see [`check`](#check)), applied in `forms/src/lib/select/select.component.scss`.
 
@@ -1149,31 +1176,31 @@ The `detail` token set is defined as a single, standardized collection that supp
 
 | Token                            | Initial value                                                                                                                                                                                                                                                                                                            | Usage                                                                                                                                                                                                                                                                                                                                                 | Status   | Source                                    |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------------------------------------- |
-| `--hub-datepicker-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%236c757d' d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z'/%3E%3C/svg%3E")` | Datepicker icon | `IN_USE` | `forms/src/lib/styles/_tokens.scss:168` |
-| `--hub-datepicker-icon-size` | `1rem` | Datepicker icon size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:169` |
-| `--hub-datepicker-icon-width` | `2.5rem` | Datepicker icon width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:170` |
-| `--hub-daterangepicker-padding-x` | `var(--hub-ref-space-3, 1rem)` | Calendar panel horizontal padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:178` |
-| `--hub-daterangepicker-padding-y` | `var(--hub-ref-space-3, 1rem)` | Calendar panel vertical padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:179` |
+| `--hub-datepicker-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%236c757d' d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z'/%3E%3C/svg%3E")` | Datepicker icon | `IN_USE` | `forms/src/lib/styles/_tokens.scss:183` |
+| `--hub-datepicker-icon-size` | `1rem` | Datepicker icon size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:184` |
+| `--hub-datepicker-icon-width` | `2.5rem` | Datepicker icon width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:185` |
+| `--hub-daterangepicker-padding-x` | `var(--hub-ref-space-3, 1rem)` | Calendar panel horizontal padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:193` |
+| `--hub-daterangepicker-padding-y` | `var(--hub-ref-space-3, 1rem)` | Calendar panel vertical padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:194` |
 
 ### `daterangepicker`
 
 | Token                                           | Initial value                                               | Usage                                                             | Status   | Source                                    |
 | ----------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------------- | -------- | ----------------------------------------- |
-| `--hub-daterangepicker-active-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Daterangepicker active bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:184` |
-| `--hub-daterangepicker-active-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Daterangepicker active color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:186` |
-| `--hub-daterangepicker-bg` | `var(--hub-sys-surface-page, #fff)` | Daterangepicker bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:173` |
-| `--hub-daterangepicker-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Daterangepicker border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:175` |
-| `--hub-daterangepicker-border-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Daterangepicker border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:176` |
-| `--hub-daterangepicker-box-shadow` | `var(--hub-sys-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15))` | Daterangepicker box shadow | `IN_USE` | `forms/src/lib/styles/_tokens.scss:177` |
-| `--hub-daterangepicker-cell-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Daterangepicker cell border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:182` |
-| `--hub-daterangepicker-cell-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker cell color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:181` |
-| `--hub-daterangepicker-cell-hover-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Daterangepicker cell hover bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:183` |
-| `--hub-daterangepicker-cell-size` | `2rem` | Daterangepicker cell size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:180` |
-| `--hub-daterangepicker-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:174` |
-| `--hub-daterangepicker-in-range-bg` | `color-mix(in oklch, var(--hub-sys-color-primary, #0d6efd) 14%, transparent)` | Daterangepicker in range bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:190` |
-| `--hub-daterangepicker-nav-arrow-color` | `var(--hub-sys-text-muted, #6c757d)` | Daterangepicker nav arrow color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:192` |
-| `--hub-daterangepicker-nav-arrow-hover-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker nav arrow hover color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:193` |
-| `--hub-daterangepicker-off-color` | `var(--hub-sys-text-muted, #6c757d)` | Daterangepicker off color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:191` |
+| `--hub-daterangepicker-active-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Daterangepicker active bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:199` |
+| `--hub-daterangepicker-active-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Daterangepicker active color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:201` |
+| `--hub-daterangepicker-bg` | `var(--hub-sys-surface-page, #fff)` | Daterangepicker bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:188` |
+| `--hub-daterangepicker-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Daterangepicker border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:190` |
+| `--hub-daterangepicker-border-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Daterangepicker border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:191` |
+| `--hub-daterangepicker-box-shadow` | `var(--hub-sys-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15))` | Daterangepicker box shadow | `IN_USE` | `forms/src/lib/styles/_tokens.scss:192` |
+| `--hub-daterangepicker-cell-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Daterangepicker cell border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:197` |
+| `--hub-daterangepicker-cell-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker cell color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:196` |
+| `--hub-daterangepicker-cell-hover-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Daterangepicker cell hover bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:198` |
+| `--hub-daterangepicker-cell-size` | `2rem` | Daterangepicker cell size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:195` |
+| `--hub-daterangepicker-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:189` |
+| `--hub-daterangepicker-in-range-bg` | `color-mix(in oklch, var(--hub-sys-color-primary, #0d6efd) 14%, transparent)` | Daterangepicker in range bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:205` |
+| `--hub-daterangepicker-nav-arrow-color` | `var(--hub-sys-text-muted, #6c757d)` | Daterangepicker nav arrow color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:207` |
+| `--hub-daterangepicker-nav-arrow-hover-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker nav arrow hover color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:208` |
+| `--hub-daterangepicker-off-color` | `var(--hub-sys-text-muted, #6c757d)` | Daterangepicker off color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:206` |
 
 ### `label`
 
@@ -1188,23 +1215,37 @@ The `detail` token set is defined as a single, standardized collection that supp
 
 | Token                                 | Initial value                                       | Usage                                                                            | Status   | Source                                    |
 | ------------------------------------- | --------------------------------------------------- | -------------------------------------------------------------------------------- | -------- | ----------------------------------------- |
-| `--hub-slider-thumb-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Slider thumb bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:128` |
-| `--hub-slider-thumb-border` | `2px solid var(--hub-sys-surface-page, #fff)` | Slider thumb border | `IN_USE` | `forms/src/lib/styles/_tokens.scss:129` |
-| `--hub-slider-thumb-border-radius` | `50%` | Slider thumb border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:127` |
-| `--hub-slider-thumb-height` | `1.1rem` | Slider thumb height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:126` |
-| `--hub-slider-thumb-width` | `1.1rem` | Slider thumb width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:125` |
-| `--hub-slider-tooltip-bg` | `var(--hub-sys-text-primary, #212529)` | Slider tooltip bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:131` |
-| `--hub-slider-tooltip-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Slider tooltip border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:133` |
-| `--hub-slider-tooltip-color` | `var(--hub-sys-surface-page, #fff)` | Slider tooltip color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:132` |
+| `--hub-slider-thumb-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Slider thumb bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:138` |
+| `--hub-slider-thumb-border` | `2px solid var(--hub-sys-surface-page, #fff)` | Slider thumb border | `IN_USE` | `forms/src/lib/styles/_tokens.scss:139` |
+| `--hub-slider-thumb-border-radius` | `50%` | Slider thumb border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:137` |
+| `--hub-slider-thumb-height` | `1.1rem` | Slider thumb height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:136` |
+| `--hub-slider-thumb-width` | `1.1rem` | Slider thumb width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:135` |
+| `--hub-slider-tooltip-bg` | `var(--hub-sys-text-primary, #212529)` | Slider tooltip bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:141` |
+| `--hub-slider-tooltip-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Slider tooltip border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:143` |
+| `--hub-slider-tooltip-color` | `var(--hub-sys-surface-page, #fff)` | Slider tooltip color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:142` |
 | `--hub-slider-track-bg` | `var(--hub-sys-border-color-default, #dee2e6)` | Slider track bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:123` |
 | `--hub-slider-track-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Slider track border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:122` |
 | `--hub-slider-track-height` | `0.375rem` | Slider track height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:121` |
 | `--hub-slider-track-width` | `100%` | Slider track width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:120` |
-| `--hub-slider-thumb-shadow` | `0 0 0 1px var(--hub-sys-border-color-default, #dee2e6)` | Slider thumb shadow ring | `IN_USE` | `forms/src/lib/styles/_tokens.scss:130` |
+| `--hub-slider-thumb-shadow` | `0 0 0 1px var(--hub-sys-border-color-default, #dee2e6)` | Slider thumb shadow ring | `IN_USE` | `forms/src/lib/styles/_tokens.scss:140` |
 | `--hub-slider-track-fill-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Slider filled track background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:124` |
 | `--hub-slider-from` | runtime (0–100) | Start position of the range slider's filled track | `INTERNAL` | `forms/src/lib/components/slider/slider.component.html:8` |
 | `--hub-slider-to` | runtime (0–100) | End position of the range slider's filled track | `INTERNAL` | `forms/src/lib/components/slider/slider.component.html:9` |
 | `--hub-slider-percent` | runtime (0–100) | Current value position driving fill and thumb/tooltip | `INTERNAL` | `forms/src/lib/components/slider/slider.component.html:7` |
+| `--hub-slider-track-fill` | `linear-gradient(var(--hub-slider-track-fill-bg), var(--hub-slider-track-fill-bg))` | Gradient-capable fill background image for the slider track (clipped to the current percentage) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:131` |
+| `--hub-slider-value-space` | `0` | Vertical headroom above the rail for the value bubble; collapsed to 0 by the flush (labelless) modifier | `IN_USE` | `forms/src/lib/components/slider/slider.component.scss:21` |
+| `--hub-segmented-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Vertical padding of each segment (md) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:234` |
+| `--hub-segmented-padding-x` | `var(--hub-ref-space-3, 1rem)` | Horizontal padding of each segment (md) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:233` |
+| `--hub-segmented-gap` | `0.25rem` | Gap between segments and inner track padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:232` |
+| `--hub-segmented-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Corner radius of the hub-segmented track | `IN_USE` | `forms/src/lib/styles/_tokens.scss:231` |
+| `--hub-segmented-selected-color` | `var(--hub-sys-text-primary, #212529)` | Selected segment text colour | `IN_USE` | `forms/src/lib/styles/_tokens.scss:230` |
+| `--hub-segmented-selected-bg` | `var(--hub-sys-surface-page, #fff)` | Selected segment background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:229` |
+| `--hub-segmented-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Track background of the hub-segmented bar | `IN_USE` | `forms/src/lib/styles/_tokens.scss:223` |
+| `--hub-segmented-indicator-transition` | `0.2s ease` | Duration/easing of the single-mode sliding indicator as it moves between options | `IN_USE` | `forms/src/lib/styles/_tokens.scss:236` |
+| `--hub-segmented-indicator-x` | `—` | Internal runtime X offset of the sliding indicator (set from the selected option's measured geometry) | `INTERNAL` | `forms/src/lib/components/segmented/segmented.component.scss:27` |
+| `--hub-segmented-indicator-y` | `—` | Internal runtime Y offset of the sliding indicator (set from the selected option's measured geometry) | `INTERNAL` | `forms/src/lib/components/segmented/segmented.component.scss:28` |
+| `--hub-segmented-indicator-width` | `—` | Internal runtime width of the sliding indicator (set from the selected option's measured geometry) | `INTERNAL` | `forms/src/lib/components/segmented/segmented.component.scss:29` |
+| `--hub-segmented-indicator-height` | `—` | Internal runtime height of the sliding indicator (set from the selected option's measured geometry) | `INTERNAL` | `forms/src/lib/components/segmented/segmented.component.scss:30` |
 ### `switch`
 
 | Token                     | Initial value                                                                                                                                            | Usage                                                                                                                                                                                 | Status   | Source                                    |
@@ -1406,58 +1447,80 @@ The standalone `tabs` proposal was **superseded**: the tabs UI shipped inside `n
 | `--hub-table-border-color`                      | `var(--hub-sys-border-color-default, #dee2e6)`                            | Border color of container and cells                                 | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:6`  |
 | `--hub-table-border-radius`                     | `var(--hub-ref-radius-md, 0.375rem)`                                      | Border radius of the container                                      | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:7`  |
 | `--hub-table-border-width`                      | `var(--hub-ref-border-width, 1px)`                                        | Border thickness                                                    | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:8`  |
-| `--hub-table-container-gap` | `var(--hub-ref-space-3, 1rem)` | Gap between top bar, table and bottom bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:12` |
-| `--hub-table-top-bar-gap` | `var(--hub-ref-space-3, 1rem)` | Gap between elements in the top action bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:13` |
-| `--hub-table-batch-actions-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gap between batch action buttons | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:17` |
-| `--hub-table-bottom-bar-gap` | `var(--hub-ref-space-3, 1rem)` | Gap between elements in the bottom bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:19` |
-| `--hub-table-bottom-bar-justify-content` | `space-around` | `justify-content` of the bottom bar flex container | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:20` |
-| `--hub-table-bottom-bar-align-items` | `center` | `align-items` of the bottom bar flex container | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:21` |
-| `--hub-table-bottom-bar-wrap` | `wrap` | `flex-wrap` of the bottom bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:22` |
-| `--hub-table-bottom-bar-paginator-order` | `1` | Flex order of the paginator slot in the bottom bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:23` |
-| `--hub-table-bottom-bar-settings-order` | `2` | Flex order of the settings slot in the bottom bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:24` |
-| `--hub-table-bottom-bar-info-order` | `3` | Flex order of the info slot in the bottom bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:25` |
-| `--hub-table-bottom-bar-paginator-flex` | `0 0 auto` | Flex shorthand for the paginator slot | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:26` |
-| `--hub-table-bottom-bar-settings-flex` | `0 0 auto` | Flex shorthand for the settings slot | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:27` |
-| `--hub-table-bottom-bar-info-flex` | `0 0 auto` | Flex shorthand for the info slot | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:28` |
-| `--hub-table-icon-color` | `currentColor` | Fill color for inline SVG mask icons | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:29` |
-| `--hub-table-icon-size` | `1em` | Size for inline SVG mask icons | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:30` |
-| `--hub-table-icon-sort` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z'/%3E%3C/svg%3E")`| Sort icon (unsorted state) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:32` |
-| `--hub-table-icon-sort-up` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z'/%3E%3C/svg%3E")`| Sort ascending icon | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:33` |
-| `--hub-table-icon-sort-down` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8H32c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E")`| Sort descending icon | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:34` |
-| `--hub-table-accent`                            | `var(--hub-sys-color-primary, #0d6efd)`                                   | Semantic accent for the selected row — re-based per `variant`        | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:46` |
-| `--hub-table-accent-subtle`                     | `color-mix(in oklch, var(--hub-table-accent) 12%, var(--hub-sys-surface-page, #ffffff))` | Soft accent tint for the selected-row background          | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:48` |
-| `--hub-table-selected-bg`                       | `var(--hub-table-accent-subtle)`                                          | Selected row background (soft accent tint)                          | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:51` |
-| `--hub-table-selected-color`                    | `var(--hub-sys-text-primary, #212529)`                                    | Selected row text color                                            | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:52` |
-| `--hub-table-accent-bg` | `transparent` | Accent layer applied via `box-shadow inset` on cells | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:35` |
-| `--hub-table-active-bg` | `var(--hub-sys-state-active-bg, rgba(0,0,0,0.1))` | Cell background in active row state | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:36` |
-| `--hub-table-active-color` | `var(--hub-sys-text-primary, #212529)` | Cell text color in active row state | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:37` |
-| `--hub-table-bg` | `var(--hub-ref-color-white, #fff)` | Base background of table cells | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:53` |
-| `--hub-table-bg-state` | `initial` | State layer (active/hover) applied over cell background via cascade | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:54` |
-| `--hub-table-bg-type` | `initial` | Variant layer (striped) applied over cell background via cascade | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:55` |
-| `--hub-table-cell-padding-x` | `var(--hub-ref-space-3, 1rem)` | Horizontal cell padding | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:56` |
-| `--hub-table-cell-padding-x-sm` | `var(--hub-ref-space-2, 0.5rem)` | Horizontal cell padding in compact mode | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:57` |
-| `--hub-table-cell-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Vertical cell padding | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:58` |
-| `--hub-table-cell-padding-y-sm` | `var(--hub-ref-space-1, 0.25rem)` | Vertical cell padding in compact mode | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:59` |
-| `--hub-table-cell-vertical-align` | `middle` | Vertical alignment of cell content | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:60` |
-| `--hub-table-color` | `var(--hub-sys-text-primary, #212529)` | Base text color of cells | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:61` |
-| `--hub-table-color-state` | `initial` | State layer (active/hover) applied over cell text color via cascade | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:62` |
-| `--hub-table-color-type` | `initial` | Variant layer (striped) applied over cell text color via cascade | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:63` |
-| `--hub-table-group-separator-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Color of the row-group divider border | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:64` |
-| `--hub-table-search-button-bg` | `var(--hub-table-container-bg)` | Background of the search trigger button | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:65` |
-| `--hub-table-search-button-border-color` | `var(--hub-table-border-color)` | Border of the search trigger button | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:66` |
-| `--hub-table-search-button-color` | `var(--hub-table-container-color)` | Text/icon color of the search trigger button | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:67` |
-| `--hub-table-search-input-bg` | `var(--hub-table-container-bg)` | Background of the search input field | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:69` |
-| `--hub-table-search-input-border-color` | `var(--hub-table-border-color)` | Border of the search input field | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:70` |
-| `--hub-table-search-input-color` | `var(--hub-table-container-color)` | Text color of the search input field | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:71` |
-| `--hub-table-filter-button-active-bg` | `color-mix(in oklch, var(--hub-sys-color-success, #198754) 10%, transparent)` | Background of filter button when filters are active | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:77` |
-| `--hub-table-filter-button-active-border-color` | `var(--hub-sys-color-success, #198754)` | Border of filter button when filters are active | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:78` |
-| `--hub-table-filter-button-hover-bg` | `rgba(0, 0, 0, 0.05)` | Background of filter button on hover | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:79` |
-| `--hub-table-filter-button-icon-active-color` | `var(--hub-sys-color-success, #198754)` | Icon color inside filter button when filters are active | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:80` |
-| `--hub-table-filter-button-icon-color` | `var(--hub-sys-text-muted, #6c757d)` | Default icon color inside filter button | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:81` |
-| `--hub-table-hover-bg` | `var(--hub-sys-state-hover-bg, rgba(0,0,0,0.075))` | Cell background on row hover | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:97` |
-| `--hub-table-hover-color` | `var(--hub-sys-text-primary, #212529)` | Cell text color on row hover | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:98` |
-| `--hub-table-striped-bg` | `var(--hub-sys-state-striped-bg, rgba(0,0,0,0.05))` | Cell background for striped rows | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:99` |
-| `--hub-table-striped-color` | `var(--hub-sys-text-primary, #212529)` | Cell text color for striped rows | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:100` |
+| `--hub-table-row-divider-color` | `var(--hub-table-border-color)` | Color of the divider between body rows (independent of the outer frame/vertical borders) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:11` |
+| `--hub-table-container-max-block-size` | `none` | Max block-size (height) of the scroll container; set it together with `options.scrollable` to cap the body height and engage the sticky header | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:15` |
+| `--hub-table-head-sticky-top` | `0` | Sticky offset of the header while the body scrolls (`options.scrollable`), e.g. to clear a toolbar above the table | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:16` |
+| `--hub-table-container-gap` | `var(--hub-ref-space-3, 1rem)` | Gap between top bar, table and bottom bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:20` |
+| `--hub-table-top-bar-gap` | `var(--hub-ref-space-3, 1rem)` | Gap between elements in the top action bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:21` |
+| `--hub-table-batch-actions-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gap between batch action buttons | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:25` |
+| `--hub-table-bottom-bar-gap` | `var(--hub-ref-space-3, 1rem)` | Gap between elements in the bottom bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:27` |
+| `--hub-table-bottom-bar-justify-content` | `space-around` | `justify-content` of the bottom bar flex container | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:28` |
+| `--hub-table-bottom-bar-align-items` | `center` | `align-items` of the bottom bar flex container | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:29` |
+| `--hub-table-bottom-bar-wrap` | `wrap` | `flex-wrap` of the bottom bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:30` |
+| `--hub-table-bottom-bar-paginator-order` | `1` | Flex order of the paginator slot in the bottom bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:31` |
+| `--hub-table-bottom-bar-settings-order` | `2` | Flex order of the settings slot in the bottom bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:32` |
+| `--hub-table-bottom-bar-info-order` | `3` | Flex order of the info slot in the bottom bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:33` |
+| `--hub-table-bottom-bar-paginator-flex` | `0 0 auto` | Flex shorthand for the paginator slot | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:34` |
+| `--hub-table-bottom-bar-settings-flex` | `0 0 auto` | Flex shorthand for the settings slot | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:35` |
+| `--hub-table-bottom-bar-info-flex` | `0 0 auto` | Flex shorthand for the info slot | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:36` |
+| `--hub-table-icon-color` | `currentColor` | Fill color for inline SVG mask icons | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:37` |
+| `--hub-table-icon-size` | `1em` | Size for inline SVG mask icons | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:38` |
+| `--hub-table-icon-sort` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z'/%3E%3C/svg%3E")`| Sort icon (unsorted state) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:40` |
+| `--hub-table-icon-sort-up` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M182.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z'/%3E%3C/svg%3E")`| Sort ascending icon | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:41` |
+| `--hub-table-icon-sort-down` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8H32c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E")`| Sort descending icon | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:42` |
+| `--hub-table-icon-caret-up` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z'/%3E%3C/svg%3E")`| Row-expander caret icon (expanded) — overridable like the sort icons | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:45` |
+| `--hub-table-icon-caret-down` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8H32c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E")`| Row-expander caret icon (collapsed) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:46` |
+| `--hub-table-icon-search` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z'/%3E%3C/svg%3E")`| Table search icon (SVG, overridable via mask-image) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:48` |
+| `--hub-table-icon-filter` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M3.9 54.9C10.5 40.9 24.5 32 40 32H472c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9V448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6V320.9L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z'/%3E%3C/svg%3E")`| Table filter icon (SVG, overridable via mask-image) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:49` |
+| `--hub-table-icon-eraser` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath d='M290.7 57.4L57.4 290.7c-25 25-25 65.5 0 90.5l80 80c12 12 28.3 18.7 45.3 18.7H288h9.4H512c17.7 0 32-14.3 32-32s-14.3-32-32-32H387.9L518.6 285.3c25-25 25-65.5 0-90.5L381.3 57.4c-25-25-65.5-25-90.5 0zM297.4 416H288l-105.4 0-80-80L227.3 211.3 364.7 348.7 297.4 416z'/%3E%3C/svg%3E")`| Table eraser icon (SVG, overridable via mask-image) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:50` |
+| `--hub-table-icon-info` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z'/%3E%3C/svg%3E")`| Table info icon (SVG, overridable via mask-image) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:51` |
+| `--hub-table-icon-chevron-up` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z'/%3E%3C/svg%3E")`| Table chevron-up icon (SVG, overridable via mask-image) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:52` |
+| `--hub-table-icon-chevron-down` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5 12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/%3E%3C/svg%3E")`| Table chevron-down icon (SVG, overridable via mask-image) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:53` |
+| `--hub-table-icon-chevron-left` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E")`| Table chevron-left icon (SVG, overridable via mask-image) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:54` |
+| `--hub-table-icon-chevron-right` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 105.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z'/%3E%3C/svg%3E")`| Table chevron-right icon (SVG, overridable via mask-image) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:55` |
+| `--hub-table-icon-angle-left` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E")`| Table angle-left icon (SVG, overridable via mask-image) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:56` |
+| `--hub-table-icon-angle-right` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z'/%3E%3C/svg%3E")`| Table angle-right icon (SVG, overridable via mask-image) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:57` |
+| `--hub-table-icon-angle-double-left` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z'/%3E%3C/svg%3E")`| Table angle-double-left icon (SVG, overridable via mask-image) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:58` |
+| `--hub-table-icon-angle-double-right` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0z'/%3E%3C/svg%3E")`| Table angle-double-right icon (SVG, overridable via mask-image) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:59` |
+| `--hub-table-icon-ellipsis-v` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 512'%3E%3Cpath d='M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z'/%3E%3C/svg%3E")`| Table ellipsis-v icon (SVG, overridable via mask-image) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:60` |
+| `--hub-table-icon-trash` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z'/%3E%3C/svg%3E")`| Table trash icon (SVG, overridable via mask-image) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:61` |
+| `--hub-table-icon-plus` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z'/%3E%3C/svg%3E")`| Table plus icon (SVG, overridable via mask-image) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:62` |
+| `--hub-table-accent`                            | `var(--hub-sys-color-primary, #0d6efd)`                                   | Semantic accent for the selected row — re-based per `variant`        | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:74` |
+| `--hub-table-accent-subtle`                     | `color-mix(in oklch, var(--hub-table-accent) 12%, var(--hub-sys-surface-page, #ffffff))` | Soft accent tint for the selected-row background          | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:76` |
+| `--hub-table-selected-bg`                       | `var(--hub-table-accent-subtle)`                                          | Selected row background (soft accent tint)                          | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:79` |
+| `--hub-table-selected-color`                    | `var(--hub-sys-text-primary, #212529)`                                    | Selected row text color                                            | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:80` |
+| `--hub-table-accent-bg` | `transparent` | Accent layer applied via `box-shadow inset` on cells | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:63` |
+| `--hub-table-active-bg` | `var(--hub-sys-state-active-bg, rgba(0,0,0,0.1))` | Cell background in active row state | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:64` |
+| `--hub-table-active-color` | `var(--hub-sys-text-primary, #212529)` | Cell text color in active row state | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:65` |
+| `--hub-table-bg` | `var(--hub-ref-color-white, #fff)` | Base background of table cells | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:81` |
+| `--hub-table-head-bg` | `var(--hub-table-bg)` | Header (thead) surface; defaults to the table surface so a sticky header stays opaque over the scrolling body | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:85` |
+| `--hub-table-head-color` | `var(--hub-table-color)` | Header (thead) text color | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:86` |
+| `--hub-table-bg-state` | `initial` | State layer (active/hover) applied over cell background via cascade | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:87` |
+| `--hub-table-bg-type` | `initial` | Variant layer (striped) applied over cell background via cascade | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:88` |
+| `--hub-table-cell-padding-x` | `var(--hub-ref-space-3, 1rem)` | Horizontal cell padding | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:89` |
+| `--hub-table-cell-padding-x-sm` | `var(--hub-ref-space-2, 0.5rem)` | Horizontal cell padding in compact mode | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:90` |
+| `--hub-table-cell-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Vertical cell padding | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:91` |
+| `--hub-table-cell-padding-y-sm` | `var(--hub-ref-space-1, 0.25rem)` | Vertical cell padding in compact mode | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:92` |
+| `--hub-table-cell-vertical-align` | `middle` | Vertical alignment of cell content | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:93` |
+| `--hub-table-color` | `var(--hub-sys-text-primary, #212529)` | Base text color of cells | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:94` |
+| `--hub-table-color-state` | `initial` | State layer (active/hover) applied over cell text color via cascade | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:95` |
+| `--hub-table-color-type` | `initial` | Variant layer (striped) applied over cell text color via cascade | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:96` |
+| `--hub-table-group-separator-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Color of the row-group divider border | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:97` |
+| `--hub-table-search-button-bg` | `var(--hub-table-container-bg)` | Background of the search trigger button | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:98` |
+| `--hub-table-search-button-border-color` | `var(--hub-table-border-color)` | Border of the search trigger button | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:99` |
+| `--hub-table-search-button-color` | `var(--hub-table-container-color)` | Text/icon color of the search trigger button | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:100` |
+| `--hub-table-search-input-bg` | `var(--hub-table-container-bg)` | Background of the search input field | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:102` |
+| `--hub-table-search-input-border-color` | `var(--hub-table-border-color)` | Border of the search input field | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:103` |
+| `--hub-table-search-input-color` | `var(--hub-table-container-color)` | Text color of the search input field | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:104` |
+| `--hub-table-filter-button-active-bg` | `color-mix(in oklch, var(--hub-sys-color-success, #198754) 10%, transparent)` | Background of filter button when filters are active | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:110` |
+| `--hub-table-filter-button-active-border-color` | `var(--hub-sys-color-success, #198754)` | Border of filter button when filters are active | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:111` |
+| `--hub-table-filter-button-hover-bg` | `rgba(0, 0, 0, 0.05)` | Background of filter button on hover | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:112` |
+| `--hub-table-filter-button-icon-active-color` | `var(--hub-sys-color-success, #198754)` | Icon color inside filter button when filters are active | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:113` |
+| `--hub-table-filter-button-icon-color` | `var(--hub-sys-text-muted, #6c757d)` | Default icon color inside filter button | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:114` |
+| `--hub-table-hover-bg` | `var(--hub-sys-state-hover-bg, rgba(0,0,0,0.075))` | Cell background on row hover | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:130` |
+| `--hub-table-hover-color` | `var(--hub-sys-text-primary, #212529)` | Cell text color on row hover | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:131` |
+| `--hub-table-striped-bg` | `var(--hub-sys-state-striped-bg, rgba(0,0,0,0.05))` | Cell background for striped rows | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:132` |
+| `--hub-table-striped-color` | `var(--hub-sys-text-primary, #212529)` | Cell text color for striped rows | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:133` |
 | `--hub-table-title-font-size`                   | `var(--hub-ref-font-size-lg, 1.25rem)`                                    | Font size of the table title                                        | `PENDING` | `UX-EXCEL`                                                   |
 | `--hub-table-cell-additional-padding`           | `calc(var(--hub-table-cell-padding-x) + var(--hub-ref-space-1, 0.25rem))` | Additional cell padding offset                                      | `PENDING` | `UX-EXCEL`                                                   |
 | `--hub-table-cell-font-size`                    | `var(--hub-ref-font-size-sm, 0.875rem)`                                   | Font size of cell content                                           | `PENDING` | `UX-EXCEL`                                                   |
@@ -1465,8 +1528,8 @@ The standalone `tabs` proposal was **superseded**: the tabs UI shipped inside `n
 | `--hub-table-container-border-radius`           | `var(--hub-table-border-radius, var(--hub-ref-radius-md, 0.375rem))`      | Border radius of table container                                    | `PENDING` | `UX-EXCEL`                                                   |
 | `--hub-table-container-padding-x`               | `var(--hub-ref-space-3, 1rem)`                                            | Horizontal padding of table container                               | `PENDING` | `UX-EXCEL`                                                   |
 | `--hub-table-container-padding-y`               | `var(--hub-ref-space-3, 1rem)`                                            | Vertical padding of table container                                 | `PENDING` | `UX-EXCEL`                                                   |
-| `--hub-table-filter-count-bg` | `var(--hub-sys-color-success, #198754)` | Background of the active-filters count badge | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:89` |
-| `--hub-table-filter-count-color` | `var(--hub-ref-color-white, #fff)` | Text color of the active-filters count badge | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:90` |
+| `--hub-table-filter-count-bg` | `var(--hub-sys-color-success, #198754)` | Background of the active-filters count badge | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:122` |
+| `--hub-table-filter-count-color` | `var(--hub-ref-color-white, #fff)` | Text color of the active-filters count badge | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:123` |
 | `--hub-table-head-bg`                           | `var(--hub-ref-surface-2, #f8f9fa)`                                       | Background of the table header row                                  | `PENDING` | `UX-EXCEL`                                                   |
 | `--hub-table-head-border-radius`                | `var(--hub-table-border-radius, var(--hub-ref-radius-md, 0.375rem))`      | Border radius of the table header row                               | `PENDING` | `UX-EXCEL`                                                   |
 | `--hub-table-tooltip-bg`                        | `var(--hub-sys-text-primary, #212529)`                                    | Background of column tooltips                                       | `PENDING` | `INVENTORY`                                                  |
@@ -1474,29 +1537,29 @@ The standalone `tabs` proposal was **superseded**: the tabs UI shipped inside `n
 | `--hub-table-tooltip-color`                     | `var(--hub-ref-color-white, #fff)`                                        | Text color of column tooltips                                       | `PENDING` | `INVENTORY`                                                  |
 | `--hub-table-tooltip-padding-x`                 | `var(--hub-ref-space-2, 0.5rem)`                                          | Horizontal padding of column tooltips                               | `PENDING` | `INVENTORY`                                                  |
 | `--hub-table-tooltip-padding-y`                 | `var(--hub-ref-space-1, 0.25rem)`                                         | Vertical padding of column tooltips                                 | `PENDING` | `INVENTORY`                                                  |
-| `--hub-table-batch-actions-btn-icon-gap` | `var(--hub-ref-space-1, 0.25rem)` | Batch action button icon gap | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:96` |
-| `--hub-table-batch-actions-margin-inline-end` | `auto` | Batch actions inline-end margin | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:18` |
-| `--hub-table-filter-button-border-color` | `transparent` | Filter button border color | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:86` |
-| `--hub-table-filter-button-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Filter button border radius | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:87` |
-| `--hub-table-filter-button-border-width` | `1px` | Filter button border width | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:85` |
-| `--hub-table-filter-button-gap` | `var(--hub-ref-space-2, 0.5rem)` | Filter button content gap | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:82` |
-| `--hub-table-filter-button-padding-x` | `0.75rem` | Filter button horizontal padding | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:83` |
-| `--hub-table-filter-button-padding-y` | `0.375rem` | Filter button vertical padding | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:84` |
-| `--hub-table-filter-button-transition` | `all 0.2s ease` | Filter button transition | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:88` |
-| `--hub-table-filter-count-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Filter count badge border radius | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:95` |
-| `--hub-table-filter-count-font-size` | `0.7rem` | Filter count badge font size | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:93` |
-| `--hub-table-filter-count-font-weight` | `var(--hub-ref-font-weight-bold, 700)` | Filter count badge font weight | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:94` |
-| `--hub-table-filter-count-padding-x` | `0.4em` | Filter count badge horizontal padding | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:92` |
-| `--hub-table-filter-count-size` | `1.25rem` | Filter count badge size | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:91` |
-| `--hub-table-search-border-radius` | `var(--hub-table-border-radius)` | Search field border radius | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:73` |
-| `--hub-table-search-border-width` | `var(--hub-table-border-width)` | Search field border width | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:72` |
-| `--hub-table-search-button-min-width` | `2.75rem` | Search button minimum width | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:68` |
-| `--hub-table-search-input-font-size` | `1rem` | Search input font size | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:76` |
-| `--hub-table-search-input-padding-x` | `0.75rem` | Search input horizontal padding | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:74` |
-| `--hub-table-search-input-padding-y` | `0.375rem` | Search input vertical padding | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:75` |
-| `--hub-table-top-bar-align-items` | `center` | Top bar cross-axis alignment | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:15` |
-| `--hub-table-top-bar-justify-content` | `end` | Top bar content justification | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:14` |
-| `--hub-table-top-bar-wrap` | `wrap` | Top bar flex wrapping | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:16` |
+| `--hub-table-batch-actions-btn-icon-gap` | `var(--hub-ref-space-1, 0.25rem)` | Batch action button icon gap | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:129` |
+| `--hub-table-batch-actions-margin-inline-end` | `auto` | Batch actions inline-end margin | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:26` |
+| `--hub-table-filter-button-border-color` | `transparent` | Filter button border color | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:119` |
+| `--hub-table-filter-button-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Filter button border radius | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:120` |
+| `--hub-table-filter-button-border-width` | `1px` | Filter button border width | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:118` |
+| `--hub-table-filter-button-gap` | `var(--hub-ref-space-2, 0.5rem)` | Filter button content gap | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:115` |
+| `--hub-table-filter-button-padding-x` | `0.75rem` | Filter button horizontal padding | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:116` |
+| `--hub-table-filter-button-padding-y` | `0.375rem` | Filter button vertical padding | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:117` |
+| `--hub-table-filter-button-transition` | `all 0.2s ease` | Filter button transition | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:121` |
+| `--hub-table-filter-count-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Filter count badge border radius | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:128` |
+| `--hub-table-filter-count-font-size` | `0.7rem` | Filter count badge font size | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:126` |
+| `--hub-table-filter-count-font-weight` | `var(--hub-ref-font-weight-bold, 700)` | Filter count badge font weight | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:127` |
+| `--hub-table-filter-count-padding-x` | `0.4em` | Filter count badge horizontal padding | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:125` |
+| `--hub-table-filter-count-size` | `1.25rem` | Filter count badge size | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:124` |
+| `--hub-table-search-border-radius` | `var(--hub-table-border-radius)` | Search field border radius | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:106` |
+| `--hub-table-search-border-width` | `var(--hub-table-border-width)` | Search field border width | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:105` |
+| `--hub-table-search-button-min-width` | `2.75rem` | Search button minimum width | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:101` |
+| `--hub-table-search-input-font-size` | `1rem` | Search input font size | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:109` |
+| `--hub-table-search-input-padding-x` | `0.75rem` | Search input horizontal padding | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:107` |
+| `--hub-table-search-input-padding-y` | `0.375rem` | Search input vertical padding | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:108` |
+| `--hub-table-top-bar-align-items` | `center` | Top bar cross-axis alignment | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:23` |
+| `--hub-table-top-bar-justify-content` | `end` | Top bar content justification | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:22` |
+| `--hub-table-top-bar-wrap` | `wrap` | Top bar flex wrapping | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:24` |
 
 #### `list`
 
@@ -1578,6 +1641,10 @@ The standalone `tabs` proposal was **superseded**: the tabs UI shipped inside `n
 | `--hub-list-placeholder-min-height` | `2.5rem` | Drop placeholder minimum height | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:108` |
 | `--hub-list-ghost-opacity` | `0.85` | Drag ghost opacity | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:109` |
 | `--hub-list-ghost-shadow` | `0 0.5rem 1rem rgba(0, 0, 0, 0.15)` | Drag ghost shadow | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:110` |
+| `--hub-list-connector-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Color of the opt-in connector line between consecutive items (`connected`) | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:112` |
+| `--hub-list-connector-width` | `2px` | Thickness of the item connector line | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:113` |
+| `--hub-list-connector-style` | `solid` | Border-style of the item connector (e.g. `dashed`) | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:114` |
+| `--hub-list-connector-offset` | `var(--hub-list-item-padding-x, var(--hub-ref-space-3, 1rem))` | Inline offset of the connector from the item's leading edge | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:115` |
 | `--hub-list-cards-row-gap` | `var(--hub-list-cards-gap)` | Card grid row gap | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:47` |
 | `--hub-list-cards-shadow` | `none` | Card box shadow | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:56` |
 | `--hub-list-cards-transition` | `background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out` | Card hover transition | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:59` |
@@ -1933,31 +2000,34 @@ The navigation strip is **semantic-accent aware**: a single `--hub-panels-accent
 | `--hub-panels-accordion-icon-color` | `var(--hub-accordion-icon-color, var(--hub-panels-accordion-btn-color))` | Accordion chevron icon color | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:129` |
 | `--hub-panels-accordion-inner-border-radius` | `var(--hub-accordion-inner-border-radius, calc(var(--hub-panels-accordion-border-radius) - var(--hub-panels-accordion-border-width)))` | Accordion inner corner radius | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:119` |
 | `--hub-panels-accordion-transition` | `var(--hub-accordion-transition, color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease)` | Accordion header visual transition | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:139` |
-| `--hub-panels-alert-accent` | `var(--hub-sys-border-color-default, #dee2e6)` | Alert accent stripe color | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:123` |
-| `--hub-panels-alert-accent-width` | `0.25rem` | Alert accent stripe width | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:127` |
-| `--hub-panels-alert-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Alert panel background | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:120` |
-| `--hub-panels-alert-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Alert panel border color | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:122` |
-| `--hub-panels-alert-border-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Alert panel corner radius | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:126` |
-| `--hub-panels-alert-color` | `var(--hub-sys-text-primary, #212529)` | Alert panel text color | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:121` |
-| `--hub-panels-alert-content-align` | `flex-start` | Alert body content cross-axis alignment (default top) | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:132` |
-| `--hub-panels-alert-content-direction` | `row` | Alert body content flex direction (default row) | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:131` |
-| `--hub-panels-alert-content-gap` | `var(--hub-sys-gap-2, 0.5rem)` | Gap between alert body content items | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:134` |
-| `--hub-panels-alert-content-justify` | `flex-start` | Alert body content main-axis justification | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:133` |
-| `--hub-panels-alert-padding-x` | `var(--hub-ref-space-4, 1.5rem)` | Alert panel horizontal padding | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:124` |
-| `--hub-panels-alert-padding-y` | `var(--hub-ref-space-3, 1rem)` | Alert panel vertical padding | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:125` |
+| `--hub-panels-alert-accent` | `var(--hub-sys-border-color-default, #dee2e6)` | Alert accent stripe color | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:165` |
+| `--hub-panels-alert-accent-width` | `0.25rem` | Alert accent stripe width | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:169` |
+| `--hub-panels-alert-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Alert panel background | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:162` |
+| `--hub-panels-alert-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Alert panel border color | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:164` |
+| `--hub-panels-alert-border-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Alert panel corner radius | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:168` |
+| `--hub-panels-alert-color` | `var(--hub-sys-text-primary, #212529)` | Alert panel text color | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:163` |
+| `--hub-panels-alert-content-align` | `flex-start` | Alert body content cross-axis alignment (default top) | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:174` |
+| `--hub-panels-alert-content-direction` | `row` | Alert body content flex direction (default row) | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:173` |
+| `--hub-panels-alert-content-gap` | `var(--hub-sys-gap-2, 0.5rem)` | Gap between alert body content items | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:176` |
+| `--hub-panels-alert-content-justify` | `flex-start` | Alert body content main-axis justification | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:175` |
+| `--hub-panels-alert-padding-x` | `var(--hub-ref-space-4, 1.5rem)` | Alert panel horizontal padding | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:166` |
+| `--hub-panels-alert-padding-y` | `var(--hub-ref-space-3, 1rem)` | Alert panel vertical padding | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:167` |
 | `--hub-panels-backward-btn-bg` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23212529' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E")` | Strip backward scroll button icon | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:47` |
 | `--hub-panels-border-color` | `var(--hub-container-border-color, var(--hub-sys-border-color-default, #dee2e6))` | Panels content border color (inherits container) | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:38` |
 | `--hub-panels-border-radius` | `var(--hub-container-border-radius, var(--hub-ref-radius-md, 0.375rem))` | Panels content corner radius (inherits container) | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:39` |
 | `--hub-panels-border-width` | `var(--hub-container-border-width, var(--hub-ref-border-width, 1px))` | Panels content border width (inherits container) | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:37` |
+| `--hub-panels-body-gap` | `0` | Gap between stacked children when the card body is a flex column (`fill`); no-op otherwise | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:28` |
+| `--hub-panels-card-accent` | `var(--hub-sys-border-color-default, #dee2e6)` | Local accent slot for the semantic card tint (`[variant]`); set inline by the component | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:24` |
 | `--hub-panels-card-bg` | `var(--hub-sys-surface-page, #fff)` | Card panel background | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:16` |
-| `--hub-panels-card-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Card panel border color | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:19` |
-| `--hub-panels-card-border-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Card panel corner radius | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:20` |
+| `--hub-panels-card-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Card panel border color | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:20` |
+| `--hub-panels-card-border-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Card panel corner radius | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:21` |
+| `--hub-panels-card-border-style` | `solid` | Card panel border style (e.g. `dashed` for an empty-state card) | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:19` |
 | `--hub-panels-card-border-width` | `var(--hub-ref-border-width, 1px)` | Card panel border width | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:18` |
-| `--hub-panels-card-box-shadow` | `var(--hub-sys-shadow-sm, 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075))` | Card panel drop shadow | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:21` |
+| `--hub-panels-card-box-shadow` | `var(--hub-sys-shadow-sm, 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075))` | Card panel drop shadow | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:29` |
 | `--hub-panels-card-color` | `var(--hub-sys-text-primary, #212529)` | Card panel text color | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:17` |
 | `--hub-panels-card-gap` | `var(--hub-ref-space-3, 1rem)` | Gap between stacked cards | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:111` |
-| `--hub-panels-card-padding-x` | `var(--hub-ref-space-4, 1.5rem)` | Card body horizontal padding | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:22` |
-| `--hub-panels-card-padding-y` | `var(--hub-ref-space-3, 1rem)` | Card body vertical padding | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:23` |
+| `--hub-panels-card-padding-x` | `var(--hub-ref-space-4, 1.5rem)` | Card body horizontal padding | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:25` |
+| `--hub-panels-card-padding-y` | `var(--hub-ref-space-3, 1rem)` | Card body vertical padding | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:26` |
 | `--hub-panels-content-bg` | `var(--hub-container-bg, var(--hub-sys-surface-page, #fff))` | Panels content area background (inherits container) | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:40` |
 | `--hub-panels-content-box-shadow` | `none` | Panels content area shadow | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:42` |
 | `--hub-panels-content-padding-x` | `var(--hub-container-padding-x, var(--hub-ref-space-3, 1rem))` | Content area horizontal padding (inherits container) | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:43` |
@@ -1979,18 +2049,18 @@ The navigation strip is **semantic-accent aware**: a single `--hub-panels-accent
 | `--hub-panels-pane-gap` | `0` | Gap between multi-selection panes | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:108` |
 | `--hub-panels-pane-min-height` | `8rem` | Multi-selection pane minimum height | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:107` |
 | `--hub-panels-pane-min-width` | `16rem` | Multi-selection pane minimum width | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:106` |
-| `--hub-panels-panel-footer-content-justify` | `flex-end` | Footer band content distribution (justify-content; the other band hooks are shared with the header) | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:43` |
-| `--hub-panels-panel-header-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Panel header/footer band background | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:27` |
-| `--hub-panels-panel-header-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Panel header/footer band border color | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:33` |
-| `--hub-panels-panel-header-border-width` | `var(--hub-ref-border-width, 1px)` | Panel header/footer band border width | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:32` |
-| `--hub-panels-panel-header-color` | `var(--hub-sys-text-primary, #212529)` | Panel header/footer band text color | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:28` |
-| `--hub-panels-panel-header-content-align` | `center` | Header/footer band cross-axis alignment (align-items) | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:41` |
-| `--hub-panels-panel-header-content-direction` | `row` | Header/footer band flex direction | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:40` |
-| `--hub-panels-panel-header-content-gap` | `var(--hub-sys-gap-3, 0.75rem)` | Header/footer band content gap | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:44` |
-| `--hub-panels-panel-header-content-justify` | `flex-start` | Header band content distribution (justify-content) | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:42` |
-| `--hub-panels-panel-header-font-weight` | `var(--hub-ref-font-weight-semibold, 600)` | Panel header/footer band font weight | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:31` |
-| `--hub-panels-panel-header-padding-x` | `var(--hub-ref-space-4, 1.5rem)` | Panel header/footer horizontal padding | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:29` |
-| `--hub-panels-panel-header-padding-y` | `var(--hub-ref-space-3, 1rem)` | Panel header/footer vertical padding | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:30` |
+| `--hub-panels-panel-footer-content-justify` | `flex-end` | Footer band content distribution (justify-content; the other band hooks are shared with the header) | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:53` |
+| `--hub-panels-panel-header-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Panel header/footer band background | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:35` |
+| `--hub-panels-panel-header-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Panel header/footer band border color | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:43` |
+| `--hub-panels-panel-header-border-width` | `var(--hub-ref-border-width, 1px)` | Panel header/footer band border width | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:42` |
+| `--hub-panels-panel-header-color` | `var(--hub-sys-text-primary, #212529)` | Panel header/footer band text color | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:38` |
+| `--hub-panels-panel-header-content-align` | `center` | Header/footer band cross-axis alignment (align-items) | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:51` |
+| `--hub-panels-panel-header-content-direction` | `row` | Header/footer band flex direction | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:50` |
+| `--hub-panels-panel-header-content-gap` | `var(--hub-sys-gap-3, 0.75rem)` | Header/footer band content gap | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:54` |
+| `--hub-panels-panel-header-content-justify` | `flex-start` | Header band content distribution (justify-content) | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:52` |
+| `--hub-panels-panel-header-font-weight` | `var(--hub-ref-font-weight-semibold, 600)` | Panel header/footer band font weight | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:41` |
+| `--hub-panels-panel-header-padding-x` | `var(--hub-ref-space-4, 1.5rem)` | Panel header/footer horizontal padding | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:39` |
+| `--hub-panels-panel-header-padding-y` | `var(--hub-ref-space-3, 1rem)` | Panel header/footer vertical padding | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:40` |
 | `--hub-panels-pill-bg-active` | `var(--hub-panels-accent)` | Active pill background | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:92` |
 | `--hub-panels-pill-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Pill corner radius | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:91` |
 | `--hub-panels-pill-color-active` | `var(--hub-panels-accent-on)` | Active pill text color | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:93` |
@@ -2025,6 +2095,8 @@ The navigation strip is **semantic-accent aware**: a single `--hub-panels-accent
 | `--hub-panels-tab-padding-y` | `var(--hub-panels-nav-link-padding-y)` | Tab vertical padding | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:63` |
 | `--hub-panels-tab-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Tab state transition | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:80` |
 | `--hub-panels-multiple-vertical-panel-min-width` | runtime (`0px`) | Min content width per `multiple + vertical` block, from the measured header height | `INTERNAL` | `panels/src/lib/components/panels/panels.component.ts:747` |
+| `--hub-tabs-gap` | `0` | Gap between tabs in the <hub-tab-nav> strip | `IN_USE` | `panels/src/lib/components/tab-nav/tab-nav.component.scss:18` |
+| `--hub-tabs-indicator-color` | `var(--hub-panels-accent, var(--hub-sys-color-primary, #0d6efd))` | Active-tab underline / active-pill fill colour for <hub-tab-nav> | `IN_USE` | `panels/src/lib/components/tab-nav/tab-nav.component.scss:16` |
 ### `milestones`
 
 | Token | Initial value | Usage | Status | Source |
@@ -2173,3 +2245,33 @@ Unique custom properties **declared** in each library's source (`.scss` + inline
 ### Template variables
 
 Template variables with interpolation are already documented in de-interpolated format within the `paginable` section.
+
+### Metrics (`ng-hub-ui-metrics`)
+
+> `ng-hub-ui-metrics` (hub-progress / hub-meter / hub-ring) exposes the theming tokens below, projected onto the `metrics` docs page through the docs `SECTION_MAP`. Consumer-facing hooks are `IN_USE`; the runtime-written variables the components set from their value inputs (`--hub-progress-value`, `--hub-meter-value`, `--hub-meter-fill`) are `INTERNAL`, so `docs:cssvars` skips them.
+
+#### metrics
+
+| Token | Initial value | Usage | Status | Source |
+| ----- | ------------- | ----- | ------ | ------ |
+| `--hub-progress-track-bg` | `color-mix(in oklch, var(--hub-progress-accent) 16%, transparent)` | Progress track background (subtle accent tint) | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:11` |
+| `--hub-progress-indicator-bg` | `var(--hub-progress-accent)` | Filled progress indicator colour | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:12` |
+| `--hub-progress-height` | `var(--hub-ref-space-2, 0.5rem)` | Progress bar thickness (sm/md/lg override it) | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:13` |
+| `--hub-progress-radius` | `var(--hub-ref-radius-pill, 50rem)` | Progress bar corner radius | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:14` |
+| `--hub-progress-value` | `0%` | Internal runtime width of the indicator (set from the value input) | `INTERNAL` | `metrics/src/lib/components/progress/progress.component.scss:41` |
+| `--hub-meter-track-bg` | `color-mix(in oklch, var(--hub-sys-color-neutral, #6c757d) 16%, transparent)` | Meter track background | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:11` |
+| `--hub-meter-low-bg` | `var(--hub-sys-color-danger, #dc3545)` | Meter fill when the value is below target | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:12` |
+| `--hub-meter-optimum-bg` | `var(--hub-sys-color-success, #198754)` | Meter fill when the value is on target | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:13` |
+| `--hub-meter-high-bg` | `var(--hub-sys-color-warning, #ffc107)` | Meter fill when the value is above target | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:14` |
+| `--hub-meter-height` | `var(--hub-ref-space-2, 0.5rem)` | Meter bar thickness | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:15` |
+| `--hub-meter-radius` | `var(--hub-ref-radius-pill, 50rem)` | Meter bar corner radius | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:16` |
+| `--hub-meter-fill` | `var(--hub-meter-optimum-bg)` | Internal band-selected meter fill colour | `INTERNAL` | `metrics/src/lib/components/meter/meter.component.scss:18` |
+| `--hub-meter-value` | `0%` | Internal runtime width of the meter fill (set from the value input) | `INTERNAL` | `metrics/src/lib/components/meter/meter.component.scss:37` |
+| `--hub-ring-size` | `4rem` | Ring outer diameter (overridden per-instance from size) | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:12` |
+| `--hub-ring-thickness` | `var(--hub-ref-space-2, 0.5rem)` | Ring stroke width (overridden per-instance from thickness) | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:13` |
+| `--hub-ring-track` | `color-mix(in oklch, var(--hub-sys-color-neutral, #6c757d) 20%, transparent)` | Ring track stroke colour | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:14` |
+| `--hub-ring-indicator` | `var(--hub-sys-color-primary, #0d6efd)` | Ring indicator stroke colour (neutral band) | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:15` |
+| `--hub-ring-caption-color` | `var(--hub-sys-text-primary, #212529)` | Ring centre caption colour | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:16` |
+| `--hub-ring-low-color` | `var(--hub-sys-color-danger, #dc3545)` | Ring stroke below the low threshold | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:17` |
+| `--hub-ring-high-color` | `var(--hub-sys-color-success, #198754)` | Ring stroke at/above the high threshold | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:18` |
+
