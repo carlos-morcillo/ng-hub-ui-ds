@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.5.1] - 2026-07-07
+
+### Changed
+
+- **docs (token catalogue)** — documented the new `<hub-table>` header chrome tokens in `docs/variables-css-library.en.md`: `--hub-table-head-font-size`, `--hub-table-head-font-weight`, `--hub-table-head-padding-x`, `--hub-table-head-padding-y` and `--hub-table-head-position` (shipped in `ng-hub-ui-paginable` 22.5.0). Documentation-only — no token or compiled-CSS changes.
+
 ## [22.5.0] - 2026-07-04
 
 ### Added
