@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.5.3] - 2026-07-08
+
+### Changed
+
+- **docs (token catalogue)** — documented the tokens shipped in `ng-hub-ui-nav` 22.7.0 and `ng-hub-ui-panels` 22.7.0: `--hub-nav-border-radius`, `--hub-nav-box-shadow`, `--hub-nav-collapsed-justify` and `--hub-panels-tab-border-end-radius`, and resynced the Source-column line references to the shifted `nav-tokens.scss`. Documentation-only — no token or compiled-CSS changes.
+
 ## [22.5.2] - 2026-07-07
 
 ### Changed
