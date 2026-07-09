@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.5.5] - 2026-07-09
+
+### Changed
+
+- **docs (token catalogue)** — documented the 23 `--hub-file-input-*` tokens added by the themeable dropzone chrome of `ng-hub-ui-forms` 22.7.0: the icon medallion (`-icon-bg`, `-icon-chip-size`, `-icon-chip-radius`), the browse action as a button (`-browse-bg`, `-browse-hover-bg`, `-browse-padding-x/-y`, `-browse-radius`, `-browse-font-size`, `-browse-text-decoration`, `-browse-gap`, `-browse-margin-top`, `-browse-icon`, `-browse-icon-display`, `-browse-icon-size`), the stacked prompt (`-prompt-direction`, `-prompt-align`, `-prompt-gap`) and the two invitation lines (`-drop-text-*`, `-drop-subtext-*`). Documentation-only — no token or compiled-CSS changes.
+
 ## [22.5.4] - 2026-07-09
 
 ### Changed
