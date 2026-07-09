@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.5.4] - 2026-07-09
+
+### Changed
+
+- **docs (token catalogue)** — documented the 66 `--hub-file-input-*` tokens shipped with `<hub-file-input>` in `ng-hub-ui-forms` 22.6.0 (dropzone surface and states, prompt/hint typography, the six swappable icon masks, file list, thumbnails, grid preview and upload progress), plus the internal `--hub-file-input-progress-value` relay, and resynced the Source-column line references shifted by the insertion. Documentation-only — no token or compiled-CSS changes.
+
 ## [22.5.3] - 2026-07-08
 
 ### Changed
