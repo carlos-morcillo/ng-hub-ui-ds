@@ -960,10 +960,10 @@ The `detail` token set is defined as a single, standardized collection that supp
 | `--hub-input-placeholder-color` | `var(--hub-sys-text-muted, #6c757d)` | Input placeholder color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:64` |
 | `--hub-input-transition` | `var(--hub-form-transition)` | Input transition | `IN_USE` | `forms/src/lib/styles/_tokens.scss:65` |
 | `--hub-input-wrapper-gap` | `var(--hub-ref-space-2, 0.5rem)` | Input wrapper gap | `IN_USE` | `forms/src/lib/styles/_tokens.scss:66` |
-| `--hub-textarea-border-radius` | `var( --hub-input-border-radius )` | Textarea border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:96` |
-| `--hub-textarea-min-height` | `4.5rem` | Textarea min height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:97` |
-| `--hub-textarea-padding-x` | `var(--hub-input-padding-x)` | Textarea padding x | `IN_USE` | `forms/src/lib/styles/_tokens.scss:94` |
-| `--hub-textarea-padding-y` | `var(--hub-input-padding-y)` | Textarea padding y | `IN_USE` | `forms/src/lib/styles/_tokens.scss:95` |
+| `--hub-textarea-border-radius` | `var( --hub-input-border-radius )` | Textarea border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:180` |
+| `--hub-textarea-min-height` | `4.5rem` | Textarea min height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:181` |
+| `--hub-textarea-padding-x` | `var(--hub-input-padding-x)` | Textarea padding x | `IN_USE` | `forms/src/lib/styles/_tokens.scss:178` |
+| `--hub-textarea-padding-y` | `var(--hub-input-padding-y)` | Textarea padding y | `IN_USE` | `forms/src/lib/styles/_tokens.scss:179` |
 | `--hub-input-color-size` | `2.5rem` | Color input swatch size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:91` |
 | `--hub-input-counter-button-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Counter stepper button background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:86` |
 | `--hub-input-counter-button-color` | `var(--hub-sys-text-primary, #212529)` | Counter stepper button color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:87` |
@@ -977,6 +977,77 @@ The `detail` token set is defined as a single, standardized collection that supp
 | `--hub-input-clear-size` | `var(--hub-ref-font-size-base, 1rem)` | Clear button size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:81` |
 | `--hub-input-clear-color` | `var(--hub-sys-text-muted, #6c757d)` | Clear button color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:82` |
 | `--hub-input-clear-hover-color` | `var(--hub-sys-color-danger, #dc3545)` | Clear button color on hover/focus | `IN_USE` | `forms/src/lib/styles/_tokens.scss:83` |
+
+### `file input`
+
+| Token | Initial value | Usage | Status | Source |
+| ----- | ------------- | ----- | ------ | ------ |
+| `--hub-file-input-bg` | `var(--hub-sys-surface-page, #fff)` | Dropzone background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:95` |
+| `--hub-file-input-color` | `var(--hub-sys-text-primary, #212529)` | Dropzone text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:96` |
+| `--hub-file-input-border-width` | `var(--hub-ref-border-width, 1px)` | Dropzone border width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:97` |
+| `--hub-file-input-border-style` | `dashed` | Dropzone border style | `IN_USE` | `forms/src/lib/styles/_tokens.scss:98` |
+| `--hub-file-input-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Dropzone border color at rest | `IN_USE` | `forms/src/lib/styles/_tokens.scss:99` |
+| `--hub-file-input-border-radius` | `var(--hub-input-border-radius)` | Dropzone corner radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:100` |
+| `--hub-file-input-padding-x` | `var(--hub-ref-space-3, 1rem)` | Dropzone horizontal padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:101` |
+| `--hub-file-input-padding-y` | `var(--hub-ref-space-4, 1.5rem)` | Dropzone vertical padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:102` |
+| `--hub-file-input-min-height` | `7rem` | Dropzone minimum height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:103` |
+| `--hub-file-input-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gutter between dropzone icon, prompt and hint | `IN_USE` | `forms/src/lib/styles/_tokens.scss:104` |
+| `--hub-file-input-transition` | `var(--hub-form-transition)` | Dropzone and action-button transition | `IN_USE` | `forms/src/lib/styles/_tokens.scss:105` |
+| `--hub-file-input-hover-border-color` | `var(--hub-sys-color-primary, #0d6efd)` | Dropzone border color on hover | `IN_USE` | `forms/src/lib/styles/_tokens.scss:106` |
+| `--hub-file-input-hover-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Dropzone background on hover | `IN_USE` | `forms/src/lib/styles/_tokens.scss:107` |
+| `--hub-file-input-dragover-bg` | `color-mix(in oklch, var(--hub-sys-color-primary, #0d6efd) 8%, transparent)` | Dropzone background while a drag hovers it | `IN_USE` | `forms/src/lib/styles/_tokens.scss:108` |
+| `--hub-file-input-dragover-border-color` | `var(--hub-sys-color-primary, #0d6efd)` | Dropzone border color while a drag hovers it | `IN_USE` | `forms/src/lib/styles/_tokens.scss:109` |
+| `--hub-file-input-focus-border-color` | `var(--hub-input-focus-border-color)` | Dropzone border color on keyboard focus | `IN_USE` | `forms/src/lib/styles/_tokens.scss:110` |
+| `--hub-file-input-focus-box-shadow` | `var(--hub-input-focus-box-shadow)` | Dropzone focus ring | `IN_USE` | `forms/src/lib/styles/_tokens.scss:111` |
+| `--hub-file-input-prompt-color` | `var(--hub-sys-text-muted, #6c757d)` | Drop-invitation text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:114` |
+| `--hub-file-input-prompt-font-size` | `var(--hub-ref-font-size-base, 1rem)` | Drop-invitation font size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:115` |
+| `--hub-file-input-browse-color` | `var(--hub-sys-color-primary, #0d6efd)` | Browse-action text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:116` |
+| `--hub-file-input-browse-font-weight` | `var(--hub-ref-font-weight-medium, 500)` | Browse-action font weight | `IN_USE` | `forms/src/lib/styles/_tokens.scss:117` |
+| `--hub-file-input-hint-color` | `var(--hub-sys-text-muted, #6c757d)` | Constraints-hint text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:118` |
+| `--hub-file-input-hint-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Constraints-hint font size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:119` |
+| `--hub-file-input-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5'/%3E%3Cpath fill='black' d='M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z'/%3E%3C/svg%3E")` | Upload glyph of the dropzone as a mask image | `IN_USE` | `forms/src/lib/styles/_tokens.scss:124` |
+| `--hub-file-input-icon-size` | `2rem` | Upload glyph size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:125` |
+| `--hub-file-input-icon-color` | `var(--hub-sys-text-muted, #6c757d)` | Upload glyph tint | `IN_USE` | `forms/src/lib/styles/_tokens.scss:126` |
+| `--hub-file-input-file-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.414A1.5 1.5 0 0 0 13.56 3.35L10.65.44A1.5 1.5 0 0 0 9.586 0zm5.5 1.5v2a1 1 0 0 0 1 1h2z'/%3E%3C/svg%3E")` | Per-file glyph (files with no thumbnail) as a mask image | `IN_USE` | `forms/src/lib/styles/_tokens.scss:127` |
+| `--hub-file-input-file-icon-size` | `1.5rem` | Per-file glyph size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:128` |
+| `--hub-file-input-file-icon-color` | `var(--hub-sys-text-muted, #6c757d)` | Per-file glyph tint | `IN_USE` | `forms/src/lib/styles/_tokens.scss:129` |
+| `--hub-file-input-remove-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E")` | Remove-file button glyph as a mask image | `IN_USE` | `forms/src/lib/styles/_tokens.scss:130` |
+| `--hub-file-input-cancel-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M5 3.5h6a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5'/%3E%3C/svg%3E")` | Cancel-upload button glyph as a mask image | `IN_USE` | `forms/src/lib/styles/_tokens.scss:131` |
+| `--hub-file-input-retry-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z'/%3E%3Cpath fill='black' d='M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466'/%3E%3C/svg%3E")` | Retry-upload button glyph as a mask image | `IN_USE` | `forms/src/lib/styles/_tokens.scss:132` |
+| `--hub-file-input-done-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='black' stroke-width='2' d='M3 8.5 6.5 12 13 4.5'/%3E%3C/svg%3E")` | Finished-upload tick as a mask image | `IN_USE` | `forms/src/lib/styles/_tokens.scss:133` |
+| `--hub-file-input-done-color` | `var(--hub-sys-color-success, #198754)` | Finished-upload tick and item border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:134` |
+| `--hub-file-input-action-size` | `1rem` | Per-file action button size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:137` |
+| `--hub-file-input-action-color` | `var(--hub-sys-text-muted, #6c757d)` | Per-file action button tint | `IN_USE` | `forms/src/lib/styles/_tokens.scss:138` |
+| `--hub-file-input-action-hover-color` | `var(--hub-sys-text-primary, #212529)` | Per-file action button tint on hover | `IN_USE` | `forms/src/lib/styles/_tokens.scss:139` |
+| `--hub-file-input-remove-hover-color` | `var(--hub-sys-color-danger, #dc3545)` | Remove button tint on hover | `IN_USE` | `forms/src/lib/styles/_tokens.scss:140` |
+| `--hub-file-input-list-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gutter between file rows | `IN_USE` | `forms/src/lib/styles/_tokens.scss:143` |
+| `--hub-file-input-list-margin-top` | `var(--hub-ref-space-2, 0.5rem)` | Space between the dropzone and the file list | `IN_USE` | `forms/src/lib/styles/_tokens.scss:144` |
+| `--hub-file-input-item-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | File row/tile background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:145` |
+| `--hub-file-input-item-color` | `var(--hub-sys-text-primary, #212529)` | File row/tile text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:146` |
+| `--hub-file-input-item-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | File row/tile border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:147` |
+| `--hub-file-input-item-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | File row/tile corner radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:148` |
+| `--hub-file-input-item-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | File row/tile horizontal padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:149` |
+| `--hub-file-input-item-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | File row/tile vertical padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:150` |
+| `--hub-file-input-item-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gutter between thumbnail, metadata and actions | `IN_USE` | `forms/src/lib/styles/_tokens.scss:151` |
+| `--hub-file-input-name-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | File name font size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:152` |
+| `--hub-file-input-size-color` | `var(--hub-sys-text-muted, #6c757d)` | File size text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:153` |
+| `--hub-file-input-size-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | File size font size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:154` |
+| `--hub-file-input-error-color` | `var(--hub-sys-color-danger, #dc3545)` | Failed-upload message and item border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:155` |
+| `--hub-file-input-error-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Failed-upload message font size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:156` |
+| `--hub-file-input-clear-color` | `var(--hub-sys-text-muted, #6c757d)` | Remove-all button text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:157` |
+| `--hub-file-input-clear-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Remove-all button font size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:158` |
+| `--hub-file-input-thumb-size` | `2.5rem` | Thumbnail size in list preview | `IN_USE` | `forms/src/lib/styles/_tokens.scss:161` |
+| `--hub-file-input-thumb-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Thumbnail corner radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:162` |
+| `--hub-file-input-thumb-bg` | `var(--hub-sys-surface-page, #fff)` | Thumbnail background behind a transparent image | `IN_USE` | `forms/src/lib/styles/_tokens.scss:163` |
+| `--hub-file-input-grid-min-width` | `8rem` | Minimum tile width in grid preview | `IN_USE` | `forms/src/lib/styles/_tokens.scss:166` |
+| `--hub-file-input-grid-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gutter between tiles in grid preview | `IN_USE` | `forms/src/lib/styles/_tokens.scss:167` |
+| `--hub-file-input-grid-thumb-height` | `6rem` | Thumbnail height in grid preview | `IN_USE` | `forms/src/lib/styles/_tokens.scss:168` |
+| `--hub-file-input-progress-height` | `0.25rem` | Upload progress bar thickness | `IN_USE` | `forms/src/lib/styles/_tokens.scss:171` |
+| `--hub-file-input-progress-radius` | `var(--hub-ref-radius-pill, 50rem)` | Upload progress bar corner radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:172` |
+| `--hub-file-input-progress-track-bg` | `var(--hub-sys-border-color-default, #dee2e6)` | Upload progress bar track color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:173` |
+| `--hub-file-input-progress-bar-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Upload progress bar fill color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:174` |
+| `--hub-file-input-progress-indeterminate-duration` | `1.2s` | Sweep duration when the upload total is unknown | `IN_USE` | `forms/src/lib/styles/_tokens.scss:175` |
+| `--hub-file-input-progress-value` | runtime (0–100) | Current upload percentage driving the progress bar width | `INTERNAL` | `forms/src/lib/components/file-input/file-input.component.scss:202` |
 
 ### `badges`
 
@@ -1115,44 +1186,44 @@ The `detail` token set is defined as a single, standardized collection that supp
 
 | Token                                              | Initial value                                                                                                                                                                                                                     | Usage                                                                                                                                                                                                                                                          | Status    | Source                                    |
 | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------------------------------------- |
-| `--hub-select-arrow-color` | `var(--hub-sys-text-muted, #6c757d)` | Select arrow color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:157` |
-| `--hub-select-bg` | `var(--hub-input-bg)` | Select bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:147` |
-| `--hub-select-border-color` | `var( --hub-input-border-color )` | Select border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:150` |
-| `--hub-select-border-radius` | `var( --hub-input-border-radius )` | Select border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:151` |
-| `--hub-select-border-width` | `var( --hub-input-border-width )` | Select border width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:149` |
-| `--hub-select-clear-color` | `var(--hub-sys-text-muted, #6c757d)` | Select clear color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:158` |
-| `--hub-select-clear-hover-color` | `var(--hub-sys-color-danger, #dc3545)` | Select clear hover color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:159` |
-| `--hub-select-color` | `var(--hub-input-color)` | Select color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:146` |
-| `--hub-select-dropdown-bg` | `var(--hub-sys-surface-page, #fff)` | Select dropdown bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:172` |
-| `--hub-select-dropdown-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Select dropdown border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:173` |
-| `--hub-select-dropdown-border-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Select dropdown border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:174` |
-| `--hub-select-dropdown-box-shadow` | `var(--hub-sys-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15))` | Select dropdown box shadow | `IN_USE` | `forms/src/lib/styles/_tokens.scss:175` |
-| `--hub-select-focus-border-color` | `var( --hub-input-focus-border-color )` | Select focus border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:152` |
-| `--hub-select-focus-box-shadow` | `var( --hub-input-focus-box-shadow )` | Select focus box shadow | `IN_USE` | `forms/src/lib/styles/_tokens.scss:153` |
-| `--hub-select-font-size` | `var(--hub-input-font-size)` | Select font size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:148` |
-| `--hub-select-option-color` | `var(--hub-sys-text-primary, #212529)` | Select option color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:160` |
-| `--hub-select-option-marked-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Select option marked bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:163` |
-| `--hub-select-option-padding-x` | `var(--hub-ref-space-3, 1rem)` | Select option padding x | `IN_USE` | `forms/src/lib/styles/_tokens.scss:161` |
-| `--hub-select-option-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Select option padding y | `IN_USE` | `forms/src/lib/styles/_tokens.scss:162` |
-| `--hub-select-option-selected-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Select option selected bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:164` |
-| `--hub-select-option-selected-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Select option selected color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:167` |
-| `--hub-select-padding-x` | `var(--hub-input-padding-x)` | Select padding x | `IN_USE` | `forms/src/lib/styles/_tokens.scss:155` |
-| `--hub-select-placeholder-color` | `var( --hub-input-placeholder-color )` | Select placeholder color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:154` |
-| `--hub-select-value-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Select value bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:169` |
-| `--hub-select-value-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Select value border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:171` |
-| `--hub-select-value-color` | `var(--hub-sys-text-primary, #212529)` | Select value color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:170` |
-| `--hub-select-button-bg` | `var(--hub-sys-surface-page, #fff)` | Segmented select button background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:211` |
-| `--hub-select-button-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Segmented select button border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:213` |
-| `--hub-select-button-color` | `var(--hub-sys-text-primary, #212529)` | Segmented select button text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:212` |
-| `--hub-select-button-gap` | `var(--hub-ref-space-2, 0.5rem)` | Segmented select button gap | `IN_USE` | `forms/src/lib/styles/_tokens.scss:216` |
-| `--hub-select-button-padding-x` | `var(--hub-ref-space-3, 1rem)` | Segmented select button horizontal padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:214` |
-| `--hub-select-button-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Segmented select button vertical padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:215` |
-| `--hub-select-button-selected-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Selected segmented button background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:217` |
-| `--hub-select-button-selected-border-color` | `var(--hub-sys-color-primary, #0d6efd)` | Selected segmented button border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:220` |
-| `--hub-select-button-selected-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Selected segmented button text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:219` |
-| `--hub-select-min-height` | `2.5rem` | Select control minimum height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:156` |
-| `--hub-select-optgroup-color` | `var(--hub-sys-text-muted, #6c757d)` | Select option group label color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:168` |
-| `--hub-select-dropdown-z-index` | `calc(var(--hub-sys-zindex-modal, 1055) + 5)` | Stacking of the ng-select dropdown panel; sits above HubModal so a select inside a modal is not clipped | `IN_USE` | `forms/src/lib/styles/_tokens.scss:180` |
+| `--hub-select-arrow-color` | `var(--hub-sys-text-muted, #6c757d)` | Select arrow color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:241` |
+| `--hub-select-bg` | `var(--hub-input-bg)` | Select bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:231` |
+| `--hub-select-border-color` | `var( --hub-input-border-color )` | Select border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:234` |
+| `--hub-select-border-radius` | `var( --hub-input-border-radius )` | Select border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:235` |
+| `--hub-select-border-width` | `var( --hub-input-border-width )` | Select border width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:233` |
+| `--hub-select-clear-color` | `var(--hub-sys-text-muted, #6c757d)` | Select clear color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:242` |
+| `--hub-select-clear-hover-color` | `var(--hub-sys-color-danger, #dc3545)` | Select clear hover color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:243` |
+| `--hub-select-color` | `var(--hub-input-color)` | Select color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:230` |
+| `--hub-select-dropdown-bg` | `var(--hub-sys-surface-page, #fff)` | Select dropdown bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:256` |
+| `--hub-select-dropdown-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Select dropdown border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:257` |
+| `--hub-select-dropdown-border-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Select dropdown border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:258` |
+| `--hub-select-dropdown-box-shadow` | `var(--hub-sys-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15))` | Select dropdown box shadow | `IN_USE` | `forms/src/lib/styles/_tokens.scss:259` |
+| `--hub-select-focus-border-color` | `var( --hub-input-focus-border-color )` | Select focus border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:236` |
+| `--hub-select-focus-box-shadow` | `var( --hub-input-focus-box-shadow )` | Select focus box shadow | `IN_USE` | `forms/src/lib/styles/_tokens.scss:237` |
+| `--hub-select-font-size` | `var(--hub-input-font-size)` | Select font size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:232` |
+| `--hub-select-option-color` | `var(--hub-sys-text-primary, #212529)` | Select option color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:244` |
+| `--hub-select-option-marked-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Select option marked bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:247` |
+| `--hub-select-option-padding-x` | `var(--hub-ref-space-3, 1rem)` | Select option padding x | `IN_USE` | `forms/src/lib/styles/_tokens.scss:245` |
+| `--hub-select-option-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Select option padding y | `IN_USE` | `forms/src/lib/styles/_tokens.scss:246` |
+| `--hub-select-option-selected-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Select option selected bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:248` |
+| `--hub-select-option-selected-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Select option selected color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:251` |
+| `--hub-select-padding-x` | `var(--hub-input-padding-x)` | Select padding x | `IN_USE` | `forms/src/lib/styles/_tokens.scss:239` |
+| `--hub-select-placeholder-color` | `var( --hub-input-placeholder-color )` | Select placeholder color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:238` |
+| `--hub-select-value-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Select value bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:253` |
+| `--hub-select-value-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Select value border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:255` |
+| `--hub-select-value-color` | `var(--hub-sys-text-primary, #212529)` | Select value color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:254` |
+| `--hub-select-button-bg` | `var(--hub-sys-surface-page, #fff)` | Segmented select button background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:295` |
+| `--hub-select-button-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Segmented select button border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:297` |
+| `--hub-select-button-color` | `var(--hub-sys-text-primary, #212529)` | Segmented select button text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:296` |
+| `--hub-select-button-gap` | `var(--hub-ref-space-2, 0.5rem)` | Segmented select button gap | `IN_USE` | `forms/src/lib/styles/_tokens.scss:300` |
+| `--hub-select-button-padding-x` | `var(--hub-ref-space-3, 1rem)` | Segmented select button horizontal padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:298` |
+| `--hub-select-button-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Segmented select button vertical padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:299` |
+| `--hub-select-button-selected-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Selected segmented button background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:301` |
+| `--hub-select-button-selected-border-color` | `var(--hub-sys-color-primary, #0d6efd)` | Selected segmented button border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:304` |
+| `--hub-select-button-selected-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Selected segmented button text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:303` |
+| `--hub-select-min-height` | `2.5rem` | Select control minimum height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:240` |
+| `--hub-select-optgroup-color` | `var(--hub-sys-text-muted, #6c757d)` | Select option group label color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:252` |
+| `--hub-select-dropdown-z-index` | `calc(var(--hub-sys-zindex-modal, 1055) + 5)` | Stacking of the ng-select dropdown panel; sits above HubModal so a select inside a modal is not clipped | `IN_USE` | `forms/src/lib/styles/_tokens.scss:264` |
 
 > **Superseded proposals (removed):** the former `--hub-select-btn-*` PENDING block shipped as the `--hub-select-button-*` tokens listed above, and the `--hub-select-checkbox-input-*` / `--hub-select-radio-input-*` proposals were dropped — option checkboxes/radios in the dropdown reuse the `check` component tokens (`--hub-check-*`, see [`check`](#check)), applied in `forms/src/lib/select/select.component.scss`.
 
@@ -1160,47 +1231,47 @@ The `detail` token set is defined as a single, standardized collection that supp
 
 | Token                                    | Initial value                                                                                                                                                              | Usage                                                                                                                                                                                                   | Status   | Source                                    |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------------------------------------- |
-| `--hub-check-input-bg` | `var(--hub-input-bg)` | Check input bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:102` |
-| `--hub-check-input-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Check input border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:104` |
-| `--hub-check-input-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Check input border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:105` |
-| `--hub-check-input-border-width` | `var(--hub-input-border-width)` | Check input border width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:103` |
-| `--hub-check-input-checked-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Check input checked bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:106` |
-| `--hub-check-input-checked-border-color` | `var(--hub-sys-color-primary, #0d6efd)` | Check input checked border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:107` |
-| `--hub-check-input-checked-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='2.5' d='M3 8.5 6.5 12 13 4.5'/%3E%3C/svg%3E")` | Check input checked icon | `IN_USE` | `forms/src/lib/styles/_tokens.scss:108` |
-| `--hub-check-input-height` | `1.15rem` | Check input height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:101` |
-| `--hub-check-input-width` | `1.15rem` | Check input width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:100` |
-| `--hub-check-radio-border-radius` | `50%` | Check radio border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:110` |
-| `--hub-check-label-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gap between check control and label | `IN_USE` | `forms/src/lib/styles/_tokens.scss:109` |
+| `--hub-check-input-bg` | `var(--hub-input-bg)` | Check input bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:186` |
+| `--hub-check-input-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Check input border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:188` |
+| `--hub-check-input-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Check input border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:189` |
+| `--hub-check-input-border-width` | `var(--hub-input-border-width)` | Check input border width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:187` |
+| `--hub-check-input-checked-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Check input checked bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:190` |
+| `--hub-check-input-checked-border-color` | `var(--hub-sys-color-primary, #0d6efd)` | Check input checked border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:191` |
+| `--hub-check-input-checked-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='2.5' d='M3 8.5 6.5 12 13 4.5'/%3E%3C/svg%3E")` | Check input checked icon | `IN_USE` | `forms/src/lib/styles/_tokens.scss:192` |
+| `--hub-check-input-height` | `1.15rem` | Check input height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:185` |
+| `--hub-check-input-width` | `1.15rem` | Check input width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:184` |
+| `--hub-check-radio-border-radius` | `50%` | Check radio border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:194` |
+| `--hub-check-label-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gap between check control and label | `IN_USE` | `forms/src/lib/styles/_tokens.scss:193` |
 
 ### `datepicker`
 
 | Token                            | Initial value                                                                                                                                                                                                                                                                                                            | Usage                                                                                                                                                                                                                                                                                                                                                 | Status   | Source                                    |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------------------------------------- |
-| `--hub-datepicker-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%236c757d' d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z'/%3E%3C/svg%3E")` | Datepicker icon | `IN_USE` | `forms/src/lib/styles/_tokens.scss:183` |
-| `--hub-datepicker-icon-size` | `1rem` | Datepicker icon size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:184` |
-| `--hub-datepicker-icon-width` | `2.5rem` | Datepicker icon width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:185` |
-| `--hub-daterangepicker-padding-x` | `var(--hub-ref-space-3, 1rem)` | Calendar panel horizontal padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:193` |
-| `--hub-daterangepicker-padding-y` | `var(--hub-ref-space-3, 1rem)` | Calendar panel vertical padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:194` |
+| `--hub-datepicker-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%236c757d' d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z'/%3E%3C/svg%3E")` | Datepicker icon | `IN_USE` | `forms/src/lib/styles/_tokens.scss:267` |
+| `--hub-datepicker-icon-size` | `1rem` | Datepicker icon size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:268` |
+| `--hub-datepicker-icon-width` | `2.5rem` | Datepicker icon width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:269` |
+| `--hub-daterangepicker-padding-x` | `var(--hub-ref-space-3, 1rem)` | Calendar panel horizontal padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:277` |
+| `--hub-daterangepicker-padding-y` | `var(--hub-ref-space-3, 1rem)` | Calendar panel vertical padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:278` |
 
 ### `daterangepicker`
 
 | Token                                           | Initial value                                               | Usage                                                             | Status   | Source                                    |
 | ----------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------------- | -------- | ----------------------------------------- |
-| `--hub-daterangepicker-active-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Daterangepicker active bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:199` |
-| `--hub-daterangepicker-active-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Daterangepicker active color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:201` |
-| `--hub-daterangepicker-bg` | `var(--hub-sys-surface-page, #fff)` | Daterangepicker bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:188` |
-| `--hub-daterangepicker-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Daterangepicker border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:190` |
-| `--hub-daterangepicker-border-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Daterangepicker border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:191` |
-| `--hub-daterangepicker-box-shadow` | `var(--hub-sys-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15))` | Daterangepicker box shadow | `IN_USE` | `forms/src/lib/styles/_tokens.scss:192` |
-| `--hub-daterangepicker-cell-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Daterangepicker cell border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:197` |
-| `--hub-daterangepicker-cell-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker cell color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:196` |
-| `--hub-daterangepicker-cell-hover-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Daterangepicker cell hover bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:198` |
-| `--hub-daterangepicker-cell-size` | `2rem` | Daterangepicker cell size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:195` |
-| `--hub-daterangepicker-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:189` |
-| `--hub-daterangepicker-in-range-bg` | `color-mix(in oklch, var(--hub-sys-color-primary, #0d6efd) 14%, transparent)` | Daterangepicker in range bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:205` |
-| `--hub-daterangepicker-nav-arrow-color` | `var(--hub-sys-text-muted, #6c757d)` | Daterangepicker nav arrow color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:207` |
-| `--hub-daterangepicker-nav-arrow-hover-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker nav arrow hover color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:208` |
-| `--hub-daterangepicker-off-color` | `var(--hub-sys-text-muted, #6c757d)` | Daterangepicker off color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:206` |
+| `--hub-daterangepicker-active-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Daterangepicker active bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:283` |
+| `--hub-daterangepicker-active-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Daterangepicker active color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:285` |
+| `--hub-daterangepicker-bg` | `var(--hub-sys-surface-page, #fff)` | Daterangepicker bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:272` |
+| `--hub-daterangepicker-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Daterangepicker border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:274` |
+| `--hub-daterangepicker-border-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Daterangepicker border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:275` |
+| `--hub-daterangepicker-box-shadow` | `var(--hub-sys-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15))` | Daterangepicker box shadow | `IN_USE` | `forms/src/lib/styles/_tokens.scss:276` |
+| `--hub-daterangepicker-cell-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Daterangepicker cell border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:281` |
+| `--hub-daterangepicker-cell-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker cell color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:280` |
+| `--hub-daterangepicker-cell-hover-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Daterangepicker cell hover bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:282` |
+| `--hub-daterangepicker-cell-size` | `2rem` | Daterangepicker cell size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:279` |
+| `--hub-daterangepicker-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:273` |
+| `--hub-daterangepicker-in-range-bg` | `color-mix(in oklch, var(--hub-sys-color-primary, #0d6efd) 14%, transparent)` | Daterangepicker in range bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:289` |
+| `--hub-daterangepicker-nav-arrow-color` | `var(--hub-sys-text-muted, #6c757d)` | Daterangepicker nav arrow color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:291` |
+| `--hub-daterangepicker-nav-arrow-hover-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker nav arrow hover color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:292` |
+| `--hub-daterangepicker-off-color` | `var(--hub-sys-text-muted, #6c757d)` | Daterangepicker off color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:290` |
 
 ### `label`
 
@@ -1215,33 +1286,33 @@ The `detail` token set is defined as a single, standardized collection that supp
 
 | Token                                 | Initial value                                       | Usage                                                                            | Status   | Source                                    |
 | ------------------------------------- | --------------------------------------------------- | -------------------------------------------------------------------------------- | -------- | ----------------------------------------- |
-| `--hub-slider-thumb-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Slider thumb bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:138` |
-| `--hub-slider-thumb-border` | `2px solid var(--hub-sys-surface-page, #fff)` | Slider thumb border | `IN_USE` | `forms/src/lib/styles/_tokens.scss:139` |
-| `--hub-slider-thumb-border-radius` | `50%` | Slider thumb border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:137` |
-| `--hub-slider-thumb-height` | `1.1rem` | Slider thumb height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:136` |
-| `--hub-slider-thumb-width` | `1.1rem` | Slider thumb width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:135` |
-| `--hub-slider-tooltip-bg` | `var(--hub-sys-text-primary, #212529)` | Slider tooltip bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:141` |
-| `--hub-slider-tooltip-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Slider tooltip border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:143` |
-| `--hub-slider-tooltip-color` | `var(--hub-sys-surface-page, #fff)` | Slider tooltip color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:142` |
-| `--hub-slider-track-bg` | `var(--hub-sys-border-color-default, #dee2e6)` | Slider track bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:123` |
-| `--hub-slider-track-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Slider track border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:122` |
-| `--hub-slider-track-height` | `0.375rem` | Slider track height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:121` |
-| `--hub-slider-track-width` | `100%` | Slider track width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:120` |
-| `--hub-slider-thumb-shadow` | `0 0 0 1px var(--hub-sys-border-color-default, #dee2e6)` | Slider thumb shadow ring | `IN_USE` | `forms/src/lib/styles/_tokens.scss:140` |
-| `--hub-slider-track-fill-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Slider filled track background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:124` |
+| `--hub-slider-thumb-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Slider thumb bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:222` |
+| `--hub-slider-thumb-border` | `2px solid var(--hub-sys-surface-page, #fff)` | Slider thumb border | `IN_USE` | `forms/src/lib/styles/_tokens.scss:223` |
+| `--hub-slider-thumb-border-radius` | `50%` | Slider thumb border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:221` |
+| `--hub-slider-thumb-height` | `1.1rem` | Slider thumb height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:220` |
+| `--hub-slider-thumb-width` | `1.1rem` | Slider thumb width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:219` |
+| `--hub-slider-tooltip-bg` | `var(--hub-sys-text-primary, #212529)` | Slider tooltip bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:225` |
+| `--hub-slider-tooltip-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Slider tooltip border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:227` |
+| `--hub-slider-tooltip-color` | `var(--hub-sys-surface-page, #fff)` | Slider tooltip color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:226` |
+| `--hub-slider-track-bg` | `var(--hub-sys-border-color-default, #dee2e6)` | Slider track bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:207` |
+| `--hub-slider-track-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Slider track border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:206` |
+| `--hub-slider-track-height` | `0.375rem` | Slider track height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:205` |
+| `--hub-slider-track-width` | `100%` | Slider track width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:204` |
+| `--hub-slider-thumb-shadow` | `0 0 0 1px var(--hub-sys-border-color-default, #dee2e6)` | Slider thumb shadow ring | `IN_USE` | `forms/src/lib/styles/_tokens.scss:224` |
+| `--hub-slider-track-fill-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Slider filled track background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:208` |
 | `--hub-slider-from` | runtime (0–100) | Start position of the range slider's filled track | `INTERNAL` | `forms/src/lib/components/slider/slider.component.html:8` |
 | `--hub-slider-to` | runtime (0–100) | End position of the range slider's filled track | `INTERNAL` | `forms/src/lib/components/slider/slider.component.html:9` |
 | `--hub-slider-percent` | runtime (0–100) | Current value position driving fill and thumb/tooltip | `INTERNAL` | `forms/src/lib/components/slider/slider.component.html:7` |
-| `--hub-slider-track-fill` | `linear-gradient(var(--hub-slider-track-fill-bg), var(--hub-slider-track-fill-bg))` | Gradient-capable fill background image for the slider track (clipped to the current percentage) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:131` |
+| `--hub-slider-track-fill` | `linear-gradient(var(--hub-slider-track-fill-bg), var(--hub-slider-track-fill-bg))` | Gradient-capable fill background image for the slider track (clipped to the current percentage) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:215` |
 | `--hub-slider-value-space` | `0` | Vertical headroom above the rail for the value bubble; collapsed to 0 by the flush (labelless) modifier | `IN_USE` | `forms/src/lib/components/slider/slider.component.scss:21` |
-| `--hub-segmented-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Vertical padding of each segment (md) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:234` |
-| `--hub-segmented-padding-x` | `var(--hub-ref-space-3, 1rem)` | Horizontal padding of each segment (md) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:233` |
-| `--hub-segmented-gap` | `0.25rem` | Gap between segments and inner track padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:232` |
-| `--hub-segmented-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Corner radius of the hub-segmented track | `IN_USE` | `forms/src/lib/styles/_tokens.scss:231` |
-| `--hub-segmented-selected-color` | `var(--hub-sys-text-primary, #212529)` | Selected segment text colour | `IN_USE` | `forms/src/lib/styles/_tokens.scss:230` |
-| `--hub-segmented-selected-bg` | `var(--hub-sys-surface-page, #fff)` | Selected segment background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:229` |
-| `--hub-segmented-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Track background of the hub-segmented bar | `IN_USE` | `forms/src/lib/styles/_tokens.scss:223` |
-| `--hub-segmented-indicator-transition` | `0.2s ease` | Duration/easing of the single-mode sliding indicator as it moves between options | `IN_USE` | `forms/src/lib/styles/_tokens.scss:236` |
+| `--hub-segmented-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Vertical padding of each segment (md) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:318` |
+| `--hub-segmented-padding-x` | `var(--hub-ref-space-3, 1rem)` | Horizontal padding of each segment (md) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:317` |
+| `--hub-segmented-gap` | `0.25rem` | Gap between segments and inner track padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:316` |
+| `--hub-segmented-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Corner radius of the hub-segmented track | `IN_USE` | `forms/src/lib/styles/_tokens.scss:315` |
+| `--hub-segmented-selected-color` | `var(--hub-sys-text-primary, #212529)` | Selected segment text colour | `IN_USE` | `forms/src/lib/styles/_tokens.scss:314` |
+| `--hub-segmented-selected-bg` | `var(--hub-sys-surface-page, #fff)` | Selected segment background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:313` |
+| `--hub-segmented-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Track background of the hub-segmented bar | `IN_USE` | `forms/src/lib/styles/_tokens.scss:307` |
+| `--hub-segmented-indicator-transition` | `0.2s ease` | Duration/easing of the single-mode sliding indicator as it moves between options | `IN_USE` | `forms/src/lib/styles/_tokens.scss:320` |
 | `--hub-segmented-indicator-x` | `—` | Internal runtime X offset of the sliding indicator (set from the selected option's measured geometry) | `INTERNAL` | `forms/src/lib/components/segmented/segmented.component.scss:27` |
 | `--hub-segmented-indicator-y` | `—` | Internal runtime Y offset of the sliding indicator (set from the selected option's measured geometry) | `INTERNAL` | `forms/src/lib/components/segmented/segmented.component.scss:28` |
 | `--hub-segmented-indicator-width` | `—` | Internal runtime width of the sliding indicator (set from the selected option's measured geometry) | `INTERNAL` | `forms/src/lib/components/segmented/segmented.component.scss:29` |
@@ -1250,11 +1321,11 @@ The `detail` token set is defined as a single, standardized collection that supp
 
 | Token                     | Initial value                                                                                                                                            | Usage                                                                                                                                                                                 | Status   | Source                                    |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------------------------------------- |
-| `--hub-switch-height` | `1.25rem` | Switch height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:114` |
-| `--hub-switch-width` | `2.25rem` | Switch width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:113` |
-| `--hub-switch-thumb` | `var(--hub-sys-surface-page, #fff)` | Switch thumb color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:117` |
-| `--hub-switch-track-off` | `var(--hub-sys-border-color-default, #dee2e6)` | Switch off-state track color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:115` |
-| `--hub-switch-track-on` | `var(--hub-sys-color-primary, #0d6efd)` | Switch on-state track color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:116` |
+| `--hub-switch-height` | `1.25rem` | Switch height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:198` |
+| `--hub-switch-width` | `2.25rem` | Switch width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:197` |
+| `--hub-switch-thumb` | `var(--hub-sys-surface-page, #fff)` | Switch thumb color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:201` |
+| `--hub-switch-track-off` | `var(--hub-sys-border-color-default, #dee2e6)` | Switch off-state track color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:199` |
+| `--hub-switch-track-on` | `var(--hub-sys-color-primary, #0d6efd)` | Switch on-state track color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:200` |
 
 ### `otp`
 
@@ -2108,7 +2179,7 @@ The navigation strip is **semantic-accent aware**: a single `--hub-panels-accent
 | `--hub-panels-tab-padding-x` | `var(--hub-panels-nav-link-padding-x)` | Tab horizontal padding | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:62` |
 | `--hub-panels-tab-padding-y` | `var(--hub-panels-nav-link-padding-y)` | Tab vertical padding | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:63` |
 | `--hub-panels-tab-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Tab state transition | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:85` |
-| `--hub-panels-multiple-vertical-panel-min-width` | runtime (`0px`) | Min content width per `multiple + vertical` block, from the measured header height | `INTERNAL` | `panels/src/lib/components/panels/panels.component.ts:748` |
+| `--hub-panels-multiple-vertical-panel-min-width` | runtime (`0px`) | Min content width per `multiple + vertical` block, from the measured header height | `INTERNAL` | `panels/src/lib/components/panels/panels.component.ts:762` |
 | `--hub-tabs-gap` | `0` | Gap between tabs in the <hub-tab-nav> strip | `IN_USE` | `panels/src/lib/components/tab-nav/tab-nav.component.scss:18` |
 | `--hub-tabs-indicator-color` | `var(--hub-panels-accent, var(--hub-sys-color-primary, #0d6efd))` | Active-tab underline / active-pill fill colour for <hub-tab-nav> | `IN_USE` | `panels/src/lib/components/tab-nav/tab-nav.component.scss:16` |
 ### `milestones`
