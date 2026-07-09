@@ -18,7 +18,7 @@
 /// page surface (`body`) or `transparent`. The colour is emitted through
 /// `--hub-bg-opacity` (default 1), so `.bg-opacity-*` (or a local override of
 /// that property) fades it without extra classes.
-/// @param {String} $variant  Accent name, or body | transparent.
+/// @param {String} $variant  Accent name, or body | body-secondary | body-tertiary | transparent.
 /// @param {Boolean} $subtle  Use the accent's `-subtle` tint.
 @mixin bg($variant: body, $subtle: false) {
 	@if $variant == transparent {
@@ -27,6 +27,12 @@
 		$color: var(--hub-sys-color-#{$variant});
 		@if $variant == body {
 			$color: var(--hub-sys-surface-page);
+		} @else if $variant == body-tertiary {
+			$color: var(--hub-sys-surface-elevated);
+		} @else if $variant == body-secondary {
+			// One step past the elevated surface, toward the theme's ink — so it
+			// darkens on a light theme and lightens on a dark one.
+			$color: color-mix(in oklch, var(--hub-sys-surface-elevated) 92%, var(--hub-sys-color-ink));
 		} @else if $subtle {
 			$color: var(--hub-sys-color-#{$variant}-subtle);
 		}
@@ -42,17 +48,24 @@
 	color: var(--hub-sys-color-#{$variant}-on);
 }
 
-/// Solid border on all sides, token-driven colour.
+/// Solid border on all sides, token-driven colour. The colour is emitted through
+/// `--hub-border-opacity` (default 1), so `.border-opacity-*` fades it.
 /// @param {Number} $width  Border width.
 /// @param {String} $color  Any CSS colour; defaults to the canonical border token.
 @mixin border($width: 1px, $color: var(--hub-sys-border-color-default)) {
-	border: $width solid $color;
+	border: $width solid color-mix(in srgb, #{$color} calc(var(--hub-border-opacity, 1) * 100%), transparent);
 }
 
-/// Border colour from an accent of the open map (keeps width/style untouched).
+/// Border colour from an accent of the open map (keeps width/style untouched),
+/// honouring `--hub-border-opacity`.
 /// @param {String} $variant  Accent name of the open map.
-@mixin border-color($variant: primary) {
-	border-color: var(--hub-sys-color-#{$variant});
+/// @param {Boolean} $subtle  Use the accent's `-border-subtle` tint.
+@mixin border-color($variant: primary, $subtle: false) {
+	$color: var(--hub-sys-color-#{$variant});
+	@if $subtle {
+		$color: var(--hub-sys-color-#{$variant}-border-subtle);
+	}
+	border-color: color-mix(in srgb, #{$color} calc(var(--hub-border-opacity, 1) * 100%), transparent);
 }
 
 /// Corner radius from the canonical scale.

@@ -98,6 +98,34 @@
 	}
 }
 
+/* ── Size ──
+ * `.small` is Bootstrap-exact: RELATIVE (`em`), so it shrinks against whatever
+ * it sits in — `.small` inside an `<h2>` stays proportional to the heading.
+ * `.large` is its missing counterpart. Neither is a token step: when you want a
+ * fixed rung of the scale, reach for `.fs-sm` / `.fs-lg` below.
+ */
+.small {
+	font-size: 0.875em;
+}
+.large {
+	font-size: 1.25em;
+}
+
+/* The canonical token steps — absolute, and they follow a re-themed
+   `--hub-ref-font-size-*` like everything else. */
+.fs-xs {
+	@include typo.font-size(xs);
+}
+.fs-sm {
+	@include typo.font-size(sm);
+}
+.fs-base {
+	@include typo.font-size(base);
+}
+.fs-lg {
+	@include typo.font-size(lg);
+}
+
 /* ── Line height ── */
 .lh-1 {
 	@include typo.line-height(1);
@@ -124,9 +152,25 @@ $_accents: primary, secondary, success, danger, warning, info, neutral, light, d
 	.text-#{$variant} {
 		@include typo.text-color($variant);
 	}
+	/* The accent driven toward the theme's ink — legible as body copy on a
+	   `-subtle` background of the same accent. */
+	.text-#{$variant}-emphasis {
+		@include typo.text-color(#{$variant}-emphasis);
+	}
 }
+/* The document de-emphasis ramp. Reach for these — not `.text-secondary`, which
+   is the brand ACCENT — when you mean "quieter body text". */
 .text-body {
 	@include typo.text-color(body);
+}
+.text-body-emphasis {
+	@include typo.text-color(body-emphasis);
+}
+.text-body-secondary {
+	@include typo.text-color(body-secondary);
+}
+.text-body-tertiary {
+	@include typo.text-color(body-tertiary);
 }
 .text-muted {
 	@include typo.text-color(muted);
@@ -136,6 +180,12 @@ $_accents: primary, secondary, success, danger, warning, info, neutral, light, d
 }
 .text-black {
 	color: #000;
+}
+.text-white-50 {
+	color: rgba(255, 255, 255, 0.5);
+}
+.text-black-50 {
+	color: rgba(0, 0, 0, 0.5);
 }
 .text-reset {
 	color: inherit;
@@ -160,6 +210,22 @@ $_accents: primary, secondary, success, danger, warning, info, neutral, light, d
 	.link-#{$variant} {
 		@include typo.link-color($variant);
 	}
+}
+/* Fades the link's own colour (feeds the --hub-link-opacity hook of .link-*). */
+.link-opacity-10 {
+	--hub-link-opacity: 0.1;
+}
+.link-opacity-25 {
+	--hub-link-opacity: 0.25;
+}
+.link-opacity-50 {
+	--hub-link-opacity: 0.5;
+}
+.link-opacity-75 {
+	--hub-link-opacity: 0.75;
+}
+.link-opacity-100 {
+	--hub-link-opacity: 1;
 }
 .link-underline {
 	text-decoration: underline;

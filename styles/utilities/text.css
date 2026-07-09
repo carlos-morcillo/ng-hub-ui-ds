@@ -149,6 +149,38 @@
   font-size: calc(var(--hub-ref-font-size-base) * 1);
 }
 
+/* ── Size ──
+ * `.small` is Bootstrap-exact: RELATIVE (`em`), so it shrinks against whatever
+ * it sits in — `.small` inside an `<h2>` stays proportional to the heading.
+ * `.large` is its missing counterpart. Neither is a token step: when you want a
+ * fixed rung of the scale, reach for `.fs-sm` / `.fs-lg` below.
+ */
+.small {
+  font-size: 0.875em;
+}
+
+.large {
+  font-size: 1.25em;
+}
+
+/* The canonical token steps — absolute, and they follow a re-themed
+   `--hub-ref-font-size-*` like everything else. */
+.fs-xs {
+  font-size: var(--hub-ref-font-size-xs);
+}
+
+.fs-sm {
+  font-size: var(--hub-ref-font-size-sm);
+}
+
+.fs-base {
+  font-size: var(--hub-ref-font-size-base);
+}
+
+.fs-lg {
+  font-size: var(--hub-ref-font-size-lg);
+}
+
 /* ── Line height ── */
 .lh-1 {
   line-height: 1;
@@ -176,40 +208,108 @@
   color: color-mix(in srgb, var(--hub-sys-color-primary) calc(var(--hub-text-opacity, 1) * 100%), transparent);
 }
 
+/* The accent driven toward the theme's ink — legible as body copy on a
+   `-subtle` background of the same accent. */
+.text-primary-emphasis {
+  color: color-mix(in srgb, var(--hub-sys-color-primary-emphasis) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
 .text-secondary {
   color: color-mix(in srgb, var(--hub-sys-color-secondary) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+/* The accent driven toward the theme's ink — legible as body copy on a
+   `-subtle` background of the same accent. */
+.text-secondary-emphasis {
+  color: color-mix(in srgb, var(--hub-sys-color-secondary-emphasis) calc(var(--hub-text-opacity, 1) * 100%), transparent);
 }
 
 .text-success {
   color: color-mix(in srgb, var(--hub-sys-color-success) calc(var(--hub-text-opacity, 1) * 100%), transparent);
 }
 
+/* The accent driven toward the theme's ink — legible as body copy on a
+   `-subtle` background of the same accent. */
+.text-success-emphasis {
+  color: color-mix(in srgb, var(--hub-sys-color-success-emphasis) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
 .text-danger {
   color: color-mix(in srgb, var(--hub-sys-color-danger) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+/* The accent driven toward the theme's ink — legible as body copy on a
+   `-subtle` background of the same accent. */
+.text-danger-emphasis {
+  color: color-mix(in srgb, var(--hub-sys-color-danger-emphasis) calc(var(--hub-text-opacity, 1) * 100%), transparent);
 }
 
 .text-warning {
   color: color-mix(in srgb, var(--hub-sys-color-warning) calc(var(--hub-text-opacity, 1) * 100%), transparent);
 }
 
+/* The accent driven toward the theme's ink — legible as body copy on a
+   `-subtle` background of the same accent. */
+.text-warning-emphasis {
+  color: color-mix(in srgb, var(--hub-sys-color-warning-emphasis) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
 .text-info {
   color: color-mix(in srgb, var(--hub-sys-color-info) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+/* The accent driven toward the theme's ink — legible as body copy on a
+   `-subtle` background of the same accent. */
+.text-info-emphasis {
+  color: color-mix(in srgb, var(--hub-sys-color-info-emphasis) calc(var(--hub-text-opacity, 1) * 100%), transparent);
 }
 
 .text-neutral {
   color: color-mix(in srgb, var(--hub-sys-color-neutral) calc(var(--hub-text-opacity, 1) * 100%), transparent);
 }
 
+/* The accent driven toward the theme's ink — legible as body copy on a
+   `-subtle` background of the same accent. */
+.text-neutral-emphasis {
+  color: color-mix(in srgb, var(--hub-sys-color-neutral-emphasis) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
 .text-light {
   color: color-mix(in srgb, var(--hub-sys-color-light) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+/* The accent driven toward the theme's ink — legible as body copy on a
+   `-subtle` background of the same accent. */
+.text-light-emphasis {
+  color: color-mix(in srgb, var(--hub-sys-color-light-emphasis) calc(var(--hub-text-opacity, 1) * 100%), transparent);
 }
 
 .text-dark {
   color: color-mix(in srgb, var(--hub-sys-color-dark) calc(var(--hub-text-opacity, 1) * 100%), transparent);
 }
 
+/* The accent driven toward the theme's ink — legible as body copy on a
+   `-subtle` background of the same accent. */
+.text-dark-emphasis {
+  color: color-mix(in srgb, var(--hub-sys-color-dark-emphasis) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+/* The document de-emphasis ramp. Reach for these — not `.text-secondary`, which
+   is the brand ACCENT — when you mean "quieter body text". */
 .text-body {
   color: color-mix(in srgb, var(--hub-sys-text-primary) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+.text-body-emphasis {
+  color: color-mix(in srgb, var(--hub-sys-text-emphasis, var(--hub-sys-text-primary)) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+.text-body-secondary {
+  color: color-mix(in srgb, var(--hub-sys-text-secondary, var(--hub-sys-text-muted)) calc(var(--hub-text-opacity, 1) * 100%), transparent);
+}
+
+.text-body-tertiary {
+  color: color-mix(in srgb, var(--hub-sys-text-tertiary, var(--hub-sys-text-muted)) calc(var(--hub-text-opacity, 1) * 100%), transparent);
 }
 
 .text-muted {
@@ -222,6 +322,14 @@
 
 .text-black {
   color: #000;
+}
+
+.text-white-50 {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.text-black-50 {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .text-reset {
@@ -247,84 +355,105 @@
 
 /* ── Link utilities ── */
 .link-primary {
-  color: var(--hub-sys-color-primary);
+  color: color-mix(in srgb, var(--hub-sys-color-primary) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-primary) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 .link-primary:hover, .link-primary:focus {
-  color: var(--hub-sys-color-primary-emphasis);
+  color: color-mix(in srgb, var(--hub-sys-color-primary-emphasis) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-primary-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 
 .link-secondary {
-  color: var(--hub-sys-color-secondary);
+  color: color-mix(in srgb, var(--hub-sys-color-secondary) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-secondary) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 .link-secondary:hover, .link-secondary:focus {
-  color: var(--hub-sys-color-secondary-emphasis);
+  color: color-mix(in srgb, var(--hub-sys-color-secondary-emphasis) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-secondary-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 
 .link-success {
-  color: var(--hub-sys-color-success);
+  color: color-mix(in srgb, var(--hub-sys-color-success) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-success) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 .link-success:hover, .link-success:focus {
-  color: var(--hub-sys-color-success-emphasis);
+  color: color-mix(in srgb, var(--hub-sys-color-success-emphasis) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-success-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 
 .link-danger {
-  color: var(--hub-sys-color-danger);
+  color: color-mix(in srgb, var(--hub-sys-color-danger) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-danger) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 .link-danger:hover, .link-danger:focus {
-  color: var(--hub-sys-color-danger-emphasis);
+  color: color-mix(in srgb, var(--hub-sys-color-danger-emphasis) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-danger-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 
 .link-warning {
-  color: var(--hub-sys-color-warning);
+  color: color-mix(in srgb, var(--hub-sys-color-warning) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-warning) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 .link-warning:hover, .link-warning:focus {
-  color: var(--hub-sys-color-warning-emphasis);
+  color: color-mix(in srgb, var(--hub-sys-color-warning-emphasis) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-warning-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 
 .link-info {
-  color: var(--hub-sys-color-info);
+  color: color-mix(in srgb, var(--hub-sys-color-info) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-info) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 .link-info:hover, .link-info:focus {
-  color: var(--hub-sys-color-info-emphasis);
+  color: color-mix(in srgb, var(--hub-sys-color-info-emphasis) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-info-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 
 .link-neutral {
-  color: var(--hub-sys-color-neutral);
+  color: color-mix(in srgb, var(--hub-sys-color-neutral) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-neutral) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 .link-neutral:hover, .link-neutral:focus {
-  color: var(--hub-sys-color-neutral-emphasis);
+  color: color-mix(in srgb, var(--hub-sys-color-neutral-emphasis) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-neutral-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 
 .link-light {
-  color: var(--hub-sys-color-light);
+  color: color-mix(in srgb, var(--hub-sys-color-light) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-light) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 .link-light:hover, .link-light:focus {
-  color: var(--hub-sys-color-light-emphasis);
+  color: color-mix(in srgb, var(--hub-sys-color-light-emphasis) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-light-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 
 .link-dark {
-  color: var(--hub-sys-color-dark);
+  color: color-mix(in srgb, var(--hub-sys-color-dark) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-dark) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
 }
 .link-dark:hover, .link-dark:focus {
-  color: var(--hub-sys-color-dark-emphasis);
+  color: color-mix(in srgb, var(--hub-sys-color-dark-emphasis) calc(var(--hub-link-opacity, 1) * 100%), transparent);
   text-decoration-color: color-mix(in srgb, var(--hub-sys-color-dark-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%), transparent);
+}
+
+/* Fades the link's own colour (feeds the --hub-link-opacity hook of .link-*). */
+.link-opacity-10 {
+  --hub-link-opacity: 0.1;
+}
+
+.link-opacity-25 {
+  --hub-link-opacity: 0.25;
+}
+
+.link-opacity-50 {
+  --hub-link-opacity: 0.5;
+}
+
+.link-opacity-75 {
+  --hub-link-opacity: 0.75;
+}
+
+.link-opacity-100 {
+  --hub-link-opacity: 1;
 }
 
 .link-underline {

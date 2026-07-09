@@ -105,6 +105,16 @@
   background-color: color-mix(in srgb, var(--hub-sys-surface-page) calc(var(--hub-bg-opacity, 1) * 100%), transparent);
 }
 
+/* The surface de-emphasis ramp: page → tertiary → secondary, each a step further
+   from the page toward the theme's ink. Not accents — `.bg-secondary` is a blue. */
+.bg-body-secondary {
+  background-color: color-mix(in srgb, color-mix(in oklch, var(--hub-sys-surface-elevated) 92%, var(--hub-sys-color-ink)) calc(var(--hub-bg-opacity, 1) * 100%), transparent);
+}
+
+.bg-body-tertiary {
+  background-color: color-mix(in srgb, var(--hub-sys-surface-elevated) calc(var(--hub-bg-opacity, 1) * 100%), transparent);
+}
+
 .bg-transparent {
   background-color: transparent;
 }
@@ -190,7 +200,7 @@
 
 /* ── Borders — additive sides ── */
 .border {
-  border: 1px solid var(--hub-sys-border-color-default);
+  border: 1px solid color-mix(in srgb, var(--hub-sys-border-color-default) calc(var(--hub-border-opacity, 1) * 100%), transparent);
 }
 
 .border-0 {
@@ -231,39 +241,104 @@
 
 /* ── Border colours ── */
 .border-primary {
-  border-color: var(--hub-sys-color-primary);
+  border-color: color-mix(in srgb, var(--hub-sys-color-primary) calc(var(--hub-border-opacity, 1) * 100%), transparent);
+}
+
+.border-primary-subtle {
+  border-color: color-mix(in srgb, var(--hub-sys-color-primary-border-subtle) calc(var(--hub-border-opacity, 1) * 100%), transparent);
 }
 
 .border-secondary {
-  border-color: var(--hub-sys-color-secondary);
+  border-color: color-mix(in srgb, var(--hub-sys-color-secondary) calc(var(--hub-border-opacity, 1) * 100%), transparent);
+}
+
+.border-secondary-subtle {
+  border-color: color-mix(in srgb, var(--hub-sys-color-secondary-border-subtle) calc(var(--hub-border-opacity, 1) * 100%), transparent);
 }
 
 .border-success {
-  border-color: var(--hub-sys-color-success);
+  border-color: color-mix(in srgb, var(--hub-sys-color-success) calc(var(--hub-border-opacity, 1) * 100%), transparent);
+}
+
+.border-success-subtle {
+  border-color: color-mix(in srgb, var(--hub-sys-color-success-border-subtle) calc(var(--hub-border-opacity, 1) * 100%), transparent);
 }
 
 .border-danger {
-  border-color: var(--hub-sys-color-danger);
+  border-color: color-mix(in srgb, var(--hub-sys-color-danger) calc(var(--hub-border-opacity, 1) * 100%), transparent);
+}
+
+.border-danger-subtle {
+  border-color: color-mix(in srgb, var(--hub-sys-color-danger-border-subtle) calc(var(--hub-border-opacity, 1) * 100%), transparent);
 }
 
 .border-warning {
-  border-color: var(--hub-sys-color-warning);
+  border-color: color-mix(in srgb, var(--hub-sys-color-warning) calc(var(--hub-border-opacity, 1) * 100%), transparent);
+}
+
+.border-warning-subtle {
+  border-color: color-mix(in srgb, var(--hub-sys-color-warning-border-subtle) calc(var(--hub-border-opacity, 1) * 100%), transparent);
 }
 
 .border-info {
-  border-color: var(--hub-sys-color-info);
+  border-color: color-mix(in srgb, var(--hub-sys-color-info) calc(var(--hub-border-opacity, 1) * 100%), transparent);
+}
+
+.border-info-subtle {
+  border-color: color-mix(in srgb, var(--hub-sys-color-info-border-subtle) calc(var(--hub-border-opacity, 1) * 100%), transparent);
 }
 
 .border-neutral {
-  border-color: var(--hub-sys-color-neutral);
+  border-color: color-mix(in srgb, var(--hub-sys-color-neutral) calc(var(--hub-border-opacity, 1) * 100%), transparent);
+}
+
+.border-neutral-subtle {
+  border-color: color-mix(in srgb, var(--hub-sys-color-neutral-border-subtle) calc(var(--hub-border-opacity, 1) * 100%), transparent);
 }
 
 .border-light {
-  border-color: var(--hub-sys-color-light);
+  border-color: color-mix(in srgb, var(--hub-sys-color-light) calc(var(--hub-border-opacity, 1) * 100%), transparent);
+}
+
+.border-light-subtle {
+  border-color: color-mix(in srgb, var(--hub-sys-color-light-border-subtle) calc(var(--hub-border-opacity, 1) * 100%), transparent);
 }
 
 .border-dark {
-  border-color: var(--hub-sys-color-dark);
+  border-color: color-mix(in srgb, var(--hub-sys-color-dark) calc(var(--hub-border-opacity, 1) * 100%), transparent);
+}
+
+.border-dark-subtle {
+  border-color: color-mix(in srgb, var(--hub-sys-color-dark-border-subtle) calc(var(--hub-border-opacity, 1) * 100%), transparent);
+}
+
+.border-white {
+  border-color: #fff;
+}
+
+.border-black {
+  border-color: #000;
+}
+
+/* ── Border opacity (feeds the --hub-border-opacity hook of .border / .border-*) ── */
+.border-opacity-10 {
+  --hub-border-opacity: 0.1;
+}
+
+.border-opacity-25 {
+  --hub-border-opacity: 0.25;
+}
+
+.border-opacity-50 {
+  --hub-border-opacity: 0.5;
+}
+
+.border-opacity-75 {
+  --hub-border-opacity: 0.75;
+}
+
+.border-opacity-100 {
+  --hub-border-opacity: 1;
 }
 
 /* ── Border widths ── */
@@ -324,9 +399,51 @@
   border-radius: var(--hub-sys-radius-pill);
 }
 
+/* Side-scoped radii. The logical corner pairs are RTL-safe: `start`/`end` follow
+   the writing direction, so a flipped locale rounds the correct edge. */
 .rounded-top {
   border-start-start-radius: var(--hub-sys-radius-md);
   border-start-end-radius: var(--hub-sys-radius-md);
+}
+
+.rounded-top-0 {
+  border-start-start-radius: var(--hub-sys-radius-none);
+  border-start-end-radius: var(--hub-sys-radius-none);
+}
+
+.rounded-top-1 {
+  border-start-start-radius: var(--hub-sys-radius-sm);
+  border-start-end-radius: var(--hub-sys-radius-sm);
+}
+
+.rounded-top-2 {
+  border-start-start-radius: var(--hub-sys-radius-md);
+  border-start-end-radius: var(--hub-sys-radius-md);
+}
+
+.rounded-top-3 {
+  border-start-start-radius: var(--hub-sys-radius-lg);
+  border-start-end-radius: var(--hub-sys-radius-lg);
+}
+
+.rounded-top-4 {
+  border-start-start-radius: var(--hub-sys-radius-xl);
+  border-start-end-radius: var(--hub-sys-radius-xl);
+}
+
+.rounded-top-5 {
+  border-start-start-radius: var(--hub-sys-radius-xxl);
+  border-start-end-radius: var(--hub-sys-radius-xxl);
+}
+
+.rounded-top-circle {
+  border-start-start-radius: 50%;
+  border-start-end-radius: 50%;
+}
+
+.rounded-top-pill {
+  border-start-start-radius: var(--hub-sys-radius-pill);
+  border-start-end-radius: var(--hub-sys-radius-pill);
 }
 
 .rounded-bottom {
@@ -334,14 +451,134 @@
   border-end-end-radius: var(--hub-sys-radius-md);
 }
 
+.rounded-bottom-0 {
+  border-end-start-radius: var(--hub-sys-radius-none);
+  border-end-end-radius: var(--hub-sys-radius-none);
+}
+
+.rounded-bottom-1 {
+  border-end-start-radius: var(--hub-sys-radius-sm);
+  border-end-end-radius: var(--hub-sys-radius-sm);
+}
+
+.rounded-bottom-2 {
+  border-end-start-radius: var(--hub-sys-radius-md);
+  border-end-end-radius: var(--hub-sys-radius-md);
+}
+
+.rounded-bottom-3 {
+  border-end-start-radius: var(--hub-sys-radius-lg);
+  border-end-end-radius: var(--hub-sys-radius-lg);
+}
+
+.rounded-bottom-4 {
+  border-end-start-radius: var(--hub-sys-radius-xl);
+  border-end-end-radius: var(--hub-sys-radius-xl);
+}
+
+.rounded-bottom-5 {
+  border-end-start-radius: var(--hub-sys-radius-xxl);
+  border-end-end-radius: var(--hub-sys-radius-xxl);
+}
+
+.rounded-bottom-circle {
+  border-end-start-radius: 50%;
+  border-end-end-radius: 50%;
+}
+
+.rounded-bottom-pill {
+  border-end-start-radius: var(--hub-sys-radius-pill);
+  border-end-end-radius: var(--hub-sys-radius-pill);
+}
+
 .rounded-start {
   border-start-start-radius: var(--hub-sys-radius-md);
   border-end-start-radius: var(--hub-sys-radius-md);
 }
 
+.rounded-start-0 {
+  border-start-start-radius: var(--hub-sys-radius-none);
+  border-end-start-radius: var(--hub-sys-radius-none);
+}
+
+.rounded-start-1 {
+  border-start-start-radius: var(--hub-sys-radius-sm);
+  border-end-start-radius: var(--hub-sys-radius-sm);
+}
+
+.rounded-start-2 {
+  border-start-start-radius: var(--hub-sys-radius-md);
+  border-end-start-radius: var(--hub-sys-radius-md);
+}
+
+.rounded-start-3 {
+  border-start-start-radius: var(--hub-sys-radius-lg);
+  border-end-start-radius: var(--hub-sys-radius-lg);
+}
+
+.rounded-start-4 {
+  border-start-start-radius: var(--hub-sys-radius-xl);
+  border-end-start-radius: var(--hub-sys-radius-xl);
+}
+
+.rounded-start-5 {
+  border-start-start-radius: var(--hub-sys-radius-xxl);
+  border-end-start-radius: var(--hub-sys-radius-xxl);
+}
+
+.rounded-start-circle {
+  border-start-start-radius: 50%;
+  border-end-start-radius: 50%;
+}
+
+.rounded-start-pill {
+  border-start-start-radius: var(--hub-sys-radius-pill);
+  border-end-start-radius: var(--hub-sys-radius-pill);
+}
+
 .rounded-end {
   border-start-end-radius: var(--hub-sys-radius-md);
   border-end-end-radius: var(--hub-sys-radius-md);
+}
+
+.rounded-end-0 {
+  border-start-end-radius: var(--hub-sys-radius-none);
+  border-end-end-radius: var(--hub-sys-radius-none);
+}
+
+.rounded-end-1 {
+  border-start-end-radius: var(--hub-sys-radius-sm);
+  border-end-end-radius: var(--hub-sys-radius-sm);
+}
+
+.rounded-end-2 {
+  border-start-end-radius: var(--hub-sys-radius-md);
+  border-end-end-radius: var(--hub-sys-radius-md);
+}
+
+.rounded-end-3 {
+  border-start-end-radius: var(--hub-sys-radius-lg);
+  border-end-end-radius: var(--hub-sys-radius-lg);
+}
+
+.rounded-end-4 {
+  border-start-end-radius: var(--hub-sys-radius-xl);
+  border-end-end-radius: var(--hub-sys-radius-xl);
+}
+
+.rounded-end-5 {
+  border-start-end-radius: var(--hub-sys-radius-xxl);
+  border-end-end-radius: var(--hub-sys-radius-xxl);
+}
+
+.rounded-end-circle {
+  border-start-end-radius: 50%;
+  border-end-end-radius: 50%;
+}
+
+.rounded-end-pill {
+  border-start-end-radius: var(--hub-sys-radius-pill);
+  border-end-end-radius: var(--hub-sys-radius-pill);
 }
 
 /* ── Shadows ── */

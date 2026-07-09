@@ -264,6 +264,8 @@ Semantic neutrals. The token names are stable across themes; only the literal va
 | `--hub-sys-surface-page`         | `#ffffff`                      | `#121212` |
 | `--hub-sys-surface-elevated`     | `#f8f9fa`                      | `#1e1e1e` |
 | `--hub-sys-text-primary`         | `#212529`                      | `#f8f9fa` |
+| `--hub-sys-text-secondary`       | `alpha 75% of text-primary`    | inherits  |
+| `--hub-sys-text-tertiary`        | `alpha 50% of text-primary`    | inherits  |
 | `--hub-sys-text-muted`           | `#6c757d`                      | `#adb5bd` |
 | `--hub-sys-border-color-default` | `#dee2e6`                      | `#343a40` |
 | `--hub-sys-link-color`           | `var(--hub-sys-color-primary)` | inherits  |
@@ -512,6 +514,9 @@ Cascade knobs read by the opt-in utility sheets and their mixin equivalents. The
 | `--hub-bg-opacity` | `1` | Opacity multiplier applied by `.bg-*` / `.text-bg-*` surface utilities (set by `.bg-opacity-{10,25,50,75,100}`) | `IN_USE` | `ds/styles/utilities/surfaces.scss:47` |
 | `--hub-text-opacity` | `1` | Opacity multiplier applied by `.text-*` colour utilities (set by `.text-opacity-{25,50,75,100}`) | `IN_USE` | `ds/styles/utilities/text.scss:146` |
 | `--hub-link-underline-opacity` | `1` | Opacity multiplier for the `.link-underline-*` underline colour (set by `.link-underline-opacity-{0,10,25,50,75,100}`) | `IN_USE` | `ds/styles/utilities/text.scss:177` |
+| `--hub-link-opacity` | `1` | Opacity multiplier for the `.link-*` text colour (set by `.link-opacity-{10,25,50,75,100}`) | `IN_USE` | `ds/styles/utilities/text.scss:199` |
+| `--hub-border-opacity` | `1` | Opacity multiplier applied by `.border` / `.border-*` colour utilities (set by `.border-opacity-{10,25,50,75,100}`) | `IN_USE` | `ds/styles/utilities/surfaces.scss:117` |
+| `--hub-focus-ring-opacity` | `0.25` | Alpha the `.focus-ring-*` utilities mix the accent with when re-tinting `--hub-sys-focus-ring-color` | `IN_USE` | `ds/styles/mixins/_helpers.scss:70` |
 
 ## `container` Variables (Inheritable base)
 

@@ -29,6 +29,14 @@ $_accents: primary, secondary, success, danger, warning, info, neutral, light, d
 .bg-body {
 	@include surfaces.bg(body);
 }
+/* The surface de-emphasis ramp: page → tertiary → secondary, each a step further
+   from the page toward the theme's ink. Not accents — `.bg-secondary` is a blue. */
+.bg-body-secondary {
+	@include surfaces.bg(body-secondary);
+}
+.bg-body-tertiary {
+	@include surfaces.bg(body-tertiary);
+}
 .bg-transparent {
 	@include surfaces.bg(transparent);
 }
@@ -103,6 +111,32 @@ $_accents: primary, secondary, success, danger, warning, info, neutral, light, d
 	.border-#{$variant} {
 		@include surfaces.border-color($variant);
 	}
+	.border-#{$variant}-subtle {
+		@include surfaces.border-color($variant, $subtle: true);
+	}
+}
+.border-white {
+	border-color: #fff;
+}
+.border-black {
+	border-color: #000;
+}
+
+/* ── Border opacity (feeds the --hub-border-opacity hook of .border / .border-*) ── */
+.border-opacity-10 {
+	--hub-border-opacity: 0.1;
+}
+.border-opacity-25 {
+	--hub-border-opacity: 0.25;
+}
+.border-opacity-50 {
+	--hub-border-opacity: 0.5;
+}
+.border-opacity-75 {
+	--hub-border-opacity: 0.75;
+}
+.border-opacity-100 {
+	--hub-border-opacity: 1;
 }
 
 /* ── Border widths ── */
@@ -140,21 +174,55 @@ $_accents: primary, secondary, success, danger, warning, info, neutral, light, d
 .rounded-pill {
 	@include surfaces.radius(pill);
 }
-.rounded-top {
-	border-start-start-radius: var(--hub-sys-radius-md);
-	border-start-end-radius: var(--hub-sys-radius-md);
-}
-.rounded-bottom {
-	border-end-start-radius: var(--hub-sys-radius-md);
-	border-end-end-radius: var(--hub-sys-radius-md);
-}
-.rounded-start {
-	border-start-start-radius: var(--hub-sys-radius-md);
-	border-end-start-radius: var(--hub-sys-radius-md);
-}
-.rounded-end {
-	border-start-end-radius: var(--hub-sys-radius-md);
-	border-end-end-radius: var(--hub-sys-radius-md);
+/* Side-scoped radii. The logical corner pairs are RTL-safe: `start`/`end` follow
+   the writing direction, so a flipped locale rounds the correct edge. */
+$_radius-steps: (
+	'0': none,
+	'1': sm,
+	'2': md,
+	'3': lg,
+	'4': xl,
+	'5': xxl,
+	'circle': circle,
+	'pill': pill,
+);
+$_radius-sides: (
+	'top': (
+		border-start-start-radius,
+		border-start-end-radius,
+	),
+	'bottom': (
+		border-end-start-radius,
+		border-end-end-radius,
+	),
+	'start': (
+		border-start-start-radius,
+		border-end-start-radius,
+	),
+	'end': (
+		border-start-end-radius,
+		border-end-end-radius,
+	),
+);
+
+@each $side, $corners in $_radius-sides {
+	.rounded-#{$side} {
+		@each $corner in $corners {
+			#{$corner}: var(--hub-sys-radius-md);
+		}
+	}
+
+	@each $step, $size in $_radius-steps {
+		.rounded-#{$side}-#{$step} {
+			@each $corner in $corners {
+				@if $size == circle {
+					#{$corner}: 50%;
+				} @else {
+					#{$corner}: var(--hub-sys-radius-#{$size});
+				}
+			}
+		}
+	}
 }
 
 /* ── Shadows ── */

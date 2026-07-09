@@ -74,25 +74,42 @@ $_heading-scale: (
 }
 
 /// Semantic text colour — any accent of the open map (`primary`, `danger`,
-/// `brand`…) or the document roles `body` / `muted`. The colour is emitted
-/// through `--hub-text-opacity` (default 1), so `.text-opacity-*` (or a local
-/// override of that property) fades it without extra classes.
-/// @param {String} $variant  Accent name, or body | muted.
+/// `brand`…) or a document role.
+///
+/// The document roles are the de-emphasis ramp, NOT accents: `body` (full ink),
+/// `body-secondary`, `body-tertiary`, `muted`, and `body-emphasis` (the strongest).
+/// They exist because `secondary` is an ACCENT — in most themes a blue — and
+/// reaching for `.text-secondary` to mean "quieter body text" silently repaints
+/// every caption in the brand's secondary colour.
+///
+/// The colour is emitted through `--hub-text-opacity` (default 1), so
+/// `.text-opacity-*` (or a local override of that property) fades it without
+/// extra classes.
+///
+/// @param {String} $variant  Accent name, or body | body-secondary |
+///                           body-tertiary | body-emphasis | muted.
 @mixin text-color($variant: body) {
 	$color: var(--hub-sys-color-#{$variant});
 	@if $variant == body {
 		$color: var(--hub-sys-text-primary);
+	} @else if $variant == body-emphasis {
+		$color: var(--hub-sys-text-emphasis, var(--hub-sys-text-primary));
+	} @else if $variant == body-secondary {
+		$color: var(--hub-sys-text-secondary, var(--hub-sys-text-muted));
+	} @else if $variant == body-tertiary {
+		$color: var(--hub-sys-text-tertiary, var(--hub-sys-text-muted));
 	} @else if $variant == muted {
 		$color: var(--hub-sys-text-muted);
 	}
 	color: color-mix(in srgb, #{$color} calc(var(--hub-text-opacity, 1) * 100%), transparent);
 }
 
-/// Accent-coloured link with its `-emphasis` hover/focus treatment. The
-/// underline colour honours `--hub-link-underline-opacity` (default 1).
+/// Accent-coloured link with its `-emphasis` hover/focus treatment. The text
+/// colour honours `--hub-link-opacity` and the underline
+/// `--hub-link-underline-opacity` (both default 1).
 /// @param {String} $variant  Accent name of the open map.
 @mixin link-color($variant: primary) {
-	color: var(--hub-sys-color-#{$variant});
+	color: color-mix(in srgb, var(--hub-sys-color-#{$variant}) calc(var(--hub-link-opacity, 1) * 100%), transparent);
 	text-decoration-color: color-mix(
 		in srgb,
 		var(--hub-sys-color-#{$variant}) calc(var(--hub-link-underline-opacity, 1) * 100%),
@@ -101,7 +118,11 @@ $_heading-scale: (
 
 	&:hover,
 	&:focus {
-		color: var(--hub-sys-color-#{$variant}-emphasis);
+		color: color-mix(
+			in srgb,
+			var(--hub-sys-color-#{$variant}-emphasis) calc(var(--hub-link-opacity, 1) * 100%),
+			transparent
+		);
 		text-decoration-color: color-mix(
 			in srgb,
 			var(--hub-sys-color-#{$variant}-emphasis) calc(var(--hub-link-underline-opacity, 1) * 100%),

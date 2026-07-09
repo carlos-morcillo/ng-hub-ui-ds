@@ -152,6 +152,10 @@
   display: grid;
 }
 
+.d-inline-grid {
+  display: inline-grid;
+}
+
 .d-block {
   display: block;
 }
@@ -771,6 +775,18 @@
   min-width: 100vw;
 }
 
+/* A flex/grid item's `min-width` and `min-height` default to `auto`, which is the
+   content's intrinsic size — so `text-overflow: ellipsis` never fires and a scroll
+   container never shrinks. These two reset that, and there is no Bootstrap name for
+   them: `.min-w-0` / `.min-h-0` follow the `min-vw-100` convention already here. */
+.min-w-0 {
+  min-width: 0;
+}
+
+.min-h-0 {
+  min-height: 0;
+}
+
 .h-auto {
   height: auto;
 }
@@ -1141,6 +1157,80 @@
   box-shadow: 0 0 0 var(--hub-sys-focus-ring-width) var(--hub-sys-focus-ring-color);
 }
 
+/* `.focus-ring-*` only re-tints the ring token — pair it with `.focus-ring`
+   (or any component that already draws one) to see the colour change. */
+.focus-ring-primary {
+  --hub-sys-focus-ring-color: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-primary) calc(var(--hub-focus-ring-opacity, 0.25) * 100%),
+  	transparent
+  );
+}
+
+.focus-ring-secondary {
+  --hub-sys-focus-ring-color: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-secondary) calc(var(--hub-focus-ring-opacity, 0.25) * 100%),
+  	transparent
+  );
+}
+
+.focus-ring-success {
+  --hub-sys-focus-ring-color: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-success) calc(var(--hub-focus-ring-opacity, 0.25) * 100%),
+  	transparent
+  );
+}
+
+.focus-ring-danger {
+  --hub-sys-focus-ring-color: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-danger) calc(var(--hub-focus-ring-opacity, 0.25) * 100%),
+  	transparent
+  );
+}
+
+.focus-ring-warning {
+  --hub-sys-focus-ring-color: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-warning) calc(var(--hub-focus-ring-opacity, 0.25) * 100%),
+  	transparent
+  );
+}
+
+.focus-ring-info {
+  --hub-sys-focus-ring-color: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-info) calc(var(--hub-focus-ring-opacity, 0.25) * 100%),
+  	transparent
+  );
+}
+
+.focus-ring-neutral {
+  --hub-sys-focus-ring-color: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-neutral) calc(var(--hub-focus-ring-opacity, 0.25) * 100%),
+  	transparent
+  );
+}
+
+.focus-ring-light {
+  --hub-sys-focus-ring-color: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-light) calc(var(--hub-focus-ring-opacity, 0.25) * 100%),
+  	transparent
+  );
+}
+
+.focus-ring-dark {
+  --hub-sys-focus-ring-color: color-mix(
+  	in srgb,
+  	var(--hub-sys-color-dark) calc(var(--hub-focus-ring-opacity, 0.25) * 100%),
+  	transparent
+  );
+}
+
 .visually-hidden,
 .visually-hidden-focusable:not(:focus):not(:focus-within) {
   position: absolute !important;
@@ -1203,6 +1293,9 @@
   .d-print-grid {
     display: grid;
   }
+  .d-print-inline-grid {
+    display: inline-grid;
+  }
   .d-print-table {
     display: table;
   }
@@ -1234,6 +1327,9 @@
   }
   .d-sm-grid {
     display: grid;
+  }
+  .d-sm-inline-grid {
+    display: inline-grid;
   }
   .d-sm-block {
     display: block;
@@ -1598,6 +1694,9 @@
   .d-md-grid {
     display: grid;
   }
+  .d-md-inline-grid {
+    display: inline-grid;
+  }
   .d-md-block {
     display: block;
   }
@@ -1960,6 +2059,9 @@
   }
   .d-lg-grid {
     display: grid;
+  }
+  .d-lg-inline-grid {
+    display: inline-grid;
   }
   .d-lg-block {
     display: block;
@@ -2324,6 +2426,9 @@
   .d-xl-grid {
     display: grid;
   }
+  .d-xl-inline-grid {
+    display: inline-grid;
+  }
   .d-xl-block {
     display: block;
   }
@@ -2686,6 +2791,9 @@
   }
   .d-xxl-grid {
     display: grid;
+  }
+  .d-xxl-inline-grid {
+    display: inline-grid;
   }
   .d-xxl-block {
     display: block;

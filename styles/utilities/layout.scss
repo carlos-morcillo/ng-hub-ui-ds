@@ -56,6 +56,9 @@ $_steps: 0 1 2 3 4 5;
 .d-grid {
 	display: grid;
 }
+.d-inline-grid {
+	display: inline-grid;
+}
 .d-block {
 	display: block;
 }
@@ -276,6 +279,17 @@ $_steps: 0 1 2 3 4 5;
 }
 .min-vw-100 {
 	min-width: 100vw;
+}
+
+/* A flex/grid item's `min-width` and `min-height` default to `auto`, which is the
+   content's intrinsic size — so `text-overflow: ellipsis` never fires and a scroll
+   container never shrinks. These two reset that, and there is no Bootstrap name for
+   them: `.min-w-0` / `.min-h-0` follow the `min-vw-100` convention already here. */
+.min-w-0 {
+	min-width: 0;
+}
+.min-h-0 {
+	min-height: 0;
 }
 .h-auto {
 	height: auto;
@@ -558,6 +572,13 @@ $_steps: 0 1 2 3 4 5;
 .focus-ring:focus {
 	@include helpers.focus-ring();
 }
+/* `.focus-ring-*` only re-tints the ring token — pair it with `.focus-ring`
+   (or any component that already draws one) to see the colour change. */
+@each $variant in (primary, secondary, success, danger, warning, info, neutral, light, dark) {
+	.focus-ring-#{$variant} {
+		@include helpers.focus-ring-color($variant);
+	}
+}
 .visually-hidden,
 .visually-hidden-focusable:not(:focus):not(:focus-within) {
 	@include helpers.visually-hidden();
@@ -604,6 +625,9 @@ $_steps: 0 1 2 3 4 5;
 	.d-print-grid {
 		display: grid;
 	}
+	.d-print-inline-grid {
+		display: inline-grid;
+	}
 	.d-print-table {
 		display: table;
 	}
@@ -629,7 +653,7 @@ $_steps: 0 1 2 3 4 5;
 @each $bp-name, $bp-width in bp.$hub-breakpoints {
 	@include bp.media-breakpoint-up($bp-name) {
 		/* display */
-		@each $d in (flex, inline-flex, grid, block, inline-block, inline, table, table-row, table-cell, none) {
+		@each $d in (flex, inline-flex, grid, inline-grid, block, inline-block, inline, table, table-row, table-cell, none) {
 			.d-#{$bp-name}-#{$d} {
 				display: $d;
 			}

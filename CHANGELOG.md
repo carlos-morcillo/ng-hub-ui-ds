@@ -5,6 +5,23 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.6.0] - 2026-07-09
+
+### Added
+
+- **utilities — the Bootstrap-standard classes the sheets were missing.** The utility sheets promise Bootstrap-exact names; an audit against `bootstrap@5` found 74 base classes documented there but absent here. All of them now ship, emitted through the existing accent loops and the surface/typography mixins, so they follow a re-theme like everything else:
+  - `text.scss` — `.text-{accent}-emphasis` (the accent driven toward the theme's ink; legible as body copy on its own `-subtle` background), `.text-black-50` / `.text-white-50`, `.link-opacity-{10,25,50,75,100}`.
+  - `surfaces.scss` — `.bg-body-secondary` / `.bg-body-tertiary` (the **surface** de-emphasis ramp), `.border-{accent}-subtle`, `.border-black` / `.border-white`, `.border-opacity-{10,25,50,75,100}`, and the side-scoped radii `.rounded-{top,bottom,start,end}-{0..5,circle,pill}` — logical corners, so they flip correctly in RTL.
+  - `layout.scss` — `.d-inline-grid` (plus its `.d-print-` and responsive variants), `.focus-ring-{accent}`.
+- **tokens — `--hub-sys-text-secondary` and `--hub-sys-text-tertiary`.** Two rungs of the text de-emphasis ramp were consumed by `text-color()` through a fallback but never declared, so `.text-body-secondary` and `.text-body-tertiary` both silently collapsed onto `.text-muted`. They are now derived as alpha over each theme's own `--hub-sys-text-primary` (75% / 50%) — no per-theme value needed, and they survive any re-theme.
+- **mixins — `focus-ring-color($variant)`** (`_helpers.scss`), the public API behind `.focus-ring-*`. It re-tints `--hub-sys-focus-ring-color` and leaves the geometry to `focus-ring()`; set it on the element, not on its focus state.
+- **cascade knobs — `--hub-border-opacity`, `--hub-link-opacity`, `--hub-focus-ring-opacity`**, documented alongside the existing `--hub-bg-opacity` / `--hub-text-opacity` contract.
+
+### Changed
+
+- **`.small` / `.large` are relative, not token steps.** `.small` resolves to Bootstrap's `0.875em`: it shrinks against whatever it sits in, so `.small` inside an `<h2>` stays proportional to the heading. Reach for `.fs-sm` / `.fs-lg` when you want a fixed rung of the token scale. Both classes are new in this release, so no shipped behaviour changes.
+- **`border()` and `border-color()` honour `--hub-border-opacity`**, and `border-color()` gained a `$subtle` flag selecting the accent's `-border-subtle` tint. `link-color()` honours `--hub-link-opacity`. All three knobs default to `1`, so existing output is byte-identical.
+
 ## [22.5.6] - 2026-07-09
 
 ### Changed

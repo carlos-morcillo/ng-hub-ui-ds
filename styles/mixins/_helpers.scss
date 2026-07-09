@@ -60,3 +60,15 @@
 	outline: 0;
 	box-shadow: 0 0 0 var(--hub-sys-focus-ring-width) var(--hub-sys-focus-ring-color);
 }
+
+/// Re-tints the ring colour token from an accent of the open map, leaving the
+/// geometry to `focus-ring()`. Set it on the element, not on its focus state —
+/// it declares a variable, it does not paint.
+/// @param {String} $variant  Accent name of the open map.
+@mixin focus-ring-color($variant: primary) {
+	--hub-sys-focus-ring-color: color-mix(
+		in srgb,
+		var(--hub-sys-color-#{$variant}) calc(var(--hub-focus-ring-opacity, 0.25) * 100%),
+		transparent
+	);
+}
