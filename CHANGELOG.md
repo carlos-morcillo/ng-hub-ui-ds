@@ -5,6 +5,25 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.5.6] - 2026-07-09
+
+### Changed
+
+- **docs (token catalogue) — hygiene wave for the Figma design-system sync.** Documentation-only; no token or compiled-CSS changes.
+  - The 41 foundational `sys` rows still flagged `PENDING` (shadows ×6, focus/accessibility ×5, zindex ×8, transitions & states ×10, breakpoints ×6, opacity ×6) were re-flagged **`IN_USE`** — every one of them has been compiled in `styles/tokens/hub-tokens.css` for a while; only the flags were stale. The parity guard now has a foundational shipped-PENDING check (A3) so this cannot drift silently again.
+  - The `metrics` token table moved from the Appendix to its canonical place in the Components chapter (`### metrics`), like every other library.
+  - The "Light / Dark theme" table is now explicitly marked as illustrative (`parity:ignore` region) — its rows re-document tokens whose canonical rows live in their own sections.
+- **docs (select)** — `--hub-select-dropdown-zindex` documented as the canonical spelling of the select dropdown stacking hook (`ng-hub-ui-forms` 22.8.0); the old `--hub-select-dropdown-z-index` row remains as the deprecated default carrier.
+
+### Added
+
+- **docs — "Utility opacity knobs" section**: `--hub-bg-opacity`, `--hub-text-opacity` and `--hub-link-underline-opacity`, the cascade knobs read by the opt-in utility sheets (`.bg-opacity-*`, `.text-opacity-*`, `.link-underline-opacity-*`). They were declared in `styles/utilities/` but had no catalogue row (they were invisible to the parity guard, which now counts ds styles as existing code).
+- **docs — "Accent slots (generated annex)"**: machine-checked inventory of the 60 per-component accent slots (`--hub-<comp>-accent` + derived `-subtle` / `-emphasis` / `-on` roles, plus the per-item runtime slots). The convention was documented only generically; the new parity **check G** validates the annex against the slots actually declared/consumed in the libraries, so design-tool syncs (Figma) have an enumerable source of truth.
+
+### Fixed
+
+- **docs — duplicate rows removed**: the stale `PENDING`/`UX-EXCEL` duplicate of `--hub-table-head-bg` (the real row ships since paginable 22.5.0) and the `--hub-sys-border-color-default` duplicate inside the former "Borders and shadows" table (retitled **"Shadows"**; the canonical row lives in "Surfaces, text and borders"). The parity guard now fails on any token documented by two rows.
+
 ## [22.5.5] - 2026-07-09
 
 ### Changed

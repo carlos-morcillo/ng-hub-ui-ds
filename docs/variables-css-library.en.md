@@ -342,17 +342,16 @@ Standalone brand aliases (base only — no derived role family):
 | `--hub-sys-gradient-3`      | `#d97706`                                                                                   |
 | `--hub-sys-gradient-accent` | `linear-gradient(135deg, var(--hub-sys-gradient-1), var(--hub-sys-gradient-2), var(--hub-sys-gradient-3))` |
 
-### Borders and shadows
+### Shadows
 
 | Token                            | Layer | Status    | Light                                     | Dark                                    | Notes                  |
 | -------------------------------- | ----- | --------- | ----------------------------------------- | --------------------------------------- | ---------------------- |
-| `--hub-sys-border-color-default` | `sys` | `PENDING` | `#dee2e6`                                 | `#343a40`                               | Standard border        |
-| `--hub-sys-shadow-sm`            | `sys` | `PENDING` | `0 0.125rem 0.25rem rgba(0, 0, 0, 0.075)` | `0 0.125rem 0.25rem rgba(0, 0, 0, 0.3)` | Low elevation          |
-| `--hub-sys-shadow`               | `sys` | `PENDING` | `0 0.5rem 1rem rgba(0, 0, 0, 0.15)`       | `0 0.5rem 1rem rgba(0, 0, 0, 0.3)`      | Medium elevation       |
-| `--hub-sys-shadow-lg`            | `sys` | `PENDING` | `0 1rem 3rem rgba(0, 0, 0, 0.175)`        | `0 1rem 3rem rgba(0, 0, 0, 0.3)`        | High elevation (modal) |
-| `--hub-sys-shadow-inset`         | `sys` | `PENDING` | `inset 0 1px 2px rgba(0, 0, 0, 0.075)`    | `inset 0 1px 2px rgba(0, 0, 0, 0.3)`    | Inset shadow           |
-| `--hub-sys-shadow-none`          | `sys` | `PENDING` | `none`                                    | `none`                                  | Explicit no shadow     |
-| `--hub-sys-shadow-md`            | `sys` | `PENDING` | `var(--hub-sys-shadow)`                   | `var(--hub-sys-shadow)`                 | Alias of medium shadow |
+| `--hub-sys-shadow-sm`            | `sys` | `IN_USE` | `0 0.125rem 0.25rem rgba(0, 0, 0, 0.075)` | `0 0.125rem 0.25rem rgba(0, 0, 0, 0.3)` | Low elevation          |
+| `--hub-sys-shadow`               | `sys` | `IN_USE` | `0 0.5rem 1rem rgba(0, 0, 0, 0.15)`       | `0 0.5rem 1rem rgba(0, 0, 0, 0.3)`      | Medium elevation       |
+| `--hub-sys-shadow-lg`            | `sys` | `IN_USE` | `0 1rem 3rem rgba(0, 0, 0, 0.175)`        | `0 1rem 3rem rgba(0, 0, 0, 0.3)`        | High elevation (modal) |
+| `--hub-sys-shadow-inset`         | `sys` | `IN_USE` | `inset 0 1px 2px rgba(0, 0, 0, 0.075)`    | `inset 0 1px 2px rgba(0, 0, 0, 0.3)`    | Inset shadow           |
+| `--hub-sys-shadow-none`          | `sys` | `IN_USE` | `none`                                    | `none`                                  | Explicit no shadow     |
+| `--hub-sys-shadow-md`            | `sys` | `IN_USE` | `var(--hub-sys-shadow)`                   | `var(--hub-sys-shadow)`                 | Alias of medium shadow |
 
 ### Radius (sys aliases)
 
@@ -374,11 +373,11 @@ The following tokens are required for all interactive elements. Do not remove `o
 
 | Token                         | Recommended value          | Status    |
 | ----------------------------- | -------------------------- | --------- |
-| `--hub-sys-focus-ring-width`  | `0.25rem`                  | `PENDING` |
-| `--hub-sys-focus-ring-color`  | `rgba(13, 110, 253, 0.25)` | `PENDING` |
-| `--hub-sys-focus-ring-offset` | `2px`                      | `PENDING` |
-| `--hub-sys-hit-area-min-size` | `44px`                     | `PENDING` |
-| `--hub-sys-text-contrast-min` | `4.5`                      | `PENDING` |
+| `--hub-sys-focus-ring-width`  | `0.25rem`                  | `IN_USE` |
+| `--hub-sys-focus-ring-color`  | `rgba(13, 110, 253, 0.25)` | `IN_USE` |
+| `--hub-sys-focus-ring-offset` | `2px`                      | `IN_USE` |
+| `--hub-sys-hit-area-min-size` | `44px`                     | `IN_USE` |
+| `--hub-sys-text-contrast-min` | `4.5`                      | `IN_USE` |
 
 Accessibility rules for new tokens and components:
 
@@ -390,55 +389,57 @@ Accessibility rules for new tokens and components:
 
 | Token                             | Recommended value | Status    |
 | --------------------------------- | ----------------- | --------- |
-| `--hub-sys-zindex-dropdown`       | `1000`            | `PENDING` |
-| `--hub-sys-zindex-sticky`         | `1020`            | `PENDING` |
-| `--hub-sys-zindex-fixed`          | `1030`            | `PENDING` |
-| `--hub-sys-zindex-modal-backdrop` | `1050`            | `PENDING` |
-| `--hub-sys-zindex-modal`          | `1055`            | `PENDING` |
-| `--hub-sys-zindex-popover`        | `1070`            | `PENDING` |
-| `--hub-sys-zindex-tooltip`        | `1080`            | `PENDING` |
-| `--hub-sys-zindex-toast`          | `1090`            | `PENDING` |
+| `--hub-sys-zindex-dropdown`       | `1000`            | `IN_USE` |
+| `--hub-sys-zindex-sticky`         | `1020`            | `IN_USE` |
+| `--hub-sys-zindex-fixed`          | `1030`            | `IN_USE` |
+| `--hub-sys-zindex-modal-backdrop` | `1050`            | `IN_USE` |
+| `--hub-sys-zindex-modal`          | `1055`            | `IN_USE` |
+| `--hub-sys-zindex-popover`        | `1070`            | `IN_USE` |
+| `--hub-sys-zindex-tooltip`        | `1080`            | `IN_USE` |
+| `--hub-sys-zindex-toast`          | `1090`            | `IN_USE` |
 
 ### Transitions and states
 
 | Token                           | Recommended value                                            | Status    |
 | ------------------------------- | ------------------------------------------------------------ | --------- |
-| `--hub-sys-transition-fast`                 | `all 0.15s ease-in-out`                                      | `PENDING` |
-| `--hub-sys-transition-base`                 | `all 0.2s ease-in-out`                                       | `PENDING` |
-| `--hub-sys-transition-slow`                 | `all 0.3s ease-in-out`                                       | `PENDING` |
-| `--hub-sys-transition-fade`                 | `opacity 0.15s linear`                                       | `PENDING` |
-| `--hub-sys-transition-collapse`             | `height 0.35s ease`                                          | `PENDING` |
-| `--hub-sys-transition-duration-base`        | `260ms`                                                      | `PENDING` |
-| `--hub-sys-transition-timing-function-base` | `ease`                                                       | `PENDING` |
-| `--hub-sys-state-active-bg`                 | `rgba(0, 0, 0, 0.1)` / `rgba(255, 255, 255, 0.1)` (dark)     | `PENDING` |
-| `--hub-sys-state-hover-bg`                  | `rgba(0, 0, 0, 0.075)` / `rgba(255, 255, 255, 0.075)` (dark) | `PENDING` |
-| `--hub-sys-state-striped-bg`                | `rgba(0, 0, 0, 0.05)` / `rgba(255, 255, 255, 0.05)` (dark)   | `PENDING` |
+| `--hub-sys-transition-fast`                 | `all 0.15s ease-in-out`                                      | `IN_USE` |
+| `--hub-sys-transition-base`                 | `all 0.2s ease-in-out`                                       | `IN_USE` |
+| `--hub-sys-transition-slow`                 | `all 0.3s ease-in-out`                                       | `IN_USE` |
+| `--hub-sys-transition-fade`                 | `opacity 0.15s linear`                                       | `IN_USE` |
+| `--hub-sys-transition-collapse`             | `height 0.35s ease`                                          | `IN_USE` |
+| `--hub-sys-transition-duration-base`        | `260ms`                                                      | `IN_USE` |
+| `--hub-sys-transition-timing-function-base` | `ease`                                                       | `IN_USE` |
+| `--hub-sys-state-active-bg`                 | `rgba(0, 0, 0, 0.1)` / `rgba(255, 255, 255, 0.1)` (dark)     | `IN_USE` |
+| `--hub-sys-state-hover-bg`                  | `rgba(0, 0, 0, 0.075)` / `rgba(255, 255, 255, 0.075)` (dark) | `IN_USE` |
+| `--hub-sys-state-striped-bg`                | `rgba(0, 0, 0, 0.05)` / `rgba(255, 255, 255, 0.05)` (dark)   | `IN_USE` |
 
 ### Breakpoints
 
 | Token                      | Recommended value | Status    |
 | -------------------------- | ----------------- | --------- |
-| `--hub-sys-breakpoint-xs`  | `0`               | `PENDING` |
-| `--hub-sys-breakpoint-sm`  | `576px`           | `PENDING` |
-| `--hub-sys-breakpoint-md`  | `768px`           | `PENDING` |
-| `--hub-sys-breakpoint-lg`  | `992px`           | `PENDING` |
-| `--hub-sys-breakpoint-xl`  | `1200px`          | `PENDING` |
-| `--hub-sys-breakpoint-xxl` | `1400px`          | `PENDING` |
+| `--hub-sys-breakpoint-xs`  | `0`               | `IN_USE` |
+| `--hub-sys-breakpoint-sm`  | `576px`           | `IN_USE` |
+| `--hub-sys-breakpoint-md`  | `768px`           | `IN_USE` |
+| `--hub-sys-breakpoint-lg`  | `992px`           | `IN_USE` |
+| `--hub-sys-breakpoint-xl`  | `1200px`          | `IN_USE` |
+| `--hub-sys-breakpoint-xxl` | `1400px`          | `IN_USE` |
 
 ### Opacity
 
 | Token                        | Recommended value | Status    |
 | ---------------------------- | ----------------- | --------- |
-| `--hub-sys-opacity-0`        | `0`               | `PENDING` |
-| `--hub-sys-opacity-25`       | `0.25`            | `PENDING` |
-| `--hub-sys-opacity-50`       | `0.5`             | `PENDING` |
-| `--hub-sys-opacity-75`       | `0.75`            | `PENDING` |
-| `--hub-sys-opacity-100`      | `1`               | `PENDING` |
-| `--hub-sys-opacity-disabled` | `0.65`            | `PENDING` |
+| `--hub-sys-opacity-0`        | `0`               | `IN_USE` |
+| `--hub-sys-opacity-25`       | `0.25`            | `IN_USE` |
+| `--hub-sys-opacity-50`       | `0.5`             | `IN_USE` |
+| `--hub-sys-opacity-75`       | `0.75`            | `IN_USE` |
+| `--hub-sys-opacity-100`      | `1`               | `IN_USE` |
+| `--hub-sys-opacity-disabled` | `0.65`            | `IN_USE` |
 
 ### Light / Dark theme
 
 Theming rule: the same semantic tokens (`--hub-sys-*`) are used in both themes. Only the assigned values change per theme. Components must consume semantic tokens, not literals.
+
+<!-- parity:ignore-start — illustrative theming table; every row below re-documents a token whose canonical row lives in its own section -->
 
 | Semantic token                   | Light                      | Dark                        |
 | -------------------------------- | -------------------------- | --------------------------- |
@@ -451,6 +452,8 @@ Theming rule: the same semantic tokens (`--hub-sys-*`) are used in both themes. 
 | `--hub-sys-color-success`        | `#198754`                  | `#75b798`                   |
 | `--hub-sys-color-danger`         | `#dc3545`                  | `#ea868f`                   |
 | `--hub-sys-focus-ring-color`     | `rgba(13, 110, 253, 0.25)` | `rgba(110, 168, 254, 0.35)` |
+
+<!-- parity:ignore-end -->
 
 CSS implementation:
 
@@ -499,6 +502,16 @@ Canonical structural tokens (Bootstrap-compatible). Sizing keywords and fraction
 | `--hub-sys-gap-3` | `var(--hub-ref-space-3)` |
 | `--hub-sys-gap-4` | `var(--hub-ref-space-4)` |
 | `--hub-sys-gap-5` | `var(--hub-ref-space-5)` |
+
+### Utility opacity knobs
+
+Cascade knobs read by the opt-in utility sheets and their mixin equivalents. They are deliberately **unprefixed by layer** — they mirror Bootstrap's `--bs-bg-opacity` / `--bs-text-opacity` contract under the `hub` namespace (ds utility class names are Bootstrap-exact). Each utility resolves its colour through `color-mix(… calc(var(--knob, 1) * 100%), transparent)`, so a consumer can re-tune opacity on any subtree by setting the knob; the `.bg-opacity-*`, `.text-opacity-*` and `.link-underline-opacity-*` classes just set these knobs.
+
+| Token | Initial value | Usage | Status | Source |
+| ----- | ------------- | ----- | ------ | ------ |
+| `--hub-bg-opacity` | `1` | Opacity multiplier applied by `.bg-*` / `.text-bg-*` surface utilities (set by `.bg-opacity-{10,25,50,75,100}`) | `IN_USE` | `ds/styles/utilities/surfaces.scss:47` |
+| `--hub-text-opacity` | `1` | Opacity multiplier applied by `.text-*` colour utilities (set by `.text-opacity-{25,50,75,100}`) | `IN_USE` | `ds/styles/utilities/text.scss:146` |
+| `--hub-link-underline-opacity` | `1` | Opacity multiplier for the `.link-underline-*` underline colour (set by `.link-underline-opacity-{0,10,25,50,75,100}`) | `IN_USE` | `ds/styles/utilities/text.scss:177` |
 
 ## `container` Variables (Inheritable base)
 
@@ -557,7 +570,80 @@ Example of base token assignment to a component:
 
 ## Components
 
-**Component accent-slot family (generative).** Components that expose a semantic variant read a single local accent slot — `--hub-{component}-accent` — defaulting to `var(--hub-sys-color-primary)`, and derive its role family locally with `color-mix(in oklch, …)` / relative color: `--hub-{component}-accent-subtle`, `-border-subtle`, `-emphasis` and the contrast pair `-on`. Because derivation reads the live slot, a custom accent (e.g. `brand`) works at runtime with a single rule — `[data-variant="brand"] { --hub-{component}-accent: var(--hub-sys-color-brand) }` — without recompiling the library. This family is generated by the slot convention (mirroring the sys family) and is not enumerated row-by-row below.
+**Component accent-slot family (generative).** Components that expose a semantic variant read a single local accent slot — `--hub-{component}-accent` — defaulting to `var(--hub-sys-color-primary)`, and derive its role family locally with `color-mix(in oklch, …)` / relative color: `--hub-{component}-accent-subtle`, `-border-subtle`, `-emphasis` and the contrast pair `-on`. Because derivation reads the live slot, a custom accent (e.g. `brand`) works at runtime with a single rule — `[data-variant="brand"] { --hub-{component}-accent: var(--hub-sys-color-brand) }` — without recompiling the library. This family is generated by the slot convention (mirroring the sys family) and is not re-enumerated inside each component's own table below — the complete slot inventory is machine-checked in the annex that follows (`tokens-parity` check G).
+
+### Accent slots (generated annex)
+
+Every accent slot discovered in the libraries (declared or consumed), one row per token. This table is validated against the code by `tokens-parity` **check G** — when a library adds or removes a slot, update this annex to match. Defaults and derivation live in each library's stylesheet: base slots default to `var(--hub-sys-color-primary)` unless the component re-bases them, and the `subtle` / `emphasis` / `on` roles derive from the live slot via `color-mix(in oklch, …)` / relative color.
+
+<!-- parity:ignore-start — enumerated and validated by check G, not by the row parser -->
+<!-- accent-annex:start -->
+
+| Slot token | Role |
+| ---------- | ---- |
+| `--hub-avatar-accent` | base |
+| `--hub-avatar-accent-subtle` | subtle |
+| `--hub-avatar-accent-emphasis` | emphasis |
+| `--hub-avatar-accent-on` | on |
+| `--hub-badge-accent` | base |
+| `--hub-badge-accent-subtle` | subtle |
+| `--hub-badge-accent-emphasis` | emphasis |
+| `--hub-badge-accent-on` | on |
+| `--hub-board-accent` | base |
+| `--hub-board-accent-subtle` | subtle |
+| `--hub-board-accent-emphasis` | emphasis |
+| `--hub-board-accent-on` | on |
+| `--hub-breadcrumb-accent` | base |
+| `--hub-breadcrumb-accent-subtle` | subtle |
+| `--hub-breadcrumb-accent-emphasis` | emphasis |
+| `--hub-breadcrumb-accent-on` | on |
+| `--hub-btn-accent` | base |
+| `--hub-btn-accent-subtle` | subtle |
+| `--hub-btn-accent-emphasis` | emphasis |
+| `--hub-btn-accent-on` | on |
+| `--hub-calendar-accent` | base |
+| `--hub-calendar-accent-subtle` | subtle |
+| `--hub-calendar-accent-emphasis` | emphasis |
+| `--hub-calendar-accent-on` | on |
+| `--hub-dropdown-item-accent` | base (per-item runtime slot, set via host `[style.--hub-dropdown-item-accent]`) |
+| `--hub-dropdown-panel-accent` | base (per-panel runtime slot) |
+| `--hub-fab-accent` | base |
+| `--hub-list-accent` | base |
+| `--hub-list-accent-subtle` | subtle |
+| `--hub-list-accent-emphasis` | emphasis |
+| `--hub-list-accent-on` | on |
+| `--hub-modal-accent` | base |
+| `--hub-modal-accent-subtle` | subtle |
+| `--hub-modal-accent-emphasis` | emphasis |
+| `--hub-modal-accent-on` | on |
+| `--hub-nav-accent` | base |
+| `--hub-nav-accent-subtle` | subtle |
+| `--hub-nav-accent-emphasis` | emphasis |
+| `--hub-nav-accent-on` | on |
+| `--hub-panels-accent` | base |
+| `--hub-panels-accent-subtle` | subtle |
+| `--hub-panels-accent-emphasis` | emphasis |
+| `--hub-panels-accent-on` | on |
+| `--hub-panels-alert-accent` | base (alert appearance slot) |
+| `--hub-panels-card-accent` | base (card variant tint slot) |
+| `--hub-progress-accent` | base |
+| `--hub-segmented-accent` | base |
+| `--hub-speed-dial-item-accent` | base (per-item runtime slot) |
+| `--hub-stepper-accent` | base |
+| `--hub-stepper-accent-subtle` | subtle |
+| `--hub-stepper-accent-emphasis` | emphasis |
+| `--hub-stepper-accent-on` | on |
+| `--hub-table-accent` | base |
+| `--hub-table-accent-subtle` | subtle |
+| `--hub-table-accent-emphasis` | emphasis |
+| `--hub-table-accent-on` | on |
+| `--hub-toast-accent` | base |
+| `--hub-toast-accent-subtle` | subtle |
+| `--hub-toast-accent-emphasis` | emphasis |
+| `--hub-toast-accent-on` | on |
+
+<!-- accent-annex:end -->
+<!-- parity:ignore-end -->
 
 Unified component inventory with current (`IN_USE`) and planned (`PENDING`) variables, always using the final canonical token name.
 
@@ -1235,18 +1321,19 @@ The `detail` token set is defined as a single, standardized collection that supp
 | `--hub-select-value-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Select value bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:286` |
 | `--hub-select-value-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Select value border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:288` |
 | `--hub-select-value-color` | `var(--hub-sys-text-primary, #212529)` | Select value color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:287` |
-| `--hub-select-button-bg` | `var(--hub-sys-surface-page, #fff)` | Segmented select button background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:328` |
-| `--hub-select-button-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Segmented select button border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:330` |
-| `--hub-select-button-color` | `var(--hub-sys-text-primary, #212529)` | Segmented select button text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:329` |
-| `--hub-select-button-gap` | `var(--hub-ref-space-2, 0.5rem)` | Segmented select button gap | `IN_USE` | `forms/src/lib/styles/_tokens.scss:333` |
-| `--hub-select-button-padding-x` | `var(--hub-ref-space-3, 1rem)` | Segmented select button horizontal padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:331` |
-| `--hub-select-button-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Segmented select button vertical padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:332` |
-| `--hub-select-button-selected-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Selected segmented button background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:334` |
-| `--hub-select-button-selected-border-color` | `var(--hub-sys-color-primary, #0d6efd)` | Selected segmented button border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:337` |
-| `--hub-select-button-selected-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Selected segmented button text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:336` |
+| `--hub-select-button-bg` | `var(--hub-sys-surface-page, #fff)` | Segmented select button background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:331` |
+| `--hub-select-button-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Segmented select button border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:333` |
+| `--hub-select-button-color` | `var(--hub-sys-text-primary, #212529)` | Segmented select button text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:332` |
+| `--hub-select-button-gap` | `var(--hub-ref-space-2, 0.5rem)` | Segmented select button gap | `IN_USE` | `forms/src/lib/styles/_tokens.scss:336` |
+| `--hub-select-button-padding-x` | `var(--hub-ref-space-3, 1rem)` | Segmented select button horizontal padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:334` |
+| `--hub-select-button-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Segmented select button vertical padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:335` |
+| `--hub-select-button-selected-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Selected segmented button background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:337` |
+| `--hub-select-button-selected-border-color` | `var(--hub-sys-color-primary, #0d6efd)` | Selected segmented button border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:340` |
+| `--hub-select-button-selected-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Selected segmented button text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:339` |
 | `--hub-select-min-height` | `2.5rem` | Select control minimum height | `IN_USE` | `forms/src/lib/styles/_tokens.scss:273` |
 | `--hub-select-optgroup-color` | `var(--hub-sys-text-muted, #6c757d)` | Select option group label color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:285` |
-| `--hub-select-dropdown-z-index` | `calc(var(--hub-sys-zindex-modal, 1055) + 5)` | Stacking of the ng-select dropdown panel; sits above HubModal so a select inside a modal is not clipped | `IN_USE` | `forms/src/lib/styles/_tokens.scss:297` |
+| `--hub-select-dropdown-zindex` | `var(--hub-select-dropdown-z-index, calc(var(--hub-sys-zindex-modal, 1055) + 5))` | Stacking of the ng-select dropdown panel (canonical `zindex` spelling); sits above HubModal so a select inside a modal is not clipped | `IN_USE` | `forms/src/lib/select/select.component.scss:179` |
+| `--hub-select-dropdown-z-index` | `calc(var(--hub-sys-zindex-modal, 1055) + 5)` | Deprecated spelling — default carrier and override bridge for `--hub-select-dropdown-zindex`; scheduled for removal after one release cycle | `IN_USE` | `forms/src/lib/styles/_tokens.scss:300` |
 
 > **Superseded proposals (removed):** the former `--hub-select-btn-*` PENDING block shipped as the `--hub-select-button-*` tokens listed above, and the `--hub-select-checkbox-input-*` / `--hub-select-radio-input-*` proposals were dropped — option checkboxes/radios in the dropdown reuse the `check` component tokens (`--hub-check-*`, see [`check`](#check)), applied in `forms/src/lib/select/select.component.scss`.
 
@@ -1270,31 +1357,31 @@ The `detail` token set is defined as a single, standardized collection that supp
 
 | Token                            | Initial value                                                                                                                                                                                                                                                                                                            | Usage                                                                                                                                                                                                                                                                                                                                                 | Status   | Source                                    |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------------------------------------- |
-| `--hub-datepicker-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%236c757d' d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z'/%3E%3C/svg%3E")` | Datepicker icon | `IN_USE` | `forms/src/lib/styles/_tokens.scss:300` |
-| `--hub-datepicker-icon-size` | `1rem` | Datepicker icon size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:301` |
-| `--hub-datepicker-icon-width` | `2.5rem` | Datepicker icon width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:302` |
-| `--hub-daterangepicker-padding-x` | `var(--hub-ref-space-3, 1rem)` | Calendar panel horizontal padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:310` |
-| `--hub-daterangepicker-padding-y` | `var(--hub-ref-space-3, 1rem)` | Calendar panel vertical padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:311` |
+| `--hub-datepicker-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%236c757d' d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z'/%3E%3C/svg%3E")` | Datepicker icon | `IN_USE` | `forms/src/lib/styles/_tokens.scss:303` |
+| `--hub-datepicker-icon-size` | `1rem` | Datepicker icon size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:304` |
+| `--hub-datepicker-icon-width` | `2.5rem` | Datepicker icon width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:305` |
+| `--hub-daterangepicker-padding-x` | `var(--hub-ref-space-3, 1rem)` | Calendar panel horizontal padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:313` |
+| `--hub-daterangepicker-padding-y` | `var(--hub-ref-space-3, 1rem)` | Calendar panel vertical padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:314` |
 
 ### `daterangepicker`
 
 | Token                                           | Initial value                                               | Usage                                                             | Status   | Source                                    |
 | ----------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------------- | -------- | ----------------------------------------- |
-| `--hub-daterangepicker-active-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Daterangepicker active bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:316` |
-| `--hub-daterangepicker-active-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Daterangepicker active color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:318` |
-| `--hub-daterangepicker-bg` | `var(--hub-sys-surface-page, #fff)` | Daterangepicker bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:305` |
-| `--hub-daterangepicker-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Daterangepicker border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:307` |
-| `--hub-daterangepicker-border-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Daterangepicker border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:308` |
-| `--hub-daterangepicker-box-shadow` | `var(--hub-sys-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15))` | Daterangepicker box shadow | `IN_USE` | `forms/src/lib/styles/_tokens.scss:309` |
-| `--hub-daterangepicker-cell-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Daterangepicker cell border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:314` |
-| `--hub-daterangepicker-cell-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker cell color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:313` |
-| `--hub-daterangepicker-cell-hover-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Daterangepicker cell hover bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:315` |
-| `--hub-daterangepicker-cell-size` | `2rem` | Daterangepicker cell size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:312` |
-| `--hub-daterangepicker-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:306` |
-| `--hub-daterangepicker-in-range-bg` | `color-mix(in oklch, var(--hub-sys-color-primary, #0d6efd) 14%, transparent)` | Daterangepicker in range bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:322` |
-| `--hub-daterangepicker-nav-arrow-color` | `var(--hub-sys-text-muted, #6c757d)` | Daterangepicker nav arrow color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:324` |
-| `--hub-daterangepicker-nav-arrow-hover-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker nav arrow hover color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:325` |
-| `--hub-daterangepicker-off-color` | `var(--hub-sys-text-muted, #6c757d)` | Daterangepicker off color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:323` |
+| `--hub-daterangepicker-active-bg` | `var(--hub-sys-color-primary, #0d6efd)` | Daterangepicker active bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:319` |
+| `--hub-daterangepicker-active-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Daterangepicker active color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:321` |
+| `--hub-daterangepicker-bg` | `var(--hub-sys-surface-page, #fff)` | Daterangepicker bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:308` |
+| `--hub-daterangepicker-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Daterangepicker border color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:310` |
+| `--hub-daterangepicker-border-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Daterangepicker border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:311` |
+| `--hub-daterangepicker-box-shadow` | `var(--hub-sys-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15))` | Daterangepicker box shadow | `IN_USE` | `forms/src/lib/styles/_tokens.scss:312` |
+| `--hub-daterangepicker-cell-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Daterangepicker cell border radius | `IN_USE` | `forms/src/lib/styles/_tokens.scss:317` |
+| `--hub-daterangepicker-cell-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker cell color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:316` |
+| `--hub-daterangepicker-cell-hover-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Daterangepicker cell hover bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:318` |
+| `--hub-daterangepicker-cell-size` | `2rem` | Daterangepicker cell size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:315` |
+| `--hub-daterangepicker-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:309` |
+| `--hub-daterangepicker-in-range-bg` | `color-mix(in oklch, var(--hub-sys-color-primary, #0d6efd) 14%, transparent)` | Daterangepicker in range bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:325` |
+| `--hub-daterangepicker-nav-arrow-color` | `var(--hub-sys-text-muted, #6c757d)` | Daterangepicker nav arrow color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:327` |
+| `--hub-daterangepicker-nav-arrow-hover-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker nav arrow hover color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:328` |
+| `--hub-daterangepicker-off-color` | `var(--hub-sys-text-muted, #6c757d)` | Daterangepicker off color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:326` |
 
 ### `label`
 
@@ -1328,14 +1415,14 @@ The `detail` token set is defined as a single, standardized collection that supp
 | `--hub-slider-percent` | runtime (0–100) | Current value position driving fill and thumb/tooltip | `INTERNAL` | `forms/src/lib/components/slider/slider.component.html:7` |
 | `--hub-slider-track-fill` | `linear-gradient(var(--hub-slider-track-fill-bg), var(--hub-slider-track-fill-bg))` | Gradient-capable fill background image for the slider track (clipped to the current percentage) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:248` |
 | `--hub-slider-value-space` | `0` | Vertical headroom above the rail for the value bubble; collapsed to 0 by the flush (labelless) modifier | `IN_USE` | `forms/src/lib/components/slider/slider.component.scss:21` |
-| `--hub-segmented-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Vertical padding of each segment (md) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:351` |
-| `--hub-segmented-padding-x` | `var(--hub-ref-space-3, 1rem)` | Horizontal padding of each segment (md) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:350` |
-| `--hub-segmented-gap` | `0.25rem` | Gap between segments and inner track padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:349` |
-| `--hub-segmented-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Corner radius of the hub-segmented track | `IN_USE` | `forms/src/lib/styles/_tokens.scss:348` |
-| `--hub-segmented-selected-color` | `var(--hub-sys-text-primary, #212529)` | Selected segment text colour | `IN_USE` | `forms/src/lib/styles/_tokens.scss:347` |
-| `--hub-segmented-selected-bg` | `var(--hub-sys-surface-page, #fff)` | Selected segment background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:346` |
-| `--hub-segmented-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Track background of the hub-segmented bar | `IN_USE` | `forms/src/lib/styles/_tokens.scss:340` |
-| `--hub-segmented-indicator-transition` | `0.2s ease` | Duration/easing of the single-mode sliding indicator as it moves between options | `IN_USE` | `forms/src/lib/styles/_tokens.scss:353` |
+| `--hub-segmented-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Vertical padding of each segment (md) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:354` |
+| `--hub-segmented-padding-x` | `var(--hub-ref-space-3, 1rem)` | Horizontal padding of each segment (md) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:353` |
+| `--hub-segmented-gap` | `0.25rem` | Gap between segments and inner track padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:352` |
+| `--hub-segmented-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Corner radius of the hub-segmented track | `IN_USE` | `forms/src/lib/styles/_tokens.scss:351` |
+| `--hub-segmented-selected-color` | `var(--hub-sys-text-primary, #212529)` | Selected segment text colour | `IN_USE` | `forms/src/lib/styles/_tokens.scss:350` |
+| `--hub-segmented-selected-bg` | `var(--hub-sys-surface-page, #fff)` | Selected segment background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:349` |
+| `--hub-segmented-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Track background of the hub-segmented bar | `IN_USE` | `forms/src/lib/styles/_tokens.scss:343` |
+| `--hub-segmented-indicator-transition` | `0.2s ease` | Duration/easing of the single-mode sliding indicator as it moves between options | `IN_USE` | `forms/src/lib/styles/_tokens.scss:356` |
 | `--hub-segmented-indicator-x` | `—` | Internal runtime X offset of the sliding indicator (set from the selected option's measured geometry) | `INTERNAL` | `forms/src/lib/components/segmented/segmented.component.scss:27` |
 | `--hub-segmented-indicator-y` | `—` | Internal runtime Y offset of the sliding indicator (set from the selected option's measured geometry) | `INTERNAL` | `forms/src/lib/components/segmented/segmented.component.scss:28` |
 | `--hub-segmented-indicator-width` | `—` | Internal runtime width of the sliding indicator (set from the selected option's measured geometry) | `INTERNAL` | `forms/src/lib/components/segmented/segmented.component.scss:29` |
@@ -1634,7 +1721,6 @@ The standalone `tabs` proposal was **superseded**: the tabs UI shipped inside `n
 | `--hub-table-container-padding-y`               | `var(--hub-ref-space-3, 1rem)`                                            | Vertical padding of table container                                 | `PENDING` | `UX-EXCEL`                                                   |
 | `--hub-table-filter-count-bg` | `var(--hub-sys-color-success, #198754)` | Background of the active-filters count badge | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:159` |
 | `--hub-table-filter-count-color` | `var(--hub-ref-color-white, #fff)` | Text color of the active-filters count badge | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:160` |
-| `--hub-table-head-bg`                           | `var(--hub-ref-surface-2, #f8f9fa)`                                       | Background of the table header row                                  | `PENDING` | `UX-EXCEL`                                                   |
 | `--hub-table-head-border-radius`                | `var(--hub-table-border-radius, var(--hub-ref-radius-md, 0.375rem))`      | Border radius of the table header row                               | `PENDING` | `UX-EXCEL`                                                   |
 | `--hub-table-tooltip-bg`                        | `var(--hub-sys-text-primary, #212529)`                                    | Background of column tooltips                                       | `PENDING` | `INVENTORY`                                                  |
 | `--hub-table-tooltip-border-radius`             | `var(--hub-ref-radius-sm, 0.25rem)`                                       | Border radius of column tooltips                                    | `PENDING` | `INVENTORY`                                                  |
@@ -2243,6 +2329,33 @@ Agnostic icon renderer (`ng-hub-ui-icons`). One token set themes any icon pack (
 | `--hub-icon-grade` | `0` | Variable-font `GRAD` axis (Material Symbols) | `IN_USE` | `icons/src/lib/styles/_icon-base.scss:18` |
 | `--hub-icon-optical-size` | `24` | Variable-font `opsz` axis (Material Symbols) | `IN_USE` | `icons/src/lib/styles/_icon-base.scss:19` |
 
+### `metrics`
+
+> `ng-hub-ui-metrics` — `hub-progress` / `hub-meter` / `hub-ring`. Consumer-facing hooks are `IN_USE`; the runtime-written variables the components set from their value inputs (`--hub-progress-value`, `--hub-meter-value`, `--hub-meter-fill`) are `INTERNAL`, so `docs:cssvars` skips them.
+
+| Token | Initial value | Usage | Status | Source |
+| ----- | ------------- | ----- | ------ | ------ |
+| `--hub-progress-track-bg` | `color-mix(in oklch, var(--hub-progress-accent) 16%, transparent)` | Progress track background (subtle accent tint) | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:11` |
+| `--hub-progress-indicator-bg` | `var(--hub-progress-accent)` | Filled progress indicator colour | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:12` |
+| `--hub-progress-height` | `var(--hub-ref-space-2, 0.5rem)` | Progress bar thickness (sm/md/lg override it) | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:13` |
+| `--hub-progress-radius` | `var(--hub-ref-radius-pill, 50rem)` | Progress bar corner radius | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:14` |
+| `--hub-progress-value` | `0%` | Internal runtime width of the indicator (set from the value input) | `INTERNAL` | `metrics/src/lib/components/progress/progress.component.scss:41` |
+| `--hub-meter-track-bg` | `color-mix(in oklch, var(--hub-sys-color-neutral, #6c757d) 16%, transparent)` | Meter track background | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:11` |
+| `--hub-meter-low-bg` | `var(--hub-sys-color-danger, #dc3545)` | Meter fill when the value is below target | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:12` |
+| `--hub-meter-optimum-bg` | `var(--hub-sys-color-success, #198754)` | Meter fill when the value is on target | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:13` |
+| `--hub-meter-high-bg` | `var(--hub-sys-color-warning, #ffc107)` | Meter fill when the value is above target | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:14` |
+| `--hub-meter-height` | `var(--hub-ref-space-2, 0.5rem)` | Meter bar thickness | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:15` |
+| `--hub-meter-radius` | `var(--hub-ref-radius-pill, 50rem)` | Meter bar corner radius | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:16` |
+| `--hub-meter-fill` | `var(--hub-meter-optimum-bg)` | Internal band-selected meter fill colour | `INTERNAL` | `metrics/src/lib/components/meter/meter.component.scss:18` |
+| `--hub-meter-value` | `0%` | Internal runtime width of the meter fill (set from the value input) | `INTERNAL` | `metrics/src/lib/components/meter/meter.component.scss:37` |
+| `--hub-ring-size` | `4rem` | Ring outer diameter (overridden per-instance from size) | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:12` |
+| `--hub-ring-thickness` | `var(--hub-ref-space-2, 0.5rem)` | Ring stroke width (overridden per-instance from thickness) | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:13` |
+| `--hub-ring-track` | `color-mix(in oklch, var(--hub-sys-color-neutral, #6c757d) 20%, transparent)` | Ring track stroke colour | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:14` |
+| `--hub-ring-indicator` | `var(--hub-sys-color-primary, #0d6efd)` | Ring indicator stroke colour (neutral band) | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:15` |
+| `--hub-ring-caption-color` | `var(--hub-sys-text-primary, #212529)` | Ring centre caption colour | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:16` |
+| `--hub-ring-low-color` | `var(--hub-sys-color-danger, #dc3545)` | Ring stroke below the low threshold | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:17` |
+| `--hub-ring-high-color` | `var(--hub-sys-color-success, #198754)` | Ring stroke at/above the high threshold | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:18` |
+
 ## Appendix
 
 ### Glossary
@@ -2353,33 +2466,4 @@ Unique custom properties **declared** in each library's source (`.scss` + inline
 ### Template variables
 
 Template variables with interpolation are already documented in de-interpolated format within the `paginable` section.
-
-### Metrics (`ng-hub-ui-metrics`)
-
-> `ng-hub-ui-metrics` (hub-progress / hub-meter / hub-ring) exposes the theming tokens below, projected onto the `metrics` docs page through the docs `SECTION_MAP`. Consumer-facing hooks are `IN_USE`; the runtime-written variables the components set from their value inputs (`--hub-progress-value`, `--hub-meter-value`, `--hub-meter-fill`) are `INTERNAL`, so `docs:cssvars` skips them.
-
-#### metrics
-
-| Token | Initial value | Usage | Status | Source |
-| ----- | ------------- | ----- | ------ | ------ |
-| `--hub-progress-track-bg` | `color-mix(in oklch, var(--hub-progress-accent) 16%, transparent)` | Progress track background (subtle accent tint) | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:11` |
-| `--hub-progress-indicator-bg` | `var(--hub-progress-accent)` | Filled progress indicator colour | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:12` |
-| `--hub-progress-height` | `var(--hub-ref-space-2, 0.5rem)` | Progress bar thickness (sm/md/lg override it) | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:13` |
-| `--hub-progress-radius` | `var(--hub-ref-radius-pill, 50rem)` | Progress bar corner radius | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:14` |
-| `--hub-progress-value` | `0%` | Internal runtime width of the indicator (set from the value input) | `INTERNAL` | `metrics/src/lib/components/progress/progress.component.scss:41` |
-| `--hub-meter-track-bg` | `color-mix(in oklch, var(--hub-sys-color-neutral, #6c757d) 16%, transparent)` | Meter track background | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:11` |
-| `--hub-meter-low-bg` | `var(--hub-sys-color-danger, #dc3545)` | Meter fill when the value is below target | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:12` |
-| `--hub-meter-optimum-bg` | `var(--hub-sys-color-success, #198754)` | Meter fill when the value is on target | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:13` |
-| `--hub-meter-high-bg` | `var(--hub-sys-color-warning, #ffc107)` | Meter fill when the value is above target | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:14` |
-| `--hub-meter-height` | `var(--hub-ref-space-2, 0.5rem)` | Meter bar thickness | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:15` |
-| `--hub-meter-radius` | `var(--hub-ref-radius-pill, 50rem)` | Meter bar corner radius | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:16` |
-| `--hub-meter-fill` | `var(--hub-meter-optimum-bg)` | Internal band-selected meter fill colour | `INTERNAL` | `metrics/src/lib/components/meter/meter.component.scss:18` |
-| `--hub-meter-value` | `0%` | Internal runtime width of the meter fill (set from the value input) | `INTERNAL` | `metrics/src/lib/components/meter/meter.component.scss:37` |
-| `--hub-ring-size` | `4rem` | Ring outer diameter (overridden per-instance from size) | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:12` |
-| `--hub-ring-thickness` | `var(--hub-ref-space-2, 0.5rem)` | Ring stroke width (overridden per-instance from thickness) | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:13` |
-| `--hub-ring-track` | `color-mix(in oklch, var(--hub-sys-color-neutral, #6c757d) 20%, transparent)` | Ring track stroke colour | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:14` |
-| `--hub-ring-indicator` | `var(--hub-sys-color-primary, #0d6efd)` | Ring indicator stroke colour (neutral band) | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:15` |
-| `--hub-ring-caption-color` | `var(--hub-sys-text-primary, #212529)` | Ring centre caption colour | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:16` |
-| `--hub-ring-low-color` | `var(--hub-sys-color-danger, #dc3545)` | Ring stroke below the low threshold | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:17` |
-| `--hub-ring-high-color` | `var(--hub-sys-color-success, #198754)` | Ring stroke at/above the high threshold | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:18` |
 
