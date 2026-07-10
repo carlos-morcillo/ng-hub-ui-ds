@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.6.1] - 2026-07-10
+
+### Changed
+
+- **docs (token catalogue)** — documented `--hub-panels-accordion-toggle-gutter`, the space the accordion's trailing chevron reserves at the row's end (shipped with the header-actions slot work in `ng-hub-ui-panels` 22.8.2; forced to `0px` when `togglePosition` places the chevron at the start). Documentation-only — no token or compiled-CSS changes.
+
 ## [22.6.0] - 2026-07-09
 
 ### Added
