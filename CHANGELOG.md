@@ -5,6 +5,13 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.1] - 2026-07-29
+
+### Changed
+
+- **docs (token catalogue)** — documented the six tokens added by today's upstream batch: the select caret geometry (`--hub-select-arrow-size`, `--hub-select-arrow-gap` — `ng-hub-ui-forms` 22.11.0, where the caret finally renders), the table header chrome (`--hub-table-head-border-width`, `--hub-table-head-text-transform`, `--hub-table-head-letter-spacing` — `ng-hub-ui-paginable` 22.7.0) and the canonical step-indicator metric (`--hub-stepper-indicator-size` — `ng-hub-ui-stepper` 22.7.0). Source line references refreshed by the parity guard. Documentation-only — no token or compiled-CSS changes in the ds itself.
+- **README** — the layout mixin group list now includes `offset` (added in 22.7.0 but missing from the list the published tarball carried).
+
 ## [22.7.0] - 2026-07-29
 
 ### Added
