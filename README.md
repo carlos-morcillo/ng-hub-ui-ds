@@ -226,8 +226,8 @@ Besides the tokens, the package ships an opt-in styling layer — nothing is emi
 **Utility sheets** — class names mirror Bootstrap's **exactly** and every value resolves to the canonical tokens. Do not load them AND Bootstrap globally in the same document. Each sheet also has a compiled `.css` twin for Sass-less apps:
 
 ```scss
-@use 'ng-hub-ui-ds/styles/utilities/layout';    // display/flex, 12-col grid, spacing, sizing, position, overflow, order, .ratio-*, .visually-hidden…
-@use 'ng-hub-ui-ds/styles/utilities/text';      // .fs-1…6, .fw-*, .lh-*, .text-truncate, semantic text colours
+@use 'ng-hub-ui-ds/styles/utilities/layout';    // display/flex (+ responsive), 12-col grid + offsets, spacing, sizing, position, overflow, order, .vr, .ratio-*, .visually-hidden…
+@use 'ng-hub-ui-ds/styles/utilities/text';      // .fs-1…6, .h1…6, .fw-*, .lh-*, .text-truncate, semantic text colours
 @use 'ng-hub-ui-ds/styles/utilities/surfaces';  // .bg-* (+ -subtle), .text-bg-*, .border*, .rounded*, .shadow*, .opacity-*
 ```
 

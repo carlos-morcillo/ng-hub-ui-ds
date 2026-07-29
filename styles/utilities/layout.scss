@@ -10,12 +10,12 @@
  * (`.stack`, `.cluster`, `.grid-auto`, `.center`). Import explicitly:
  *   @use 'ng-hub-ui-ds/styles/utilities/layout';
  *
- * Includes a 12-column grid (`.row` + `.col-1…12`), width/height sizing,
- * directional padding/margin (`.p-*` / `.pt-*` / `.mx-*` / `.ms-auto` …),
- * display/flex helpers, gap, position/inset, overflow, order, float,
- * visibility, z-index, object-fit, vertical-align, interaction helpers and
- * the accessibility/behaviour helpers (`.visually-hidden`, `.stretched-link`,
- * `.ratio-*`, `.clearfix`).
+ * Includes a 12-column grid (`.row` + `.col-1…12` + `.offset-1…11`),
+ * width/height sizing, directional padding/margin (`.p-*` / `.pt-*` / `.mx-*`
+ * / `.ms-auto` …), display/flex helpers, gap, position/inset, overflow, order,
+ * float, visibility, z-index, object-fit, vertical-align, interaction helpers
+ * and the accessibility/behaviour helpers (`.visually-hidden`,
+ * `.stretched-link`, `.ratio-*`, `.clearfix`, `.vr`).
  */
 
 @use '../mixins/breakpoints' as bp;
@@ -40,6 +40,11 @@ $_steps: 0 1 2 3 4 5;
 @for $i from 1 through 12 {
 	.col-#{$i} {
 		@include layout.col($i);
+	}
+}
+@for $i from 1 through 11 {
+	.offset-#{$i} {
+		@include layout.offset($i);
 	}
 }
 .center {
@@ -489,6 +494,16 @@ $_steps: 0 1 2 3 4 5;
 	@include helpers.clearfix();
 }
 
+/* ── Vertical rule — self-stretching inline separator for flex rows ── */
+.vr {
+	display: inline-block;
+	align-self: stretch;
+	width: 1px;
+	min-height: 1em;
+	background-color: currentcolor;
+	opacity: 0.25;
+}
+
 /* ── Visibility ── */
 .visible {
 	visibility: visible;
@@ -646,10 +661,12 @@ $_steps: 0 1 2 3 4 5;
 }
 
 /* ── Responsive variants (mobile-first, Bootstrap-exact names) ──
-   Generated for the highest-traffic groups: display, columns, spacing and gap.
-   Any other utility gets its responsive variant the same way in consumer code:
+   Generated for the highest-traffic groups: display, columns + offsets,
+   spacing, gap and the whole flex family (direction, wrap, grow/shrink,
+   justify/align, order). Any other utility gets its responsive variant the
+   same way in consumer code:
      @use 'ng-hub-ui-ds' as hub;
-     @include hub.media-breakpoint-up(md) { .justify-content-md-center { justify-content: center; } } */
+     @include hub.media-breakpoint-up(md) { .text-md-center { text-align: center; } } */
 @each $bp-name, $bp-width in bp.$hub-breakpoints {
 	@include bp.media-breakpoint-up($bp-name) {
 		/* display */
@@ -659,11 +676,74 @@ $_steps: 0 1 2 3 4 5;
 			}
 		}
 
-		/* 12-column spans */
+		/* 12-column spans + offsets (`offset-{bp}-0` resets to auto placement) */
 		@for $i from 1 through 12 {
 			.col-#{$bp-name}-#{$i} {
 				@include layout.col($i);
 			}
+		}
+		@for $i from 0 through 11 {
+			.offset-#{$bp-name}-#{$i} {
+				@include layout.offset($i);
+			}
+		}
+
+		/* flex direction / wrap / grow / shrink */
+		@each $dir in (row, row-reverse, column, column-reverse) {
+			.flex-#{$bp-name}-#{$dir} {
+				flex-direction: $dir;
+			}
+		}
+		@each $w in (wrap, nowrap, wrap-reverse) {
+			.flex-#{$bp-name}-#{$w} {
+				flex-wrap: $w;
+			}
+		}
+		.flex-#{$bp-name}-fill {
+			flex: 1 1 auto;
+		}
+		@each $g in (0, 1) {
+			.flex-#{$bp-name}-grow-#{$g} {
+				flex-grow: $g;
+			}
+			.flex-#{$bp-name}-shrink-#{$g} {
+				flex-shrink: $g;
+			}
+		}
+
+		/* main-axis / cross-axis alignment */
+		@each $k, $v in (start: flex-start, end: flex-end, center: center, between: space-between, around: space-around, evenly: space-evenly) {
+			.justify-content-#{$bp-name}-#{$k} {
+				justify-content: $v;
+			}
+		}
+		@each $k, $v in (start: flex-start, end: flex-end, center: center, baseline: baseline, stretch: stretch) {
+			.align-items-#{$bp-name}-#{$k} {
+				align-items: $v;
+			}
+		}
+		@each $k, $v in (auto: auto, start: flex-start, end: flex-end, center: center, baseline: baseline, stretch: stretch) {
+			.align-self-#{$bp-name}-#{$k} {
+				align-self: $v;
+			}
+		}
+		@each $k, $v in (start: flex-start, end: flex-end, center: center, between: space-between, around: space-around, stretch: stretch) {
+			.align-content-#{$bp-name}-#{$k} {
+				align-content: $v;
+			}
+		}
+
+		/* order */
+		.order-#{$bp-name}-first {
+			order: -1;
+		}
+		@for $i from 0 through 5 {
+			.order-#{$bp-name}-#{$i} {
+				order: #{$i};
+			}
+		}
+		.order-#{$bp-name}-last {
+			order: 6;
 		}
 
 		/* spacing + gap */

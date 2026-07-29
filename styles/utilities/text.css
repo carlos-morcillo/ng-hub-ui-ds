@@ -149,6 +149,52 @@
   font-size: calc(var(--hub-ref-font-size-base) * 1);
 }
 
+/* ── Heading classes — heading typography without the semantics ──
+ * `.h5` on a <div> reads like an <h5>: the matching step of the heading scale
+ * plus what the ds reset gives a real heading (margin + tight leading), with
+ * the UA's bold weight made explicit since a non-heading element lacks it. */
+.h1 {
+  font-size: calc(var(--hub-ref-font-size-base) * 2.5);
+  font-weight: var(--hub-ref-font-weight-bold);
+  line-height: var(--hub-ref-line-height-sm);
+  margin-block: 0 var(--hub-ref-space-2);
+}
+
+.h2 {
+  font-size: calc(var(--hub-ref-font-size-base) * 2);
+  font-weight: var(--hub-ref-font-weight-bold);
+  line-height: var(--hub-ref-line-height-sm);
+  margin-block: 0 var(--hub-ref-space-2);
+}
+
+.h3 {
+  font-size: calc(var(--hub-ref-font-size-base) * 1.75);
+  font-weight: var(--hub-ref-font-weight-bold);
+  line-height: var(--hub-ref-line-height-sm);
+  margin-block: 0 var(--hub-ref-space-2);
+}
+
+.h4 {
+  font-size: calc(var(--hub-ref-font-size-base) * 1.5);
+  font-weight: var(--hub-ref-font-weight-bold);
+  line-height: var(--hub-ref-line-height-sm);
+  margin-block: 0 var(--hub-ref-space-2);
+}
+
+.h5 {
+  font-size: calc(var(--hub-ref-font-size-base) * 1.25);
+  font-weight: var(--hub-ref-font-weight-bold);
+  line-height: var(--hub-ref-line-height-sm);
+  margin-block: 0 var(--hub-ref-space-2);
+}
+
+.h6 {
+  font-size: calc(var(--hub-ref-font-size-base) * 1);
+  font-weight: var(--hub-ref-font-weight-bold);
+  line-height: var(--hub-ref-line-height-sm);
+  margin-block: 0 var(--hub-ref-space-2);
+}
+
 /* ── Size ──
  * `.small` is Bootstrap-exact: RELATIVE (`em`), so it shrinks against whatever
  * it sits in — `.small` inside an `<h2>` stays proportional to the heading.

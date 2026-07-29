@@ -98,6 +98,19 @@
 	}
 }
 
+/* ── Heading classes — heading typography without the semantics ──
+ * `.h5` on a <div> reads like an <h5>: the matching step of the heading scale
+ * plus what the ds reset gives a real heading (margin + tight leading), with
+ * the UA's bold weight made explicit since a non-heading element lacks it. */
+@for $i from 1 through 6 {
+	.h#{$i} {
+		@include typo.font-size($i);
+		@include typo.font-weight(bold);
+		@include typo.line-height(sm);
+		margin-block: 0 var(--hub-ref-space-2);
+	}
+}
+
 /* ── Size ──
  * `.small` is Bootstrap-exact: RELATIVE (`em`), so it shrinks against whatever
  * it sits in — `.small` inside an `<h2>` stays proportional to the heading.

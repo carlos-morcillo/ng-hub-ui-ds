@@ -54,8 +54,21 @@
 }
 
 /// A column spanning $span of the 12 tracks of a `row()`.
+/// Emits the `grid-column-end` longhand (identical auto-placement) so that
+/// `offset()` can set the start track on the same element independently.
 @mixin col($span: 12) {
-	grid-column: span #{$span};
+	grid-column-end: span #{$span};
+}
+
+/// Starts a `col()` at track $n + 1 of its `row()` — Bootstrap's offset
+/// semantics on the CSS grid. `offset(0)` resets to auto placement (the
+/// responsive `.offset-{bp}-0` reset).
+@mixin offset($n: 0) {
+	@if $n == 0 {
+		grid-column-start: auto;
+	} @else {
+		grid-column-start: #{$n + 1};
+	}
 }
 
 /// Centered page wrapper constrained to a container max-width.

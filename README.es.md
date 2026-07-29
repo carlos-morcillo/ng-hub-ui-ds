@@ -224,8 +224,8 @@ Además de los tokens, el paquete incluye una capa de estilos opt-in — no se e
 **Hojas de utilidades** — los nombres de clase son **exactamente los de Bootstrap** y cada valor resuelve a los tokens canónicos. No cargues estas hojas Y Bootstrap globalmente en el mismo documento. Cada hoja tiene además su gemela `.css` compilada para apps sin Sass:
 
 ```scss
-@use 'ng-hub-ui-ds/styles/utilities/layout';    // display/flex, grid de 12 col, spacing, sizing, position, overflow, order, .ratio-*, .visually-hidden…
-@use 'ng-hub-ui-ds/styles/utilities/text';      // .fs-1…6, .fw-*, .lh-*, .text-truncate, colores de texto semánticos
+@use 'ng-hub-ui-ds/styles/utilities/layout';    // display/flex (+ responsive), grid de 12 col + offsets, spacing, sizing, position, overflow, order, .vr, .ratio-*, .visually-hidden…
+@use 'ng-hub-ui-ds/styles/utilities/text';      // .fs-1…6, .h1…6, .fw-*, .lh-*, .text-truncate, colores de texto semánticos
 @use 'ng-hub-ui-ds/styles/utilities/surfaces';  // .bg-* (+ -subtle), .text-bg-*, .border*, .rounded*, .shadow*, .opacity-*
 ```
 

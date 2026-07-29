@@ -5,6 +5,19 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.0] - 2026-07-29
+
+### Added
+
+- **`.offset-1…11` grid offsets** plus responsive `.offset-{bp}-0…11` (the `-0` variant resets to auto placement): Bootstrap's offset semantics ported to the CSS grid — the class sets `grid-column-start`, so `.col-4.offset-md-8` spans 4 tracks starting at track 9 from `md` up. Backed by a new public **`offset($n)` layout mixin**, the counterpart of `col($span)`.
+- **Responsive variants for the whole flex family** across sm/md/lg/xl/xxl (reported upstream by a consumer: `flex-md-row` and `align-items-md-start` did nothing): `.flex-{bp}-{row,column}(-reverse)`, `.flex-{bp}-{wrap,nowrap,wrap-reverse}`, `.flex-{bp}-fill`, `.flex-{bp}-{grow,shrink}-{0,1}`, `.justify-content-{bp}-*`, `.align-items-{bp}-*`, `.align-self-{bp}-*`, `.align-content-{bp}-*` and `.order-{bp}-{first,0…5,last}`.
+- **`.h1`–`.h6` heading classes** — heading typography without the semantics: the matching step of the heading scale plus the reset's heading treatment (margin and tight leading), with the UA's bold weight made explicit so a `.h5` `<div>` reads like an `<h5>`.
+- **`.vr` vertical rule** — Bootstrap-exact self-stretching inline separator for flex rows (`currentcolor` at 25% opacity).
+
+### Changed
+
+- **`col($span)` emits the `grid-column-end: span N` longhand** instead of the `grid-column: span N` shorthand. Auto placement is identical, but the start track is left free for `offset()` / `.offset-*` to set on the same element. Only relevant if you were manually overriding `grid-column-start` on a `col()` element — that override no longer needs to fight the shorthand.
+
 ## [22.6.1] - 2026-07-10
 
 ### Changed
