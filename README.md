@@ -250,7 +250,7 @@ The only non-Bootstrap names are the layout primitives that mirror the mixins: `
 .sr-label    { @include hub.visually-hidden(); }
 ```
 
-Groups: **theme** (`theme()` — partial theming in one call: pass only the changed scales/accents as maps), **breakpoints** (`media-breakpoint-up/down` over the `$hub-breakpoints` map — the responsive variants `.d-md-*`, `.col-lg-*`, `.p-sm-*`… are generated from it), **layout** (`stack`, `cluster`, `grid`, `grid-fixed`, `row`, `col`, `center`), **typography** (`font-family`, `font-size`, `font-weight`, `line-height`, `text-color`, `link-color`, `text-truncate`, `text-break`), **surfaces** (`bg`, `text-bg`, `border`, `border-color`, `radius`, `shadow`), **helpers** (`focus-ring`, `visually-hidden`, `stretched-link`, `ratio`, `clearfix`) and the **bridges** (`bridge-bootstrap` / `bridge-material` / `bridge-tailwind` / `bridge-open-props`).
+Groups: **theme** (`theme()` — partial theming in one call: pass only the changed scales/accents as maps), **breakpoints** (`media-breakpoint-up/down` over the `$hub-breakpoints` map — the responsive variants `.d-md-*`, `.col-lg-*`, `.p-sm-*`… are generated from it), **layout** (`stack`, `cluster`, `grid`, `grid-fixed`, `row`, `col`, `offset`, `center`), **typography** (`font-family`, `font-size`, `font-weight`, `line-height`, `text-color`, `link-color`, `text-truncate`, `text-break`), **surfaces** (`bg`, `text-bg`, `border`, `border-color`, `radius`, `shadow`), **helpers** (`focus-ring`, `visually-hidden`, `stretched-link`, `ratio`, `clearfix`) and the **bridges** (`bridge-bootstrap` / `bridge-material` / `bridge-tailwind` / `bridge-open-props`).
 
 The full catalogue with live demos is documented at [hubui.dev/design-system](https://hubui.dev/design-system).
 
