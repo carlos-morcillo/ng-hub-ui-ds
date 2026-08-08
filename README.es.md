@@ -3,7 +3,7 @@
 **Español** | [English](./README.md)
 
 La **base de design tokens** compartida de la familia
-[ng-hub-ui](https://hubui.dev/). Publica las variables CSS canónicas
+[ng-hub-ui](https://hubui.dev/en/). Publica las variables CSS canónicas
 `--hub-ref-*` (primitivas) y `--hub-sys-*` (semánticas) — rampas de color,
 espaciado, radios, tipografía, superficies, colores semánticos, sombras, focus
 ring y más — con claro/oscuro y **8 temas integrados**.
@@ -16,11 +16,11 @@ lee la misma paleta. Re-tematizas en un sitio y toda la familia sigue.
 
 ## Documentación y ejemplos en vivo
 
-Este paquete forma parte de [Hub UI](https://hubui.dev/), una colección de
+Este paquete forma parte de [Hub UI](https://hubui.dev/en/), una colección de
 librerías de componentes Angular para aplicaciones standalone.
 
-- Documentación: https://hubui.dev/design-system/
-- Hub UI: https://hubui.dev/
+- Documentación: https://hubui.dev/en/design-system/
+- Hub UI: https://hubui.dev/en/
 
 ## 🧩 Familia de librerías `ng-hub-ui`
 
@@ -250,7 +250,7 @@ Los únicos nombres fuera de Bootstrap son los primitivos de layout que reflejan
 
 Grupos: **tema** (`theme()` — tematización parcial en una llamada: pásale solo las escalas/acentos cambiados como mapas), **breakpoints** (`media-breakpoint-up/down` sobre el mapa `$hub-breakpoints` — de él se generan las variantes responsive `.d-md-*`, `.col-lg-*`, `.p-sm-*`…), **layout** (`stack`, `cluster`, `grid`, `grid-fixed`, `row`, `col`, `offset`, `center`), **tipografía** (`font-family`, `font-size`, `font-weight`, `line-height`, `text-color`, `link-color`, `text-truncate`, `text-break`), **superficies** (`bg`, `text-bg`, `border`, `border-color`, `radius`, `shadow`), **helpers** (`focus-ring`, `visually-hidden`, `stretched-link`, `ratio`, `clearfix`) y los **puentes** (`bridge-bootstrap` / `bridge-material` / `bridge-tailwind` / `bridge-open-props`).
 
-El catálogo completo con demos en vivo está documentado en [hubui.dev/design-system](https://hubui.dev/design-system).
+El catálogo completo con demos en vivo está documentado en [hubui.dev/design-system](https://hubui.dev/en/design-system/).
 
 ---
 
@@ -369,7 +369,7 @@ $hub-accents-light: (
 | Cambiar el modo oscuro     | `[data-theme='dark'] { --hub-sys-… : … }`                   |
 | Añadir un acento propio    | define `--hub-sys-color-<x>` (+ familia opcional)           |
 | Crear un tema              | `[data-theme='<nombre>'] { … }` y actívalo                  |
-| Ver todos los tokens       | la página de tokens en [hubui.dev](https://hubui.dev/design-system/) |
+| Ver todos los tokens       | la página de tokens en [hubui.dev](https://hubui.dev/en/design-system/) |
 
 ---
 
