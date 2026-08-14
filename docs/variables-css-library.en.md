@@ -2389,6 +2389,24 @@ Agnostic icon renderer (`ng-hub-ui-icons`). One token set themes any icon pack (
 | `--hub-ring-low-color` | `var(--hub-sys-color-danger, #dc3545)` | Ring stroke below the low threshold | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:17` |
 | `--hub-ring-high-color` | `var(--hub-sys-color-success, #198754)` | Ring stroke at/above the high threshold | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:18` |
 
+### `signature`
+
+The signature field reuses the `.hub-field__*` shell from `ng-hub-ui-forms`, so its own slots default to that shell's field contract before falling back to `sys`/`ref`: the drawing surface reads the `--hub-input-*` control tokens, the label reads the `--hub-label-*` family, and the disabled state reads `--hub-form-disabled-opacity`. Theming a form therefore themes its signature field with no extra rules; overriding a `--hub-signature-*` slot re-targets only this component. Theme the whole field in one call with the `hub-signature-theme()` Sass mixin.
+
+| Token | Initial value | Usage | Status | Source |
+| ----- | ------------- | ----- | ------ | ------ |
+| `--hub-signature-bg` | `var(--hub-input-bg, var(--hub-sys-surface, #fff))` | Drawing-surface background | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:2` |
+| `--hub-signature-color` | `var(--hub-input-color, var(--hub-sys-text-primary, #212529))` | Field text colour | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:3` |
+| `--hub-signature-border-color` | `var(--hub-input-border-color, var(--hub-sys-border, #ced4da))` | Drawing-surface border colour | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:4` |
+| `--hub-signature-border-width` | `var(--hub-input-border-width, 1px)` | Drawing-surface border thickness | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:5` |
+| `--hub-signature-border-radius` | `var(--hub-input-border-radius, var(--hub-ref-radius-md, 0.375rem))` | Drawing-surface corner radius | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:6` |
+| `--hub-signature-focus-border-color` | `var(--hub-input-focus-border-color, var(--hub-sys-color-primary, #0d6efd))` | Border colour while the surface holds keyboard focus | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:7` |
+| `--hub-signature-focus-shadow` | `var(--hub-input-focus-box-shadow, 0 0 0 0.25rem rgb(13 110 253 / 25%))` | Focus ring around the drawing surface | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:8` |
+| `--hub-signature-label-color` | `var(--hub-label-color, var(--hub-sys-text-primary, #212529))` | Field label colour | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:9` |
+| `--hub-signature-label-font-size` | `var(--hub-label-font-size, var(--hub-ref-font-size-sm, 0.875rem))` | Field label font size | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:10` |
+| `--hub-signature-font-size` | `var(--hub-input-font-size, 1rem)` | Field font size | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:11` |
+| `--hub-signature-actions-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gap between the clear / undo / redo actions | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:12` |
+
 ## Appendix
 
 ### Glossary
