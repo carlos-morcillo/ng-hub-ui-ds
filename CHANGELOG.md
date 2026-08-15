@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.4] - 2026-08-15
+
+### Added
+
+- Token-spec rows for the `ng-hub-ui-nav` 22.9.0 icon rail: `--hub-nav-rail-width`, `--hub-nav-rail-transition` and the sixteen `--hub-nav-rail-toggle-*` slots (size, padding, colors, border, radius, shadow, replaceable SVG icon mask, insets, z-index, transition). Documentation-only — no token or compiled-CSS changes in the ds itself.
+
 ## [22.7.3] - 2026-08-14
 
 ### Added
