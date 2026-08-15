@@ -2145,23 +2145,41 @@ Neutral loading-placeholder tokens (no semantic colour variant). The base / high
 | `--hub-nav-mobile-zindex` | `var(--hub-sys-zindex-fixed, 1030)` | Mobile panel z-index | `IN_USE` | `nav/src/styles/nav-tokens.scss:138` |
 | `--hub-nav-padding-x` | `var(--hub-ref-space-3, 1rem)` | Navigation horizontal padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:10` |
 | `--hub-nav-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Navigation vertical padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:11` |
-| `--hub-nav-panel-back-color` | `var(--hub-sys-text-primary, #212529)` | Panel back button color | `IN_USE` | `nav/src/styles/nav-tokens.scss:175` |
-| `--hub-nav-panel-back-hover-bg` | `var(--hub-sys-state-hover-bg, rgba(0, 0, 0, 0.075))` | Panel back button hover background | `IN_USE` | `nav/src/styles/nav-tokens.scss:176` |
-| `--hub-nav-panel-back-size` | `2rem` | Panel back button size | `IN_USE` | `nav/src/styles/nav-tokens.scss:177` |
-| `--hub-nav-panel-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Side panel background | `IN_USE` | `nav/src/styles/nav-tokens.scss:156` |
-| `--hub-nav-panel-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Side panel border color | `IN_USE` | `nav/src/styles/nav-tokens.scss:158` |
-| `--hub-nav-panel-border-width` | `1px` | Side panel border width | `IN_USE` | `nav/src/styles/nav-tokens.scss:159` |
-| `--hub-nav-panel-color` | `var(--hub-sys-text-primary, #212529)` | Side panel text color | `IN_USE` | `nav/src/styles/nav-tokens.scss:157` |
-| `--hub-nav-panel-header-bg` | `var(--hub-sys-surface-page, #fff)` | Panel header background | `IN_USE` | `nav/src/styles/nav-tokens.scss:168` |
-| `--hub-nav-panel-header-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Panel header border color | `IN_USE` | `nav/src/styles/nav-tokens.scss:169` |
-| `--hub-nav-panel-header-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Panel header font size | `IN_USE` | `nav/src/styles/nav-tokens.scss:170` |
-| `--hub-nav-panel-header-font-weight` | `var(--hub-ref-font-weight-semibold, 600)` | Panel header font weight | `IN_USE` | `nav/src/styles/nav-tokens.scss:171` |
-| `--hub-nav-panel-header-height` | `3rem` | Panel header height | `IN_USE` | `nav/src/styles/nav-tokens.scss:167` |
-| `--hub-nav-panel-header-padding-x` | `var(--hub-ref-space-3, 1rem)` | Panel header horizontal padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:172` |
-| `--hub-nav-panel-shadow` | `var(--hub-sys-shadow-sm, 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075))` | Side panel shadow | `IN_USE` | `nav/src/styles/nav-tokens.scss:160` |
-| `--hub-nav-panel-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Side panel slide transition | `IN_USE` | `nav/src/styles/nav-tokens.scss:164` |
-| `--hub-nav-panel-width` | `16rem` | Side panel width | `IN_USE` | `nav/src/styles/nav-tokens.scss:155` |
-| `--hub-nav-panel-zindex` | `var(--hub-sys-zindex-dropdown, 1000)` | Side panel z-index | `IN_USE` | `nav/src/styles/nav-tokens.scss:161` |
+| `--hub-nav-panel-back-color` | `var(--hub-sys-text-primary, #212529)` | Panel back button color | `IN_USE` | `nav/src/styles/nav-tokens.scss:204` |
+| `--hub-nav-panel-back-hover-bg` | `var(--hub-sys-state-hover-bg, rgba(0, 0, 0, 0.075))` | Panel back button hover background | `IN_USE` | `nav/src/styles/nav-tokens.scss:205` |
+| `--hub-nav-panel-back-size` | `2rem` | Panel back button size | `IN_USE` | `nav/src/styles/nav-tokens.scss:206` |
+| `--hub-nav-panel-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Side panel background | `IN_USE` | `nav/src/styles/nav-tokens.scss:185` |
+| `--hub-nav-panel-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Side panel border color | `IN_USE` | `nav/src/styles/nav-tokens.scss:187` |
+| `--hub-nav-panel-border-width` | `1px` | Side panel border width | `IN_USE` | `nav/src/styles/nav-tokens.scss:188` |
+| `--hub-nav-panel-color` | `var(--hub-sys-text-primary, #212529)` | Side panel text color | `IN_USE` | `nav/src/styles/nav-tokens.scss:186` |
+| `--hub-nav-panel-header-bg` | `var(--hub-sys-surface-page, #fff)` | Panel header background | `IN_USE` | `nav/src/styles/nav-tokens.scss:197` |
+| `--hub-nav-panel-header-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Panel header border color | `IN_USE` | `nav/src/styles/nav-tokens.scss:198` |
+| `--hub-nav-panel-header-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Panel header font size | `IN_USE` | `nav/src/styles/nav-tokens.scss:199` |
+| `--hub-nav-panel-header-font-weight` | `var(--hub-ref-font-weight-semibold, 600)` | Panel header font weight | `IN_USE` | `nav/src/styles/nav-tokens.scss:200` |
+| `--hub-nav-panel-header-height` | `3rem` | Panel header height | `IN_USE` | `nav/src/styles/nav-tokens.scss:196` |
+| `--hub-nav-panel-header-padding-x` | `var(--hub-ref-space-3, 1rem)` | Panel header horizontal padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:201` |
+| `--hub-nav-panel-shadow` | `var(--hub-sys-shadow-sm, 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075))` | Side panel shadow | `IN_USE` | `nav/src/styles/nav-tokens.scss:189` |
+| `--hub-nav-panel-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Side panel slide transition | `IN_USE` | `nav/src/styles/nav-tokens.scss:193` |
+| `--hub-nav-panel-width` | `16rem` | Side panel width | `IN_USE` | `nav/src/styles/nav-tokens.scss:184` |
+| `--hub-nav-panel-zindex` | `var(--hub-sys-zindex-dropdown, 1000)` | Side panel z-index | `IN_USE` | `nav/src/styles/nav-tokens.scss:190` |
+| `--hub-nav-rail-toggle-bg` | `var(--hub-sys-surface-elevated, #fff)` | Rail toggle background | `IN_USE` | `nav/src/styles/nav-tokens.scss:164` |
+| `--hub-nav-rail-toggle-border-color` | `var(--hub-nav-border-color, #dee2e6)` | Rail toggle border color | `IN_USE` | `nav/src/styles/nav-tokens.scss:168` |
+| `--hub-nav-rail-toggle-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Rail toggle container radius | `IN_USE` | `nav/src/styles/nav-tokens.scss:169` |
+| `--hub-nav-rail-toggle-border-width` | `1px` | Rail toggle border width | `IN_USE` | `nav/src/styles/nav-tokens.scss:167` |
+| `--hub-nav-rail-toggle-color` | `var(--hub-nav-item-color, #212529)` | Rail toggle arrow color | `IN_USE` | `nav/src/styles/nav-tokens.scss:163` |
+| `--hub-nav-rail-toggle-hover-bg` | `var(--hub-nav-item-hover-bg, rgba(0, 0, 0, 0.04))` | Rail toggle hover background | `IN_USE` | `nav/src/styles/nav-tokens.scss:166` |
+| `--hub-nav-rail-toggle-hover-color` | `var(--hub-nav-item-hover-color, #0d6efd)` | Rail toggle hover arrow color | `IN_USE` | `nav/src/styles/nav-tokens.scss:165` |
+| `--hub-nav-rail-toggle-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E")` | Rail toggle arrow glyph (SVG mask, replaceable) | `IN_USE` | `nav/src/styles/nav-tokens.scss:172` |
+| `--hub-nav-rail-toggle-icon-size` | `0.875em` | Rail toggle arrow size | `IN_USE` | `nav/src/styles/nav-tokens.scss:173` |
+| `--hub-nav-rail-toggle-inset-block` | `50%` | Block position of the rail toggle's center (50% = middle) | `IN_USE` | `nav/src/styles/nav-tokens.scss:177` |
+| `--hub-nav-rail-toggle-inset-inline` | `calc(var(--hub-nav-rail-toggle-size, 1.75rem) / -2)` | Rail toggle offset from the outer edge (negative overhangs) | `IN_USE` | `nav/src/styles/nav-tokens.scss:178` |
+| `--hub-nav-rail-toggle-padding` | `0.25rem` | Rail toggle inner padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:162` |
+| `--hub-nav-rail-toggle-shadow` | `var(--hub-sys-shadow-sm, 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075))` | Rail toggle shadow | `IN_USE` | `nav/src/styles/nav-tokens.scss:170` |
+| `--hub-nav-rail-toggle-size` | `1.75rem` | Rail toggle container size | `IN_USE` | `nav/src/styles/nav-tokens.scss:161` |
+| `--hub-nav-rail-toggle-transition` | `var(--hub-sys-transition-fast, all 0.15s ease-in-out)` | Rail toggle state transition | `IN_USE` | `nav/src/styles/nav-tokens.scss:181` |
+| `--hub-nav-rail-toggle-zindex` | `calc(var(--hub-nav-panel-zindex, 1000) + 1)` | Rail toggle z-index (above the drill-down panels) | `IN_USE` | `nav/src/styles/nav-tokens.scss:180` |
+| `--hub-nav-rail-transition` | `width 0.2s ease-in-out` | Rail expand/collapse transition | `IN_USE` | `nav/src/styles/nav-tokens.scss:158` |
+| `--hub-nav-rail-width` | `4rem` | Collapsed rail width | `IN_USE` | `nav/src/styles/nav-tokens.scss:155` |
 | `--hub-nav-scrollbar-color` | `transparent transparent` | Scrollbar thumb/track color | `IN_USE` | `nav/src/styles/nav-tokens.scss:26` |
 | `--hub-nav-scrollbar-thumb-color` | `transparent` | Scrollbar thumb color | `IN_USE` | `nav/src/styles/nav-tokens.scss:28` |
 | `--hub-nav-scrollbar-thumb-radius` | `var(--hub-ref-radius-pill, 50rem)` | Scrollbar thumb corner radius | `IN_USE` | `nav/src/styles/nav-tokens.scss:30` |
@@ -2189,7 +2207,7 @@ Neutral loading-placeholder tokens (no semantic colour variant). The base / high
 | `--hub-nav-mobile-overlay-position` | `fixed` | CSS position of the mobile overlay/panel | `IN_USE` | `nav/src/components/nav-mobile-panel/nav-mobile-panel.component.scss:3` |
 | `--hub-nav-mobile-root-padding-inline` | `0.5rem` | Inline padding of the mobile root list | `IN_USE` | `nav/src/components/nav-mobile-panel/nav-mobile-panel.component.scss:73` |
 | `--hub-nav-mobile-shadow` | `0 0.5rem 1rem rgba(0, 0, 0, 0.18)` | Box shadow of the mobile drawer panel | `IN_USE` | `nav/src/components/nav-mobile-panel/nav-mobile-panel.component.scss:85` |
-| `--hub-nav-sticky-top` | runtime (`0px`) | Sticky offset from top — written from the `stickyTop` config option; set via config, not CSS | `INTERNAL` | `nav/src/components/nav/nav.component.ts:73` |
+| `--hub-nav-sticky-top` | runtime (`0px`) | Sticky offset from top — written from the `stickyTop` config option; set via config, not CSS | `INTERNAL` | `nav/src/components/nav/nav.component.ts:77` |
 ### `panels`
 
 The outer container chrome (`--hub-panels-content-bg`, `--hub-panels-border-*`, `--hub-panels-content-padding-*`) inherits from the `--hub-container-*` base layer, so it re-bases when a container token is overridden on a subtree. Inner pieces (tabs, cards, pills, accordion) keep their own tokens.
