@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.5] - 2026-08-16
+
+### Added
+
+- Token-spec row for the `ng-hub-ui-nav` 22.10.0 travelling active mark: `--hub-nav-item-active-indicator-transition`, which times the mark as it moves between items when `config.activeIndicator` is on. Documentation-only — the token itself is declared and shipped by `ng-hub-ui-nav`, and nothing in the ds's own tokens or compiled CSS changes.
+
 ## [22.7.4] - 2026-08-15
 
 ### Added
