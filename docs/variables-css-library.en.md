@@ -2070,14 +2070,14 @@ Neutral loading-placeholder tokens (no semantic colour variant). The base / high
 
 | Token | Initial value | Usage | Status | Source |
 | ----- | ------------- | ----- | ------ | ------ |
-| `--hub-nav-accordion-indent` | `var(--hub-ref-space-3, 1rem)` | Accordion submenu indentation | `IN_USE` | `nav/src/styles/nav-tokens.scss:143` |
-| `--hub-nav-accordion-transition` | `0.35s ease` | Accordion expand/collapse transition | `IN_USE` | `nav/src/styles/nav-tokens.scss:148` |
-| `--hub-nav-badge-bg` | `var(--hub-sys-color-danger, #dc3545)` | Badge background color | `IN_USE` | `nav/src/styles/nav-tokens.scss:122` |
-| `--hub-nav-badge-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Badge corner radius | `IN_USE` | `nav/src/styles/nav-tokens.scss:124` |
-| `--hub-nav-badge-color` | `var(--hub-ref-color-white, #fff)` | Badge text color | `IN_USE` | `nav/src/styles/nav-tokens.scss:123` |
-| `--hub-nav-badge-font-size` | `var(--hub-ref-font-size-xs, 0.75rem)` | Badge font size | `IN_USE` | `nav/src/styles/nav-tokens.scss:119` |
-| `--hub-nav-badge-padding-x` | `0.5em` | Badge horizontal padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:120` |
-| `--hub-nav-badge-padding-y` | `0.25em` | Badge vertical padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:121` |
+| `--hub-nav-accordion-indent` | `var(--hub-ref-space-3, 1rem)` | Accordion submenu indentation | `IN_USE` | `nav/src/styles/nav-tokens.scss:148` |
+| `--hub-nav-accordion-transition` | `0.35s ease` | Accordion expand/collapse transition | `IN_USE` | `nav/src/styles/nav-tokens.scss:153` |
+| `--hub-nav-badge-bg` | `var(--hub-sys-color-danger, #dc3545)` | Badge background color | `IN_USE` | `nav/src/styles/nav-tokens.scss:127` |
+| `--hub-nav-badge-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Badge corner radius | `IN_USE` | `nav/src/styles/nav-tokens.scss:129` |
+| `--hub-nav-badge-color` | `var(--hub-ref-color-white, #fff)` | Badge text color | `IN_USE` | `nav/src/styles/nav-tokens.scss:128` |
+| `--hub-nav-badge-font-size` | `var(--hub-ref-font-size-xs, 0.75rem)` | Badge font size | `IN_USE` | `nav/src/styles/nav-tokens.scss:124` |
+| `--hub-nav-badge-padding-x` | `0.5em` | Badge horizontal padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:125` |
+| `--hub-nav-badge-padding-y` | `0.25em` | Badge vertical padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:126` |
 | `--hub-nav-accent` | `var(--hub-sys-color-primary, #0d6efd)` | Semantic accent — re-based per `variant`; drives the hover/active affordances | `IN_USE` | `nav/src/styles/nav-tokens.scss:36` |
 | `--hub-nav-accent-subtle` | `color-mix(in oklch, var(--hub-nav-accent) 12%, var(--hub-sys-surface-page, #ffffff))` | Subtle accent tint — soft active/hover surface | `IN_USE` | `nav/src/styles/nav-tokens.scss:40` |
 | `--hub-nav-bg` | `color-mix(in oklch, var(--hub-nav-accent) 5%, var(--hub-sys-surface-page, #fff))` | Navigation surface background (faint accent tint, re-based per variant) | `IN_USE` | `nav/src/styles/nav-tokens.scss:50` |
@@ -2090,26 +2090,26 @@ Neutral loading-placeholder tokens (no semantic colour variant). The base / high
 | `--hub-nav-brand-font-size` | `var(--hub-ref-font-size-lg, 1.25rem)` | Brand font size | `IN_USE` | `nav/src/styles/nav-tokens.scss:61` |
 | `--hub-nav-brand-font-weight` | `var(--hub-ref-font-weight-semibold, 600)` | Brand font weight | `IN_USE` | `nav/src/styles/nav-tokens.scss:62` |
 | `--hub-nav-brand-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | Brand horizontal padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:64` |
-| `--hub-nav-caret-color` | `currentColor` | Dropdown caret color | `IN_USE` | `nav/src/styles/nav-tokens.scss:102` |
-| `--hub-nav-caret-size` | `0.3rem` | Dropdown caret size | `IN_USE` | `nav/src/styles/nav-tokens.scss:101` |
+| `--hub-nav-caret-color` | `currentColor` | Dropdown caret color | `IN_USE` | `nav/src/styles/nav-tokens.scss:107` |
+| `--hub-nav-caret-size` | `0.3rem` | Dropdown caret size | `IN_USE` | `nav/src/styles/nav-tokens.scss:106` |
 | `--hub-nav-color` | `var(--hub-sys-text-primary, #212529)` | Navigation text color | `IN_USE` | `nav/src/styles/nav-tokens.scss:51` |
-| `--hub-nav-dropdown-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Dropdown menu background | `IN_USE` | `nav/src/styles/nav-tokens.scss:91` |
-| `--hub-nav-dropdown-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Dropdown menu border color | `IN_USE` | `nav/src/styles/nav-tokens.scss:93` |
-| `--hub-nav-dropdown-border-radius` | `var(--hub-nav-item-border-radius, var(--hub-ref-radius-sm, 0.25rem))` | Dropdown menu corner radius | `IN_USE` | `nav/src/styles/nav-tokens.scss:94` |
-| `--hub-nav-dropdown-color` | `var(--hub-sys-text-primary, #212529)` | Dropdown menu text color | `IN_USE` | `nav/src/styles/nav-tokens.scss:92` |
-| `--hub-nav-dropdown-min-width` | `12rem` | Dropdown menu minimum width | `IN_USE` | `nav/src/styles/nav-tokens.scss:97` |
-| `--hub-nav-dropdown-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Dropdown menu vertical padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:96` |
-| `--hub-nav-dropdown-shadow` | `var(--hub-sys-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15))` | Dropdown menu shadow | `IN_USE` | `nav/src/styles/nav-tokens.scss:95` |
-| `--hub-nav-dropdown-zindex` | `var(--hub-sys-zindex-dropdown, 1000)` | Dropdown menu z-index | `IN_USE` | `nav/src/styles/nav-tokens.scss:98` |
+| `--hub-nav-dropdown-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Dropdown menu background | `IN_USE` | `nav/src/styles/nav-tokens.scss:96` |
+| `--hub-nav-dropdown-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Dropdown menu border color | `IN_USE` | `nav/src/styles/nav-tokens.scss:98` |
+| `--hub-nav-dropdown-border-radius` | `var(--hub-nav-item-border-radius, var(--hub-ref-radius-sm, 0.25rem))` | Dropdown menu corner radius | `IN_USE` | `nav/src/styles/nav-tokens.scss:99` |
+| `--hub-nav-dropdown-color` | `var(--hub-sys-text-primary, #212529)` | Dropdown menu text color | `IN_USE` | `nav/src/styles/nav-tokens.scss:97` |
+| `--hub-nav-dropdown-min-width` | `12rem` | Dropdown menu minimum width | `IN_USE` | `nav/src/styles/nav-tokens.scss:102` |
+| `--hub-nav-dropdown-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Dropdown menu vertical padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:101` |
+| `--hub-nav-dropdown-shadow` | `var(--hub-sys-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15))` | Dropdown menu shadow | `IN_USE` | `nav/src/styles/nav-tokens.scss:100` |
+| `--hub-nav-dropdown-zindex` | `var(--hub-sys-zindex-dropdown, 1000)` | Dropdown menu z-index | `IN_USE` | `nav/src/styles/nav-tokens.scss:103` |
 | `--hub-nav-gap` | `var(--hub-ref-space-1, 0.25rem)` | Gap between nav items | `IN_USE` | `nav/src/styles/nav-tokens.scss:12` |
-| `--hub-nav-header-color` | `var(--hub-sys-text-muted, #6c757d)` | Section header text color | `IN_USE` | `nav/src/styles/nav-tokens.scss:107` |
-| `--hub-nav-header-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Section header font size | `IN_USE` | `nav/src/styles/nav-tokens.scss:105` |
-| `--hub-nav-header-font-weight` | `var(--hub-ref-font-weight-semibold, 600)` | Section header font weight | `IN_USE` | `nav/src/styles/nav-tokens.scss:106` |
-| `--hub-nav-header-horizontal-padding-inline-start` | `2rem` | Horizontal header inline-start padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:112` |
-| `--hub-nav-header-margin-inline-start` | `var(--hub-ref-space-3, 1rem)` | Section header inline-start margin | `IN_USE` | `nav/src/styles/nav-tokens.scss:111` |
-| `--hub-nav-header-margin-top` | `var(--hub-ref-space-3, 1rem)` | Section header top margin | `IN_USE` | `nav/src/styles/nav-tokens.scss:110` |
-| `--hub-nav-header-padding-x` | `var(--hub-ref-space-3, 1rem)` | Section header horizontal padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:108` |
-| `--hub-nav-header-padding-y` | `var(--hub-ref-space-1, 0.25rem)` | Section header vertical padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:109` |
+| `--hub-nav-header-color` | `var(--hub-sys-text-muted, #6c757d)` | Section header text color | `IN_USE` | `nav/src/styles/nav-tokens.scss:112` |
+| `--hub-nav-header-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Section header font size | `IN_USE` | `nav/src/styles/nav-tokens.scss:110` |
+| `--hub-nav-header-font-weight` | `var(--hub-ref-font-weight-semibold, 600)` | Section header font weight | `IN_USE` | `nav/src/styles/nav-tokens.scss:111` |
+| `--hub-nav-header-horizontal-padding-inline-start` | `2rem` | Horizontal header inline-start padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:117` |
+| `--hub-nav-header-margin-inline-start` | `var(--hub-ref-space-3, 1rem)` | Section header inline-start margin | `IN_USE` | `nav/src/styles/nav-tokens.scss:116` |
+| `--hub-nav-header-margin-top` | `var(--hub-ref-space-3, 1rem)` | Section header top margin | `IN_USE` | `nav/src/styles/nav-tokens.scss:115` |
+| `--hub-nav-header-padding-x` | `var(--hub-ref-space-3, 1rem)` | Section header horizontal padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:113` |
+| `--hub-nav-header-padding-y` | `var(--hub-ref-space-1, 0.25rem)` | Section header vertical padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:114` |
 | `--hub-nav-height` | `3.5rem` | Navigation bar height | `IN_USE` | `nav/src/styles/nav-tokens.scss:9` |
 | `--hub-nav-horizontal-items-justify` | `center` | Horizontal items justification | `IN_USE` | `nav/src/styles/nav-tokens.scss:16` |
 | `--hub-nav-collapsed-justify` | `space-between` | `justify-content` of items when the nav is collapsed (opt-in hook) | `IN_USE` | `nav/src/components/nav/nav.component.scss:69` |
@@ -2120,17 +2120,18 @@ Neutral loading-placeholder tokens (no semantic colour variant). The base / high
 | `--hub-nav-horizontal-panel-padding-x` | `0` | Horizontal panel horizontal padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:24` |
 | `--hub-nav-horizontal-panel-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Horizontal panel vertical padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:23` |
 | `--hub-nav-horizontal-row-gap` | `0` | Horizontal nav row gap | `IN_USE` | `nav/src/styles/nav-tokens.scss:15` |
-| `--hub-nav-icon-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gap between icon and label | `IN_USE` | `nav/src/styles/nav-tokens.scss:152` |
-| `--hub-nav-icon-size` | `var(--hub-ref-icon-size, 1em)` | Nav item icon size | `IN_USE` | `nav/src/styles/nav-tokens.scss:151` |
+| `--hub-nav-icon-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gap between icon and label | `IN_USE` | `nav/src/styles/nav-tokens.scss:157` |
+| `--hub-nav-icon-size` | `var(--hub-ref-icon-size, 1em)` | Nav item icon size | `IN_USE` | `nav/src/styles/nav-tokens.scss:156` |
 | `--hub-nav-item-active-bg` | `var(--hub-nav-accent-subtle)` | Active item background (soft accent tint) | `IN_USE` | `nav/src/styles/nav-tokens.scss:80` |
 | `--hub-nav-item-active-color` | `var(--hub-nav-accent)` | Active item text color (accent) | `IN_USE` | `nav/src/styles/nav-tokens.scss:81` |
 | `--hub-nav-item-active-indicator-color` | `var(--hub-nav-accent)` | Active item indicator bar color | `IN_USE` | `nav/src/styles/nav-tokens.scss:83` |
 | `--hub-nav-item-active-indicator-size` | `3px` | Active item indicator bar thickness | `IN_USE` | `nav/src/styles/nav-tokens.scss:84` |
+| `--hub-nav-item-active-indicator-transition` | `transform 0.25s ease, width 0.25s ease, height 0.25s ease` | How the active mark travels between items when `config.activeIndicator` is on | `IN_USE` | `nav/src/styles/nav-tokens.scss:89` |
 | `--hub-nav-item-active-font-weight` | `var(--hub-ref-font-weight-semibold, 600)` | Active item font weight | `IN_USE` | `nav/src/styles/nav-tokens.scss:82` |
 | `--hub-nav-item-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Nav item corner radius | `IN_USE` | `nav/src/styles/nav-tokens.scss:72` |
 | `--hub-nav-item-color` | `var(--hub-sys-text-primary, #212529)` | Nav item text color | `IN_USE` | `nav/src/styles/nav-tokens.scss:69` |
-| `--hub-nav-item-disabled-color` | `var(--hub-sys-text-muted, #6c757d)` | Disabled item text color | `IN_USE` | `nav/src/styles/nav-tokens.scss:87` |
-| `--hub-nav-item-disabled-opacity` | `var(--hub-sys-opacity-disabled, 0.65)` | Disabled item opacity | `IN_USE` | `nav/src/styles/nav-tokens.scss:88` |
+| `--hub-nav-item-disabled-color` | `var(--hub-sys-text-muted, #6c757d)` | Disabled item text color | `IN_USE` | `nav/src/styles/nav-tokens.scss:92` |
+| `--hub-nav-item-disabled-opacity` | `var(--hub-sys-opacity-disabled, 0.65)` | Disabled item opacity | `IN_USE` | `nav/src/styles/nav-tokens.scss:93` |
 | `--hub-nav-item-font-size` | `var(--hub-ref-font-size-base, 1rem)` | Nav item font size | `IN_USE` | `nav/src/styles/nav-tokens.scss:70` |
 | `--hub-nav-item-font-weight` | `var(--hub-ref-font-weight-base, 400)` | Nav item font weight | `IN_USE` | `nav/src/styles/nav-tokens.scss:71` |
 | `--hub-nav-item-hover-bg` | `color-mix(in oklch, var(--hub-nav-accent) 8%, var(--hub-sys-surface-page, #fff))` | Item hover background (soft accent tint) | `IN_USE` | `nav/src/styles/nav-tokens.scss:76` |
@@ -2138,69 +2139,69 @@ Neutral loading-placeholder tokens (no semantic colour variant). The base / high
 | `--hub-nav-item-padding-x` | `var(--hub-nav-mobile-item-padding-inline, 0.75rem)` | Nav item horizontal padding | `IN_USE` | `nav/src/components/nav-mobile-panel/nav-mobile-panel.component.scss:61` |
 | `--hub-nav-item-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Nav item vertical padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:68` |
 | `--hub-nav-item-transition` | `var(--hub-sys-transition-fast, all 0.15s ease-in-out)` | Nav item state transition | `IN_USE` | `nav/src/styles/nav-tokens.scss:73` |
-| `--hub-nav-mobile-backdrop-bg` | `rgba(0, 0, 0, 0.5)` | Mobile panel backdrop color | `IN_USE` | `nav/src/styles/nav-tokens.scss:139` |
-| `--hub-nav-mobile-bg` | `var(--hub-sys-surface-page, #fff)` | Mobile panel background | `IN_USE` | `nav/src/styles/nav-tokens.scss:135` |
-| `--hub-nav-mobile-color` | `var(--hub-sys-text-primary, #212529)` | Mobile panel text color | `IN_USE` | `nav/src/styles/nav-tokens.scss:136` |
-| `--hub-nav-mobile-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Mobile panel slide transition | `IN_USE` | `nav/src/styles/nav-tokens.scss:140` |
-| `--hub-nav-mobile-width` | `18rem` | Mobile panel width | `IN_USE` | `nav/src/styles/nav-tokens.scss:137` |
-| `--hub-nav-mobile-zindex` | `var(--hub-sys-zindex-fixed, 1030)` | Mobile panel z-index | `IN_USE` | `nav/src/styles/nav-tokens.scss:138` |
+| `--hub-nav-mobile-backdrop-bg` | `rgba(0, 0, 0, 0.5)` | Mobile panel backdrop color | `IN_USE` | `nav/src/styles/nav-tokens.scss:144` |
+| `--hub-nav-mobile-bg` | `var(--hub-sys-surface-page, #fff)` | Mobile panel background | `IN_USE` | `nav/src/styles/nav-tokens.scss:140` |
+| `--hub-nav-mobile-color` | `var(--hub-sys-text-primary, #212529)` | Mobile panel text color | `IN_USE` | `nav/src/styles/nav-tokens.scss:141` |
+| `--hub-nav-mobile-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Mobile panel slide transition | `IN_USE` | `nav/src/styles/nav-tokens.scss:145` |
+| `--hub-nav-mobile-width` | `18rem` | Mobile panel width | `IN_USE` | `nav/src/styles/nav-tokens.scss:142` |
+| `--hub-nav-mobile-zindex` | `var(--hub-sys-zindex-fixed, 1030)` | Mobile panel z-index | `IN_USE` | `nav/src/styles/nav-tokens.scss:143` |
 | `--hub-nav-padding-x` | `var(--hub-ref-space-3, 1rem)` | Navigation horizontal padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:10` |
 | `--hub-nav-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Navigation vertical padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:11` |
-| `--hub-nav-panel-back-color` | `var(--hub-sys-text-primary, #212529)` | Panel back button color | `IN_USE` | `nav/src/styles/nav-tokens.scss:204` |
-| `--hub-nav-panel-back-hover-bg` | `var(--hub-sys-state-hover-bg, rgba(0, 0, 0, 0.075))` | Panel back button hover background | `IN_USE` | `nav/src/styles/nav-tokens.scss:205` |
-| `--hub-nav-panel-back-size` | `2rem` | Panel back button size | `IN_USE` | `nav/src/styles/nav-tokens.scss:206` |
-| `--hub-nav-panel-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Side panel background | `IN_USE` | `nav/src/styles/nav-tokens.scss:185` |
-| `--hub-nav-panel-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Side panel border color | `IN_USE` | `nav/src/styles/nav-tokens.scss:187` |
-| `--hub-nav-panel-border-width` | `1px` | Side panel border width | `IN_USE` | `nav/src/styles/nav-tokens.scss:188` |
-| `--hub-nav-panel-color` | `var(--hub-sys-text-primary, #212529)` | Side panel text color | `IN_USE` | `nav/src/styles/nav-tokens.scss:186` |
-| `--hub-nav-panel-header-bg` | `var(--hub-sys-surface-page, #fff)` | Panel header background | `IN_USE` | `nav/src/styles/nav-tokens.scss:197` |
-| `--hub-nav-panel-header-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Panel header border color | `IN_USE` | `nav/src/styles/nav-tokens.scss:198` |
-| `--hub-nav-panel-header-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Panel header font size | `IN_USE` | `nav/src/styles/nav-tokens.scss:199` |
-| `--hub-nav-panel-header-font-weight` | `var(--hub-ref-font-weight-semibold, 600)` | Panel header font weight | `IN_USE` | `nav/src/styles/nav-tokens.scss:200` |
-| `--hub-nav-panel-header-height` | `3rem` | Panel header height | `IN_USE` | `nav/src/styles/nav-tokens.scss:196` |
-| `--hub-nav-panel-header-padding-x` | `var(--hub-ref-space-3, 1rem)` | Panel header horizontal padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:201` |
-| `--hub-nav-panel-shadow` | `var(--hub-sys-shadow-sm, 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075))` | Side panel shadow | `IN_USE` | `nav/src/styles/nav-tokens.scss:189` |
-| `--hub-nav-panel-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Side panel slide transition | `IN_USE` | `nav/src/styles/nav-tokens.scss:193` |
-| `--hub-nav-panel-width` | `16rem` | Side panel width | `IN_USE` | `nav/src/styles/nav-tokens.scss:184` |
-| `--hub-nav-panel-zindex` | `var(--hub-sys-zindex-dropdown, 1000)` | Side panel z-index | `IN_USE` | `nav/src/styles/nav-tokens.scss:190` |
-| `--hub-nav-rail-toggle-bg` | `var(--hub-sys-surface-elevated, #fff)` | Rail toggle background | `IN_USE` | `nav/src/styles/nav-tokens.scss:164` |
-| `--hub-nav-rail-toggle-border-color` | `var(--hub-nav-border-color, #dee2e6)` | Rail toggle border color | `IN_USE` | `nav/src/styles/nav-tokens.scss:168` |
-| `--hub-nav-rail-toggle-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Rail toggle container radius | `IN_USE` | `nav/src/styles/nav-tokens.scss:169` |
-| `--hub-nav-rail-toggle-border-width` | `1px` | Rail toggle border width | `IN_USE` | `nav/src/styles/nav-tokens.scss:167` |
-| `--hub-nav-rail-toggle-color` | `var(--hub-nav-item-color, #212529)` | Rail toggle arrow color | `IN_USE` | `nav/src/styles/nav-tokens.scss:163` |
-| `--hub-nav-rail-toggle-hover-bg` | `var(--hub-nav-item-hover-bg, rgba(0, 0, 0, 0.04))` | Rail toggle hover background | `IN_USE` | `nav/src/styles/nav-tokens.scss:166` |
-| `--hub-nav-rail-toggle-hover-color` | `var(--hub-nav-item-hover-color, #0d6efd)` | Rail toggle hover arrow color | `IN_USE` | `nav/src/styles/nav-tokens.scss:165` |
-| `--hub-nav-rail-toggle-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E")` | Rail toggle arrow glyph (SVG mask, replaceable) | `IN_USE` | `nav/src/styles/nav-tokens.scss:172` |
-| `--hub-nav-rail-toggle-icon-size` | `0.875em` | Rail toggle arrow size | `IN_USE` | `nav/src/styles/nav-tokens.scss:173` |
-| `--hub-nav-rail-toggle-inset-block` | `50%` | Block position of the rail toggle's center (50% = middle) | `IN_USE` | `nav/src/styles/nav-tokens.scss:177` |
-| `--hub-nav-rail-toggle-inset-inline` | `calc(var(--hub-nav-rail-toggle-size, 1.75rem) / -2)` | Rail toggle offset from the outer edge (negative overhangs) | `IN_USE` | `nav/src/styles/nav-tokens.scss:178` |
-| `--hub-nav-rail-toggle-padding` | `0.25rem` | Rail toggle inner padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:162` |
-| `--hub-nav-rail-toggle-shadow` | `var(--hub-sys-shadow-sm, 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075))` | Rail toggle shadow | `IN_USE` | `nav/src/styles/nav-tokens.scss:170` |
-| `--hub-nav-rail-toggle-size` | `1.75rem` | Rail toggle container size | `IN_USE` | `nav/src/styles/nav-tokens.scss:161` |
-| `--hub-nav-rail-toggle-transition` | `var(--hub-sys-transition-fast, all 0.15s ease-in-out)` | Rail toggle state transition | `IN_USE` | `nav/src/styles/nav-tokens.scss:181` |
-| `--hub-nav-rail-toggle-zindex` | `calc(var(--hub-nav-panel-zindex, 1000) + 1)` | Rail toggle z-index (above the drill-down panels) | `IN_USE` | `nav/src/styles/nav-tokens.scss:180` |
-| `--hub-nav-rail-transition` | `width 0.2s ease-in-out` | Rail expand/collapse transition | `IN_USE` | `nav/src/styles/nav-tokens.scss:158` |
-| `--hub-nav-rail-width` | `4rem` | Collapsed rail width | `IN_USE` | `nav/src/styles/nav-tokens.scss:155` |
+| `--hub-nav-panel-back-color` | `var(--hub-sys-text-primary, #212529)` | Panel back button color | `IN_USE` | `nav/src/styles/nav-tokens.scss:209` |
+| `--hub-nav-panel-back-hover-bg` | `var(--hub-sys-state-hover-bg, rgba(0, 0, 0, 0.075))` | Panel back button hover background | `IN_USE` | `nav/src/styles/nav-tokens.scss:210` |
+| `--hub-nav-panel-back-size` | `2rem` | Panel back button size | `IN_USE` | `nav/src/styles/nav-tokens.scss:211` |
+| `--hub-nav-panel-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Side panel background | `IN_USE` | `nav/src/styles/nav-tokens.scss:190` |
+| `--hub-nav-panel-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Side panel border color | `IN_USE` | `nav/src/styles/nav-tokens.scss:192` |
+| `--hub-nav-panel-border-width` | `1px` | Side panel border width | `IN_USE` | `nav/src/styles/nav-tokens.scss:193` |
+| `--hub-nav-panel-color` | `var(--hub-sys-text-primary, #212529)` | Side panel text color | `IN_USE` | `nav/src/styles/nav-tokens.scss:191` |
+| `--hub-nav-panel-header-bg` | `var(--hub-sys-surface-page, #fff)` | Panel header background | `IN_USE` | `nav/src/styles/nav-tokens.scss:202` |
+| `--hub-nav-panel-header-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Panel header border color | `IN_USE` | `nav/src/styles/nav-tokens.scss:203` |
+| `--hub-nav-panel-header-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Panel header font size | `IN_USE` | `nav/src/styles/nav-tokens.scss:204` |
+| `--hub-nav-panel-header-font-weight` | `var(--hub-ref-font-weight-semibold, 600)` | Panel header font weight | `IN_USE` | `nav/src/styles/nav-tokens.scss:205` |
+| `--hub-nav-panel-header-height` | `3rem` | Panel header height | `IN_USE` | `nav/src/styles/nav-tokens.scss:201` |
+| `--hub-nav-panel-header-padding-x` | `var(--hub-ref-space-3, 1rem)` | Panel header horizontal padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:206` |
+| `--hub-nav-panel-shadow` | `var(--hub-sys-shadow-sm, 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075))` | Side panel shadow | `IN_USE` | `nav/src/styles/nav-tokens.scss:194` |
+| `--hub-nav-panel-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Side panel slide transition | `IN_USE` | `nav/src/styles/nav-tokens.scss:198` |
+| `--hub-nav-panel-width` | `16rem` | Side panel width | `IN_USE` | `nav/src/styles/nav-tokens.scss:189` |
+| `--hub-nav-panel-zindex` | `var(--hub-sys-zindex-dropdown, 1000)` | Side panel z-index | `IN_USE` | `nav/src/styles/nav-tokens.scss:195` |
+| `--hub-nav-rail-toggle-bg` | `var(--hub-sys-surface-elevated, #fff)` | Rail toggle background | `IN_USE` | `nav/src/styles/nav-tokens.scss:169` |
+| `--hub-nav-rail-toggle-border-color` | `var(--hub-nav-border-color, #dee2e6)` | Rail toggle border color | `IN_USE` | `nav/src/styles/nav-tokens.scss:173` |
+| `--hub-nav-rail-toggle-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Rail toggle container radius | `IN_USE` | `nav/src/styles/nav-tokens.scss:174` |
+| `--hub-nav-rail-toggle-border-width` | `1px` | Rail toggle border width | `IN_USE` | `nav/src/styles/nav-tokens.scss:172` |
+| `--hub-nav-rail-toggle-color` | `var(--hub-nav-item-color, #212529)` | Rail toggle arrow color | `IN_USE` | `nav/src/styles/nav-tokens.scss:168` |
+| `--hub-nav-rail-toggle-hover-bg` | `var(--hub-nav-item-hover-bg, rgba(0, 0, 0, 0.04))` | Rail toggle hover background | `IN_USE` | `nav/src/styles/nav-tokens.scss:171` |
+| `--hub-nav-rail-toggle-hover-color` | `var(--hub-nav-item-hover-color, #0d6efd)` | Rail toggle hover arrow color | `IN_USE` | `nav/src/styles/nav-tokens.scss:170` |
+| `--hub-nav-rail-toggle-icon` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E")` | Rail toggle arrow glyph (SVG mask, replaceable) | `IN_USE` | `nav/src/styles/nav-tokens.scss:177` |
+| `--hub-nav-rail-toggle-icon-size` | `0.875em` | Rail toggle arrow size | `IN_USE` | `nav/src/styles/nav-tokens.scss:178` |
+| `--hub-nav-rail-toggle-inset-block` | `50%` | Block position of the rail toggle's center (50% = middle) | `IN_USE` | `nav/src/styles/nav-tokens.scss:182` |
+| `--hub-nav-rail-toggle-inset-inline` | `calc(var(--hub-nav-rail-toggle-size, 1.75rem) / -2)` | Rail toggle offset from the outer edge (negative overhangs) | `IN_USE` | `nav/src/styles/nav-tokens.scss:183` |
+| `--hub-nav-rail-toggle-padding` | `0.25rem` | Rail toggle inner padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:167` |
+| `--hub-nav-rail-toggle-shadow` | `var(--hub-sys-shadow-sm, 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075))` | Rail toggle shadow | `IN_USE` | `nav/src/styles/nav-tokens.scss:175` |
+| `--hub-nav-rail-toggle-size` | `1.75rem` | Rail toggle container size | `IN_USE` | `nav/src/styles/nav-tokens.scss:166` |
+| `--hub-nav-rail-toggle-transition` | `var(--hub-sys-transition-fast, all 0.15s ease-in-out)` | Rail toggle state transition | `IN_USE` | `nav/src/styles/nav-tokens.scss:186` |
+| `--hub-nav-rail-toggle-zindex` | `calc(var(--hub-nav-panel-zindex, 1000) + 1)` | Rail toggle z-index (above the drill-down panels) | `IN_USE` | `nav/src/styles/nav-tokens.scss:185` |
+| `--hub-nav-rail-transition` | `width 0.2s ease-in-out` | Rail expand/collapse transition | `IN_USE` | `nav/src/styles/nav-tokens.scss:163` |
+| `--hub-nav-rail-width` | `4rem` | Collapsed rail width | `IN_USE` | `nav/src/styles/nav-tokens.scss:160` |
 | `--hub-nav-scrollbar-color` | `transparent transparent` | Scrollbar thumb/track color | `IN_USE` | `nav/src/styles/nav-tokens.scss:26` |
 | `--hub-nav-scrollbar-thumb-color` | `transparent` | Scrollbar thumb color | `IN_USE` | `nav/src/styles/nav-tokens.scss:28` |
 | `--hub-nav-scrollbar-thumb-radius` | `var(--hub-ref-radius-pill, 50rem)` | Scrollbar thumb corner radius | `IN_USE` | `nav/src/styles/nav-tokens.scss:30` |
 | `--hub-nav-scrollbar-track-color` | `transparent` | Scrollbar track color | `IN_USE` | `nav/src/styles/nav-tokens.scss:29` |
 | `--hub-nav-scrollbar-webkit-size` | `0` | WebKit scrollbar size | `IN_USE` | `nav/src/styles/nav-tokens.scss:27` |
 | `--hub-nav-scrollbar-width` | `none` | Scrollbar width visibility | `IN_USE` | `nav/src/styles/nav-tokens.scss:25` |
-| `--hub-nav-separator-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Separator divider color | `IN_USE` | `nav/src/styles/nav-tokens.scss:115` |
-| `--hub-nav-separator-margin-y` | `var(--hub-ref-space-2, 0.5rem)` | Separator vertical margin | `IN_USE` | `nav/src/styles/nav-tokens.scss:116` |
-| `--hub-nav-toggler-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Toggler button border color | `IN_USE` | `nav/src/styles/nav-tokens.scss:131` |
-| `--hub-nav-toggler-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Toggler button corner radius | `IN_USE` | `nav/src/styles/nav-tokens.scss:132` |
-| `--hub-nav-toggler-color` | `var(--hub-sys-text-primary, #212529)` | Toggler button icon color | `IN_USE` | `nav/src/styles/nav-tokens.scss:130` |
-| `--hub-nav-toggler-font-size` | `var(--hub-ref-font-size-lg, 1.25rem)` | Toggler button font size | `IN_USE` | `nav/src/styles/nav-tokens.scss:129` |
-| `--hub-nav-toggler-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | Toggler button horizontal padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:127` |
-| `--hub-nav-toggler-padding-y` | `var(--hub-ref-space-1, 0.25rem)` | Toggler button vertical padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:128` |
+| `--hub-nav-separator-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Separator divider color | `IN_USE` | `nav/src/styles/nav-tokens.scss:120` |
+| `--hub-nav-separator-margin-y` | `var(--hub-ref-space-2, 0.5rem)` | Separator vertical margin | `IN_USE` | `nav/src/styles/nav-tokens.scss:121` |
+| `--hub-nav-toggler-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Toggler button border color | `IN_USE` | `nav/src/styles/nav-tokens.scss:136` |
+| `--hub-nav-toggler-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Toggler button corner radius | `IN_USE` | `nav/src/styles/nav-tokens.scss:137` |
+| `--hub-nav-toggler-color` | `var(--hub-sys-text-primary, #212529)` | Toggler button icon color | `IN_USE` | `nav/src/styles/nav-tokens.scss:135` |
+| `--hub-nav-toggler-font-size` | `var(--hub-ref-font-size-lg, 1.25rem)` | Toggler button font size | `IN_USE` | `nav/src/styles/nav-tokens.scss:134` |
+| `--hub-nav-toggler-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | Toggler button horizontal padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:132` |
+| `--hub-nav-toggler-padding-y` | `var(--hub-ref-space-1, 0.25rem)` | Toggler button vertical padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:133` |
 | `--hub-nav-vertical-items-overflow-x` | `hidden` | Vertical items x-overflow | `IN_USE` | `nav/src/styles/nav-tokens.scss:20` |
 | `--hub-nav-vertical-items-overflow-y` | `auto` | Vertical items y-overflow | `IN_USE` | `nav/src/styles/nav-tokens.scss:19` |
 | `--hub-nav-vertical-panel-padding-block` | `0` | Vertical panel block padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:22` |
 | `--hub-nav-vertical-panel-padding-inline` | `var(--hub-ref-space-2, 0.5rem)` | Vertical panel inline padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:21` |
-| `--hub-nav-mobile-accordion-gap` | `0.25rem` | Gap between items in the mobile accordion list | `IN_USE` | `nav/src/components/nav-item-list/nav-item-list.component.scss:111` |
-| `--hub-nav-mobile-accordion-nested-spacing` | `0.25rem` | Top margin before a nested (child) accordion group | `IN_USE` | `nav/src/components/nav-item-list/nav-item-list.component.scss:130` |
+| `--hub-nav-mobile-accordion-gap` | `0.25rem` | Gap between items in the mobile accordion list | `IN_USE` | `nav/src/components/nav-item-list/nav-item-list.component.scss:167` |
+| `--hub-nav-mobile-accordion-nested-spacing` | `0.25rem` | Top margin before a nested (child) accordion group | `IN_USE` | `nav/src/components/nav-item-list/nav-item-list.component.scss:186` |
 | `--hub-nav-mobile-body-padding-block-end` | `var(--hub-nav-padding-y, 0.5rem)` | Bottom padding of the mobile panel body | `IN_USE` | `nav/src/components/nav-mobile-panel/nav-mobile-panel.component.scss:60` |
 | `--hub-nav-mobile-body-padding-inline` | `var(--hub-nav-padding-x, 1rem)` | Inline padding of the mobile panel body | `IN_USE` | `nav/src/components/nav-mobile-panel/nav-mobile-panel.component.scss:59` |
 | `--hub-nav-mobile-border-color` | `rgba(0, 0, 0, 0.08)` | Border color of the mobile drawer panel | `IN_USE` | `nav/src/components/nav-mobile-panel/nav-mobile-panel.component.scss:86` |
