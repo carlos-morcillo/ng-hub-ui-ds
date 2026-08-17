@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.7] - 2026-08-17
+
+### Added
+
+- **`--hub-modal-resize-duration` and `--hub-modal-resize-easing`** documented in the token spec. They tune the travel the modal now performs between two content heights. The duration is unitless on purpose: it is read from script rather than used in a CSS transition, because the height a modal is leaving and the one it is arriving at both compute to `auto`, and no CSS transition fires on that.
+
 ## [22.7.6] - 2026-08-17
 
 ### Fixed
