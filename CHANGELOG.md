@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.8] - 2026-08-17
+
+### Added
+
+- **Four `hub-list` tokens documented**, following `ng-hub-ui-paginable@22.11.0`: `--hub-list-radio-size` (the single-selection radio, defaulting to the checkbox's size), `--hub-list-divider-width` and `--hub-list-divider-color` (the rule that stands in for the gap between rows when a list is flush, read only under that variant), and `--hub-list-checkbox-size`, which shipped undocumented. Two internal per-cell relays of the table's selected-row bar are recorded as `INTERNAL` so the parity check stops reporting them as undeclared.
+
 ## [22.7.7] - 2026-08-17
 
 ### Added

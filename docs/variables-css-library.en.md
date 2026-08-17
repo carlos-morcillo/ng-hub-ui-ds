@@ -1704,8 +1704,8 @@ The standalone `tabs` proposal was **superseded**: the tabs UI shipped inside `n
 | `--hub-table-selected-color`                    | `var(--hub-sys-text-primary, #212529)`                                    | Selected row text color                                            | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:99` |
 | `--hub-table-selected-bar-width` | `0` | Width of the optional accent bar on the selected row's leading edge (`0` = hidden) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:105` |
 | `--hub-table-selected-bar-color` | `var(--hub-table-accent)` | Colour of the selected-row accent bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:106` |
-| `--hub-table-cell-bar-width` | `var(--hub-table-selected-bar-width)` | Internal per-cell relay of the selected-row bar width (mirrored/negated for RTL); theme via `--hub-table-selected-bar-width` | `INTERNAL` | `paginable/src/lib/components/table/table.component.scss:763` |
-| `--hub-table-cell-bar-color` | `var(--hub-table-selected-bar-color, var(--hub-table-accent))` | Internal per-cell relay of the selected-row bar colour; theme via `--hub-table-selected-bar-color` | `INTERNAL` | `paginable/src/lib/components/table/table.component.scss:764` |
+| `--hub-table-cell-bar-width` | `var(--hub-table-selected-bar-width)` | Internal per-cell relay of the selected-row bar width (mirrored/negated for RTL); theme via `--hub-table-selected-bar-width` | `INTERNAL` | `paginable/src/lib/components/table/table.component.scss:785` |
+| `--hub-table-cell-bar-color` | `var(--hub-table-selected-bar-color, var(--hub-table-accent))` | Internal per-cell relay of the selected-row bar colour; theme via `--hub-table-selected-bar-color` | `INTERNAL` | `paginable/src/lib/components/table/table.component.scss:786` |
 | `--hub-table-accent-bg` | `transparent` | Accent layer applied via `box-shadow inset` on cells | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:82` |
 | `--hub-table-active-bg` | `var(--hub-sys-state-active-bg, rgba(0,0,0,0.1))` | Cell background in active row state | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:83` |
 | `--hub-table-active-color` | `var(--hub-sys-text-primary, #212529)` | Cell text color in active row state | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:84` |
@@ -1789,103 +1789,106 @@ The standalone `tabs` proposal was **superseded**: the tabs UI shipped inside `n
 
 | Variable Name                           | Initial value                                  | Usage                                              | Status   | Source                                                                    |
 | --------------------------------------- | ---------------------------------------------- | -------------------------------------------------- | -------- | ------------------------------------------------------------------------- |
-| `--hub-list-checkbox-size`              | `1rem`                                         | Size of the selection checkbox                     | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:4`  |
-| `--hub-list-chevron-size`               | `var(--hub-ref-icon-size, 1em)`                | Size of the expand/collapse icon                   | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:5`  |
-| `--hub-list-bg`                         | `transparent`                                  | Background of the whole list component (host); transparent by default | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:6`  |
-| `--hub-list-border-radius`              | `var(--hub-ref-radius-md, 0.375rem)`           | Border radius of the list component surface        | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:7`  |
-| `--hub-list-padding-x`                  | `var(--hub-ref-space-0, 0)`                    | Horizontal padding of the list component surface   | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:8`  |
-| `--hub-list-padding-y`                  | `var(--hub-ref-space-0, 0)`                    | Vertical padding of the list component surface     | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:9`  |
-| `--hub-list-gap`                        | `var(--hub-ref-space-4, 1.5rem)`               | Gap between top bar, items collection and bottom bar | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:10` |
-| `--hub-list-items-bg`                   | `transparent`                                  | Background of the items collection (`<ul>`)        | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:11` |
-| `--hub-list-items-gap`                  | `var(--hub-ref-space-2, 0.5rem)`               | Gap between list items                             | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:12` |
-| `--hub-list-empty-bg`                   | `var(--hub-ref-surface-2, #f8f9fa)`            | Background of the empty state                      | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:13` |
-| `--hub-list-empty-border-color`         | `var(--hub-sys-border-color-default, #dee2e6)` | Border color of the empty state                    | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:14` |
-| `--hub-list-empty-color`                | `var(--hub-sys-text-muted, #6c757d)`           | Text color of the empty state                      | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:15` |
-| `--hub-list-item-bg`                    | `var(--hub-sys-surface-page, #ffffff)`         | Background of an item (solid surface, like table rows) | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:18` |
-| `--hub-list-item-border-color`          | `var(--hub-sys-border-color-default, #dee2e6)` | Border color of an item                            | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:19` |
-| `--hub-list-item-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Border radius of an item | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:21` |
-| `--hub-list-item-color` | `var(--hub-sys-text-primary, #212529)` | Text color of an item | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:22` |
-| `--hub-list-item-gap` | `var(--hub-ref-space-2, 0.5rem)` | Internal gap inside an item | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:23` |
-| `--hub-list-item-hover-bg` | `var(--hub-ref-surface-2, #f8f9fa)` | Background of an item on hover | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:24` |
-| `--hub-list-item-padding-x` | `var(--hub-ref-space-3, 1rem)` | Horizontal padding of an item | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:25` |
-| `--hub-list-item-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Vertical padding of an item | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:26` |
-| `--hub-list-children-gap` | `var(--hub-list-item-padding-y)` | Top margin separating a nested children list from its parent item | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:27` |
-| `--hub-list-accent`                     | `var(--hub-sys-color-primary, #0d6efd)`        | Semantic accent for the selected item — re-based per `variant` (list & cards) | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:37` |
-| `--hub-list-item-selected-bg`           | `var(--hub-list-accent)`                       | Background of a selected item                      | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:42` |
-| `--hub-list-item-selected-color` | `var(--hub-list-accent-on)` | Text color of a selected item | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:43` |
-| `--hub-list-bottom-bar-gap` | `var(--hub-ref-space-3, 1rem)` | Gap between elements in the bottom bar | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:65` |
-| `--hub-list-bottom-bar-justify-content` | `space-around` | `justify-content` of the bottom bar | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:66` |
-| `--hub-list-bottom-bar-align-items` | `center` | `align-items` of the bottom bar | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:67` |
-| `--hub-list-bottom-bar-wrap` | `wrap` | `flex-wrap` of the bottom bar | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:68` |
-| `--hub-list-bottom-bar-paginator-order` | `1` | Flex order of the paginator slot in the bottom bar | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:69` |
-| `--hub-list-bottom-bar-settings-order` | `2` | Flex order of the settings slot in the bottom bar | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:70` |
-| `--hub-list-bottom-bar-info-order` | `3` | Flex order of the info slot in the bottom bar | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:71` |
-| `--hub-list-bottom-bar-paginator-flex` | `0 0 auto` | Flex shorthand for the paginator slot | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:72` |
-| `--hub-list-bottom-bar-settings-flex` | `0 0 auto` | Flex shorthand for the settings slot | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:73` |
-| `--hub-list-bottom-bar-info-flex` | `0 0 auto` | Flex shorthand for the info slot | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:74` |
-| `--hub-list-search-btn-bg` | `var(--hub-ref-surface-2, #f8f9fa)` | Background of the search trigger button | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:75` |
-| `--hub-list-search-btn-color` | `var(--hub-sys-text-primary, #212529)` | Icon/text color of the search trigger button | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:76` |
-| `--hub-list-search-input-bg` | `var(--hub-sys-surface-page, #ffffff)` | Background of the search input | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:78` |
-| `--hub-list-search-input-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Border of the search input | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:79` |
-| `--hub-list-search-input-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Border radius of the search input | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:80` |
-| `--hub-list-search-input-color` | `var(--hub-sys-text-primary, #212529)` | Text color of the search input | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:81` |
-| `--hub-list-action-btn-bg` | `var(--hub-sys-surface-page, #ffffff)` | Action button background color | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:88` |
-| `--hub-list-action-btn-border-color` | `var(--hub-list-item-border-color)` | Action button border color | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:90` |
-| `--hub-list-action-btn-border-radius` | `var(--hub-list-item-border-radius)` | Action button border radius | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:91` |
-| `--hub-list-action-btn-color` | `var(--hub-list-item-color)` | Action button text color | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:89` |
-| `--hub-list-action-btn-hover-bg` | `var(--hub-list-item-hover-bg)` | Action button hover background | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:94` |
-| `--hub-list-action-btn-padding-x` | `0.75rem` | Action button horizontal padding | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:93` |
-| `--hub-list-action-btn-padding-y` | `0.375rem` | Action button vertical padding | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:92` |
-| `--hub-list-batch-actions-gap` | `var(--hub-ref-space-2, 0.5rem)` | Batch actions group gap | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:64` |
-| `--hub-list-cards-bg` | `var(--hub-list-item-bg, transparent)` | Card background color | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:49` |
-| `--hub-list-cards-border-color` | `var(--hub-list-item-border-color)` | Card border color | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:53` |
-| `--hub-list-cards-border-radius` | `var(--hub-list-item-border-radius)` | Card border radius | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:55` |
-| `--hub-list-cards-border-width` | `var(--hub-list-item-border-width, 1px)` | Card border width | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:54` |
-| `--hub-list-cards-color` | `var(--hub-list-item-color)` | Card text color | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:50` |
-| `--hub-list-cards-column-gap` | `var(--hub-list-cards-gap)` | Card grid column gap | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:48` |
-| `--hub-list-cards-columns` | `auto-fit` | Card grid column count | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:46` |
-| `--hub-list-cards-gap` | `var(--hub-list-items-gap)` | Card grid gap | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:45` |
-| `--hub-list-cards-hover-bg` | `var(--hub-list-item-hover-bg)` | Card hover background color | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:57` |
-| `--hub-list-cards-hover-shadow` | `var(--hub-list-cards-shadow)` | Card hover box shadow | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:58` |
-| `--hub-list-cards-min-column-width` | `18rem` | Card minimum column width | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:44` |
-| `--hub-list-cards-padding-x` | `var(--hub-list-item-padding-x)` | Card horizontal padding | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:51` |
-| `--hub-list-cards-padding-y` | `var(--hub-list-item-padding-y)` | Card vertical padding | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:52` |
-| `--hub-list-drag-handle-color` | `var(--hub-sys-text-muted, #6c757d)` | Drag handle colour | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:96` |
-| `--hub-list-drag-handle-cursor` | `grab` | Drag handle cursor | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:97` |
-| `--hub-list-drag-handle-size` | `var(--hub-ref-icon-size, 1em)` | Drag handle size | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:98` |
-| `--hub-list-item-dragging-opacity` | `0.5` | Opacity of the item being dragged | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:99` |
-| `--hub-list-item-dragging-cursor` | `grabbing` | Cursor while dragging an item | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:100` |
-| `--hub-list-drop-target-outline-color` | `var(--hub-list-accent)` | Drop-target outline colour | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:101` |
-| `--hub-list-drop-target-outline-width` | `2px` | Drop-target outline width | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:102` |
-| `--hub-list-placeholder-bg` | `var(--hub-ref-surface-2, #f8f9fa)` | Drop placeholder background | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:103` |
-| `--hub-list-placeholder-border-color` | `var(--hub-list-accent)` | Drop placeholder border colour | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:104` |
-| `--hub-list-placeholder-border-width` | `2px` | Drop placeholder border width | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:105` |
-| `--hub-list-placeholder-border-style` | `dashed` | Drop placeholder border style | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:106` |
-| `--hub-list-placeholder-border-radius` | `var(--hub-list-item-border-radius)` | Drop placeholder border radius | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:107` |
-| `--hub-list-placeholder-min-height` | `2.5rem` | Drop placeholder minimum height | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:108` |
-| `--hub-list-ghost-opacity` | `0.85` | Drag ghost opacity | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:109` |
-| `--hub-list-ghost-shadow` | `0 0.5rem 1rem rgba(0, 0, 0, 0.15)` | Drag ghost shadow | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:110` |
-| `--hub-list-connector-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Color of the opt-in connector line between consecutive items (`connected`) | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:112` |
-| `--hub-list-connector-width` | `2px` | Thickness of the item connector line | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:113` |
-| `--hub-list-connector-style` | `solid` | Border-style of the item connector (e.g. `dashed`) | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:114` |
-| `--hub-list-connector-offset` | `var(--hub-list-item-padding-x, var(--hub-ref-space-3, 1rem))` | Inline offset of the connector from the item's leading edge | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:115` |
-| `--hub-list-cards-row-gap` | `var(--hub-list-cards-gap)` | Card grid row gap | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:47` |
-| `--hub-list-cards-shadow` | `none` | Card box shadow | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:56` |
-| `--hub-list-cards-transition` | `background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out` | Card hover transition | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:59` |
-| `--hub-list-empty-padding-x` | `var(--hub-ref-space-3, 1rem)` | Empty state horizontal padding | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:16` |
-| `--hub-list-empty-padding-y` | `var(--hub-ref-space-3, 1rem)` | Empty state vertical padding | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:17` |
-| `--hub-list-item-border-width` | `1px` | List item border width | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:20` |
-| `--hub-list-search-border-color` | `var(--hub-list-search-input-border-color)` | Search field border color | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:82` |
-| `--hub-list-search-border-radius` | `var(--hub-list-search-input-border-radius)` | Search field border radius | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:84` |
-| `--hub-list-search-border-width` | `1px` | Search field border width | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:83` |
-| `--hub-list-search-button-min-width` | `2.75rem` | Search button minimum width | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:77` |
-| `--hub-list-search-input-font-size` | `1rem` | Search input font size | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:87` |
-| `--hub-list-search-input-padding-x` | `0.75rem` | Search input horizontal padding | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:85` |
-| `--hub-list-search-input-padding-y` | `0.375rem` | Search input vertical padding | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:86` |
-| `--hub-list-top-bar-align-items` | `center` | Top bar cross-axis alignment | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:62` |
-| `--hub-list-top-bar-gap` | `var(--hub-ref-space-2, 0.5rem)` | Top bar content gap | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:60` |
-| `--hub-list-top-bar-justify-content` | `end` | Top bar content justification | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:61` |
-| `--hub-list-top-bar-wrap` | `wrap` | Top bar flex wrapping | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:63` |
+| `--hub-list-checkbox-size`              | `1rem`                                         | Size of the selection checkbox                     | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:6`  |
+| `--hub-list-radio-size`                 | `var(--hub-list-checkbox-size)`                | Size of the single-selection radio                 | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:9`  |
+| `--hub-list-divider-width`              | `var(--hub-ref-border-width, 1px)`             | Rule between rows when the list is flush           | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:35` |
+| `--hub-list-divider-color`              | `var(--hub-list-item-border-color)`            | Colour of that rule                                | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:36` |
+| `--hub-list-chevron-size`               | `var(--hub-ref-icon-size, 1em)`                | Size of the expand/collapse icon                   | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:10`  |
+| `--hub-list-bg`                         | `transparent`                                  | Background of the whole list component (host); transparent by default | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:11`  |
+| `--hub-list-border-radius`              | `var(--hub-ref-radius-md, 0.375rem)`           | Border radius of the list component surface        | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:12`  |
+| `--hub-list-padding-x`                  | `var(--hub-ref-space-0, 0)`                    | Horizontal padding of the list component surface   | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:13`  |
+| `--hub-list-padding-y`                  | `var(--hub-ref-space-0, 0)`                    | Vertical padding of the list component surface     | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:14`  |
+| `--hub-list-gap`                        | `var(--hub-ref-space-4, 1.5rem)`               | Gap between top bar, items collection and bottom bar | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:15` |
+| `--hub-list-items-bg`                   | `transparent`                                  | Background of the items collection (`<ul>`)        | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:16` |
+| `--hub-list-items-gap`                  | `var(--hub-ref-space-2, 0.5rem)`               | Gap between list items                             | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:17` |
+| `--hub-list-empty-bg`                   | `var(--hub-ref-surface-2, #f8f9fa)`            | Background of the empty state                      | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:18` |
+| `--hub-list-empty-border-color`         | `var(--hub-sys-border-color-default, #dee2e6)` | Border color of the empty state                    | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:19` |
+| `--hub-list-empty-color`                | `var(--hub-sys-text-muted, #6c757d)`           | Text color of the empty state                      | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:20` |
+| `--hub-list-item-bg`                    | `var(--hub-sys-surface-page, #ffffff)`         | Background of an item (solid surface, like table rows) | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:23` |
+| `--hub-list-item-border-color`          | `var(--hub-sys-border-color-default, #dee2e6)` | Border color of an item                            | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:24` |
+| `--hub-list-item-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Border radius of an item | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:26` |
+| `--hub-list-item-color` | `var(--hub-sys-text-primary, #212529)` | Text color of an item | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:27` |
+| `--hub-list-item-gap` | `var(--hub-ref-space-2, 0.5rem)` | Internal gap inside an item | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:28` |
+| `--hub-list-item-hover-bg` | `var(--hub-ref-surface-2, #f8f9fa)` | Background of an item on hover | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:29` |
+| `--hub-list-item-padding-x` | `var(--hub-ref-space-3, 1rem)` | Horizontal padding of an item | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:30` |
+| `--hub-list-item-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Vertical padding of an item | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:31` |
+| `--hub-list-children-gap` | `var(--hub-list-item-padding-y)` | Top margin separating a nested children list from its parent item | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:32` |
+| `--hub-list-accent`                     | `var(--hub-sys-color-primary, #0d6efd)`        | Semantic accent for the selected item — re-based per `variant` (list & cards) | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:46` |
+| `--hub-list-item-selected-bg`           | `var(--hub-list-accent)`                       | Background of a selected item                      | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:51` |
+| `--hub-list-item-selected-color` | `var(--hub-list-accent-on)` | Text color of a selected item | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:52` |
+| `--hub-list-bottom-bar-gap` | `var(--hub-ref-space-3, 1rem)` | Gap between elements in the bottom bar | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:74` |
+| `--hub-list-bottom-bar-justify-content` | `space-around` | `justify-content` of the bottom bar | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:75` |
+| `--hub-list-bottom-bar-align-items` | `center` | `align-items` of the bottom bar | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:76` |
+| `--hub-list-bottom-bar-wrap` | `wrap` | `flex-wrap` of the bottom bar | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:77` |
+| `--hub-list-bottom-bar-paginator-order` | `1` | Flex order of the paginator slot in the bottom bar | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:78` |
+| `--hub-list-bottom-bar-settings-order` | `2` | Flex order of the settings slot in the bottom bar | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:79` |
+| `--hub-list-bottom-bar-info-order` | `3` | Flex order of the info slot in the bottom bar | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:80` |
+| `--hub-list-bottom-bar-paginator-flex` | `0 0 auto` | Flex shorthand for the paginator slot | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:81` |
+| `--hub-list-bottom-bar-settings-flex` | `0 0 auto` | Flex shorthand for the settings slot | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:82` |
+| `--hub-list-bottom-bar-info-flex` | `0 0 auto` | Flex shorthand for the info slot | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:83` |
+| `--hub-list-search-btn-bg` | `var(--hub-ref-surface-2, #f8f9fa)` | Background of the search trigger button | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:84` |
+| `--hub-list-search-btn-color` | `var(--hub-sys-text-primary, #212529)` | Icon/text color of the search trigger button | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:85` |
+| `--hub-list-search-input-bg` | `var(--hub-sys-surface-page, #ffffff)` | Background of the search input | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:87` |
+| `--hub-list-search-input-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Border of the search input | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:88` |
+| `--hub-list-search-input-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Border radius of the search input | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:89` |
+| `--hub-list-search-input-color` | `var(--hub-sys-text-primary, #212529)` | Text color of the search input | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:90` |
+| `--hub-list-action-btn-bg` | `var(--hub-sys-surface-page, #ffffff)` | Action button background color | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:97` |
+| `--hub-list-action-btn-border-color` | `var(--hub-list-item-border-color)` | Action button border color | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:99` |
+| `--hub-list-action-btn-border-radius` | `var(--hub-list-item-border-radius)` | Action button border radius | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:100` |
+| `--hub-list-action-btn-color` | `var(--hub-list-item-color)` | Action button text color | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:98` |
+| `--hub-list-action-btn-hover-bg` | `var(--hub-list-item-hover-bg)` | Action button hover background | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:103` |
+| `--hub-list-action-btn-padding-x` | `0.75rem` | Action button horizontal padding | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:102` |
+| `--hub-list-action-btn-padding-y` | `0.375rem` | Action button vertical padding | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:101` |
+| `--hub-list-batch-actions-gap` | `var(--hub-ref-space-2, 0.5rem)` | Batch actions group gap | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:73` |
+| `--hub-list-cards-bg` | `var(--hub-list-item-bg, transparent)` | Card background color | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:58` |
+| `--hub-list-cards-border-color` | `var(--hub-list-item-border-color)` | Card border color | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:62` |
+| `--hub-list-cards-border-radius` | `var(--hub-list-item-border-radius)` | Card border radius | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:64` |
+| `--hub-list-cards-border-width` | `var(--hub-list-item-border-width, 1px)` | Card border width | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:63` |
+| `--hub-list-cards-color` | `var(--hub-list-item-color)` | Card text color | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:59` |
+| `--hub-list-cards-column-gap` | `var(--hub-list-cards-gap)` | Card grid column gap | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:57` |
+| `--hub-list-cards-columns` | `auto-fit` | Card grid column count | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:55` |
+| `--hub-list-cards-gap` | `var(--hub-list-items-gap)` | Card grid gap | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:54` |
+| `--hub-list-cards-hover-bg` | `var(--hub-list-item-hover-bg)` | Card hover background color | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:66` |
+| `--hub-list-cards-hover-shadow` | `var(--hub-list-cards-shadow)` | Card hover box shadow | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:67` |
+| `--hub-list-cards-min-column-width` | `18rem` | Card minimum column width | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:53` |
+| `--hub-list-cards-padding-x` | `var(--hub-list-item-padding-x)` | Card horizontal padding | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:60` |
+| `--hub-list-cards-padding-y` | `var(--hub-list-item-padding-y)` | Card vertical padding | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:61` |
+| `--hub-list-drag-handle-color` | `var(--hub-sys-text-muted, #6c757d)` | Drag handle colour | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:105` |
+| `--hub-list-drag-handle-cursor` | `grab` | Drag handle cursor | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:106` |
+| `--hub-list-drag-handle-size` | `var(--hub-ref-icon-size, 1em)` | Drag handle size | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:107` |
+| `--hub-list-item-dragging-opacity` | `0.5` | Opacity of the item being dragged | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:108` |
+| `--hub-list-item-dragging-cursor` | `grabbing` | Cursor while dragging an item | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:109` |
+| `--hub-list-drop-target-outline-color` | `var(--hub-list-accent)` | Drop-target outline colour | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:110` |
+| `--hub-list-drop-target-outline-width` | `2px` | Drop-target outline width | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:111` |
+| `--hub-list-placeholder-bg` | `var(--hub-ref-surface-2, #f8f9fa)` | Drop placeholder background | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:112` |
+| `--hub-list-placeholder-border-color` | `var(--hub-list-accent)` | Drop placeholder border colour | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:113` |
+| `--hub-list-placeholder-border-width` | `2px` | Drop placeholder border width | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:114` |
+| `--hub-list-placeholder-border-style` | `dashed` | Drop placeholder border style | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:115` |
+| `--hub-list-placeholder-border-radius` | `var(--hub-list-item-border-radius)` | Drop placeholder border radius | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:116` |
+| `--hub-list-placeholder-min-height` | `2.5rem` | Drop placeholder minimum height | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:117` |
+| `--hub-list-ghost-opacity` | `0.85` | Drag ghost opacity | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:118` |
+| `--hub-list-ghost-shadow` | `0 0.5rem 1rem rgba(0, 0, 0, 0.15)` | Drag ghost shadow | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:119` |
+| `--hub-list-connector-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Color of the opt-in connector line between consecutive items (`connected`) | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:121` |
+| `--hub-list-connector-width` | `2px` | Thickness of the item connector line | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:122` |
+| `--hub-list-connector-style` | `solid` | Border-style of the item connector (e.g. `dashed`) | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:123` |
+| `--hub-list-connector-offset` | `var(--hub-list-item-padding-x, var(--hub-ref-space-3, 1rem))` | Inline offset of the connector from the item's leading edge | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:124` |
+| `--hub-list-cards-row-gap` | `var(--hub-list-cards-gap)` | Card grid row gap | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:56` |
+| `--hub-list-cards-shadow` | `none` | Card box shadow | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:65` |
+| `--hub-list-cards-transition` | `background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out` | Card hover transition | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:68` |
+| `--hub-list-empty-padding-x` | `var(--hub-ref-space-3, 1rem)` | Empty state horizontal padding | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:21` |
+| `--hub-list-empty-padding-y` | `var(--hub-ref-space-3, 1rem)` | Empty state vertical padding | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:22` |
+| `--hub-list-item-border-width` | `1px` | List item border width | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:25` |
+| `--hub-list-search-border-color` | `var(--hub-list-search-input-border-color)` | Search field border color | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:91` |
+| `--hub-list-search-border-radius` | `var(--hub-list-search-input-border-radius)` | Search field border radius | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:93` |
+| `--hub-list-search-border-width` | `1px` | Search field border width | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:92` |
+| `--hub-list-search-button-min-width` | `2.75rem` | Search button minimum width | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:86` |
+| `--hub-list-search-input-font-size` | `1rem` | Search input font size | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:96` |
+| `--hub-list-search-input-padding-x` | `0.75rem` | Search input horizontal padding | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:94` |
+| `--hub-list-search-input-padding-y` | `0.375rem` | Search input vertical padding | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:95` |
+| `--hub-list-top-bar-align-items` | `center` | Top bar cross-axis alignment | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:71` |
+| `--hub-list-top-bar-gap` | `var(--hub-ref-space-2, 0.5rem)` | Top bar content gap | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:69` |
+| `--hub-list-top-bar-justify-content` | `end` | Top bar content justification | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:70` |
+| `--hub-list-top-bar-wrap` | `wrap` | Top bar flex wrapping | `IN_USE` | `paginable/src/lib/components/list/paginable-list/list.component.scss:72` |
 
 #### `paginator`
 
