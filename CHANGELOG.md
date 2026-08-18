@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.9] - 2026-08-18
+
+### Added
+
+- **Eight `group-attached` tokens documented**, following `ng-hub-ui-forms@22.21.0`: the radius, gap, border width and border colour that govern the seam of a field group, for `input` and for `select`. They are what lets a field drawn without a box — inside a table cell — stop welding its attached content into a strip.
+
 ## [22.7.8] - 2026-08-17
 
 ### Added
