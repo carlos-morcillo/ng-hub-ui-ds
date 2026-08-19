@@ -2174,6 +2174,7 @@ Neutral loading-placeholder tokens (no semantic colour variant). The base / high
 | `--hub-nav-panel-header-height` | `3rem` | Panel header height | `IN_USE` | `nav/src/styles/nav-tokens.scss:201` |
 | `--hub-nav-panel-header-padding-x` | `var(--hub-ref-space-3, 1rem)` | Panel header horizontal padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:206` |
 | `--hub-nav-panel-shadow` | `var(--hub-sys-shadow-sm, 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075))` | Side panel shadow | `IN_USE` | `nav/src/styles/nav-tokens.scss:194` |
+| `--hub-nav-panel-last-shadow` | `none` | Shadow of the outermost panel in a vertical stack. Defaults to none because that panel closes its edge with a border instead, so the boundary is drawn once; a theme that separates panels by shade or by a cast shadow sets this — `var(--hub-nav-panel-shadow)` keeps the panel's own | `PENDING` | `nav/src/components/nav-panel/nav-panel.component.scss` |
 | `--hub-nav-panel-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Side panel slide transition | `IN_USE` | `nav/src/styles/nav-tokens.scss:198` |
 | `--hub-nav-panel-width` | `16rem` | Side panel width | `IN_USE` | `nav/src/styles/nav-tokens.scss:189` |
 | `--hub-nav-panel-zindex` | `var(--hub-sys-zindex-dropdown, 1000)` | Side panel z-index | `IN_USE` | `nav/src/styles/nav-tokens.scss:195` |
