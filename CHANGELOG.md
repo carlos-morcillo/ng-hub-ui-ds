@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.10] - 2026-08-19
+
+### Added
+
+- **`--hub-nav-panel-last-shadow` documented**, following `ng-hub-ui-nav@22.11.0`. It carries the shadow of the outermost panel in a vertical stack, and defaults to `none` because that panel now closes its edge with a border and the boundary should be drawn once. A theme that separates its panels by shade, or by a cast shadow, sets it — `var(--hub-nav-panel-shadow)` keeps the panel's own.
+
 ## [22.7.9] - 2026-08-18
 
 ### Added
