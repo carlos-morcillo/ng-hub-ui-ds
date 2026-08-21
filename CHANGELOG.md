@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.11] - 2026-08-21
+
+### Added
+
+- **The table's action tokens and the modal's dialog inset documented**, following `ng-hub-ui-paginable@22.14.0` and `ng-hub-ui-modal@22.7.0`: `--hub-table-action-accent` (also recorded as a per-action accent slot), its `subtle` and `emphasis` mixes, `--hub-table-sort-btn-hover-color`, and `--hub-modal-dialog-inset` — the space a dialog discounts from the viewport so its body is what scrolls rather than the page.
+
 ## [22.7.10] - 2026-08-19
 
 ### Added

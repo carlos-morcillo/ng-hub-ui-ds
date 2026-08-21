@@ -642,6 +642,7 @@ Every accent slot discovered in the libraries (declared or consumed), one row pe
 | `--hub-table-accent-subtle` | subtle |
 | `--hub-table-accent-emphasis` | emphasis |
 | `--hub-table-accent-on` | on |
+| `--hub-table-action-accent` | base (per-action runtime slot) |
 | `--hub-toast-accent` | base |
 | `--hub-toast-accent-subtle` | subtle |
 | `--hub-toast-accent-emphasis` | emphasis |
@@ -1621,6 +1622,7 @@ The standalone `tabs` proposal was **superseded**: the tabs UI shipped inside `n
 | `--hub-modal-fade-transform` | `translate(0, -50px)` | Dialog transform at fade start | `IN_USE` | `modal/src/lib/modal.scss:196` |
 | `--hub-modal-show-transform` | `none` | Dialog transform when shown | `IN_USE` | `modal/src/lib/modal.scss:197` |
 | `--hub-modal-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Dialog transition curve/duration | `IN_USE` | `modal/src/lib/modal.scss:198` |
+| `--hub-modal-dialog-inset` | `var(--hub-modal-margin-block, 3.5rem)` | Space the dialog discounts from the viewport when capping its own height, so the body is what scrolls rather than the page. Zero inside a fullscreen dialog, which covers the viewport and has no margin to discount | `IN_USE` | `modal/src/lib/modal.scss:351` |
 | `--hub-modal-resize-duration` | `200` | Milliseconds the dialog takes to travel between two content heights. Unitless, because it is read from script rather than used in a CSS transition | `IN_USE` | `modal/src/lib/modal.scss:199` |
 | `--hub-modal-resize-easing` | `ease-in-out` | Easing for that same height travel | `IN_USE` | `modal/src/lib/modal.scss:200` |
 | `--hub-modal-scale-transform` | `scale(1.02)` | Dialog scale in static backdrop bump | `IN_USE` | `modal/src/lib/modal.scss:201` |
@@ -1667,6 +1669,10 @@ The standalone `tabs` proposal was **superseded**: the tabs UI shipped inside `n
 | `--hub-table-border-color`                      | `var(--hub-sys-border-color-default, #dee2e6)`                            | Border color of container and cells                                 | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:17`  |
 | `--hub-table-border-radius`                     | `var(--hub-ref-radius-md, 0.375rem)`                                      | Border radius of the container                                      | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:18`  |
 | `--hub-table-border-width`                      | `var(--hub-ref-border-width, 1px)`                                        | Border thickness                                                    | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:19`  |
+| `--hub-table-action-accent` | `—` | Accent an action button paints with. Written on the element by the component from `PaginableActionButton.color` through `resolveHubAccent`, so any system role or literal colour resolves — not a fixed list | `IN_USE` | `paginable/src/lib/components/table/table.component.ts` |
+| `--hub-table-action-subtle` | `color-mix(in oklch, var(--hub-table-action-accent) 12%, var(--hub-sys-surface-page, #ffffff))` | The soft variant's fill: the accent at 12% over the page surface, the formula `hubButton` uses, so a row action and a real soft button read alike side by side | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:317` |
+| `--hub-table-action-emphasis` | `color-mix(in oklch, var(--hub-table-action-accent) 80%, var(--hub-sys-color-ink, #212529))` | The accent at 80% over the ink, for the text of a tinted action | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:322` |
+| `--hub-table-sort-btn-hover-color` | `var(--hub-sys-color-primary)` | Colour of a sort control under the pointer | `IN_USE` | `paginable/src/lib/components/table/table.component.scss` |
 | `--hub-table-row-divider-color` | `var(--hub-table-border-color)` | Color of the divider between body rows (independent of the outer frame/vertical borders) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:22` |
 | `--hub-table-container-max-block-size` | `none` | Max block-size (height) of the scroll container; set it together with `options.scrollable` to cap the body height and engage the sticky header | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:26` |
 | `--hub-table-container-overflow` | `auto` | Scroll behaviour of the built-in table container; `[stickyHeader]` flips it to `visible` so the header pins to the consumer's own scroll ancestor | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:34` |
@@ -1712,8 +1718,8 @@ The standalone `tabs` proposal was **superseded**: the tabs UI shipped inside `n
 | `--hub-table-selected-color`                    | `var(--hub-sys-text-primary, #212529)`                                    | Selected row text color                                            | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:99` |
 | `--hub-table-selected-bar-width` | `0` | Width of the optional accent bar on the selected row's leading edge (`0` = hidden) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:105` |
 | `--hub-table-selected-bar-color` | `var(--hub-table-accent)` | Colour of the selected-row accent bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:106` |
-| `--hub-table-cell-bar-width` | `var(--hub-table-selected-bar-width)` | Internal per-cell relay of the selected-row bar width (mirrored/negated for RTL); theme via `--hub-table-selected-bar-width` | `INTERNAL` | `paginable/src/lib/components/table/table.component.scss:829` |
-| `--hub-table-cell-bar-color` | `var(--hub-table-selected-bar-color, var(--hub-table-accent))` | Internal per-cell relay of the selected-row bar colour; theme via `--hub-table-selected-bar-color` | `INTERNAL` | `paginable/src/lib/components/table/table.component.scss:830` |
+| `--hub-table-cell-bar-width` | `var(--hub-table-selected-bar-width)` | Internal per-cell relay of the selected-row bar width (mirrored/negated for RTL); theme via `--hub-table-selected-bar-width` | `INTERNAL` | `paginable/src/lib/components/table/table.component.scss:933` |
+| `--hub-table-cell-bar-color` | `var(--hub-table-selected-bar-color, var(--hub-table-accent))` | Internal per-cell relay of the selected-row bar colour; theme via `--hub-table-selected-bar-color` | `INTERNAL` | `paginable/src/lib/components/table/table.component.scss:934` |
 | `--hub-table-accent-bg` | `transparent` | Accent layer applied via `box-shadow inset` on cells | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:82` |
 | `--hub-table-active-bg` | `var(--hub-sys-state-active-bg, rgba(0,0,0,0.1))` | Cell background in active row state | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:83` |
 | `--hub-table-active-color` | `var(--hub-sys-text-primary, #212529)` | Cell text color in active row state | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:84` |
