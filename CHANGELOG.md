@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.12] - 2026-08-22
+
+### Added
+
+- **`--hub-tooltip-white-space` and `--hub-tooltip-text-align` documented**, following `ng-hub-ui-utils@22.10.0`. They govern how a tooltip's label wraps and aligns, and are forwarded from the host — which is what makes them settable for one tooltip instead of all of them.
+
 ## [22.7.11] - 2026-08-21
 
 ### Added
