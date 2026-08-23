@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.13] - 2026-08-23
+
+### Added
+
+- **The three `hub-timepicker` variables documented**, following `ng-hub-ui-forms@22.23.0`: `--hub-timepicker-width` and `--hub-timepicker-min-width` — the field is sized to its content, because an `HH:MM` control stretched across a form row reads as if it expected more than four digits — and `--hub-timepicker-indicator-opacity`, which dims the browser's own clock glyph so it sits with the field's chrome rather than competing with it.
+
 ## [22.7.12] - 2026-08-22
 
 ### Added
