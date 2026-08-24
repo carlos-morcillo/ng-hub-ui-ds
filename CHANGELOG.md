@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.14] - 2026-08-24
+
+### Added
+
+- **The eleven `hub-loading` variables documented**, following the initial `ng-hub-ui-loading@22.0.0`. One of them, `--hub-loading-accent`, joins the accent-slot annex: all five indicator variants read that single slot, so the library derives no `subtle`/`emphasis`/`on` family the way a component with surfaces and borders does. Three carry a literal default on purpose — `--hub-loading-size`, `--hub-loading-speed` and `--hub-loading-backdrop-blur` — because an indicator's diameter is not a spacing step, its loop period is not a transition duration, and a scrim's blur is not a shadow; borrowing a `sys` token that means something else would tie them to a scale that would move for unrelated reasons. The scrim itself does follow the theme, through `--hub-loading-backdrop-bg` mixing `--hub-sys-surface-page` with transparency, which is what lets one declaration read as a white veil on a light theme and a dark one on a dark theme.
+
 ## [22.7.13] - 2026-08-23
 
 ### Added

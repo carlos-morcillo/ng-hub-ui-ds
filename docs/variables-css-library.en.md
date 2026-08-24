@@ -617,6 +617,7 @@ Every accent slot discovered in the libraries (declared or consumed), one row pe
 | `--hub-list-accent-subtle` | subtle |
 | `--hub-list-accent-emphasis` | emphasis |
 | `--hub-list-accent-on` | on |
+| `--hub-loading-accent` | base (single indicator slot; the variants share one colour, so no role family is derived) |
 | `--hub-modal-accent` | base |
 | `--hub-modal-accent-subtle` | subtle |
 | `--hub-modal-accent-emphasis` | emphasis |
@@ -2452,6 +2453,24 @@ The signature field reuses the `.hub-field__*` shell from `ng-hub-ui-forms`, so 
 | `--hub-signature-font-size` | `var(--hub-input-font-size, 1rem)` | Field font size | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:11` |
 | `--hub-signature-actions-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gap between the clear / undo / redo actions | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:12` |
 
+### `loading`
+
+One accent drives all five indicator variants, so recolouring the spinner recolours the dots, the bars, the pulse and the ring with it — the `color` input feeds this single slot through `resolveHubAccent()`, exactly as the button's accent does. Three tokens have no honest counterpart in the design system and therefore carry a literal rather than borrowing a `sys` token that means something else: an indicator's diameter is not a spacing step, its loop period is not a transition duration, and a scrim's blur is not a shadow. The backdrop instead follows `--hub-sys-surface-page`, which is what lets one declaration read as a white veil on a light theme and a dark one on a dark theme without a second token to keep in sync. Theme the whole indicator in one call with the `hub-loading-theme()` Sass mixin.
+
+| Token | Initial value | Usage | Status | Source |
+| ----- | ------------- | ----- | ------ | ------ |
+| `--hub-loading-accent` | `var(--hub-sys-color-primary, #0d6efd)` | Indicator colour, shared by all five variants | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:7` |
+| `--hub-loading-size` | `2.5rem` | Indicator diameter; the `sm` / `lg` modifiers re-declare it | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:8` |
+| `--hub-loading-thickness` | `calc(var(--hub-ref-border-width, 1px) * 3)` | Stroke weight of the `spinner` and `ring` variants | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:9` |
+| `--hub-loading-speed` | `0.9s` | Period of one animation loop, for every variant | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:10` |
+| `--hub-loading-gap` | `var(--hub-sys-gap-2, var(--hub-ref-space-2, 0.5rem))` | Space between indicator, message and projected content | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:11` |
+| `--hub-loading-text-color` | `var(--hub-sys-text-primary, var(--hub-ref-color-gray-900, #212529))` | Message colour | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:12` |
+| `--hub-loading-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Message font size; the `sm` / `lg` modifiers re-declare it | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:13` |
+| `--hub-loading-backdrop-bg` | `color-mix(in srgb, var(--hub-sys-surface-page, #ffffff) 72%, transparent)` | Scrim painted behind the `overlay` and `fullscreen` modes | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:16` |
+| `--hub-loading-backdrop-blur` | `2px` | Blur radius applied to whatever the scrim covers | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:17` |
+| `--hub-loading-z-index` | `var(--hub-sys-zindex-modal, 1055)` | Stacking order of the `fullscreen` overlay | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:18` |
+| `--hub-loading-image-size` | `var(--hub-loading-size)` | Size of the branding image supplied through `image` | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:19` |
+
 ## Appendix
 
 ### Glossary
@@ -2549,6 +2568,7 @@ Unique custom properties **declared** in each library's source (`.scss` + inline
 | `ds`          |                       230 |
 | `forms`       |                       157 |
 | `icons`       |                         6 |
+| `loading`     |                        11 |
 | `milestones`  |                        15 |
 | `modal`       |                        89 |
 | `nav`         |                       110 |
