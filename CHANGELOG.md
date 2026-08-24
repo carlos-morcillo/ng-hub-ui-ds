@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.15] - 2026-08-24
+
+### Added
+
+- **`--hub-field-stack-gap` documented**, following `ng-hub-ui-forms@22.23.1`. It is the space a field leaves under itself when fields are stacked, zero by default so no existing form moves, and zeroed outright by `hubFormControlAdapter` on any control built into another component's chrome.
+
 ## [22.7.14] - 2026-08-24
 
 ### Added
