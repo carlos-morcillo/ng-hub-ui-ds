@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.16] - 2026-08-24
+
+### Changed
+
+- **`--hub-field-stack-gap` is documented as a fallback, not a declaration**, following `ng-hub-ui-forms@22.23.2`. Its `Source` now points at the rule that carries the default rather than at a `:root` block that no longer declares it, and the description says why: a declaration ties with a consumer's own and the winner is decided by import order alone. Worth stating plainly, because re-declaring it is exactly what a future reader would do to "tidy" it.
+
 ## [22.7.15] - 2026-08-24
 
 ### Added
