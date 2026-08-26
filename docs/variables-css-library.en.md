@@ -677,62 +677,62 @@ Source legend:
 | `--hub-accordion-active-bg`                    | `var(--hub-sys-color-primary-subtle, #e7f1ff)`                                                                                                                                                                                                                                               | Active/expanded header background color      | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:133` |
 | `--hub-accordion-active-color`                 | `var(--hub-sys-color-primary, #0d6efd)`                                                                                                                                                                                                                                                      | Active/expanded header text color            | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:132` |
 | `--hub-accordion-bg`                           | `var(--hub-sys-surface-page, #fff)`                                                                                                                                                                                                                                                          | Panel background color                       | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:120` |
-| `--hub-accordion-body-padding-x`               | `1.25rem`                                                                                                                                                                                                                                                                                    | Horizontal body padding                      | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:157` |
-| `--hub-accordion-body-padding-y`               | `var(--hub-ref-space-3, 1rem)`                                                                                                                                                                                                                                                               | Vertical body padding                        | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:158` |
+| `--hub-accordion-body-padding-x`               | `1.25rem`                                                                                                                                                                                                                                                                                    | Horizontal body padding                      | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:160` |
+| `--hub-accordion-body-padding-y`               | `var(--hub-ref-space-3, 1rem)`                                                                                                                                                                                                                                                               | Vertical body padding                        | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:161` |
 | `--hub-accordion-border-color`                 | `var(--hub-sys-border-color-default, rgba(0, 0, 0, 0.125))`                                                                                                                                                                                                                                  | Panel border color                           | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:122` |
 | `--hub-accordion-border-radius`                | `var(--hub-ref-radius-sm, 0.25rem)`                                                                                                                                                                                                                                                          | Panel border radius                          | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:123` |
 | `--hub-accordion-border-width`                 | `var(--hub-ref-border-width, 1px)`                                                                                                                                                                                                                                                           | Panel border width                           | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:121` |
 | `--hub-accordion-btn-bg`                       | `var(--hub-sys-surface-page, #fff)`                                                                                                                                                                                                                                                          | Header button background                     | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:131` |
 | `--hub-accordion-btn-color`                    | `var(--hub-sys-text-primary, #212529)`                                                                                                                                                                                                                                                       | Header button text color                     | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:130` |
-| `--hub-accordion-btn-focus-box-shadow`         | `0 0 0 var(--hub-sys-focus-ring-width, 0.25rem) var(--hub-sys-focus-ring-color, rgba(13, 110, 253, 0.25))`                                                                                                                                                                                   | Focus ring shadow                            | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:141` |
-| `--hub-accordion-btn-icon-mask`                | `url("data:image/svg+xml;charset=UTF-8,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E")` | Chevron icon mask (down by default)          | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:136` |
-| `--hub-accordion-btn-icon-transform`           | `rotate(-180deg)`                                                                                                                                                                                                                                                                            | Expanded state icon transform (up direction) | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:138` |
-| `--hub-accordion-btn-icon-transition`          | `transform 0.2s ease-in-out`                                                                                                                                                                                                                                                                 | Icon transition                              | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:139` |
-| `--hub-accordion-btn-icon-width`               | `1.25rem`                                                                                                                                                                                                                                                                                    | Icon size                                    | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:137` |
+| `--hub-accordion-btn-focus-box-shadow`         | `0 0 0 var(--hub-sys-focus-ring-width, 0.25rem) var(--hub-sys-focus-ring-color, rgba(13, 110, 253, 0.25))`                                                                                                                                                                                   | Focus ring shadow                            | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:144` |
+| `--hub-accordion-btn-icon-mask`                | `url("data:image/svg+xml;charset=UTF-8,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E")` | Chevron icon mask (down by default)          | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:137` |
+| `--hub-accordion-btn-icon-transform`           | `rotate(-180deg)`                                                                                                                                                                                                                                                                            | Expanded state icon transform (up direction) | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:141` |
+| `--hub-accordion-btn-icon-transition`          | `transform 0.2s ease-in-out`                                                                                                                                                                                                                                                                 | Icon transition                              | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:142` |
+| `--hub-accordion-btn-icon-width`               | `1.25rem`                                                                                                                                                                                                                                                                                    | Icon size                                    | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:140` |
 | `--hub-accordion-btn-padding-x`                | `1.25rem`                                                                                                                                                                                                                                                                                    | Header horizontal padding                    | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:128` |
 | `--hub-accordion-btn-padding-y`                | `var(--hub-ref-space-3, 1rem)`                                                                                                                                                                                                                                                               | Header vertical padding                      | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:129` |
-| `--hub-accordion-collapse-transition-duration` | `0.25s`                                                                                                                                                                                                                                                                                      | Collapse/expand transition duration          | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:152` |
-| `--hub-accordion-collapse-transition-easing`   | `cubic-bezier(0.4, 0, 0.2, 1)`                                                                                                                                                                                                                                                               | Collapse/expand transition easing            | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:154` |
+| `--hub-accordion-collapse-transition-duration` | `0.25s`                                                                                                                                                                                                                                                                                      | Collapse/expand transition duration          | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:155` |
+| `--hub-accordion-collapse-transition-easing`   | `cubic-bezier(0.4, 0, 0.2, 1)`                                                                                                                                                                                                                                                               | Collapse/expand transition easing            | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:157` |
 | `--hub-accordion-color`                        | `var(--hub-sys-text-primary, #212529)`                                                                                                                                                                                                                                                       | Panel text color                             | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:119` |
 | `--hub-accordion-icon-active-color`            | `var(--hub-accordion-active-color, var(--hub-sys-color-primary, #0d6efd))`                                                                                                                                                                                                                   | Expanded icon color                          | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:135` |
 | `--hub-accordion-icon-color`                   | `var(--hub-accordion-btn-color, var(--hub-sys-text-primary, #212529))`                                                                                                                                                                                                                       | Collapsed icon color                         | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:134` |
 | `--hub-accordion-inner-border-radius`          | `calc(var(--hub-accordion-border-radius, var(--hub-ref-radius-sm, 0.25rem)) - var(--hub-accordion-border-width, var(--hub-ref-border-width, 1px)))`                                                                                                                                          | Inner border radius                          | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:125` |
-| `--hub-accordion-transition`                   | `color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease`                                                                                                                                        | Header visual transition                     | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:145` |
+| `--hub-accordion-transition`                   | `color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease`                                                                                                                                        | Header visual transition                     | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:148` |
 
 ### `avatar`
 
 | Token                               | Initial value                                                                            | Usage                                                  | Status   | Source                                 |
 | ----------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------ | -------- | -------------------------------------- |
-| `--hub-avatar-size` | runtime (`50px`) | Avatar box size in px — written on the host from the `size` input (the input is the API; a CSS override is overruled by the inline style) | `INTERNAL` | `avatar/src/lib/avatar.component.ts:84` |
+| `--hub-avatar-size` | runtime (`50px`) | Avatar box size in px — written on the host from the `size` input (the input is the API; a CSS override is overruled by the inline style) | `INTERNAL` | `avatar/src/lib/avatar.component.ts:97` |
 | `--hub-avatar-overflow` | `hidden` | Overflow clipping behavior for avatar container | `IN_USE` | `avatar/src/lib/avatar.component.scss:4` |
 | `--hub-avatar-border-radius-round` | `50%` | Round shape radius token | `IN_USE` | `avatar/src/lib/avatar.component.scss:5` |
 | `--hub-avatar-border-radius-square` | `var(--hub-ref-radius-sm, 0.25rem)` | Default square shape radius token | `IN_USE` | `avatar/src/lib/avatar.component.scss:6` |
 | `--hub-avatar-border-radius` | `var(--hub-avatar-border-radius-round, var(--hub-avatar-border-radius-square, 0.25rem))` | Effective avatar radius used in host/container/content | `IN_USE` | `avatar/src/lib/avatar.component.scss:7` |
-| `--hub-avatar-border-width-default` | `var(--hub-ref-border-width, 1px)` | Default border width when border is enabled | `IN_USE` | `avatar/src/lib/avatar.component.scss:11` |
-| `--hub-avatar-border-width` | `0` | Effective avatar border width | `IN_USE` | `avatar/src/lib/avatar.component.scss:12` |
-| `--hub-avatar-border-color` | `transparent` | Effective avatar border color | `IN_USE` | `avatar/src/lib/avatar.component.scss:13` |
-| `--hub-avatar-fg-color` | `var(--hub-avatar-accent-on, var(--hub-ref-color-white, #fff))` | Text/avatar foreground color token | `IN_USE` | `avatar/src/lib/avatar.component.scss:24` |
-| `--hub-avatar-bg-color` | `var(--hub-avatar-accent, var(--hub-sys-color-primary, #0d6efd))` | Avatar surface color token (accent by default; initials/value override it, images cover it) | `IN_USE` | `avatar/src/lib/avatar.component.scss:28` |
-| `--hub-avatar-font-family` | `var( --hub-ref-font-family-base, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif )` | Avatar text font family | `IN_USE` | `avatar/src/lib/avatar.component.scss:29` |
-| `--hub-avatar-font-weight` | `var(--hub-ref-font-weight-base, 400)` | Avatar text font weight | `IN_USE` | `avatar/src/lib/avatar.component.scss:39` |
-| `--hub-avatar-font-size` | `calc(var(--hub-avatar-size, 50px) / 3)` | Avatar text font size | `IN_USE` | `avatar/src/lib/avatar.component.scss:40` |
-| `--hub-avatar-line-height` | `var(--hub-avatar-size, 50px)` | Avatar text line-height token | `IN_USE` | `avatar/src/lib/avatar.component.scss:41` |
-| `--hub-avatar-text-transform` | `uppercase` | Avatar text transform | `IN_USE` | `avatar/src/lib/avatar.component.scss:42` |
-| `--hub-avatar-text-align` | `center` | Avatar text alignment | `IN_USE` | `avatar/src/lib/avatar.component.scss:43` |
-| `--hub-avatar-object-fit` | `cover` | Avatar image object-fit token | `IN_USE` | `avatar/src/lib/avatar.component.scss:44` |
-| `--hub-avatar-content-padding` | `calc(var(--hub-avatar-size, 50px) * 0.2)` | Padding around projected custom content (icon/SVG/image) | `IN_USE` | `avatar/src/lib/avatar.component.scss:50` |
-| `--hub-avatar-content-icon-size` | `calc(var(--hub-avatar-size, 50px) * 0.55)` | Font size for projected icon fonts / emoji | `IN_USE` | `avatar/src/lib/avatar.component.scss:51` |
-| `--hub-avatar-badge-size` | `calc(var(--hub-avatar-size, 50px) * 0.28)` | Badge dot diameter / label min-height (scales with size) | `IN_USE` | `avatar/src/lib/avatar.component.scss:54` |
-| `--hub-avatar-badge-offset` | `0px` | Badge inset from the bottom-end corner | `IN_USE` | `avatar/src/lib/avatar.component.scss:55` |
-| `--hub-avatar-badge-ring-width` | `max(2px, calc(var(--hub-avatar-size, 50px) * 0.05))` | Ring around the badge (separates it from the avatar) | `IN_USE` | `avatar/src/lib/avatar.component.scss:56` |
-| `--hub-avatar-badge-ring-color` | `var(--hub-sys-surface-page, #fff)` | Badge ring colour | `IN_USE` | `avatar/src/lib/avatar.component.scss:57` |
-| `--hub-avatar-badge-color` | `var(--hub-sys-color-secondary, #6c757d)` | Badge fill (neutral default; pick a semantic colour with the `badgeColor` input → `--hub-sys-color-*`) | `IN_USE` | `avatar/src/lib/avatar.component.scss:59` |
-| `--hub-avatar-badge-text-color` | `var(--hub-ref-color-white, #fff)` | Badge label text colour | `IN_USE` | `avatar/src/lib/avatar.component.scss:60` |
-| `--hub-avatar-badge-font-size` | `calc(var(--hub-avatar-size, 50px) * 0.22)` | Badge label font size | `IN_USE` | `avatar/src/lib/avatar.component.scss:61` |
-| `--hub-avatar-badge-padding` | `calc(var(--hub-avatar-size, 50px) * 0.08)` | Badge label inline padding | `IN_USE` | `avatar/src/lib/avatar.component.scss:62` |
-| `--hub-avatar-group-overlap`        | `calc(var(--hub-avatar-size, 50px) * 0.3)`                                               | Overlap amount between stacked avatars in `.hub-avatar-group` | `IN_USE` | `avatar/src/lib/avatar.component.scss:65` |
-| `--hub-avatar-group-ring-width`     | `max(2px, calc(var(--hub-avatar-size, 50px) * 0.04))`                                    | Ring width on each avatar inside a group               | `IN_USE` | `avatar/src/lib/avatar.component.scss:66` |
-| `--hub-avatar-group-ring-color`     | `var(--hub-sys-surface-page, #fff)`                                                      | Ring colour on each avatar inside a group              | `IN_USE` | `avatar/src/lib/avatar.component.scss:67` |
+| `--hub-avatar-border-width-default` | `var(--hub-ref-border-width, 1px)` | Default border width when border is enabled | `IN_USE` | `avatar/src/lib/avatar.component.scss:8` |
+| `--hub-avatar-border-width` | `0` | Effective avatar border width | `IN_USE` | `avatar/src/lib/avatar.component.scss:9` |
+| `--hub-avatar-border-color` | `transparent` | Effective avatar border color | `IN_USE` | `avatar/src/lib/avatar.component.scss:10` |
+| `--hub-avatar-fg-color` | `var(--hub-avatar-accent-on, var(--hub-ref-color-white, #fff))` | Text/avatar foreground color token | `IN_USE` | `avatar/src/lib/avatar.component.scss:21` |
+| `--hub-avatar-bg-color` | `var(--hub-avatar-accent, var(--hub-sys-color-primary, #0d6efd))` | Avatar surface color token (accent by default; initials/value override it, images cover it) | `IN_USE` | `avatar/src/lib/avatar.component.scss:25` |
+| `--hub-avatar-font-family` | `var( --hub-ref-font-family-base, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif )` | Avatar text font family | `IN_USE` | `avatar/src/lib/avatar.component.scss:26` |
+| `--hub-avatar-font-weight` | `var(--hub-ref-font-weight-base, 400)` | Avatar text font weight | `IN_USE` | `avatar/src/lib/avatar.component.scss:36` |
+| `--hub-avatar-font-size` | `calc(var(--hub-avatar-size, 50px) / 3)` | Avatar text font size | `IN_USE` | `avatar/src/lib/avatar.component.scss:37` |
+| `--hub-avatar-line-height` | `var(--hub-avatar-size, 50px)` | Avatar text line-height token | `IN_USE` | `avatar/src/lib/avatar.component.scss:38` |
+| `--hub-avatar-text-transform` | `uppercase` | Avatar text transform | `IN_USE` | `avatar/src/lib/avatar.component.scss:39` |
+| `--hub-avatar-text-align` | `center` | Avatar text alignment | `IN_USE` | `avatar/src/lib/avatar.component.scss:40` |
+| `--hub-avatar-object-fit` | `cover` | Avatar image object-fit token | `IN_USE` | `avatar/src/lib/avatar.component.scss:41` |
+| `--hub-avatar-content-padding` | `calc(var(--hub-avatar-size, 50px) * 0.2)` | Padding around projected custom content (icon/SVG/image) | `IN_USE` | `avatar/src/lib/avatar.component.scss:47` |
+| `--hub-avatar-content-icon-size` | `calc(var(--hub-avatar-size, 50px) * 0.55)` | Font size for projected icon fonts / emoji | `IN_USE` | `avatar/src/lib/avatar.component.scss:48` |
+| `--hub-avatar-badge-size` | `calc(var(--hub-avatar-size, 50px) * 0.28)` | Badge dot diameter / label min-height (scales with size) | `IN_USE` | `avatar/src/lib/avatar.component.scss:51` |
+| `--hub-avatar-badge-offset` | `0px` | Badge inset from the bottom-end corner | `IN_USE` | `avatar/src/lib/avatar.component.scss:52` |
+| `--hub-avatar-badge-ring-width` | `max(2px, calc(var(--hub-avatar-size, 50px) * 0.05))` | Ring around the badge (separates it from the avatar) | `IN_USE` | `avatar/src/lib/avatar.component.scss:53` |
+| `--hub-avatar-badge-ring-color` | `var(--hub-sys-surface-page, #fff)` | Badge ring colour | `IN_USE` | `avatar/src/lib/avatar.component.scss:54` |
+| `--hub-avatar-badge-color` | `var(--hub-sys-color-secondary, #6c757d)` | Badge fill (neutral default; pick a semantic colour with the `badgeColor` input → `--hub-sys-color-*`) | `IN_USE` | `avatar/src/lib/avatar.component.scss:56` |
+| `--hub-avatar-badge-text-color` | `var(--hub-ref-color-white, #fff)` | Badge label text colour | `IN_USE` | `avatar/src/lib/avatar.component.scss:57` |
+| `--hub-avatar-badge-font-size` | `calc(var(--hub-avatar-size, 50px) * 0.22)` | Badge label font size | `IN_USE` | `avatar/src/lib/avatar.component.scss:58` |
+| `--hub-avatar-badge-padding` | `calc(var(--hub-avatar-size, 50px) * 0.08)` | Badge label inline padding | `IN_USE` | `avatar/src/lib/avatar.component.scss:59` |
+| `--hub-avatar-group-overlap`        | `calc(var(--hub-avatar-size, 50px) * 0.3)`                                               | Overlap amount between stacked avatars in `.hub-avatar-group` | `IN_USE` | `avatar/src/lib/avatar.component.scss:62` |
+| `--hub-avatar-group-ring-width`     | `max(2px, calc(var(--hub-avatar-size, 50px) * 0.04))`                                    | Ring width on each avatar inside a group               | `IN_USE` | `avatar/src/lib/avatar.component.scss:63` |
+| `--hub-avatar-group-ring-color`     | `var(--hub-sys-surface-page, #fff)`                                                      | Ring colour on each avatar inside a group              | `IN_USE` | `avatar/src/lib/avatar.component.scss:64` |
 
 ### `board`
 
@@ -785,31 +785,31 @@ Source legend:
 | `--hub-board-card-border-radius`           | `var(--hub-board-border-radius)`                                                 | Card border radius (inherits from board base)   | `IN_USE` | `board/src/lib/components/board/board.component.scss:47` |
 | `--hub-board-card-box-shadow`              | `none`                                                                           | Card box shadow                                 | `IN_USE` | `board/src/lib/components/board/board.component.scss:48` |
 | `--hub-board-card-inner-border-radius`     | `calc(var(--hub-board-card-border-radius) - var(--hub-board-card-border-width))` | Inner card border radius                        | `IN_USE` | `board/src/lib/components/board/board.component.scss:49` |
-| `--hub-board-card-cap-padding-y`           | `var(--hub-ref-space-2, 0.5rem)`                                                 | Card cap shared vertical padding                | `IN_USE` | `board/src/lib/components/board/board.component.scss:52` |
-| `--hub-board-card-cap-padding-x`           | `var(--hub-ref-space-3, 1rem)`                                                   | Card cap shared horizontal padding              | `IN_USE` | `board/src/lib/components/board/board.component.scss:53` |
-| `--hub-board-card-cap-bg`                  | `var(--hub-sys-surface-elevated, #f8f9fa)`                           | Card cap shared background                      | `IN_USE` | `board/src/lib/components/board/board.component.scss:54` |
-| `--hub-board-card-cap-color`               | `inherit`                                                                        | Card cap shared text color                      | `IN_USE` | `board/src/lib/components/board/board.component.scss:55` |
-| `--hub-board-card-padding-y`               | `var(--hub-board-card-spacer-y)`                                                 | Card body vertical padding                      | `IN_USE` | `board/src/lib/components/board/board.component.scss:56` |
-| `--hub-board-card-padding-x`               | `var(--hub-board-card-spacer-x)`                                                 | Card body horizontal padding                    | `IN_USE` | `board/src/lib/components/board/board.component.scss:57` |
-| `--hub-board-card-header-padding-y`        | `var(--hub-board-card-cap-padding-y)`                                            | Card header vertical padding                    | `IN_USE` | `board/src/lib/components/board/board.component.scss:58` |
-| `--hub-board-card-header-padding-x`        | `var(--hub-board-card-cap-padding-x)`                                            | Card header horizontal padding                  | `IN_USE` | `board/src/lib/components/board/board.component.scss:59` |
-| `--hub-board-card-header-bg`               | `var(--hub-board-card-cap-bg)`                                                   | Card header background                          | `IN_USE` | `board/src/lib/components/board/board.component.scss:60` |
-| `--hub-board-card-header-color`            | `var(--hub-board-card-cap-color)`                                                | Card header text color                          | `IN_USE` | `board/src/lib/components/board/board.component.scss:61` |
-| `--hub-board-card-footer-padding-y`        | `var(--hub-board-card-cap-padding-y)`                                            | Card footer vertical padding                    | `IN_USE` | `board/src/lib/components/board/board.component.scss:62` |
-| `--hub-board-card-footer-padding-x`        | `var(--hub-board-card-cap-padding-x)`                                            | Card footer horizontal padding                  | `IN_USE` | `board/src/lib/components/board/board.component.scss:63` |
-| `--hub-board-card-footer-bg`               | `var(--hub-board-card-cap-bg)`                                                   | Card footer background                          | `IN_USE` | `board/src/lib/components/board/board.component.scss:64` |
-| `--hub-board-card-footer-color`            | `var(--hub-board-card-cap-color)`                                                | Card footer text color                          | `IN_USE` | `board/src/lib/components/board/board.component.scss:65` |
-| `--hub-board-card-height`                  | `auto`                                                                           | Card height                                     | `IN_USE` | `board/src/lib/components/board/board.component.scss:66` |
-| `--hub-board-card-color`                   | `var(--hub-board-container-color)`                                               | Card text color                                 | `IN_USE` | `board/src/lib/components/board/board.component.scss:67` |
-| `--hub-board-card-bg`                      | `var(--hub-board-container-bg)`                                                  | Card background                                 | `IN_USE` | `board/src/lib/components/board/board.component.scss:68` |
-| `--hub-board-drag-transition`              | `transform 250ms cubic-bezier(0, 0, 0.2, 1)`                                     | Drag-and-drop animation transition              | `IN_USE` | `board/src/lib/components/board/board.component.scss:69` |
-| `--hub-board-accent`                       | `var(--hub-sys-color-primary, #0d6efd)`                                          | Semantic accent — re-based per `variant`; drives the drop placeholder | `IN_USE` | `board/src/lib/components/board/board.component.scss:75` |
-| `--hub-board-accent-subtle`                | `color-mix(in oklch, var(--hub-board-accent) 12%, var(--hub-sys-surface-page, #fff))` | Soft accent tint for the placeholder background | `IN_USE` | `board/src/lib/components/board/board.component.scss:77` |
-| `--hub-board-placeholder-border-color`     | `var(--hub-board-accent)`                                                        | Drop placeholder border color                   | `IN_USE` | `board/src/lib/components/board/board.component.scss:79` |
-| `--hub-board-placeholder-border-width` | `2px` | Drop placeholder border width | `IN_USE` | `board/src/lib/components/board/board.component.scss:80` |
-| `--hub-board-placeholder-border-style` | `dashed` | Drop placeholder border style | `IN_USE` | `board/src/lib/components/board/board.component.scss:81` |
-| `--hub-board-placeholder-bg`               | `var(--hub-board-accent-subtle)`                                                | Drop placeholder background                     | `IN_USE` | `board/src/lib/components/board/board.component.scss:82` |
-| `--hub-board-placeholder-min-height` | `60px` | Drop placeholder minimum height | `IN_USE` | `board/src/lib/components/board/board.component.scss:83` |
+| `--hub-board-card-cap-padding-y`           | `var(--hub-ref-space-2, 0.5rem)`                                                 | Card cap shared vertical padding                | `IN_USE` | `board/src/lib/components/board/board.component.scss:50` |
+| `--hub-board-card-cap-padding-x`           | `var(--hub-ref-space-3, 1rem)`                                                   | Card cap shared horizontal padding              | `IN_USE` | `board/src/lib/components/board/board.component.scss:51` |
+| `--hub-board-card-cap-bg`                  | `var(--hub-sys-surface-elevated, #f8f9fa)`                           | Card cap shared background                      | `IN_USE` | `board/src/lib/components/board/board.component.scss:52` |
+| `--hub-board-card-cap-color`               | `inherit`                                                                        | Card cap shared text color                      | `IN_USE` | `board/src/lib/components/board/board.component.scss:53` |
+| `--hub-board-card-padding-y`               | `var(--hub-board-card-spacer-y)`                                                 | Card body vertical padding                      | `IN_USE` | `board/src/lib/components/board/board.component.scss:54` |
+| `--hub-board-card-padding-x`               | `var(--hub-board-card-spacer-x)`                                                 | Card body horizontal padding                    | `IN_USE` | `board/src/lib/components/board/board.component.scss:55` |
+| `--hub-board-card-header-padding-y`        | `var(--hub-board-card-cap-padding-y)`                                            | Card header vertical padding                    | `IN_USE` | `board/src/lib/components/board/board.component.scss:56` |
+| `--hub-board-card-header-padding-x`        | `var(--hub-board-card-cap-padding-x)`                                            | Card header horizontal padding                  | `IN_USE` | `board/src/lib/components/board/board.component.scss:57` |
+| `--hub-board-card-header-bg`               | `var(--hub-board-card-cap-bg)`                                                   | Card header background                          | `IN_USE` | `board/src/lib/components/board/board.component.scss:58` |
+| `--hub-board-card-header-color`            | `var(--hub-board-card-cap-color)`                                                | Card header text color                          | `IN_USE` | `board/src/lib/components/board/board.component.scss:59` |
+| `--hub-board-card-footer-padding-y`        | `var(--hub-board-card-cap-padding-y)`                                            | Card footer vertical padding                    | `IN_USE` | `board/src/lib/components/board/board.component.scss:60` |
+| `--hub-board-card-footer-padding-x`        | `var(--hub-board-card-cap-padding-x)`                                            | Card footer horizontal padding                  | `IN_USE` | `board/src/lib/components/board/board.component.scss:61` |
+| `--hub-board-card-footer-bg`               | `var(--hub-board-card-cap-bg)`                                                   | Card footer background                          | `IN_USE` | `board/src/lib/components/board/board.component.scss:62` |
+| `--hub-board-card-footer-color`            | `var(--hub-board-card-cap-color)`                                                | Card footer text color                          | `IN_USE` | `board/src/lib/components/board/board.component.scss:63` |
+| `--hub-board-card-height`                  | `auto`                                                                           | Card height                                     | `IN_USE` | `board/src/lib/components/board/board.component.scss:64` |
+| `--hub-board-card-color`                   | `var(--hub-board-container-color)`                                               | Card text color                                 | `IN_USE` | `board/src/lib/components/board/board.component.scss:65` |
+| `--hub-board-card-bg`                      | `var(--hub-board-container-bg)`                                                  | Card background                                 | `IN_USE` | `board/src/lib/components/board/board.component.scss:66` |
+| `--hub-board-drag-transition`              | `transform 250ms cubic-bezier(0, 0, 0.2, 1)`                                     | Drag-and-drop animation transition              | `IN_USE` | `board/src/lib/components/board/board.component.scss:67` |
+| `--hub-board-accent`                       | `var(--hub-sys-color-primary, #0d6efd)`                                          | Semantic accent — re-based per `variant`; drives the drop placeholder | `IN_USE` | `board/src/lib/components/board/board.component.scss:73` |
+| `--hub-board-accent-subtle`                | `color-mix(in oklch, var(--hub-board-accent) 12%, var(--hub-sys-surface-page, #fff))` | Soft accent tint for the placeholder background | `IN_USE` | `board/src/lib/components/board/board.component.scss:75` |
+| `--hub-board-placeholder-border-color`     | `var(--hub-board-accent)`                                                        | Drop placeholder border color                   | `IN_USE` | `board/src/lib/components/board/board.component.scss:77` |
+| `--hub-board-placeholder-border-width` | `2px` | Drop placeholder border width | `IN_USE` | `board/src/lib/components/board/board.component.scss:78` |
+| `--hub-board-placeholder-border-style` | `dashed` | Drop placeholder border style | `IN_USE` | `board/src/lib/components/board/board.component.scss:79` |
+| `--hub-board-placeholder-bg`               | `var(--hub-board-accent-subtle)`                                                | Drop placeholder background                     | `IN_USE` | `board/src/lib/components/board/board.component.scss:80` |
+| `--hub-board-placeholder-min-height` | `60px` | Drop placeholder minimum height | `IN_USE` | `board/src/lib/components/board/board.component.scss:81` |
 
 ### `breadcrumbs`
 
@@ -845,41 +845,41 @@ Source legend:
 | `--hub-calendar-border-color`          | `var(--hub-sys-border-color-default, #dee2e6)`                          | Calendar border color                           | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:5`  |
 | `--hub-calendar-border-radius`         | `var(--hub-ref-radius-md, 0.375rem)`                                      | Calendar border radius                          | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:6`  |
 | `--hub-calendar-font-family` | `var(--hub-ref-font-family-base, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif)` | Calendar typography family | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:18` |
-| `--hub-calendar-header-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Header background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:19` |
-| `--hub-calendar-btn-bg` | `var(--hub-ref-color-white, #ffffff)` | Calendar button background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:22` |
-| `--hub-calendar-btn-color` | `inherit` | Calendar button text color | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:23` |
-| `--hub-calendar-btn-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Calendar button border color | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:24` |
-| `--hub-calendar-btn-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Calendar button border radius | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:25` |
-| `--hub-calendar-btn-padding-x` | `var(--hub-ref-space-3, 1rem)` | Calendar button horizontal padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:26` |
-| `--hub-calendar-btn-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Calendar button vertical padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:27` |
-| `--hub-calendar-btn-hover-bg` | `var(--hub-sys-state-hover-bg, rgba(0, 0, 0, 0.075))` | Calendar button hover background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:28` |
-| `--hub-calendar-btn-active-bg` | `var(--hub-calendar-accent)` | Active button background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:29` |
-| `--hub-calendar-btn-active-color` | `var(--hub-calendar-accent-on, var(--hub-ref-color-white, #ffffff))` | Active button text color | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:30` |
-| `--hub-calendar-day-min-height` | `80px` | Day cell minimum height | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:33` |
-| `--hub-calendar-day-hover-bg` | `var(--hub-sys-state-hover-bg, rgba(0, 0, 0, 0.075))` | Day cell hover background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:34` |
-| `--hub-calendar-day-today-bg` | `color-mix(in oklch, var(--hub-calendar-accent) 8%, var(--hub-calendar-bg, #fff))` | Today day-cell background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:35` |
-| `--hub-calendar-day-other-month-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Other-month day-cell background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:36` |
-| `--hub-calendar-day-other-month-color` | `var(--hub-sys-text-muted, #6c757d)` | Other-month day-cell text color | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:37` |
-| `--hub-calendar-day-weekend-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Weekend day-cell background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:38` |
-| `--hub-calendar-day-selected-bg` | `var(--hub-calendar-accent-subtle)` | Selected day-cell background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:39` |
-| `--hub-calendar-day-drag-over-bg` | `color-mix(in oklch, var(--hub-calendar-accent) 32%, var(--hub-calendar-bg, #fff))` | Drag-over day-cell background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:40` |
-| `--hub-calendar-event-bg` | `var(--hub-calendar-accent)` | Event chip background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:41` |
-| `--hub-calendar-event-color` | `var(--hub-calendar-accent-on, var(--hub-ref-color-white, #ffffff))` | Event chip text color | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:42` |
-| `--hub-calendar-event-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Event chip border radius | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:43` |
-| `--hub-calendar-event-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | Event chip horizontal padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:44` |
-| `--hub-calendar-event-padding-y` | `var(--hub-ref-space-1, 0.25rem)` | Event chip vertical padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:45` |
-| `--hub-calendar-event-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Event chip font size | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:46` |
-| `--hub-calendar-month-card-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Month card background (year view) | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:47` |
-| `--hub-calendar-month-card-hover-bg` | `var(--hub-sys-state-hover-bg, rgba(0, 0, 0, 0.075))` | Month card hover background (year view) | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:48` |
-| `--hub-calendar-primary` | `var(--hub-calendar-accent)` | Accent color alias used in month cards | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:51` |
-| `--hub-calendar-muted` | `var(--hub-sys-text-muted, #6c757d)` | Muted text alias for secondary labels | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:52` |
-| `--hub-calendar-btn-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Transition for calendar actions and month cards | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:53` |
-| `--hub-calendar-day-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | Day cell horizontal padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:31` |
-| `--hub-calendar-day-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Day cell vertical padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:32` |
-| `--hub-calendar-header-padding-x` | `var(--hub-ref-space-3, 1rem)` | Header horizontal padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:20` |
-| `--hub-calendar-header-padding-y` | `var(--hub-ref-space-3, 1rem)` | Header vertical padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:21` |
-| `--hub-calendar-month-card-padding-x` | `var(--hub-ref-space-4, 1.5rem)` | Month card horizontal padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:49` |
-| `--hub-calendar-month-card-padding-y` | `var(--hub-ref-space-4, 1.5rem)` | Month card vertical padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:50` |
+| `--hub-calendar-header-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Header background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:28` |
+| `--hub-calendar-btn-bg` | `var(--hub-ref-color-white, #ffffff)` | Calendar button background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:31` |
+| `--hub-calendar-btn-color` | `inherit` | Calendar button text color | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:32` |
+| `--hub-calendar-btn-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Calendar button border color | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:33` |
+| `--hub-calendar-btn-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Calendar button border radius | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:34` |
+| `--hub-calendar-btn-padding-x` | `var(--hub-ref-space-3, 1rem)` | Calendar button horizontal padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:35` |
+| `--hub-calendar-btn-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Calendar button vertical padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:36` |
+| `--hub-calendar-btn-hover-bg` | `var(--hub-sys-state-hover-bg, rgba(0, 0, 0, 0.075))` | Calendar button hover background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:37` |
+| `--hub-calendar-btn-active-bg` | `var(--hub-calendar-accent)` | Active button background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:38` |
+| `--hub-calendar-btn-active-color` | `var(--hub-calendar-accent-on, var(--hub-ref-color-white, #ffffff))` | Active button text color | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:39` |
+| `--hub-calendar-day-min-height` | `80px` | Day cell minimum height | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:42` |
+| `--hub-calendar-day-hover-bg` | `var(--hub-sys-state-hover-bg, rgba(0, 0, 0, 0.075))` | Day cell hover background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:43` |
+| `--hub-calendar-day-today-bg` | `color-mix(in oklch, var(--hub-calendar-accent) 8%, var(--hub-calendar-bg, #fff))` | Today day-cell background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:44` |
+| `--hub-calendar-day-other-month-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Other-month day-cell background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:45` |
+| `--hub-calendar-day-other-month-color` | `var(--hub-sys-text-muted, #6c757d)` | Other-month day-cell text color | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:46` |
+| `--hub-calendar-day-weekend-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Weekend day-cell background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:47` |
+| `--hub-calendar-day-selected-bg` | `var(--hub-calendar-accent-subtle)` | Selected day-cell background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:48` |
+| `--hub-calendar-day-drag-over-bg` | `color-mix(in oklch, var(--hub-calendar-accent) 32%, var(--hub-calendar-bg, #fff))` | Drag-over day-cell background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:49` |
+| `--hub-calendar-event-bg` | `var(--hub-calendar-accent)` | Event chip background | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:50` |
+| `--hub-calendar-event-color` | `var(--hub-calendar-accent-on, var(--hub-ref-color-white, #ffffff))` | Event chip text color | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:51` |
+| `--hub-calendar-event-border-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Event chip border radius | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:52` |
+| `--hub-calendar-event-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | Event chip horizontal padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:53` |
+| `--hub-calendar-event-padding-y` | `var(--hub-ref-space-1, 0.25rem)` | Event chip vertical padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:54` |
+| `--hub-calendar-event-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Event chip font size | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:55` |
+| `--hub-calendar-month-card-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Month card background (year view) | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:56` |
+| `--hub-calendar-month-card-hover-bg` | `var(--hub-sys-state-hover-bg, rgba(0, 0, 0, 0.075))` | Month card hover background (year view) | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:57` |
+| `--hub-calendar-primary` | `var(--hub-calendar-accent)` | Accent color alias used in month cards | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:60` |
+| `--hub-calendar-muted` | `var(--hub-sys-text-muted, #6c757d)` | Muted text alias for secondary labels | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:61` |
+| `--hub-calendar-btn-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Transition for calendar actions and month cards | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:62` |
+| `--hub-calendar-day-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | Day cell horizontal padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:40` |
+| `--hub-calendar-day-padding-y` | `var(--hub-ref-space-2, 0.5rem)` | Day cell vertical padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:41` |
+| `--hub-calendar-header-padding-x` | `var(--hub-ref-space-3, 1rem)` | Header horizontal padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:29` |
+| `--hub-calendar-header-padding-y` | `var(--hub-ref-space-3, 1rem)` | Header vertical padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:30` |
+| `--hub-calendar-month-card-padding-x` | `var(--hub-ref-space-4, 1.5rem)` | Month card horizontal padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:58` |
+| `--hub-calendar-month-card-padding-y` | `var(--hub-ref-space-4, 1.5rem)` | Month card vertical padding | `IN_USE` | `calendar/src/lib/components/calendar/calendar.component.scss:59` |
 
 ### `form`
 
@@ -1075,7 +1075,7 @@ The `detail` token set is defined as a single, standardized collection that supp
 | `--hub-input-counter-button-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Counter stepper button background | `IN_USE` | `forms/src/lib/styles/_tokens.scss:160` |
 | `--hub-input-counter-button-color` | `var(--hub-sys-text-primary, #212529)` | Counter stepper button color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:161` |
 | `--hub-input-counter-button-width` | `2.5rem` | Counter stepper button width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:162` |
-| `--hub-input-eye-mask` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z'/%3E%3Cpath d='M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z'/%3E%3C/svg%3E")` | Password visibility toggle eye icon | `IN_USE` | `forms/src/lib/components/input/input.component.scss:333` |
+| `--hub-input-eye-mask` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z'/%3E%3Cpath d='M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z'/%3E%3C/svg%3E")` | Password visibility toggle eye icon | `IN_USE` | `forms/src/lib/components/input/input.component.scss:332` |
 | `--hub-input-icon-color` | `var(--hub-sys-text-muted, #6c757d)` | Affix glyph color (projected leading/trailing content) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:137` |
 | `--hub-input-icon-size` | `var(--hub-ref-font-size-base, 1rem)` | Affix glyph size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:138` |
 | `--hub-input-affix-inset` | `var(--hub-input-padding-x)` | Affix inset from the field edge | `IN_USE` | `forms/src/lib/styles/_tokens.scss:139` |
@@ -1093,7 +1093,7 @@ The `detail` token set is defined as a single, standardized collection that supp
 | `--hub-input-strength-2` | `var(--hub-sys-color-warning, #ffc107)` | Strength meter color at level 2 (fair) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:155` |
 | `--hub-input-strength-3` | `var(--hub-sys-color-info, #0dcaf0)` | Strength meter color at level 3 (good) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:156` |
 | `--hub-input-strength-4` | `var(--hub-sys-color-success, #198754)` | Strength meter color at level 4 (strong) | `IN_USE` | `forms/src/lib/styles/_tokens.scss:157` |
-| `--hub-input-strength-color` | `var(--hub-input-strength-1)` | Active strength-segment color, cascaded per level from the tokens above | `IN_USE` | `forms/src/lib/components/input/input.component.scss:356` |
+| `--hub-input-strength-color` | `var(--hub-input-strength-1)` | Active strength-segment color, cascaded per level from the tokens above | `IN_USE` | `forms/src/lib/components/input/input.component.scss:355` |
 
 ### `file input`
 
@@ -1194,45 +1194,45 @@ The `detail` token set is defined as a single, standardized collection that supp
 | Token | Initial value | Usage | Status | Source |
 | --- | --- | --- | --- | --- |
 | `--hub-badge-accent` | `var(--hub-sys-color-primary, #0d6efd)` | Badge accent | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:17` |
-| `--hub-badge-accent-border` | `color-mix(in oklch, var(--hub-badge-accent) 35%, var(--hub-sys-surface-page, #fff))` | Badge accent border | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:166` |
+| `--hub-badge-accent-border` | `color-mix(in oklch, var(--hub-badge-accent) 35%, var(--hub-sys-surface-page, #fff))` | Badge accent border | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:175` |
 | `--hub-badge-accent-on` | `oklch(from var(--hub-badge-accent) clamp(0, (0.62 - l) * 1000, 1) 0 h)` | Badge accent contrast (on-color) | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:22` |
-| `--hub-badge-accent-emphasis` | `color-mix(in oklch, var(--hub-badge-accent) 80%, var(--hub-sys-color-ink, #212529))` | Badge accent emphasis | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:46` |
-| `--hub-badge-accent-subtle` | `color-mix(in oklch, var(--hub-badge-accent) 12%, var(--hub-sys-surface-page, #fff))` | Badge accent subtle | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:143` |
-| `--hub-badge-align` | `center` | Badge align | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:34` |
+| `--hub-badge-accent-emphasis` | `color-mix(in oklch, var(--hub-badge-accent) 80%, var(--hub-sys-color-ink, #212529))` | Badge accent emphasis | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:55` |
+| `--hub-badge-accent-subtle` | `color-mix(in oklch, var(--hub-badge-accent) 12%, var(--hub-sys-surface-page, #fff))` | Badge accent subtle | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:152` |
+| `--hub-badge-align` | `center` | Badge align | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:43` |
 | `--hub-badge-bg` | `var(--hub-badge-accent)` | Badge bg | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:21` |
 | `--hub-badge-border-color` | `var(--hub-badge-accent)` | Badge border color | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:23` |
-| `--hub-badge-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Badge border radius | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:36` |
-| `--hub-badge-border-width` | `var(--hub-ref-border-width, 1px)` | Badge border width | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:35` |
+| `--hub-badge-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Badge border radius | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:45` |
+| `--hub-badge-border-width` | `var(--hub-ref-border-width, 1px)` | Badge border width | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:44` |
 | `--hub-badge-color` | `var(--hub-badge-accent-on)` | Badge color | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:22` |
-| `--hub-badge-direction` | `row` | Badge direction | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:33` |
+| `--hub-badge-direction` | `row` | Badge direction | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:42` |
 | `--hub-badge-dot-color` | `currentColor` | Badge dot color | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:24` |
-| `--hub-badge-dot-size` | `var(--hub-ref-space-2, 0.5rem)` | Badge dot size | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:38` |
-| `--hub-badge-focus-ring-color` | `var(--hub-sys-focus-ring-color, rgba(13, 110, 253, 0.25))` | Badge focus ring color | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:43` |
-| `--hub-badge-focus-ring-width` | `var(--hub-sys-focus-ring-width, 0.25rem)` | Badge focus ring width | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:42` |
+| `--hub-badge-dot-size` | `var(--hub-ref-space-2, 0.5rem)` | Badge dot size | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:47` |
+| `--hub-badge-focus-ring-color` | `var(--hub-sys-focus-ring-color, rgba(13, 110, 253, 0.25))` | Badge focus ring color | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:52` |
+| `--hub-badge-focus-ring-width` | `var(--hub-sys-focus-ring-width, 0.25rem)` | Badge focus ring width | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:51` |
 | `--hub-badge-font-family` | `var(--hub-ref-font-family-base, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif)` | Badge font family | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:25` |
-| `--hub-badge-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Badge font size | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:26` |
-| `--hub-badge-max-width` | `100%` | Badge max width (truncation bound for the content ellipsis) | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:37` |
-| `--hub-badge-font-weight` | `var(--hub-ref-font-weight-semibold, 600)` | Badge font weight | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:27` |
-| `--hub-badge-gap` | `var(--hub-ref-space-1, 0.25rem)` | Badge gap | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:32` |
-| `--hub-badge-letter-spacing` | `0.01em` | Badge letter spacing | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:29` |
-| `--hub-badge-line-height` | `1` | Badge line height | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:28` |
-| `--hub-badge-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | Badge padding x | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:30` |
-| `--hub-badge-padding-y` | `var(--hub-ref-space-1, 0.25rem)` | Badge padding y | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:31` |
-| `--hub-badge-remove-gap` | `0.125rem` | Badge remove gap | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:40` |
-| `--hub-badge-remove-hover-bg` | `color-mix(in oklch, currentColor 12%, transparent)` | Badge remove hover bg | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:41` |
-| `--hub-badge-remove-size` | `1rem` | Badge remove size | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:39` |
-| `--hub-badge-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Badge transition | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:44` |
-| `--hub-badge-active-bg` | `var(--hub-badge-accent-emphasis)` | Active (pressed) background of an interactive badge (.hub-badge--active) | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:46` |
-| `--hub-badge-overlay-offset` | `-0.25rem` | Corner inset of the overlay status dot (dotOverlay) | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:48` |
+| `--hub-badge-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Badge font size | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:35` |
+| `--hub-badge-max-width` | `100%` | Badge max width (truncation bound for the content ellipsis) | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:46` |
+| `--hub-badge-font-weight` | `var(--hub-ref-font-weight-semibold, 600)` | Badge font weight | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:36` |
+| `--hub-badge-gap` | `var(--hub-ref-space-1, 0.25rem)` | Badge gap | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:41` |
+| `--hub-badge-letter-spacing` | `0.01em` | Badge letter spacing | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:38` |
+| `--hub-badge-line-height` | `1` | Badge line height | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:37` |
+| `--hub-badge-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | Badge padding x | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:39` |
+| `--hub-badge-padding-y` | `var(--hub-ref-space-1, 0.25rem)` | Badge padding y | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:40` |
+| `--hub-badge-remove-gap` | `0.125rem` | Badge remove gap | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:49` |
+| `--hub-badge-remove-hover-bg` | `color-mix(in oklch, currentColor 12%, transparent)` | Badge remove hover bg | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:50` |
+| `--hub-badge-remove-size` | `1rem` | Badge remove size | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:48` |
+| `--hub-badge-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Badge transition | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:53` |
+| `--hub-badge-active-bg` | `var(--hub-badge-accent-emphasis)` | Active (pressed) background of an interactive badge (.hub-badge--active) | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:55` |
+| `--hub-badge-overlay-offset` | `-0.25rem` | Corner inset of the overlay status dot (dotOverlay) | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:57` |
 | `--hub-chip-set-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gap between chips inside a hub-chip-set | `IN_USE` | `badges/src/lib/components/chip-set/chip-set.component.scss:2` |
-| `--hub-chip-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Chip transition | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:30` |
-| `--hub-chip-focus-ring-width` | `var(--hub-sys-focus-ring-width, 0.25rem)` | Chip focus ring width | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:29` |
-| `--hub-chip-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Chip shell radius | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:28` |
-| `--hub-chip-border-width` | `var(--hub-ref-border-width, 1px)` | Chip border width | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:27` |
-| `--hub-chip-padding-y` | `var(--hub-ref-space-1, 0.25rem)` | Chip vertical padding | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:26` |
-| `--hub-chip-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | Chip horizontal padding | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:25` |
-| `--hub-chip-font-weight` | `var(--hub-ref-font-weight-medium, 500)` | Chip font weight | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:24` |
-| `--hub-chip-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Chip font size | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:23` |
+| `--hub-chip-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Chip transition | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:39` |
+| `--hub-chip-focus-ring-width` | `var(--hub-sys-focus-ring-width, 0.25rem)` | Chip focus ring width | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:38` |
+| `--hub-chip-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Chip shell radius | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:37` |
+| `--hub-chip-border-width` | `var(--hub-ref-border-width, 1px)` | Chip border width | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:36` |
+| `--hub-chip-padding-y` | `var(--hub-ref-space-1, 0.25rem)` | Chip vertical padding | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:35` |
+| `--hub-chip-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | Chip horizontal padding | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:34` |
+| `--hub-chip-font-weight` | `var(--hub-ref-font-weight-medium, 500)` | Chip font weight | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:33` |
+| `--hub-chip-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Chip font size | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:32` |
 | `--hub-chip-font-family` | `var(--hub-ref-font-family-base, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif)` | Chip font family | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:22` |
 | `--hub-chip-focus-ring` | `var(--hub-sys-focus-ring-color, rgba(13, 110, 253, 0.25))` | Chip focus ring colour | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:20` |
 | `--hub-chip-gap` | `var(--hub-ref-space-1, 0.25rem)` | Gap between leading slot, label and dismiss button | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:19` |
@@ -1376,7 +1376,7 @@ The `detail` token set is defined as a single, standardized collection that supp
 | `--hub-select-button-selected-color` | `var(--hub-sys-color-primary-on, var(--hub-ref-color-white, #fff))` | Selected segmented button text color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:443` |
 | `--hub-select-min-height` | `calc( var(--hub-input-line-height) * var(--hub-input-font-size) + 2 * var(--hub-input-padding-y) + 2 * var(--hub-input-border-width) )` | Minimum height of the select control. Derived rather than declared: it spells out the height an input reaches by construction — one line of text between two paddings and two borders — because a select is a div and inherits none of it. Held as a number it drifted, and the select stood 2px taller than every other field | `IN_USE` | `forms/src/lib/styles/_tokens.scss:352` |
 | `--hub-select-optgroup-color` | `var(--hub-sys-text-muted, #6c757d)` | Select option group label color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:384` |
-| `--hub-select-dropdown-zindex` | `var(--hub-select-dropdown-z-index, calc(var(--hub-sys-zindex-modal, 1055) + 5))` | Stacking of the ng-select dropdown panel (canonical `zindex` spelling); sits above HubModal so a select inside a modal is not clipped | `IN_USE` | `forms/src/lib/select/select.component.scss:305` |
+| `--hub-select-dropdown-zindex` | `var(--hub-select-dropdown-z-index, calc(var(--hub-sys-zindex-modal, 1055) + 5))` | Stacking of the ng-select dropdown panel (canonical `zindex` spelling); sits above HubModal so a select inside a modal is not clipped | `IN_USE` | `forms/src/lib/select/select.component.scss:304` |
 | `--hub-select-dropdown-z-index` | `calc(var(--hub-sys-zindex-modal, 1055) + 5)` | Deprecated spelling — default carrier and override bridge for `--hub-select-dropdown-zindex`; scheduled for removal after one release cycle | `IN_USE` | `forms/src/lib/styles/_tokens.scss:399` |
 
 > **Superseded proposals (removed):** the former `--hub-select-btn-*` PENDING block shipped as the `--hub-select-button-*` tokens listed above, and the `--hub-select-checkbox-input-*` / `--hub-select-radio-input-*` proposals were dropped — option checkboxes/radios in the dropdown reuse the `check` component tokens (`--hub-check-*`, see [`check`](#check)), applied in `forms/src/lib/select/select.component.scss`.
@@ -1539,21 +1539,21 @@ The standalone `tabs` proposal was **superseded**: the tabs UI shipped inside `n
 | Token                                        | Initial value                                                                                                                                                                               | Usage                                                           | Status   | Source                         |
 | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | -------- | ------------------------------ |
 | `--hub-modal-zindex` | `var(--hub-sys-zindex-modal, 1055)` | Modal layer z-index | `IN_USE` | `modal/src/lib/modal.scss:46` |
-| `--hub-modal-backdrop-zindex` | `calc(var(--hub-modal-zindex, var(--hub-sys-zindex-modal, 1055)) - 1)` | Backdrop layer z-index | `IN_USE` | `modal/src/lib/modal.scss:202` |
+| `--hub-modal-backdrop-zindex` | `calc(var(--hub-modal-zindex, var(--hub-sys-zindex-modal, 1055)) - 1)` | Backdrop layer z-index | `IN_USE` | `modal/src/lib/modal.scss:168` |
 | `--hub-modal-accent` | `var(--hub-sys-color-primary, #0d6efd)` | Semantic accent (opt-in via `variant`); re-based per variant | `IN_USE` | `modal/src/lib/modal.scss:54` |
 | `--hub-modal-accent-subtle` | `color-mix(in oklch, var(--hub-modal-accent) 12%, var(--hub-sys-surface-page, #ffffff))` | Variant tinted background (generated from the accent) | `IN_USE` | `modal/src/lib/modal.scss:56` |
 | `--hub-modal-accent-border` | `color-mix(in oklch, var(--hub-modal-accent) 35%, var(--hub-sys-surface-page, #ffffff))` | Variant accent-tinted border (outer + header/footer rules) | `IN_USE` | `modal/src/lib/modal.scss:58` |
 | `--hub-modal-accent-bar-width` | `var(--hub-ref-space-1, 0.25rem)` | Thickness of the variant accent bar atop the dialog | `IN_USE` | `modal/src/lib/modal.scss:59` |
-| `--hub-modal-title-color` | `var(--hub-modal-color, var(--hub-sys-text-primary, #212529))` | Title colour; a `variant` re-points it to the accent | `IN_USE` | `modal/src/lib/modal.scss:176` |
+| `--hub-modal-title-color` | `var(--hub-modal-color, var(--hub-sys-text-primary, #212529))` | Title colour; a `variant` re-points it to the accent | `IN_USE` | `modal/src/lib/modal.scss:142` |
 | `--hub-modal-width` | `auto` | Base dialog width | `IN_USE` | `modal/src/lib/modal.scss:60` |
 | `--hub-modal-max-width` | `500px` | Dialog max-width | `IN_USE` | `modal/src/lib/modal.scss:61` |
-| `--hub-modal-color` | `var(--hub-sys-text-primary, #212529)` | Base modal text color | `IN_USE` | `modal/src/lib/modal.scss:135` |
-| `--hub-modal-bg` | `var(--hub-sys-surface-page, #ffffff)` | Modal content background | `IN_USE` | `modal/src/lib/modal.scss:136` |
-| `--hub-modal-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Modal border color | `IN_USE` | `modal/src/lib/modal.scss:137` |
-| `--hub-modal-border-width` | `var(--hub-ref-border-width, 1px)` | Modal border width | `IN_USE` | `modal/src/lib/modal.scss:138` |
-| `--hub-modal-border-radius` | `var(--hub-ref-radius-lg, 0.5rem)` | Modal outer border radius | `IN_USE` | `modal/src/lib/modal.scss:139` |
-| `--hub-modal-inner-border-radius` | `calc( var(--hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem)) - var( --hub-modal-border-width, var(--hub-ref-border-width, 1px) ) )` | Inner radius for header/footer caps | `IN_USE` | `modal/src/lib/modal.scss:156` |
-| `--hub-modal-box-shadow` | `var(--hub-sys-shadow-lg, 0 1rem 3rem rgba(0,0,0,0.175))` | Modal elevation shadow | `IN_USE` | `modal/src/lib/modal.scss:162` |
+| `--hub-modal-color` | `var(--hub-sys-text-primary, #212529)` | Base modal text color | `IN_USE` | `modal/src/lib/modal.scss:109` |
+| `--hub-modal-bg` | `var(--hub-sys-surface-page, #ffffff)` | Modal content background | `IN_USE` | `modal/src/lib/modal.scss:110` |
+| `--hub-modal-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Modal border color | `IN_USE` | `modal/src/lib/modal.scss:111` |
+| `--hub-modal-border-width` | `var(--hub-ref-border-width, 1px)` | Modal border width | `IN_USE` | `modal/src/lib/modal.scss:112` |
+| `--hub-modal-border-radius` | `var(--hub-ref-radius-lg, 0.5rem)` | Modal outer border radius | `IN_USE` | `modal/src/lib/modal.scss:113` |
+| `--hub-modal-inner-border-radius` | `calc( var(--hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem)) - var( --hub-modal-border-width, var(--hub-ref-border-width, 1px) ) )` | Inner radius for header/footer caps | `IN_USE` | `modal/src/lib/modal.scss:122` |
+| `--hub-modal-box-shadow` | `var(--hub-sys-shadow-lg, 0 1rem 3rem rgba(0,0,0,0.175))` | Modal elevation shadow | `IN_USE` | `modal/src/lib/modal.scss:128` |
 | **Margin tokens**                            |                                                                                                                                                                                             |                                                                 |          |                                |
 | `--hub-modal-margin-y` | `1.75rem` | Vertical margin alias used by top/bottom margin tokens | `IN_USE` | `modal/src/lib/modal.scss:62` |
 | `--hub-modal-margin-x` | `auto` | Horizontal margin alias used by left/right margin tokens | `IN_USE` | `modal/src/lib/modal.scss:63` |
@@ -1562,84 +1562,84 @@ The standalone `tabs` proposal was **superseded**: the tabs UI shipped inside `n
 | `--hub-modal-margin-bottom` | `var(--hub-modal-margin-y, 1.75rem)` | Dialog bottom margin | `IN_USE` | `modal/src/lib/modal.scss:66` |
 | `--hub-modal-margin-left` | `var(--hub-modal-margin-x, auto)` | Dialog left margin | `IN_USE` | `modal/src/lib/modal.scss:67` |
 | `--hub-modal-margin-block` | `calc( var(--hub-modal-margin-top, 1.75rem) + var(--hub-modal-margin-bottom, 1.75rem) )` | Sum of vertical margins (used for scrollable min-height calc) | `IN_USE` | `modal/src/lib/modal.scss:68` |
-| `--hub-modal-margin` | `var(--hub-modal-margin-top) var(--hub-modal-margin-right) var(--hub-modal-margin-bottom) var(--hub-modal-margin-left)` | Dialog outer margin shorthand | `IN_USE` | `modal/src/lib/modal.scss:72` |
+| `--hub-modal-margin` | `var(--hub-modal-margin-top) var(--hub-modal-margin-right) var(--hub-modal-margin-bottom) var(--hub-modal-margin-left)` | Dialog outer margin shorthand | `IN_USE` | `modal/src/lib/modal.scss:69` |
 | **Placement — Start (left drawer)**          |                                                                                                                                                                                             |                                                                 |          |                                |
-| `--hub-modal-placement-start-margin-top` | `var(--hub-modal-margin-top, 1.75rem)` | Top margin when placement=start | `IN_USE` | `modal/src/lib/modal.scss:74` |
-| `--hub-modal-placement-start-margin-right` | `auto` | Right margin when placement=start | `IN_USE` | `modal/src/lib/modal.scss:78` |
-| `--hub-modal-placement-start-margin-bottom` | `var(--hub-modal-margin-bottom, 1.75rem)` | Bottom margin when placement=start | `IN_USE` | `modal/src/lib/modal.scss:79` |
-| `--hub-modal-placement-start-margin-left` | `0` | Left margin when placement=start (flush to edge) | `IN_USE` | `modal/src/lib/modal.scss:83` |
-| `--hub-modal-placement-start-margin-block` | `calc( var(--hub-modal-placement-start-margin-top, 1.75rem) + var(--hub-modal-placement-start-margin-bottom, 1.75rem) )` | Sum of vertical margins for start placement | `IN_USE` | `modal/src/lib/modal.scss:84` |
-| `--hub-modal-placement-start-margin` | `var(--hub-modal-placement-start-margin-top) var(--hub-modal-placement-start-margin-right) var(--hub-modal-placement-start-margin-bottom) var(--hub-modal-placement-start-margin-left)` | Margin shorthand for start placement | `IN_USE` | `modal/src/lib/modal.scss:88` |
-| `--hub-modal-placement-start-border-radius` | `0 var(--hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem)) var(--hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem)) 0` | Border radius for start-anchored dialog (right corners rounded) | `IN_USE` | `modal/src/lib/modal.scss:140` |
+| `--hub-modal-placement-start-margin-top` | `var(--hub-modal-margin-top, 1.75rem)` | Top margin when placement=start | `IN_USE` | `modal/src/lib/modal.scss:71` |
+| `--hub-modal-placement-start-margin-right` | `auto` | Right margin when placement=start | `IN_USE` | `modal/src/lib/modal.scss:72` |
+| `--hub-modal-placement-start-margin-bottom` | `var(--hub-modal-margin-bottom, 1.75rem)` | Bottom margin when placement=start | `IN_USE` | `modal/src/lib/modal.scss:73` |
+| `--hub-modal-placement-start-margin-left` | `0` | Left margin when placement=start (flush to edge) | `IN_USE` | `modal/src/lib/modal.scss:74` |
+| `--hub-modal-placement-start-margin-block` | `calc( var(--hub-modal-placement-start-margin-top, 1.75rem) + var(--hub-modal-placement-start-margin-bottom, 1.75rem) )` | Sum of vertical margins for start placement | `IN_USE` | `modal/src/lib/modal.scss:75` |
+| `--hub-modal-placement-start-margin` | `var(--hub-modal-placement-start-margin-top) var(--hub-modal-placement-start-margin-right) var(--hub-modal-placement-start-margin-bottom) var(--hub-modal-placement-start-margin-left)` | Margin shorthand for start placement | `IN_USE` | `modal/src/lib/modal.scss:78` |
+| `--hub-modal-placement-start-border-radius` | `0 var(--hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem)) var(--hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem)) 0` | Border radius for start-anchored dialog (right corners rounded) | `IN_USE` | `modal/src/lib/modal.scss:114` |
 | **Placement — End (right drawer)**           |                                                                                                                                                                                             |                                                                 |          |                                |
-| `--hub-modal-placement-end-margin-top` | `var(--hub-modal-margin-top, 1.75rem)` | Top margin when placement=end | `IN_USE` | `modal/src/lib/modal.scss:94` |
-| `--hub-modal-placement-end-margin-right` | `0` | Right margin when placement=end (flush to edge) | `IN_USE` | `modal/src/lib/modal.scss:95` |
-| `--hub-modal-placement-end-margin-bottom` | `var(--hub-modal-margin-bottom, 1.75rem)` | Bottom margin when placement=end | `IN_USE` | `modal/src/lib/modal.scss:96` |
-| `--hub-modal-placement-end-margin-left` | `auto` | Left margin when placement=end | `IN_USE` | `modal/src/lib/modal.scss:100` |
-| `--hub-modal-placement-end-margin-block` | `calc( var(--hub-modal-placement-end-margin-top, 1.75rem) + var(--hub-modal-placement-end-margin-bottom, 1.75rem) )` | Sum of vertical margins for end placement | `IN_USE` | `modal/src/lib/modal.scss:101` |
-| `--hub-modal-placement-end-margin` | `var(--hub-modal-placement-end-margin-top) var(--hub-modal-placement-end-margin-right) var(--hub-modal-placement-end-margin-bottom) var(--hub-modal-placement-end-margin-left)` | Margin shorthand for end placement | `IN_USE` | `modal/src/lib/modal.scss:105` |
-| `--hub-modal-placement-end-border-radius` | `var( --hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem) ) 0 0 var(--hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem))` | Border radius for end-anchored dialog (left corners rounded) | `IN_USE` | `modal/src/lib/modal.scss:143` |
+| `--hub-modal-placement-end-margin-top` | `var(--hub-modal-margin-top, 1.75rem)` | Top margin when placement=end | `IN_USE` | `modal/src/lib/modal.scss:81` |
+| `--hub-modal-placement-end-margin-right` | `0` | Right margin when placement=end (flush to edge) | `IN_USE` | `modal/src/lib/modal.scss:82` |
+| `--hub-modal-placement-end-margin-bottom` | `var(--hub-modal-margin-bottom, 1.75rem)` | Bottom margin when placement=end | `IN_USE` | `modal/src/lib/modal.scss:83` |
+| `--hub-modal-placement-end-margin-left` | `auto` | Left margin when placement=end | `IN_USE` | `modal/src/lib/modal.scss:84` |
+| `--hub-modal-placement-end-margin-block` | `calc( var(--hub-modal-placement-end-margin-top, 1.75rem) + var(--hub-modal-placement-end-margin-bottom, 1.75rem) )` | Sum of vertical margins for end placement | `IN_USE` | `modal/src/lib/modal.scss:85` |
+| `--hub-modal-placement-end-margin` | `var(--hub-modal-placement-end-margin-top) var(--hub-modal-placement-end-margin-right) var(--hub-modal-placement-end-margin-bottom) var(--hub-modal-placement-end-margin-left)` | Margin shorthand for end placement | `IN_USE` | `modal/src/lib/modal.scss:88` |
+| `--hub-modal-placement-end-border-radius` | `var( --hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem) ) 0 0 var(--hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem))` | Border radius for end-anchored dialog (left corners rounded) | `IN_USE` | `modal/src/lib/modal.scss:116` |
 | **Placement — Top (top sheet)**              |                                                                                                                                                                                             |                                                                 |          |                                |
-| `--hub-modal-placement-top-margin-top` | `0` | Top margin when placement=top (flush to top edge) | `IN_USE` | `modal/src/lib/modal.scss:109` |
-| `--hub-modal-placement-top-margin-right` | `auto` | Right margin when placement=top | `IN_USE` | `modal/src/lib/modal.scss:110` |
-| `--hub-modal-placement-top-margin-bottom` | `0` | Bottom margin when placement=top | `IN_USE` | `modal/src/lib/modal.scss:111` |
-| `--hub-modal-placement-top-margin-left` | `auto` | Left margin when placement=top | `IN_USE` | `modal/src/lib/modal.scss:112` |
-| `--hub-modal-placement-top-margin-block` | `calc( var(--hub-modal-placement-top-margin-top, 0px) + var(--hub-modal-placement-top-margin-bottom, 0px) )` | Sum of vertical margins for top placement | `IN_USE` | `modal/src/lib/modal.scss:113` |
-| `--hub-modal-placement-top-margin` | `var(--hub-modal-placement-top-margin-top) var(--hub-modal-placement-top-margin-right) var(--hub-modal-placement-top-margin-bottom) var(--hub-modal-placement-top-margin-left)` | Margin shorthand for top placement | `IN_USE` | `modal/src/lib/modal.scss:117` |
-| `--hub-modal-placement-top-border-radius` | `0 0 var(--hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem)) var(--hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem))` | Border radius for top-anchored dialog (bottom corners rounded) | `IN_USE` | `modal/src/lib/modal.scss:148` |
+| `--hub-modal-placement-top-margin-top` | `0` | Top margin when placement=top (flush to top edge) | `IN_USE` | `modal/src/lib/modal.scss:90` |
+| `--hub-modal-placement-top-margin-right` | `auto` | Right margin when placement=top | `IN_USE` | `modal/src/lib/modal.scss:91` |
+| `--hub-modal-placement-top-margin-bottom` | `0` | Bottom margin when placement=top | `IN_USE` | `modal/src/lib/modal.scss:92` |
+| `--hub-modal-placement-top-margin-left` | `auto` | Left margin when placement=top | `IN_USE` | `modal/src/lib/modal.scss:93` |
+| `--hub-modal-placement-top-margin-block` | `calc( var(--hub-modal-placement-top-margin-top, 0px) + var(--hub-modal-placement-top-margin-bottom, 0px) )` | Sum of vertical margins for top placement | `IN_USE` | `modal/src/lib/modal.scss:94` |
+| `--hub-modal-placement-top-margin` | `var(--hub-modal-placement-top-margin-top) var(--hub-modal-placement-top-margin-right) var(--hub-modal-placement-top-margin-bottom) var(--hub-modal-placement-top-margin-left)` | Margin shorthand for top placement | `IN_USE` | `modal/src/lib/modal.scss:97` |
+| `--hub-modal-placement-top-border-radius` | `0 0 var(--hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem)) var(--hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem))` | Border radius for top-anchored dialog (bottom corners rounded) | `IN_USE` | `modal/src/lib/modal.scss:118` |
 | **Placement — Bottom (bottom sheet)**        |                                                                                                                                                                                             |                                                                 |          |                                |
-| `--hub-modal-placement-bottom-margin-top` | `0` | Top margin when placement=bottom | `IN_USE` | `modal/src/lib/modal.scss:121` |
-| `--hub-modal-placement-bottom-margin-right` | `auto` | Right margin when placement=bottom | `IN_USE` | `modal/src/lib/modal.scss:122` |
-| `--hub-modal-placement-bottom-margin-bottom` | `0` | Bottom margin when placement=bottom (flush to bottom edge) | `IN_USE` | `modal/src/lib/modal.scss:123` |
-| `--hub-modal-placement-bottom-margin-left` | `auto` | Left margin when placement=bottom | `IN_USE` | `modal/src/lib/modal.scss:124` |
-| `--hub-modal-placement-bottom-margin-block` | `calc( var(--hub-modal-placement-bottom-margin-top, 0px) + var(--hub-modal-placement-bottom-margin-bottom, 0px) )` | Sum of vertical margins for bottom placement | `IN_USE` | `modal/src/lib/modal.scss:125` |
-| `--hub-modal-placement-bottom-margin` | `var(--hub-modal-placement-bottom-margin-top) var(--hub-modal-placement-bottom-margin-right) var(--hub-modal-placement-bottom-margin-bottom) var(--hub-modal-placement-bottom-margin-left)` | Margin shorthand for bottom placement | `IN_USE` | `modal/src/lib/modal.scss:129` |
-| `--hub-modal-placement-bottom-border-radius` | `var( --hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem) ) var(--hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem)) 0 0` | Border radius for bottom-anchored dialog (top corners rounded) | `IN_USE` | `modal/src/lib/modal.scss:151` |
+| `--hub-modal-placement-bottom-margin-top` | `0` | Top margin when placement=bottom | `IN_USE` | `modal/src/lib/modal.scss:99` |
+| `--hub-modal-placement-bottom-margin-right` | `auto` | Right margin when placement=bottom | `IN_USE` | `modal/src/lib/modal.scss:100` |
+| `--hub-modal-placement-bottom-margin-bottom` | `0` | Bottom margin when placement=bottom (flush to bottom edge) | `IN_USE` | `modal/src/lib/modal.scss:101` |
+| `--hub-modal-placement-bottom-margin-left` | `auto` | Left margin when placement=bottom | `IN_USE` | `modal/src/lib/modal.scss:102` |
+| `--hub-modal-placement-bottom-margin-block` | `calc( var(--hub-modal-placement-bottom-margin-top, 0px) + var(--hub-modal-placement-bottom-margin-bottom, 0px) )` | Sum of vertical margins for bottom placement | `IN_USE` | `modal/src/lib/modal.scss:103` |
+| `--hub-modal-placement-bottom-margin` | `var(--hub-modal-placement-bottom-margin-top) var(--hub-modal-placement-bottom-margin-right) var(--hub-modal-placement-bottom-margin-bottom) var(--hub-modal-placement-bottom-margin-left)` | Margin shorthand for bottom placement | `IN_USE` | `modal/src/lib/modal.scss:106` |
+| `--hub-modal-placement-bottom-border-radius` | `var( --hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem) ) var(--hub-modal-border-radius, var(--hub-ref-radius-lg, 0.5rem)) 0 0` | Border radius for bottom-anchored dialog (top corners rounded) | `IN_USE` | `modal/src/lib/modal.scss:120` |
 | **Header**                                   |                                                                                                                                                                                             |                                                                 |          |                                |
-| `--hub-modal-header-padding-x` | `var(--hub-modal-padding-x)` | Header horizontal padding | `IN_USE` | `modal/src/lib/modal.scss:165` |
-| `--hub-modal-header-padding-y` | `var(--hub-modal-padding-y)` | Header vertical padding | `IN_USE` | `modal/src/lib/modal.scss:166` |
-| `--hub-modal-header-gap` | `var(--hub-ref-space-2, 0.5rem)` | Header content gap | `IN_USE` | `modal/src/lib/modal.scss:167` |
-| `--hub-modal-header-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Header bottom border color | `IN_USE` | `modal/src/lib/modal.scss:168` |
-| `--hub-modal-header-border-width` | `var(--hub-ref-border-width, 1px)` | Header bottom border width | `IN_USE` | `modal/src/lib/modal.scss:169` |
+| `--hub-modal-header-padding-x` | `var(--hub-modal-padding-x)` | Header horizontal padding | `IN_USE` | `modal/src/lib/modal.scss:131` |
+| `--hub-modal-header-padding-y` | `var(--hub-modal-padding-y)` | Header vertical padding | `IN_USE` | `modal/src/lib/modal.scss:132` |
+| `--hub-modal-header-gap` | `var(--hub-ref-space-2, 0.5rem)` | Header content gap | `IN_USE` | `modal/src/lib/modal.scss:133` |
+| `--hub-modal-header-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Header bottom border color | `IN_USE` | `modal/src/lib/modal.scss:134` |
+| `--hub-modal-header-border-width` | `var(--hub-ref-border-width, 1px)` | Header bottom border width | `IN_USE` | `modal/src/lib/modal.scss:135` |
 | **Title**                                    |                                                                                                                                                                                             |                                                                 |          |                                |
-| `--hub-modal-title-font-size` | `var(--hub-ref-font-size-lg, 1.25rem)` | Modal title font size | `IN_USE` | `modal/src/lib/modal.scss:170` |
-| `--hub-modal-title-font-weight` | `var(--hub-ref-font-weight-medium, 500)` | Modal title font weight | `IN_USE` | `modal/src/lib/modal.scss:171` |
-| `--hub-modal-title-line-height` | `var(--hub-ref-line-height-base, 1.5)` | Modal title line-height | `IN_USE` | `modal/src/lib/modal.scss:172` |
-| `--hub-modal-title-margin-x` | `0` | Title horizontal margin | `IN_USE` | `modal/src/lib/modal.scss:173` |
-| `--hub-modal-title-margin-y` | `0` | Title vertical margin | `IN_USE` | `modal/src/lib/modal.scss:174` |
+| `--hub-modal-title-font-size` | `var(--hub-ref-font-size-lg, 1.25rem)` | Modal title font size | `IN_USE` | `modal/src/lib/modal.scss:136` |
+| `--hub-modal-title-font-weight` | `var(--hub-ref-font-weight-medium, 500)` | Modal title font weight | `IN_USE` | `modal/src/lib/modal.scss:137` |
+| `--hub-modal-title-line-height` | `var(--hub-ref-line-height-base, 1.5)` | Modal title line-height | `IN_USE` | `modal/src/lib/modal.scss:138` |
+| `--hub-modal-title-margin-x` | `0` | Title horizontal margin | `IN_USE` | `modal/src/lib/modal.scss:139` |
+| `--hub-modal-title-margin-y` | `0` | Title vertical margin | `IN_USE` | `modal/src/lib/modal.scss:140` |
 | **Body**                                     |                                                                                                                                                                                             |                                                                 |          |                                |
-| `--hub-modal-body-padding-x` | `var(--hub-modal-padding-x)` | Body horizontal padding | `IN_USE` | `modal/src/lib/modal.scss:177` |
-| `--hub-modal-body-padding-y` | `var(--hub-modal-padding-y)` | Body vertical padding | `IN_USE` | `modal/src/lib/modal.scss:178` |
+| `--hub-modal-body-padding-x` | `var(--hub-modal-padding-x)` | Body horizontal padding | `IN_USE` | `modal/src/lib/modal.scss:143` |
+| `--hub-modal-body-padding-y` | `var(--hub-modal-padding-y)` | Body vertical padding | `IN_USE` | `modal/src/lib/modal.scss:144` |
 | **Footer**                                   |                                                                                                                                                                                             |                                                                 |          |                                |
-| `--hub-modal-footer-padding-x` | `var(--hub-modal-padding-x)` | Footer horizontal padding | `IN_USE` | `modal/src/lib/modal.scss:179` |
-| `--hub-modal-footer-padding-y` | `var(--hub-modal-padding-y)` | Footer vertical padding | `IN_USE` | `modal/src/lib/modal.scss:180` |
-| `--hub-modal-footer-gap` | `var(--hub-ref-space-2, 0.5rem)` | Footer actions gap | `IN_USE` | `modal/src/lib/modal.scss:181` |
-| `--hub-modal-footer-bg` | `var(--hub-modal-bg, var(--hub-sys-surface-page, #ffffff))` | Footer background | `IN_USE` | `modal/src/lib/modal.scss:182` |
-| `--hub-modal-footer-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Footer top border color | `IN_USE` | `modal/src/lib/modal.scss:183` |
-| `--hub-modal-footer-border-width` | `var(--hub-ref-border-width, 1px)` | Footer top border width | `IN_USE` | `modal/src/lib/modal.scss:184` |
+| `--hub-modal-footer-padding-x` | `var(--hub-modal-padding-x)` | Footer horizontal padding | `IN_USE` | `modal/src/lib/modal.scss:145` |
+| `--hub-modal-footer-padding-y` | `var(--hub-modal-padding-y)` | Footer vertical padding | `IN_USE` | `modal/src/lib/modal.scss:146` |
+| `--hub-modal-footer-gap` | `var(--hub-ref-space-2, 0.5rem)` | Footer actions gap | `IN_USE` | `modal/src/lib/modal.scss:147` |
+| `--hub-modal-footer-bg` | `var(--hub-modal-bg, var(--hub-sys-surface-page, #ffffff))` | Footer background | `IN_USE` | `modal/src/lib/modal.scss:148` |
+| `--hub-modal-footer-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Footer top border color | `IN_USE` | `modal/src/lib/modal.scss:149` |
+| `--hub-modal-footer-border-width` | `var(--hub-ref-border-width, 1px)` | Footer top border width | `IN_USE` | `modal/src/lib/modal.scss:150` |
 | **Close button**                             |                                                                                                                                                                                             |                                                                 |          |                                |
-| `--hub-modal-close-color` | `var(--hub-sys-text-primary, #212529)` | Close button icon color | `IN_USE` | `modal/src/lib/modal.scss:185` |
-| `--hub-modal-close-size` | `var(--hub-ref-font-size-lg, 1.25rem)` | Close button font-size (controls icon size) | `IN_USE` | `modal/src/lib/modal.scss:186` |
-| `--hub-modal-close-line-height` | `1` | Close button line-height | `IN_USE` | `modal/src/lib/modal.scss:187` |
-| `--hub-modal-close-opacity` | `0.5` | Close button base opacity | `IN_USE` | `modal/src/lib/modal.scss:190` |
-| `--hub-modal-close-hover-opacity` | `0.75` | Close button hover/focus opacity | `IN_USE` | `modal/src/lib/modal.scss:191` |
+| `--hub-modal-close-color` | `var(--hub-sys-text-primary, #212529)` | Close button icon color | `IN_USE` | `modal/src/lib/modal.scss:151` |
+| `--hub-modal-close-size` | `var(--hub-ref-font-size-lg, 1.25rem)` | Close button font-size (controls icon size) | `IN_USE` | `modal/src/lib/modal.scss:152` |
+| `--hub-modal-close-line-height` | `1` | Close button line-height | `IN_USE` | `modal/src/lib/modal.scss:153` |
+| `--hub-modal-close-opacity` | `0.5` | Close button base opacity | `IN_USE` | `modal/src/lib/modal.scss:156` |
+| `--hub-modal-close-hover-opacity` | `0.75` | Close button hover/focus opacity | `IN_USE` | `modal/src/lib/modal.scss:157` |
 | **Backdrop**                                 |                                                                                                                                                                                             |                                                                 |          |                                |
-| `--hub-modal-backdrop-bg` | `var(--hub-ref-color-black, #000000)` | Backdrop background color | `IN_USE` | `modal/src/lib/modal.scss:192` |
-| `--hub-modal-backdrop-opacity` | `var(--hub-sys-opacity-50, 0.5)` | Backdrop visible opacity | `IN_USE` | `modal/src/lib/modal.scss:193` |
-| `--hub-modal-backdrop-opacity-hidden` | `var(--hub-sys-opacity-0, 0)` | Backdrop opacity when hidden (before fade-in) | `IN_USE` | `modal/src/lib/modal.scss:194` |
-| `--hub-modal-backdrop-transition` | `opacity 0.15s linear` | Backdrop fade transition | `IN_USE` | `modal/src/lib/modal.scss:195` |
+| `--hub-modal-backdrop-bg` | `var(--hub-ref-color-black, #000000)` | Backdrop background color | `IN_USE` | `modal/src/lib/modal.scss:158` |
+| `--hub-modal-backdrop-opacity` | `var(--hub-sys-opacity-50, 0.5)` | Backdrop visible opacity | `IN_USE` | `modal/src/lib/modal.scss:159` |
+| `--hub-modal-backdrop-opacity-hidden` | `var(--hub-sys-opacity-0, 0)` | Backdrop opacity when hidden (before fade-in) | `IN_USE` | `modal/src/lib/modal.scss:160` |
+| `--hub-modal-backdrop-transition` | `opacity 0.15s linear` | Backdrop fade transition | `IN_USE` | `modal/src/lib/modal.scss:161` |
 | **Motion**                                   |                                                                                                                                                                                             |                                                                 |          |                                |
-| `--hub-modal-fade-transform` | `translate(0, -50px)` | Dialog transform at fade start | `IN_USE` | `modal/src/lib/modal.scss:196` |
-| `--hub-modal-show-transform` | `none` | Dialog transform when shown | `IN_USE` | `modal/src/lib/modal.scss:197` |
-| `--hub-modal-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Dialog transition curve/duration | `IN_USE` | `modal/src/lib/modal.scss:198` |
-| `--hub-modal-dialog-inset` | `var(--hub-modal-margin-block, 3.5rem)` | Space the dialog discounts from the viewport when capping its own height, so the body is what scrolls rather than the page. Zero inside a fullscreen dialog, which covers the viewport and has no margin to discount | `IN_USE` | `modal/src/lib/modal.scss:351` |
-| `--hub-modal-resize-duration` | `200` | Milliseconds the dialog takes to travel between two content heights. Unitless, because it is read from script rather than used in a CSS transition | `IN_USE` | `modal/src/lib/modal.scss:199` |
-| `--hub-modal-resize-easing` | `ease-in-out` | Easing for that same height travel | `IN_USE` | `modal/src/lib/modal.scss:200` |
-| `--hub-modal-scale-transform` | `scale(1.02)` | Dialog scale in static backdrop bump | `IN_USE` | `modal/src/lib/modal.scss:201` |
-| `--hub-modal-close-padding-x` | `0` | Close button horizontal padding | `IN_USE` | `modal/src/lib/modal.scss:188` |
-| `--hub-modal-close-padding-y` | `0` | Close button vertical padding | `IN_USE` | `modal/src/lib/modal.scss:189` |
-| `--hub-modal-padding-x` | `var(--hub-ref-space-3, 1rem)` | Dialog body horizontal padding | `IN_USE` | `modal/src/lib/modal.scss:163` |
-| `--hub-modal-padding-y` | `var(--hub-ref-space-3, 1rem)` | Dialog body vertical padding | `IN_USE` | `modal/src/lib/modal.scss:164` |
+| `--hub-modal-fade-transform` | `translate(0, -50px)` | Dialog transform at fade start | `IN_USE` | `modal/src/lib/modal.scss:162` |
+| `--hub-modal-show-transform` | `none` | Dialog transform when shown | `IN_USE` | `modal/src/lib/modal.scss:163` |
+| `--hub-modal-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Dialog transition curve/duration | `IN_USE` | `modal/src/lib/modal.scss:164` |
+| `--hub-modal-dialog-inset` | `var(--hub-modal-margin-block, 3.5rem)` | Space the dialog discounts from the viewport when capping its own height, so the body is what scrolls rather than the page. Zero inside a fullscreen dialog, which covers the viewport and has no margin to discount | `IN_USE` | `modal/src/lib/modal.scss:313` |
+| `--hub-modal-resize-duration` | `200` | Milliseconds the dialog takes to travel between two content heights. Unitless, because it is read from script rather than used in a CSS transition | `IN_USE` | `modal/src/lib/modal.scss:165` |
+| `--hub-modal-resize-easing` | `ease-in-out` | Easing for that same height travel | `IN_USE` | `modal/src/lib/modal.scss:166` |
+| `--hub-modal-scale-transform` | `scale(1.02)` | Dialog scale in static backdrop bump | `IN_USE` | `modal/src/lib/modal.scss:167` |
+| `--hub-modal-close-padding-x` | `0` | Close button horizontal padding | `IN_USE` | `modal/src/lib/modal.scss:154` |
+| `--hub-modal-close-padding-y` | `0` | Close button vertical padding | `IN_USE` | `modal/src/lib/modal.scss:155` |
+| `--hub-modal-padding-x` | `var(--hub-ref-space-3, 1rem)` | Dialog body horizontal padding | `IN_USE` | `modal/src/lib/modal.scss:129` |
+| `--hub-modal-padding-y` | `var(--hub-ref-space-3, 1rem)` | Dialog body vertical padding | `IN_USE` | `modal/src/lib/modal.scss:130` |
 
 ### `toast`
 
@@ -1728,8 +1728,8 @@ The standalone `tabs` proposal was **superseded**: the tabs UI shipped inside `n
 | `--hub-table-selected-color`                    | `var(--hub-sys-text-primary, #212529)`                                    | Selected row text color                                            | `IN_USE`  | `paginable/src/lib/components/table/table.component.scss:99` |
 | `--hub-table-selected-bar-width` | `0` | Width of the optional accent bar on the selected row's leading edge (`0` = hidden) | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:105` |
 | `--hub-table-selected-bar-color` | `var(--hub-table-accent)` | Colour of the selected-row accent bar | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:106` |
-| `--hub-table-cell-bar-width` | `var(--hub-table-selected-bar-width)` | Internal per-cell relay of the selected-row bar width (mirrored/negated for RTL); theme via `--hub-table-selected-bar-width` | `INTERNAL` | `paginable/src/lib/components/table/table.component.scss:953` |
-| `--hub-table-cell-bar-color` | `var(--hub-table-selected-bar-color, var(--hub-table-accent))` | Internal per-cell relay of the selected-row bar colour; theme via `--hub-table-selected-bar-color` | `INTERNAL` | `paginable/src/lib/components/table/table.component.scss:954` |
+| `--hub-table-cell-bar-width` | `var(--hub-table-selected-bar-width)` | Internal per-cell relay of the selected-row bar width (mirrored/negated for RTL); theme via `--hub-table-selected-bar-width` | `INTERNAL` | `paginable/src/lib/components/table/table.component.scss:950` |
+| `--hub-table-cell-bar-color` | `var(--hub-table-selected-bar-color, var(--hub-table-accent))` | Internal per-cell relay of the selected-row bar colour; theme via `--hub-table-selected-bar-color` | `INTERNAL` | `paginable/src/lib/components/table/table.component.scss:951` |
 | `--hub-table-accent-bg` | `transparent` | Accent layer applied via `box-shadow inset` on cells | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:82` |
 | `--hub-table-active-bg` | `var(--hub-sys-state-active-bg, rgba(0,0,0,0.1))` | Cell background in active row state | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:83` |
 | `--hub-table-active-color` | `var(--hub-sys-text-primary, #212529)` | Cell text color in active row state | `IN_USE` | `paginable/src/lib/components/table/table.component.scss:84` |
@@ -1965,11 +1965,11 @@ Neutral loading-placeholder tokens (no semantic colour variant). The base / high
 
 | Token                              | Initial value                       | Usage                                                | Status   | Source                                  |
 | ---------------------------------- | ----------------------------------- | ---------------------------------------------------- | -------- | --------------------------------------- |
-| `--hub-skeleton-bg` | `rgba(148, 163, 184, 0.18)` | Base placeholder surface (shimmer gradient base) | `IN_USE` | `skeleton/src/lib/styles/mixins/_skeleton-theme.scss:37` |
-| `--hub-skeleton-highlight` | `rgba(255, 255, 255, 0.52)` | Moving highlight band of the shimmer | `IN_USE` | `skeleton/src/lib/styles/mixins/_skeleton-theme.scss:40` |
-| `--hub-skeleton-radius` | `12px` | Default node corner radius | `IN_USE` | `skeleton/src/lib/styles/mixins/_skeleton-theme.scss:43` |
-| `--hub-skeleton-gap` | `12px` | Default gap between stacked / grid nodes | `IN_USE` | `skeleton/src/lib/styles/mixins/_skeleton-theme.scss:46` |
-| `--hub-skeleton-animation-duration` | `1.35s` | Shimmer animation duration | `IN_USE` | `skeleton/src/lib/styles/mixins/_skeleton-theme.scss:49` |
+| `--hub-skeleton-bg` | `rgba(148, 163, 184, 0.18)` | Base placeholder surface (shimmer gradient base) | `IN_USE` | `skeleton/src/lib/styles/mixins/_skeleton-theme.scss:31` |
+| `--hub-skeleton-highlight` | `rgba(255, 255, 255, 0.52)` | Moving highlight band of the shimmer | `IN_USE` | `skeleton/src/lib/styles/mixins/_skeleton-theme.scss:34` |
+| `--hub-skeleton-radius` | `12px` | Default node corner radius | `IN_USE` | `skeleton/src/lib/styles/mixins/_skeleton-theme.scss:37` |
+| `--hub-skeleton-gap` | `12px` | Default gap between stacked / grid nodes | `IN_USE` | `skeleton/src/lib/styles/mixins/_skeleton-theme.scss:40` |
+| `--hub-skeleton-animation-duration` | `1.35s` | Shimmer animation duration | `IN_USE` | `skeleton/src/lib/styles/mixins/_skeleton-theme.scss:43` |
 | `--hub-skeleton-node-width` | runtime (`100%`) | Width of a line/block/circle node — written from the template DSL | `INTERNAL` | `skeleton/src/lib/hub-skeleton.component.ts:122` |
 | `--hub-skeleton-node-height` | runtime (`12px`) | Height of a line/block/circle node — written from the template DSL | `INTERNAL` | `skeleton/src/lib/hub-skeleton.component.ts:123` |
 | `--hub-skeleton-node-size` | runtime (`40px`) | Width/height of a circle node — written from the template DSL | `INTERNAL` | `skeleton/src/lib/hub-skeleton.component.ts:127` |
@@ -2025,7 +2025,7 @@ Neutral loading-placeholder tokens (no semantic colour variant). The base / high
 | `--hub-stepper-content-padding-y` | `0` | Content vertical padding | `IN_USE` | `stepper/src/lib/stepper/stepper.component.scss:60` |
 | `--hub-stepper-nav-padding-x` | `0` | Nav horizontal padding | `IN_USE` | `stepper/src/lib/stepper/stepper.component.scss:21` |
 | `--hub-stepper-nav-padding-y` | `0` | Nav vertical padding | `IN_USE` | `stepper/src/lib/stepper/stepper.component.scss:22` |
-| `--hub-stepper-nav-title-max-width` | `12rem` | Max width of a step nav title before ellipsis | `IN_USE` | `stepper/src/lib/stepper/stepper.component.scss:385` |
+| `--hub-stepper-nav-title-max-width` | `12rem` | Max width of a step nav title before ellipsis | `IN_USE` | `stepper/src/lib/stepper/stepper.component.scss:387` |
 ### `layout`
 
 #### `aside`
@@ -2230,8 +2230,8 @@ Neutral loading-placeholder tokens (no semantic colour variant). The base / high
 | `--hub-nav-vertical-items-overflow-y` | `auto` | Vertical items y-overflow | `IN_USE` | `nav/src/styles/nav-tokens.scss:19` |
 | `--hub-nav-vertical-panel-padding-block` | `0` | Vertical panel block padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:22` |
 | `--hub-nav-vertical-panel-padding-inline` | `var(--hub-ref-space-2, 0.5rem)` | Vertical panel inline padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:21` |
-| `--hub-nav-mobile-accordion-gap` | `0.25rem` | Gap between items in the mobile accordion list | `IN_USE` | `nav/src/components/nav-item-list/nav-item-list.component.scss:167` |
-| `--hub-nav-mobile-accordion-nested-spacing` | `0.25rem` | Top margin before a nested (child) accordion group | `IN_USE` | `nav/src/components/nav-item-list/nav-item-list.component.scss:186` |
+| `--hub-nav-mobile-accordion-gap` | `0.25rem` | Gap between items in the mobile accordion list | `IN_USE` | `nav/src/components/nav-item-list/nav-item-list.component.scss:165` |
+| `--hub-nav-mobile-accordion-nested-spacing` | `0.25rem` | Top margin before a nested (child) accordion group | `IN_USE` | `nav/src/components/nav-item-list/nav-item-list.component.scss:184` |
 | `--hub-nav-mobile-body-padding-block-end` | `var(--hub-nav-padding-y, 0.5rem)` | Bottom padding of the mobile panel body | `IN_USE` | `nav/src/components/nav-mobile-panel/nav-mobile-panel.component.scss:60` |
 | `--hub-nav-mobile-body-padding-inline` | `var(--hub-nav-padding-x, 1rem)` | Inline padding of the mobile panel body | `IN_USE` | `nav/src/components/nav-mobile-panel/nav-mobile-panel.component.scss:59` |
 | `--hub-nav-mobile-border-color` | `rgba(0, 0, 0, 0.08)` | Border color of the mobile drawer panel | `IN_USE` | `nav/src/components/nav-mobile-panel/nav-mobile-panel.component.scss:86` |
@@ -2254,28 +2254,28 @@ The navigation strip is **semantic-accent aware**: a single `--hub-panels-accent
 | `--hub-panels-accordion-active-bg` | `var(--hub-accordion-active-bg, var(--hub-panels-accent-subtle))` | Accordion active item background | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:133` |
 | `--hub-panels-accordion-active-color` | `var(--hub-accordion-active-color, var(--hub-panels-accent-emphasis))` | Accordion active item text color | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:132` |
 | `--hub-panels-accordion-bg` | `var(--hub-accordion-bg, var(--hub-sys-surface-page, #fff))` | Accordion view background | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:120` |
-| `--hub-panels-accordion-body-padding-x` | `var(--hub-accordion-body-padding-x, 1.25rem)` | Accordion body horizontal padding | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:157` |
-| `--hub-panels-accordion-body-padding-y` | `var(--hub-accordion-body-padding-y, var(--hub-ref-space-3, 1rem))` | Accordion body vertical padding | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:158` |
+| `--hub-panels-accordion-body-padding-x` | `var(--hub-accordion-body-padding-x, 1.25rem)` | Accordion body horizontal padding | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:160` |
+| `--hub-panels-accordion-body-padding-y` | `var(--hub-accordion-body-padding-y, var(--hub-ref-space-3, 1rem))` | Accordion body vertical padding | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:161` |
 | `--hub-panels-accordion-border-color` | `var(--hub-accordion-border-color, var(--hub-sys-border-color-default, #dee2e6))` | Accordion border color | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:122` |
 | `--hub-panels-accordion-border-radius` | `var(--hub-accordion-border-radius, var(--hub-ref-radius-sm, 0.25rem))` | Accordion corner radius | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:123` |
 | `--hub-panels-accordion-border-width` | `var(--hub-accordion-border-width, var(--hub-ref-border-width, 1px))` | Accordion border width | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:121` |
 | `--hub-panels-accordion-btn-bg` | `var(--hub-accordion-btn-bg, var(--hub-sys-surface-page, #fff))` | Accordion header button background | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:131` |
 | `--hub-panels-accordion-btn-color` | `var(--hub-accordion-btn-color, var(--hub-sys-text-primary, #212529))` | Accordion header button text color | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:130` |
-| `--hub-panels-accordion-btn-focus-box-shadow` | `var(--hub-accordion-btn-focus-box-shadow, 0 0 0 var(--hub-sys-focus-ring-width, 0.25rem) var(--hub-sys-focus-ring-color, rgba(13, 110, 253, 0.25)))` | Accordion header focus ring shadow | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:140` |
+| `--hub-panels-accordion-btn-focus-box-shadow` | `var(--hub-accordion-btn-focus-box-shadow, 0 0 0 var(--hub-sys-focus-ring-width, 0.25rem) var(--hub-sys-focus-ring-color, rgba(13, 110, 253, 0.25)))` | Accordion header focus ring shadow | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:143` |
 | `--hub-panels-accordion-btn-icon-mask` | `var(--hub-accordion-btn-icon-mask, url("data:image/svg+xml` | Accordion chevron icon mask | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:136` |
-| `--hub-panels-accordion-btn-icon-transform` | `var(--hub-accordion-btn-icon-transform, rotate(-180deg))` | Accordion chevron rotation transform | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:138` |
-| `--hub-panels-accordion-btn-icon-transition` | `var(--hub-accordion-btn-icon-transition, transform 0.2s ease-in-out)` | Accordion chevron transition | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:139` |
-| `--hub-panels-accordion-btn-icon-width` | `var(--hub-accordion-btn-icon-width, 1.25rem)` | Accordion chevron icon size | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:137` |
+| `--hub-panels-accordion-btn-icon-transform` | `var(--hub-accordion-btn-icon-transform, rotate(-180deg))` | Accordion chevron rotation transform | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:141` |
+| `--hub-panels-accordion-btn-icon-transition` | `var(--hub-accordion-btn-icon-transition, transform 0.2s ease-in-out)` | Accordion chevron transition | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:142` |
+| `--hub-panels-accordion-btn-icon-width` | `var(--hub-accordion-btn-icon-width, 1.25rem)` | Accordion chevron icon size | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:140` |
 | `--hub-panels-accordion-btn-padding-x` | `var(--hub-accordion-btn-padding-x, 1.25rem)` | Accordion button horizontal padding | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:128` |
 | `--hub-panels-accordion-btn-padding-y` | `var(--hub-accordion-btn-padding-y, var(--hub-ref-space-3, 1rem))` | Accordion button vertical padding | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:129` |
-| `--hub-panels-accordion-collapse-transition-duration` | `var(--hub-accordion-collapse-transition-duration, 0.25s)` | Accordion collapse animation duration | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:152` |
-| `--hub-panels-accordion-collapse-transition-easing` | `var(--hub-accordion-collapse-transition-easing, cubic-bezier(0.4, 0, 0.2, 1))` | Accordion collapse animation easing | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:153` |
+| `--hub-panels-accordion-collapse-transition-duration` | `var(--hub-accordion-collapse-transition-duration, 0.25s)` | Accordion collapse animation duration | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:155` |
+| `--hub-panels-accordion-collapse-transition-easing` | `var(--hub-accordion-collapse-transition-easing, cubic-bezier(0.4, 0, 0.2, 1))` | Accordion collapse animation easing | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:156` |
 | `--hub-panels-accordion-color` | `var(--hub-accordion-color, var(--hub-sys-text-primary, #212529))` | Accordion view text color | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:119` |
 | `--hub-panels-accordion-icon-active-color` | `var(--hub-accordion-icon-active-color, var(--hub-panels-accordion-active-color))` | Accordion active chevron color | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:135` |
 | `--hub-panels-accordion-icon-color` | `var(--hub-accordion-icon-color, var(--hub-panels-accordion-btn-color))` | Accordion chevron icon color | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:134` |
 | `--hub-panels-accordion-inner-border-radius` | `var(--hub-accordion-inner-border-radius, calc(var(--hub-panels-accordion-border-radius) - var(--hub-panels-accordion-border-width)))` | Accordion inner corner radius | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:124` |
 | `--hub-panels-accordion-toggle-gutter` | `calc(var(--hub-panels-accordion-btn-icon-width) + var(--hub-panels-tab-gap))` | Space the trailing chevron reserves at the row.s end — whatever sits last in the header (heading or actions) keeps clear of the glyph; forced to `0px` when `togglePosition` places the chevron at the start | `IN_USE` | `panels/src/lib/components/panels/panels.accordion.scss:69` |
-| `--hub-panels-accordion-transition` | `var(--hub-accordion-transition, color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease)` | Accordion header visual transition | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:144` |
+| `--hub-panels-accordion-transition` | `var(--hub-accordion-transition, color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease)` | Accordion header visual transition | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:147` |
 | `--hub-panels-alert-accent` | `var(--hub-sys-border-color-default, #dee2e6)` | Alert accent stripe color | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:165` |
 | `--hub-panels-alert-accent-width` | `0.25rem` | Alert accent stripe width | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:169` |
 | `--hub-panels-alert-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Alert panel background | `IN_USE` | `panels/src/lib/components/panel/panel.component.scss:162` |
@@ -2371,7 +2371,7 @@ The navigation strip is **semantic-accent aware**: a single `--hub-panels-accent
 | `--hub-panels-tab-padding-x` | `var(--hub-panels-nav-link-padding-x)` | Tab horizontal padding | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:62` |
 | `--hub-panels-tab-padding-y` | `var(--hub-panels-nav-link-padding-y)` | Tab vertical padding | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:63` |
 | `--hub-panels-tab-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Tab state transition | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:85` |
-| `--hub-panels-multiple-vertical-panel-min-width` | runtime (`0px`) | Min content width per `multiple + vertical` block, from the measured header height | `INTERNAL` | `panels/src/lib/components/panels/panels.component.ts:775` |
+| `--hub-panels-multiple-vertical-panel-min-width` | runtime (`0px`) | Min content width per `multiple + vertical` block, from the measured header height | `INTERNAL` | `panels/src/lib/components/panels/panels.component.ts:765` |
 | `--hub-tabs-gap` | `0` | Gap between tabs in the <hub-tab-nav> strip | `IN_USE` | `panels/src/lib/components/tab-nav/tab-nav.component.scss:18` |
 | `--hub-tabs-indicator-color` | `var(--hub-panels-accent, var(--hub-sys-color-primary, #0d6efd))` | Active-tab underline / active-pill fill colour for <hub-tab-nav> | `IN_USE` | `panels/src/lib/components/tab-nav/tab-nav.component.scss:16` |
 ### `milestones`
@@ -2394,10 +2394,10 @@ The navigation strip is **semantic-accent aware**: a single `--hub-panels-accent
 | `--hub-milestone-pending-color` | `var(--hub-sys-text-muted, #6c757d)` | Pending node text color | `IN_USE` | `milestones/src/lib/milestones.component.scss:14` |
 | `--hub-milestone-spacing` | `1.75rem` | Spacing between node and content | `IN_USE` | `milestones/src/lib/milestones.component.scss:23` |
 | `--hub-milestone-pulse-color` | `var(--hub-milestone-node-color)` | Color of the active-node pulse ring | `IN_USE` | `milestones/src/lib/milestones.component.scss:171` |
-| `--hub-milestone-pulse-duration` | `1.6s` | Duration of the pulse animation | `IN_USE` | `milestones/src/lib/milestones.component.scss:194` |
-| `--hub-milestone-pulse-spread` | `0.75rem` | Spread radius of the pulse ring | `IN_USE` | `milestones/src/lib/milestones.component.scss:177` |
-| `--hub-milestone-reveal-duration` | `0.5s` | Duration of the connector reveal/fill animation | `IN_USE` | `milestones/src/lib/milestones.component.scss:235` |
-| `--hub-milestone-reveal-stagger` | `0.14s` | Per-index delay of the staggered reveal | `IN_USE` | `milestones/src/lib/milestones.component.scss:236` |
+| `--hub-milestone-pulse-duration` | `1.6s` | Duration of the pulse animation | `IN_USE` | `milestones/src/lib/milestones.component.scss:195` |
+| `--hub-milestone-pulse-spread` | `0.75rem` | Spread radius of the pulse ring | `IN_USE` | `milestones/src/lib/milestones.component.scss:178` |
+| `--hub-milestone-reveal-duration` | `0.5s` | Duration of the connector reveal/fill animation | `IN_USE` | `milestones/src/lib/milestones.component.scss:236` |
+| `--hub-milestone-reveal-stagger` | `0.14s` | Per-index delay of the staggered reveal | `IN_USE` | `milestones/src/lib/milestones.component.scss:237` |
 | `--hub-milestone-index` | runtime (0-based) | Node position used to stagger the reveal delay; set per node by the parent | `INTERNAL` | `milestones/src/lib/milestone.component.ts:29` |
 ### `icons`
 
