@@ -5,6 +5,20 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.17] - 2026-08-25
+
+### Added
+
+- **The three floating-label tokens are documented**: `--hub-field-floating-inset`, `--hub-field-floating-travel` and `--hub-field-floating-scale`, following `ng-hub-ui-forms@22.24.0`. They are what makes an input, a select and a datepicker with a floating label the same field rather than three that resemble each other — the geometry lives in one place and all of them read it — so they belong in the spec rather than in one library's changelog.
+
+### Changed
+
+- **`--hub-select-min-height` is documented as derived**, not as `2.5rem`. The token now spells out the height an input reaches by construction — one line of text between two paddings and two borders — because a select is a `div` and inherits none of it. Held as a literal it had drifted, and the select stood 2px taller than every other field.
+
+### Fixed
+
+- **The parity check no longer skips a declaration that wraps.** Its pattern needed the whole declaration, terminating `;` included, on a single line; a long `calc()` broken by the formatter therefore registered as *undeclared*, so value parity had nothing to compare and the documented value was free to drift in silence. Teaching it to read a wrapped declaration as one logical line immediately surfaced sixteen stale values — one in this spec and fifteen in the per-library reference docs of `avatar`, `board`, `modal`, `paginable`, `panels` and `stepper`, where for instance `--hub-modal-margin` was still documented as `1.75rem auto` long after the code had decomposed it into four per-side tokens. All sixteen are corrected.
+
 ## [22.7.16] - 2026-08-24
 
 ### Changed
