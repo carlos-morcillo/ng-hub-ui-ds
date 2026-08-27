@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.18] - 2026-08-27
+
+### Fixed
+
+- **The `Source` column points at the right lines again.** This package ships its `docs/` folder, so the reference table travels to consumers — and the line numbers it cites drifted twice since 22.7.17 was published: 231 of them when the libraries were normalised to the repository's Prettier config, and three more when `ng-hub-ui-forms`' time field gained a group and its stylesheet grew an `@use`. Nothing else moved: every value, description and status is unchanged, which the parity check confirms.
+
 ## [22.7.17] - 2026-08-25
 
 ### Added
