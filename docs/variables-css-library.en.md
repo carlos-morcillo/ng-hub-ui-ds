@@ -820,11 +820,11 @@ Source legend:
 | `--hub-breadcrumb-margin-bottom` | `var(--hub-ref-space-0, 0)` | Bottom margin of the breadcrumb list | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:5` |
 | `--hub-breadcrumb-bg` | `var(--hub-sys-surface-page, transparent)` | Background color of the breadcrumb list | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:6` |
 | `--hub-breadcrumb-color` | `var(--hub-sys-text-primary, #212529)` | Base text color of the breadcrumb list | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:7` |
-| `--hub-breadcrumb-font-size` | `inherit` | Font size of the breadcrumb list; inherits from parent by default | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:29` |
+| `--hub-breadcrumb-font-size` | `inherit` | Font size of the breadcrumb list; inherits from parent by default | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:42` |
 | `--hub-breadcrumb-border-radius` | `var(--hub-ref-radius-md, 0.375rem)` | Border radius of the breadcrumb list container | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:8` |
 | `--hub-breadcrumb-divider-color` | `var(--hub-sys-text-muted, #6c757d)` | Color of the separator between breadcrumb items | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:9` |
-| `--hub-breadcrumb-divider` | `'>'` | Content of the separator (LTR) | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:27` |
-| `--hub-breadcrumb-divider-flipped` | `'<'` | Content of the separator (RTL) | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:28` |
+| `--hub-breadcrumb-divider` | `'>'` | Content of the separator (LTR) | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:40` |
+| `--hub-breadcrumb-divider-flipped` | `'<'` | Content of the separator (RTL) | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:41` |
 | `--hub-breadcrumb-item-padding-x` | `var(--hub-ref-space-1, 0.25rem)` | Horizontal padding between breadcrumb items | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:10` |
 | `--hub-breadcrumb-item-active-color` | `var(--hub-sys-text-muted, #6c757d)` | Text color of the last (active) breadcrumb item | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:11` |
 | `--hub-breadcrumb-accent` | `var(--hub-sys-color-primary, #0d6efd)` | Semantic accent for the links — re-based per `variant` (default = link colour) | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:19` |
@@ -832,7 +832,16 @@ Source legend:
 | `--hub-breadcrumb-link-hover-color` | `var(--hub-breadcrumb-accent-emphasis, var(--hub-sys-link-hover-color, #0a58ca))` | Text color of breadcrumb links on hover | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:24` |
 | `--hub-breadcrumb-link-decoration` | `none` | Text decoration of breadcrumb links | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:25` |
 | `--hub-breadcrumb-link-hover-decoration` | `underline` | Text decoration of breadcrumb links on hover | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:26` |
-| `--hub-breadcrumb-max-item-width` | `12rem` | Max width of a breadcrumb item label before it is clipped with an ellipsis (opt-in via the `truncateItems` input) | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:32` |
+| `--hub-breadcrumb-max-item-width` | `12rem` | Max width of a breadcrumb item label before it is clipped with an ellipsis (opt-in via the `truncateItems` input) | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:45` |
+| `--hub-breadcrumb-link-focus-color` | `var(--hub-breadcrumb-accent-emphasis)` | Text color of a link, or of the collapsed indicator, while it holds keyboard focus | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:30` |
+| `--hub-breadcrumb-focus-bg` | `transparent` | Background behind a link while it holds keyboard focus | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:31` |
+| `--hub-breadcrumb-focus-ring-width` | `var(--hub-sys-focus-ring-width, 0.25rem)` | Width of the keyboard focus ring | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:32` |
+| `--hub-breadcrumb-focus-ring-color` | `var(--hub-sys-focus-ring-color, rgba(13, 110, 253, 0.25))` | Color of the keyboard focus ring | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:33` |
+| `--hub-breadcrumb-focus-ring-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Corner radius the keyboard focus ring is drawn with | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:34` |
+| `--hub-breadcrumb-collapsed-color` | `var(--hub-sys-text-muted, #6c757d)` | Text color of the collapsed indicator (the `…` button shown when `maxItems` folds the trail) | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:36` |
+| `--hub-breadcrumb-collapsed-hover-color` | `var(--hub-breadcrumb-accent)` | Text color of the collapsed indicator on hover | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:37` |
+| `--hub-breadcrumb-collapsed-bg` | `transparent` | Background of the collapsed indicator | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:38` |
+| `--hub-breadcrumb-collapsed-hover-bg` | `var(--hub-breadcrumb-accent-subtle)` | Background of the collapsed indicator on hover | `IN_USE` | `breadcrumbs/src/lib/components/breadcrumb/breadcrumb.component.scss:39` |
 
 ### `calendar`
 
