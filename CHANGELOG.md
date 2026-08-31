@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.19] - 2026-08-31
+
+### Added
+
+- **docs (datepicker)** — `--hub-datepicker-overlay-zindex`, the calendar overlay's stacking hook (`ng-hub-ui-forms` 22.28.0), defaulting to `calc(var(--hub-sys-zindex-modal, 1055) + 5)`. It is the datepicker's counterpart of `--hub-select-dropdown-zindex`: both panels now open above `HubModal`, so the two controls of that package answer the same question the same way. Consumed-only, like the select's canonical spelling — the default lives in the `var()` fallback, so an override anywhere in the cascade wins.
+
 ## [22.7.18] - 2026-08-27
 
 ### Fixed

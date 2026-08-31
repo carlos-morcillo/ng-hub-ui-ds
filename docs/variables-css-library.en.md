@@ -1462,6 +1462,7 @@ The `detail` token set is defined as a single, standardized collection that supp
 | `--hub-timepicker-min-width` | `8rem` | Floor for that width, so the native stepper and the AM/PM segment still fit where a locale shows them | `IN_USE` | `forms/src/lib/components/timepicker/timepicker.component.scss:14` |
 | `--hub-timepicker-indicator-opacity` | `0.6` | Opacity of the browser's own clock indicator, dimmed so it sits with the field's chrome instead of competing with it | `IN_USE` | `forms/src/lib/components/timepicker/timepicker.component.scss:21` |
 | `--hub-datepicker-icon-width` | `2.5rem` | Datepicker icon width | `IN_USE` | `forms/src/lib/styles/_tokens.scss:407` |
+| `--hub-datepicker-overlay-zindex` | `calc(var(--hub-sys-zindex-modal, 1055) + 5)` | Stacking of the calendar overlay, and of its backdrop one layer below it. Sits above HubModal so a datepicker opened inside a dialog draws its calendar over the dialog instead of behind it — the counterpart of `--hub-select-dropdown-zindex`. Read through its `var()` fallback and never declared, so setting it anywhere in the cascade wins | `IN_USE` | `forms/src/lib/components/datepicker/datepicker.component.scss:158` |
 | `--hub-daterangepicker-padding-x` | `var(--hub-ref-space-3, 1rem)` | Calendar panel horizontal padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:415` |
 | `--hub-daterangepicker-padding-y` | `var(--hub-ref-space-3, 1rem)` | Calendar panel vertical padding | `IN_USE` | `forms/src/lib/styles/_tokens.scss:416` |
 
