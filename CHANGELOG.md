@@ -5,6 +5,16 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.8.1] - 2026-09-01
+
+### Changed
+
+- **`--hub-table-action-disabled-opacity` is documented as covering menu items too.** Following
+  `ng-hub-ui-paginable` 22.16.0, a row's dropdown reads the same token for an item it refuses, so
+  the description named two of the three places it now applies. This package ships its `docs/`
+  folder and the table travels to consumers, which is the whole reason a partial description is
+  worth a release: a reader tuning the token would have been surprised by what else moved.
+
 ## [22.8.0] - 2026-09-01
 
 ### Added
