@@ -1,6 +1,6 @@
 {
 	"name": "ng-hub-ui-ds",
-	"version": "22.7.19",
+	"version": "22.7.20",
 	"license": "MIT",
 	"scripts": {
 		"build:tokens": "sass styles/tokens/hub-tokens.scss styles/tokens/hub-tokens.css --style=expanded --no-source-map",
@@ -11,7 +11,7 @@
 	},
 	"description": "Design tokens for the ng-hub-ui family — the canonical `--hub-ref-*` (primitive) and `--hub-sys-*` (semantic) CSS custom properties, with light/dark and 8 built-in themes. Framework-agnostic: ship the compiled CSS or the SCSS source. Import once and every ng-hub-ui library reads the same palette.",
 	"author": "Carlos Morcillo <carlos.morcillo@me.com> (https://www.carlosmorcillo.com)",
-	"homepage": "https://hubui.dev/",
+	"homepage": "https://hubui.dev/en/design-system/",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/carlos-morcillo/ng-hub-ui-ds.git"

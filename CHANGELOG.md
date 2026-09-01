@@ -5,6 +5,12 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.7.20] - 2026-09-01
+
+### Added
+
+- **docs (datepicker)** — `--hub-datepicker-grid-gap`, the gap between the calendar's day cells (`ng-hub-ui-forms` 22.29.0), defaulting to `0.125rem`. Consumed-only, like the overlay's stacking hook before it. What earns it a row is that the panel now measures itself from the same arithmetic the grid lays itself out with — seven cells and the six gaps between them — so this token no longer only spaces the days: widening it widens the panel, which is the supported way to make room for `monthFormat="long"`. A reader who tunes it expecting a purely cosmetic change gets a wider calendar, and the table should say so before they find out.
+
 ## [22.7.19] - 2026-08-31
 
 ### Added

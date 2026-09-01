@@ -1480,6 +1480,7 @@ The `detail` token set is defined as a single, standardized collection that supp
 | `--hub-daterangepicker-cell-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker cell color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:418` |
 | `--hub-daterangepicker-cell-hover-bg` | `var(--hub-sys-surface-elevated, #f8f9fa)` | Daterangepicker cell hover bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:420` |
 | `--hub-daterangepicker-cell-size` | `2rem` | Daterangepicker cell size | `IN_USE` | `forms/src/lib/styles/_tokens.scss:417` |
+| `--hub-datepicker-grid-gap` | `0.125rem` | Gap between the calendar's day cells. Read twice on purpose — the grid lays itself out with it and the panel measures its own width from it — because the panel is exactly seven cells and the six gaps between them, and two literals would drift the first time either was tuned. Widening it widens the panel, which is what makes room for `monthFormat="long"` | `IN_USE` | `forms/src/lib/components/datepicker/datepicker.component.scss:178` |
 | `--hub-daterangepicker-color` | `var(--hub-sys-text-primary, #212529)` | Daterangepicker color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:411` |
 | `--hub-daterangepicker-in-range-bg` | `color-mix(in oklch, var(--hub-sys-color-primary, #0d6efd) 14%, transparent)` | Daterangepicker in range bg | `IN_USE` | `forms/src/lib/styles/_tokens.scss:427` |
 | `--hub-daterangepicker-nav-arrow-color` | `var(--hub-sys-text-muted, #6c757d)` | Daterangepicker nav arrow color | `IN_USE` | `forms/src/lib/styles/_tokens.scss:434` |
