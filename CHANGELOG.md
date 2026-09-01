@@ -5,6 +5,35 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.8.0] - 2026-09-01
+
+### Added
+
+- **`.font-tabular-nums`** — the one utility here Bootstrap does not have, and deliberately
+  so: Bootstrap ships no `font-variant-numeric` helper at all, so there was nothing to
+  mirror. Named into the `.font-*` family beside `.font-monospace`, because it is the same
+  kind of decision — which shapes the glyphs take.
+
+  Proportional numerals give every digit its own width, so a 1 is narrower than a 0 and two
+  amounts in a column have their units in different places. Money is read by comparing it
+  downwards, and a column whose units do not line up has to be read figure by figure
+  instead. Consumers were writing the declaration by hand in their own sheets — five screens
+  of one product, which is what asked for this.
+
+- **docs (table)** — `--hub-table-action-disabled-opacity`, how far a refused action button is
+  faded (`ng-hub-ui-paginable` 22.15.0), defaulting to `0.5`. Consumed-only. It exists because
+  the table draws its own action buttons, so the browser's default disabled rendering never
+  reaches them: without a declaration a refused action kept its full tint and its pointer and
+  read as pressable.
+
+### Fixed
+
+- **Two `Source` lines point at the right rows again**: `--hub-table-cell-bar-width` and
+  `--hub-table-cell-bar-color` moved seventeen lines down when the table's stylesheet gained
+  its disabled-action block. This package ships its `docs/` folder, so the citations travel to
+  consumers and a stale line number sends a reader to the wrong rule. Nothing else moved —
+  every value, description and status is unchanged, which the parity check confirms.
+
 ## [22.7.20] - 2026-09-01
 
 ### Added

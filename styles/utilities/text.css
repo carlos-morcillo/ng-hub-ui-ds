@@ -249,6 +249,23 @@
   font-family: var(--hub-ref-font-family-mono);
 }
 
+/* ── Numerals ──
+ *
+ * The one name here Bootstrap does not have, and it is deliberate: Bootstrap ships no
+ * `font-variant-numeric` utility at all, so there was nothing to mirror. Named into the
+ * `.font-*` family beside `.font-monospace`, because it is the same kind of decision —
+ * which shapes the glyphs take — rather than a colour or a weight.
+ *
+ * Proportional numerals give every digit its own width, so a 1 is narrower than a 0 and
+ * two amounts in a column have their units in different places. Money is read by
+ * comparing it downwards; a column whose units do not line up has to be read figure by
+ * figure instead. Consumers were writing the declaration by hand in their own sheets —
+ * five screens of one product, which is what asked for this.
+ */
+.font-tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
 /* ── Semantic text colours ── */
 .text-primary {
   color: color-mix(in srgb, var(--hub-sys-color-primary) calc(var(--hub-text-opacity, 1) * 100%), transparent);
