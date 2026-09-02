@@ -5,6 +5,29 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.8.3] - 2026-09-02
+
+### Added
+
+- **docs (forms)** — `--hub-input-plaintext-color`, the value colour on a `plaintext` field
+  (`ng-hub-ui-forms` 22.30.0), defaulting to `var(--hub-ref-color-gray-700, #495057)`.
+
+  It exists because of what a field loses along with its box. Measured on the documentation site:
+  label and value came out at exactly the same colour, separated only by 2px of size and one
+  weight step — fine inside a box, which does the separating, and not fine once the box is gone,
+  where a column of them reads as undifferentiated lines. The label is deliberately untouched, on
+  the same tokens as every other field's, because a form's labels have to keep one rhythm whatever
+  state each field is in; it is the value that steps back a shade. 8.18:1 against the page, so it
+  clears AAA, and it is a token rather than a literal.
+
+- **docs (forms)** — `--hub-input-plaintext-padding-block`
+  (`0 calc(var(--hub-input-padding-y) * 2)`) and `--hub-input-plaintext-font-weight` (`300`), the
+  rest of that treatment. The padding is the one worth reading before you override it, because it
+  is doing two jobs: nothing above puts the value directly under its label, closing that gap from
+  10px to 4px, and twice the padding below holds the control at exactly an editable field's
+  height, so a grid mixing the two still lines up. Replace it with a single value and you give up
+  one of the two.
+
 ## [22.8.2] - 2026-09-02
 
 ### Added
