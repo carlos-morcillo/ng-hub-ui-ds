@@ -5,6 +5,23 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.8.4] - 2026-09-02
+
+### Added
+
+- **docs (forms)** — the ten `--hub-form-hint-*` variables of `ng-hub-ui-forms` 22.31.0, which dress
+  the question mark that carries `formTextType="tooltip"` helper text: size, type, and the resting
+  and hover colours of its surface and border.
+
+  The one worth reading is `--hub-form-hint-size`, at `1.15em` rather than a pixel value. The mark
+  sits beside a label, so it is sized against that label's type: a form that scales its labels down
+  scales the mark with them, instead of leaving a circle that grows relative to the words next to
+  it. The rest of the family is there because the mark is drawn from CSS rather than an icon font —
+  `ng-hub-ui-icons` is not a dependency of that package — so every part of its appearance has to be
+  reachable from a token or it is not reachable at all.
+
+  Documentation-only, as always for another library's tokens.
+
 ## [22.8.3] - 2026-09-02
 
 ### Added
