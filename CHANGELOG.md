@@ -5,6 +5,25 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.8.2] - 2026-09-02
+
+### Added
+
+- **The thirty-four table variables of `ng-hub-ui-paginable` 22.17.0 are documented.** Twenty-six
+  of them exist because that release stopped naming Bootstrap classes in the filter row: the
+  controls and the clear-filters button had promised a stylesheet the family does not ship, so in
+  a product without Bootstrap the whole row was invisible. They are now drawn from
+  `--hub-table-filter-control-*` and `--hub-table-delete-filters-*`, which is what a consumer has
+  to reach for to theme them — and the only way back to the old red-at-rest clear button.
+
+  The remaining eight cover the filter row itself (`--hub-table-filter-row-bg`,
+  `--hub-table-filter-cell-padding-x` / `-y`), the search box's new clear affordance
+  (`--hub-table-search-clear-*`) and the close glyph it uses (`--hub-table-icon-close`).
+
+  Documentation-only, as always for another library's tokens: nothing in the ds's own tokens or
+  compiled CSS changes. It earns a release because this package ships its `docs/` folder, so the
+  reference table travels to consumers — and a token nobody can find is one nobody can theme.
+
 ## [22.8.1] - 2026-09-01
 
 ### Changed
