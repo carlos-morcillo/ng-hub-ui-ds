@@ -5,6 +5,23 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.8.5] - 2026-09-02
+
+### Added
+
+- **docs (modal)** — the three `--hub-modal-offcanvas-*` variables of `ng-hub-ui-modal` 22.8.0:
+  the width of a start/end drawer, the height of a top/bottom sheet, and the rounding of its
+  content. All three sit deliberately outside the modal size scale, which is the point of them:
+  `size: 'lg'` is 800px, and on an 853px window that covers the document the drawer is meant to be
+  read *against*, leaving 53px of it showing.
+
+### Fixed
+
+- **Ninety `Source` citations point at the right lines again.** `ng-hub-ui-modal` moved its default
+  declarations from `.hub-modal` to `:root` to repair its composition contract, which shifted every
+  line after them. This package ships its `docs/` folder, so the citations travel to consumers and a
+  stale number sends a reader to the wrong rule. Nothing else moved, which the parity check confirms.
+
 ## [22.8.4] - 2026-09-02
 
 ### Added
