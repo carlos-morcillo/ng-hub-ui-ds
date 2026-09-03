@@ -1372,22 +1372,22 @@ The `detail` token set is defined as a single, standardized collection that supp
 | `--hub-overlay-border-radius` | `var(--hub-sys-radius-sm, 0.25rem)` | Overlay border radius | `IN_USE` | `utils/src/lib/styles/overlay.scss:14` |
 | `--hub-overlay-shadow` | `var(--hub-sys-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15))` | Overlay shadow | `IN_USE` | `utils/src/lib/styles/overlay.scss:15` |
 | `--hub-overlay-zindex` | `var(--hub-sys-zindex-dropdown, 1000)` | Overlay z index | `IN_USE` | `utils/src/lib/styles/overlay.scss:16` |
-| `--hub-tooltip-bg` | `var(--hub-ref-color-black, #000)` | Tooltip background | `IN_USE` | `utils/src/lib/styles/tooltip.scss:17` |
-| `--hub-tooltip-border-radius` | `var(--hub-sys-radius-md, 0.375rem)` | Tooltip corner radius | `IN_USE` | `utils/src/lib/styles/tooltip.scss:22` |
-| `--hub-tooltip-color` | `var(--hub-ref-color-white, #fff)` | Tooltip text color | `IN_USE` | `utils/src/lib/styles/tooltip.scss:18` |
-| `--hub-tooltip-font-family` | `var(--hub-ref-font-family-base, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif)` | Tooltip font family | `IN_USE` | `utils/src/lib/styles/tooltip.scss:32` |
-| `--hub-tooltip-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Tooltip font size | `IN_USE` | `utils/src/lib/styles/tooltip.scss:23` |
-| `--hub-tooltip-font-weight` | `var(--hub-ref-font-weight-base, 400)` | Tooltip font weight | `IN_USE` | `utils/src/lib/styles/tooltip.scss:24` |
-| `--hub-tooltip-line-height` | `var(--hub-ref-line-height-base, 1.5)` | Tooltip line height | `IN_USE` | `utils/src/lib/styles/tooltip.scss:25` |
-| `--hub-tooltip-max-width` | `200px` | Tooltip max width | `IN_USE` | `utils/src/lib/styles/tooltip.scss:26` |
-| `--hub-tooltip-white-space` | `normal` | How the label wraps. Forwarded from the host, so one tooltip can be told to keep its text on a single line without a global rule that changes every tooltip in the product | `IN_USE` | `utils/src/lib/styles/tooltip.scss:27` |
-| `--hub-tooltip-text-align` | `center` | Alignment of the label. Forwarded the same way — a tooltip carrying a sentence or two usually wants to read left, while a short name reads better centred | `IN_USE` | `utils/src/lib/styles/tooltip.scss:28` |
-| `--hub-tooltip-opacity` | `0.9` | Tooltip visible opacity | `IN_USE` | `utils/src/lib/styles/tooltip.scss:19` |
-| `--hub-tooltip-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | Tooltip horizontal padding | `IN_USE` | `utils/src/lib/styles/tooltip.scss:20` |
-| `--hub-tooltip-padding-y` | `var(--hub-ref-space-1, 0.25rem)` | Tooltip vertical padding | `IN_USE` | `utils/src/lib/styles/tooltip.scss:21` |
-| `--hub-tooltip-shadow` | `none` | Tooltip box shadow | `IN_USE` | `utils/src/lib/styles/tooltip.scss:31` |
-| `--hub-tooltip-transition-duration` | `0.15s` | Tooltip fade duration | `IN_USE` | `utils/src/lib/styles/tooltip.scss:30` |
-| `--hub-tooltip-zindex` | `var(--hub-sys-zindex-tooltip, 1080)` | Tooltip stacking order | `IN_USE` | `utils/src/lib/styles/tooltip.scss:29` |
+| `--hub-tooltip-bg` | `var(--hub-sys-color-ink, #212529)` | Tooltip background | `IN_USE` | `utils/src/lib/styles/tooltip.scss:20` |
+| `--hub-tooltip-border-radius` | `var(--hub-sys-radius-md, 0.375rem)` | Tooltip corner radius | `IN_USE` | `utils/src/lib/styles/tooltip.scss:25` |
+| `--hub-tooltip-color` | `var(--hub-sys-surface-page, #fff)` | Tooltip text color | `IN_USE` | `utils/src/lib/styles/tooltip.scss:21` |
+| `--hub-tooltip-font-family` | `var(--hub-ref-font-family-base, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif)` | Tooltip font family | `IN_USE` | `utils/src/lib/styles/tooltip.scss:35` |
+| `--hub-tooltip-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Tooltip font size | `IN_USE` | `utils/src/lib/styles/tooltip.scss:26` |
+| `--hub-tooltip-font-weight` | `var(--hub-ref-font-weight-base, 400)` | Tooltip font weight | `IN_USE` | `utils/src/lib/styles/tooltip.scss:27` |
+| `--hub-tooltip-line-height` | `var(--hub-ref-line-height-base, 1.5)` | Tooltip line height | `IN_USE` | `utils/src/lib/styles/tooltip.scss:28` |
+| `--hub-tooltip-max-width` | `200px` | Tooltip max width | `IN_USE` | `utils/src/lib/styles/tooltip.scss:29` |
+| `--hub-tooltip-white-space` | `normal` | How the label wraps. Forwarded from the host, so one tooltip can be told to keep its text on a single line without a global rule that changes every tooltip in the product | `IN_USE` | `utils/src/lib/styles/tooltip.scss:30` |
+| `--hub-tooltip-text-align` | `center` | Alignment of the label. Forwarded the same way — a tooltip carrying a sentence or two usually wants to read left, while a short name reads better centred | `IN_USE` | `utils/src/lib/styles/tooltip.scss:31` |
+| `--hub-tooltip-opacity` | `0.9` | Tooltip visible opacity | `IN_USE` | `utils/src/lib/styles/tooltip.scss:22` |
+| `--hub-tooltip-padding-x` | `var(--hub-ref-space-2, 0.5rem)` | Tooltip horizontal padding | `IN_USE` | `utils/src/lib/styles/tooltip.scss:23` |
+| `--hub-tooltip-padding-y` | `var(--hub-ref-space-1, 0.25rem)` | Tooltip vertical padding | `IN_USE` | `utils/src/lib/styles/tooltip.scss:24` |
+| `--hub-tooltip-shadow` | `none` | Tooltip box shadow | `IN_USE` | `utils/src/lib/styles/tooltip.scss:34` |
+| `--hub-tooltip-transition-duration` | `0.15s` | Tooltip fade duration | `IN_USE` | `utils/src/lib/styles/tooltip.scss:33` |
+| `--hub-tooltip-zindex` | `var(--hub-sys-zindex-tooltip, 1080)` | Tooltip stacking order | `IN_USE` | `utils/src/lib/styles/tooltip.scss:32` |
 
 ### `select`
 
@@ -1696,6 +1696,10 @@ The standalone `tabs` proposal was **superseded**: the tabs UI shipped inside `n
 | `--hub-modal-close-line-height` | `1` | Close button line-height | `IN_USE` | `modal/src/lib/modal.scss:168` |
 | `--hub-modal-close-opacity` | `0.5` | Close button base opacity | `IN_USE` | `modal/src/lib/modal.scss:171` |
 | `--hub-modal-close-hover-opacity` | `0.75` | Close button hover/focus opacity | `IN_USE` | `modal/src/lib/modal.scss:172` |
+| `--hub-modal-close-focus-ring-width` | `2px` | Close button focus ring thickness | `IN_USE` | `modal/src/lib/modal.scss:521` |
+| `--hub-modal-close-focus-ring-color` | `var(--hub-modal-accent)` | Close button focus ring color; follows the dialog accent so a variant dialog does not draw the browser default blue | `IN_USE` | `modal/src/lib/modal.scss:522` |
+| `--hub-modal-close-focus-ring-offset` | `2px` | Gap between the close button and its focus ring | `IN_USE` | `modal/src/lib/modal.scss:523` |
+| `--hub-modal-close-focus-ring-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Corner radius of the close button focus ring | `IN_USE` | `modal/src/lib/modal.scss:524` |
 | **Backdrop**                                 |                                                                                                                                                                                             |                                                                 |          |                                |
 | `--hub-modal-backdrop-bg` | `var(--hub-ref-color-black, #000000)` | Backdrop background color | `IN_USE` | `modal/src/lib/modal.scss:173` |
 | `--hub-modal-backdrop-opacity` | `var(--hub-sys-opacity-50, 0.5)` | Backdrop visible opacity | `IN_USE` | `modal/src/lib/modal.scss:174` |

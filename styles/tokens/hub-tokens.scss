@@ -328,11 +328,11 @@ $hub-accents: map.merge($hub-accents, $hub-accents-extra);
 // Per-theme accent maps — just the base color of each variant a theme re-tints.
 
 $hub-accents-bootstrap: (
-	primary: var(--bs-primary, #0d6efd),
-	success: var(--bs-success, #198754),
-	danger: var(--bs-danger, #dc3545),
-	warning: var(--bs-warning, #ffc107),
-	info: var(--bs-info, #0dcaf0)
+	primary: #0d6efd,
+	success: #198754,
+	danger: #dc3545,
+	warning: #ffc107,
+	info: #0dcaf0
 );
 
 $hub-accents-dark: (
@@ -598,43 +598,10 @@ $hub-accents-terminal: (
 }
 
 /* ============================================================
-   Bootstrap bridge variables
-   Maps Bootstrap variables into hub sys tokens.
-   ============================================================ */
-
-:root,
-[data-theme='base'],
-[data-theme='light'],
-[data-theme='bootstrap'],
-[data-theme='dark'],
-[data-theme='sunset'],
-[data-theme='forest'],
-[data-theme='mono'] {
-	--hub-sys-color-primary: var(--bs-primary, #0d6efd);
-	--hub-sys-color-secondary: var(--bs-secondary, #6c757d);
-	--hub-sys-color-success: var(--bs-success, #198754);
-	--hub-sys-color-danger: var(--bs-danger, #dc3545);
-	--hub-sys-color-warning: var(--bs-warning, #ffc107);
-	--hub-sys-color-info: var(--bs-info, #0dcaf0);
-	--hub-sys-color-dark: var(--bs-dark, #212529);
-	--hub-sys-surface-elevated: var(--bs-light, #f8f9fa);
-	--hub-sys-border-color-default: var(--bs-border-color, #dee2e6);
-	--hub-sys-surface-page: var(--bs-body-bg, #ffffff);
-	--hub-sys-text-primary: var(--bs-body-color, #212529);
-	/* The de-emphasis ramp: alpha over the theme's own ink, so it follows any
-	   re-theme without a per-theme value. `secondary` here is the TEXT role,
-	   not the `secondary` ACCENT (a blue in most themes). */
-	--hub-sys-text-secondary: color-mix(in srgb, var(--hub-sys-text-primary) 75%, transparent);
-	--hub-sys-text-tertiary: color-mix(in srgb, var(--hub-sys-text-primary) 50%, transparent);
-}
-
-/* ============================================================
    LAYER 2 — sys (base alias)
    Base is equivalent to light theme and works as explicit default.
-   Also re-asserted for :root / [data-theme='light'] AFTER the Bootstrap
-   bridge above (whose selector also matches :root/light), so the default
-   and light themes keep their ref-based accents/surfaces instead of being
-   silently overridden by --bs-* when Bootstrap is present.
+   Every value here comes from the ref layer, so the package carries no
+   dependency on any other framework's variables.
    ============================================================ */
 
 :root,
@@ -658,29 +625,31 @@ $hub-accents-terminal: (
 
 /* ============================================================
    LAYER 2 — sys (bootstrap-aligned)
-   Preserves classic Bootstrap palette and spacing feel.
+   Reproduces the classic Bootstrap palette and spacing feel from literal
+   values. It is a look, not a dependency: nothing here reads a --bs-*
+   variable, so the theme renders identically with Bootstrap absent.
    ============================================================ */
 
 [data-theme='bootstrap'] {
 	@include hub-color-accents($hub-accents-bootstrap);
-	--hub-sys-color-secondary: var(--bs-secondary, #6c757d);
-	--hub-sys-color-dark: var(--bs-dark, #212529);
-	--hub-sys-surface-page: var(--bs-body-bg, #ffffff);
-	--hub-sys-surface-elevated: var(--bs-light, #f8f9fa);
-	--hub-sys-text-primary: var(--bs-body-color, #212529);
+	--hub-sys-color-secondary: #6c757d;
+	--hub-sys-color-dark: #212529;
+	--hub-sys-surface-page: #ffffff;
+	--hub-sys-surface-elevated: #f8f9fa;
+	--hub-sys-text-primary: #212529;
 	/* The de-emphasis ramp: alpha over the theme's own ink, so it follows any
 	   re-theme without a per-theme value. `secondary` here is the TEXT role,
 	   not the `secondary` ACCENT (a blue in most themes). */
 	--hub-sys-text-secondary: color-mix(in srgb, var(--hub-sys-text-primary) 75%, transparent);
 	--hub-sys-text-tertiary: color-mix(in srgb, var(--hub-sys-text-primary) 50%, transparent);
-	--hub-sys-text-muted: var(--bs-secondary-color, #6c757d);
-	--hub-sys-link-color: var(--bs-link-color, #0d6efd);
-	--hub-sys-link-hover-color: var(--bs-link-hover-color, #0a58ca);
-	--hub-sys-border-color-default: var(--bs-border-color, #dee2e6);
-	--hub-sys-shadow-sm: var(--bs-box-shadow-sm, 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075));
-	--hub-sys-shadow: var(--bs-box-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15));
-	--hub-sys-shadow-lg: var(--bs-box-shadow-lg, 0 1rem 3rem rgba(0, 0, 0, 0.175));
-	--hub-sys-focus-ring-color: rgba(var(--bs-primary-rgb, 13, 110, 253), 0.25);
+	--hub-sys-text-muted: #6c757d;
+	--hub-sys-link-color: #0d6efd;
+	--hub-sys-link-hover-color: #0a58ca;
+	--hub-sys-border-color-default: #dee2e6;
+	--hub-sys-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+	--hub-sys-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	--hub-sys-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+	--hub-sys-focus-ring-color: rgba(13, 110, 253, 0.25);
 	--hub-sys-state-hover-bg: rgba(0, 0, 0, 0.075);
 	--hub-sys-state-active-bg: rgba(0, 0, 0, 0.1);
 	--hub-sys-state-striped-bg: rgba(0, 0, 0, 0.05);
@@ -867,8 +836,8 @@ $hub-accents-terminal: (
    square corners, near-black surfaces and a glowing green palette.
    The immersive layer (scanlines, glow, code blocks and overrides
    for the documentation chrome) lives in styles/themes/terminal.scss.
-   Note: terminal is intentionally excluded from the Bootstrap bridge
-   block above, so its tokens and --bs-* overrides take full control.
+   Note: terminal is intentionally excluded from the bootstrap-aligned
+   theme block above, so its own tokens take full control.
    ============================================================ */
 
 [data-theme='terminal'] {

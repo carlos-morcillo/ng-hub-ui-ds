@@ -5,6 +5,29 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.9.0] - 2026-09-03
+
+### Removed
+
+- **The Bootstrap bridge.** A block of `--hub-sys-*` declarations read Bootstrap's own variables
+  — `var(--bs-primary, …)`, `var(--bs-body-color, …)`, `var(--bs-border-color, …)` — and its
+  selector covered `:root` and every theme. With Bootstrap present it silently handed that
+  package control of this one's semantic tokens; without it, every declaration resolved to its
+  fallback and the block did nothing. It is gone, and with it the package's last dependency on
+  another framework's variables: **0** `--bs-*` references remain.
+
+### Changed
+
+- **The `bootstrap` theme keeps its look and loses the dependency.** It borrowed the palette
+  through `var(--bs-*)` with the classic values as fallbacks; those values are now written
+  literally. It renders identically whether or not Bootstrap is loaded — which, since its
+  fallbacks were already the Bootstrap defaults, is what it rendered in practice all along.
+
+### Added
+
+- Four themable hooks for the modal's close-button focus ring, documented in the token spec:
+  `--hub-modal-close-focus-ring-width`, `-color`, `-offset` and `-radius`.
+
 ## [22.8.5] - 2026-09-02
 
 ### Added
