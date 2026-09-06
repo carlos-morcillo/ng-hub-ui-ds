@@ -834,8 +834,9 @@ $hub-accents-terminal: (
    LAYER 2 — sys (terminal theme)
    Green-phosphor CRT terminal aesthetic: monospace typography,
    square corners, near-black surfaces and a glowing green palette.
-   The immersive layer (scanlines, glow, code blocks and overrides
-   for the documentation chrome) lives in styles/themes/terminal.scss.
+   These are tokens only. The immersive layer that usually goes with the
+   look (scanlines, glow, styled code blocks) is not part of this package:
+   build it in your own stylesheet on top of these values.
    Note: terminal is intentionally excluded from the bootstrap-aligned
    theme block above, so its own tokens take full control.
    ============================================================ */

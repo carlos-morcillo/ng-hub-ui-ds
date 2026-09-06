@@ -5,6 +5,48 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.9.1] - 2026-09-06
+
+### Fixed
+
+- **The README stopped promising a token that resolves to nothing.** Its colour table still listed
+  `--hub-sys-color-{variant}-dark` as the fifth member of the family — retired in 22.4.0 — and never
+  mentioned `-on`, the member that replaced it and that forms, buttons and badges consume today. The
+  "SCSS functions" section described a closed `$hub-variants` list and a `-dark` back-compat alias,
+  a mechanism the package left behind in that same release: it now shows the open `$hub-accents` map,
+  `$hub-accents-extra` and the real derivation loop, so a reader who copies it gets working code.
+  Also restores the seven libraries missing from the family list and drops the two that are not in it:
+  `ng-hub-ui-accordion`, retired in favour of panels, and `ng-hub-ui-dropdown`, which is a directive
+  inside `ng-hub-ui-buttons` and never a package. `focus-ring-color()` joins the mixin catalogue.
+  Both languages.
+- **`BREAKING_CHANGES.md` records the 22.4.0 removal of `--hub-sys-color-{variant}-dark`.** It shipped
+  with a changelog line and no entry here; in this repository the major tracks Angular and can never
+  signal a break, so this file is the only warning a consumer gets — and a CSS variable that resolves
+  to nothing fails silently, at paint time, with no build error.
+- **The terminal-theme comment no longer points at a file the package does not ship.** It sent the
+  reader to `styles/themes/terminal.scss`, which lives in the documentation app, not here. The
+  compiled `hub-tokens.css` carries the same correction.
+- **Docs site** — the family gallery on the design-system page claimed `avatar`, `milestones` and
+  `utils` were still pending after they had been wired to `--hub-sys-*`, and listed none of
+  `action-sheet`, `badges`, `buttons`, `icons`, `loading`, `metrics` or `signature`. Its cards also
+  linked to unprefixed URLs, which only resolve through a legacy redirect table `action-sheet` is
+  absent from, and which drop a reader of the Spanish page into the English docs; they are relative
+  now. Nothing in the published package changes.
+
+### Added
+
+- **`FUNCTIONALITIES.md`**, the coverage table the rest of the family carries: which tokens, mixins
+  and utilities exist and which of them the documentation actually demonstrates. Every mixin is
+  marked uncovered on purpose — the page's demos consume the utility classes, as it says itself.
+
+### Removed
+
+- **Docs site** — the orphan `app-topbar` component. The site's top navigation moved into the app
+  shell's sidebar slots and nothing mounts the component any more, but its stylesheet stayed behind
+  as the last place in the repository still reading `--hub-sys-color-primary-dark`, the alias this
+  package retired in 22.4.0. A component nobody renders is still a component somebody copies styles
+  from, which is the only reason this was worth a line. Nothing in the published package changes.
+
 ## [22.9.0] - 2026-09-03
 
 ### Removed
@@ -14,7 +56,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   selector covered `:root` and every theme. With Bootstrap present it silently handed that
   package control of this one's semantic tokens; without it, every declaration resolved to its
   fallback and the block did nothing. It is gone, and with it the package's last dependency on
-  another framework's variables: **0** `--bs-*` references remain.
+  another framework's variables: the emitted tokens carry **0** `--bs-*` references. The
+  only ones left in the package are inside `bridge-bootstrap()`, which emits nothing unless
+  you call it.
 
 ### Changed
 

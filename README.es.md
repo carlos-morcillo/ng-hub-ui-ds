@@ -27,25 +27,30 @@ librerías de componentes Angular para aplicaciones standalone.
 Este paquete es la base de design tokens de la que lee el resto del ecosistema
 **ng-hub-ui**:
 
-- [**ng-hub-ui-accordion**](https://www.npmjs.com/package/ng-hub-ui-accordion) (obsoleta — usa ng-hub-ui-panels)
 - [**ng-hub-ui-action-sheet**](https://www.npmjs.com/package/ng-hub-ui-action-sheet)
 - [**ng-hub-ui-avatar**](https://www.npmjs.com/package/ng-hub-ui-avatar)
+- [**ng-hub-ui-badges**](https://www.npmjs.com/package/ng-hub-ui-badges)
 - [**ng-hub-ui-board**](https://www.npmjs.com/package/ng-hub-ui-board)
 - [**ng-hub-ui-breadcrumbs**](https://www.npmjs.com/package/ng-hub-ui-breadcrumbs)
+- [**ng-hub-ui-buttons**](https://www.npmjs.com/package/ng-hub-ui-buttons)
 - [**ng-hub-ui-calendar**](https://www.npmjs.com/package/ng-hub-ui-calendar)
-- [**ng-hub-ui-dropdown**](https://www.npmjs.com/package/ng-hub-ui-dropdown)
 - [**ng-hub-ui-ds**](https://www.npmjs.com/package/ng-hub-ui-ds) ← Estás aquí
 - [**ng-hub-ui-forms**](https://www.npmjs.com/package/ng-hub-ui-forms)
 - [**ng-hub-ui-history**](https://www.npmjs.com/package/ng-hub-ui-history)
+- [**ng-hub-ui-icons**](https://www.npmjs.com/package/ng-hub-ui-icons)
+- [**ng-hub-ui-loading**](https://www.npmjs.com/package/ng-hub-ui-loading)
+- [**ng-hub-ui-metrics**](https://www.npmjs.com/package/ng-hub-ui-metrics)
 - [**ng-hub-ui-milestones**](https://www.npmjs.com/package/ng-hub-ui-milestones)
 - [**ng-hub-ui-modal**](https://www.npmjs.com/package/ng-hub-ui-modal)
 - [**ng-hub-ui-nav**](https://www.npmjs.com/package/ng-hub-ui-nav)
 - [**ng-hub-ui-paginable**](https://www.npmjs.com/package/ng-hub-ui-paginable)
 - [**ng-hub-ui-panels**](https://www.npmjs.com/package/ng-hub-ui-panels)
 - [**ng-hub-ui-portal**](https://www.npmjs.com/package/ng-hub-ui-portal)
+- [**ng-hub-ui-signature**](https://www.npmjs.com/package/ng-hub-ui-signature)
 - [**ng-hub-ui-skeleton**](https://www.npmjs.com/package/ng-hub-ui-skeleton)
 - [**ng-hub-ui-sortable**](https://www.npmjs.com/package/ng-hub-ui-sortable)
 - [**ng-hub-ui-stepper**](https://www.npmjs.com/package/ng-hub-ui-stepper)
+- [**ng-hub-ui-toast**](https://www.npmjs.com/package/ng-hub-ui-toast)
 - [**ng-hub-ui-utils**](https://www.npmjs.com/package/ng-hub-ui-utils)
 
 ---
@@ -178,8 +183,10 @@ espaciado direccional `-x` / `-y`.
 
 ## 🎨 Los colores semánticos
 
-Cada color semántico (`primary` · `success` · `danger` · `warning` · `info`)
-expone una **familia uniforme** de cinco tokens:
+Cada variante semántica expone una **familia uniforme** de cinco tokens. El conjunto por
+defecto es `primary` · `secondary` · `success` · `danger` · `warning` · `info` · `neutral` ·
+`light` · `dark`, y es **abierto**: cada variante que añadas obtiene la misma familia (ver
+[Cómo modificarlo](#️-cómo-modificarlo)).
 
 | Token                               | Uso típico                                     |
 | ----------------------------------- | ---------------------------------------------- |
@@ -187,7 +194,7 @@ expone una **familia uniforme** de cinco tokens:
 | `--hub-sys-color-<v>-subtle`        | Fondo tenue (banners, alertas)                 |
 | `--hub-sys-color-<v>-border-subtle` | Borde tenue sobre el fondo subtle              |
 | `--hub-sys-color-<v>-emphasis`      | Texto legible sobre el fondo subtle            |
-| `--hub-sys-color-<v>-dark`          | Variante oscura del color                      |
+| `--hub-sys-color-<v>-on`            | Color de texto/icono con contraste **sobre** el acento |
 
 Ejemplo de uso (un aviso a juego con el resto de la familia):
 
@@ -248,7 +255,7 @@ Los únicos nombres fuera de Bootstrap son los primitivos de layout que reflejan
 .sr-label    { @include hub.visually-hidden(); }
 ```
 
-Grupos: **tema** (`theme()` — tematización parcial en una llamada: pásale solo las escalas/acentos cambiados como mapas), **breakpoints** (`media-breakpoint-up/down` sobre el mapa `$hub-breakpoints` — de él se generan las variantes responsive `.d-md-*`, `.col-lg-*`, `.p-sm-*`…), **layout** (`stack`, `cluster`, `grid`, `grid-fixed`, `row`, `col`, `offset`, `center`), **tipografía** (`font-family`, `font-size`, `font-weight`, `line-height`, `text-color`, `link-color`, `text-truncate`, `text-break`), **superficies** (`bg`, `text-bg`, `border`, `border-color`, `radius`, `shadow`), **helpers** (`focus-ring`, `visually-hidden`, `stretched-link`, `ratio`, `clearfix`) y los **puentes** (`bridge-bootstrap` / `bridge-material` / `bridge-tailwind` / `bridge-open-props`).
+Grupos: **tema** (`theme()` — tematización parcial en una llamada: pásale solo las escalas/acentos cambiados como mapas), **breakpoints** (`media-breakpoint-up/down` sobre el mapa `$hub-breakpoints` — de él se generan las variantes responsive `.d-md-*`, `.col-lg-*`, `.p-sm-*`…), **layout** (`stack`, `cluster`, `grid`, `grid-fixed`, `row`, `col`, `offset`, `center`), **tipografía** (`font-family`, `font-size`, `font-weight`, `line-height`, `text-color`, `link-color`, `text-truncate`, `text-break`), **superficies** (`bg`, `text-bg`, `border`, `border-color`, `radius`, `shadow`), **helpers** (`focus-ring`, `focus-ring-color`, `visually-hidden`, `stretched-link`, `ratio`, `clearfix`) y los **puentes** (`bridge-bootstrap` / `bridge-material` / `bridge-tailwind` / `bridge-open-props`).
 
 El catálogo completo con demos en vivo está documentado en [hubui.dev/design-system](https://hubui.dev/en/design-system/).
 
@@ -311,43 +318,55 @@ Reúne tus overrides bajo un atributo de tema y actívalo cuando quieras:
 ## 🧩 Funciones SCSS (cómo se genera por dentro)
 
 Las familias de color semántico **no se escriben a mano**, y un tema solo fija el
-**acento** de cada variante — `-subtle`, `-border-subtle` y `-emphasis` se derivan
-**una sola vez** en `:root` con `color-mix()` a partir del acento, la superficie y
-el _ink_ vivos. Así, añadir un color o un tema es uniforme y sin _boilerplate_.
+**acento** de cada variante — `-subtle`, `-border-subtle`, `-emphasis` y `-on` se
+derivan **una sola vez** en `:root` a partir del acento, la superficie y el _ink_
+vivos. Los nombres de las variantes viven en un único mapa Sass **abierto**, así
+que añadir un color o un tema es uniforme y sin _boilerplate_.
 
 ```scss
-$hub-variants: primary, success, danger, warning, info;
-
-// Un acento por variante, por tema — solo el color base.
-$hub-accents-light: (
+// El ÚNICO sitio que enumera los nombres de variante. Es `!default`, así que puedes
+// reemplazarlo entero antes del import — o, mejor, fusionar con $hub-accents-extra.
+$hub-accents: (
 	primary: var(--hub-ref-color-blue-500, #0d6efd),
+	secondary: var(--hub-ref-color-gray-600, #6c757d),
 	success: var(--hub-ref-color-green-500, #198754),
 	danger:  var(--hub-ref-color-red-500, #dc3545),
 	warning: var(--hub-ref-color-yellow-500, #ffc107),
-	info:    var(--hub-ref-color-cyan-500, #0dcaf0)
-);
+	info:    var(--hub-ref-color-cyan-500, #0dcaf0),
+	neutral: var(--hub-ref-color-gray-600, #6c757d),
+	light:   var(--hub-ref-color-gray-100, #f8f9fa),
+	dark:    var(--hub-ref-color-gray-900, #212529)
+) !default;
 
-// Fija SOLO --hub-sys-color-<variante> (el acento). Se llama en cada tema.
+// Override aditivo — pasa SOLO las variantes que añades o retocas, conserva las demás.
+$hub-accents-extra: () !default;
+$hub-accents: map.merge($hub-accents, $hub-accents-extra);
+
+// Fija SOLO --hub-sys-color-<variante> (el acento). Se llama en cada bloque de tema
+// con el mapa propio del tema, así que un tema emite justo las variantes que retinta.
 @mixin hub-color-accents($accents) {
-	@each $name in $hub-variants {
-		--hub-sys-color-#{$name}: #{map.get($accents, $name)};
+	@each $name, $color in $accents {
+		--hub-sys-color-#{$name}: #{$color};
 	}
 }
 
-// Deriva la familia de roles del acento + superficie + ink vivos. Se emite UNA
-// vez en :root; los temas solo cambian las entradas y la familia se recalcula.
+// Deriva la familia de roles del acento + superficie + ink vivos. Se emite UNA vez
+// en :root sobre el conjunto abierto, así que cada variante — incluidas las tuyas —
+// obtiene su familia completa gratis.
 @mixin hub-color-derive() {
-	@each $name in $hub-variants {
+	@each $name in map.keys($hub-accents) {
 		--hub-sys-color-#{$name}-subtle:        color-mix(in oklch, var(--hub-sys-color-#{$name}) 12%, var(--hub-sys-surface-page, #fff));
 		--hub-sys-color-#{$name}-border-subtle: color-mix(in oklch, var(--hub-sys-color-#{$name}) 35%, var(--hub-sys-surface-page, #fff));
 		--hub-sys-color-#{$name}-emphasis:      color-mix(in oklch, var(--hub-sys-color-#{$name}) 80%, var(--hub-sys-color-ink, #212529));
-		--hub-sys-color-#{$name}-dark:          var(--hub-sys-color-#{$name}-emphasis); // alias retrocompatible
+		// Volteo de contraste en escala de grises según la luminosidad del propio acento:
+		// los acentos oscuros (L < .62) resuelven a texto blanco; los claros, a casi negro.
+		--hub-sys-color-#{$name}-on:            oklch(from var(--hub-sys-color-#{$name}) clamp(0, (0.62 - l) * 1000, 1) 0 h);
 	}
 }
 
 :root,
 [data-theme='light'] {
-	@include hub-color-accents($hub-accents-light);
+	@include hub-color-accents($hub-accents);
 	@include hub-color-derive();
 }
 ```
@@ -355,8 +374,8 @@ $hub-accents-light: (
 > Casi nunca necesitas tocar el SCSS: como la familia se deriva del **acento
 > único** en tiempo de ejecución, sobrescribir `--hub-sys-color-<variante>` en CSS
 > plano — incluso en un subárbol — recalcula `-subtle` / `-border-subtle` /
-> `-emphasis` automáticamente. Los mapas + mixins son solo la mecánica interna,
-> útil si contribuyes al paquete o compilas tu propia variante de la paleta.
+> `-emphasis` / `-on` automáticamente. Los mapas + mixins son solo la mecánica
+> interna, útil si contribuyes al paquete o compilas tu propia variante de la paleta.
 
 ---
 
