@@ -5,6 +5,17 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.9.2] - 2026-09-07
+
+### Changed
+
+- **The token catalogue catches up with the release of 2026-09-07.** `docs/variables-css-library.en.md`
+  travels inside the published package, so it is the one place a consumer can read what every
+  `--hub-*` token is for without cloning the repository. Six libraries moved their defaults off
+  their own element in that release, two calendar tokens are new, and the `Source` column pointed at
+  lines that had shifted. All of that is now in step with the code, which is what `npm run
+tokens:parity` checks on every build.
+
 ## [22.9.1] - 2026-09-06
 
 ### Fixed
@@ -80,7 +91,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   the width of a start/end drawer, the height of a top/bottom sheet, and the rounding of its
   content. All three sit deliberately outside the modal size scale, which is the point of them:
   `size: 'lg'` is 800px, and on an 853px window that covers the document the drawer is meant to be
-  read *against*, leaving 53px of it showing.
+  read _against_, leaving 53px of it showing.
 
 ### Fixed
 
@@ -97,14 +108,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   the question mark that carries `formTextType="tooltip"` helper text: size, type, and the resting
   and hover colours of its surface and border.
 
-  The one worth reading is `--hub-form-hint-size`, at `1.15em` rather than a pixel value. The mark
-  sits beside a label, so it is sized against that label's type: a form that scales its labels down
-  scales the mark with them, instead of leaving a circle that grows relative to the words next to
-  it. The rest of the family is there because the mark is drawn from CSS rather than an icon font —
-  `ng-hub-ui-icons` is not a dependency of that package — so every part of its appearance has to be
-  reachable from a token or it is not reachable at all.
+    The one worth reading is `--hub-form-hint-size`, at `1.15em` rather than a pixel value. The mark
+    sits beside a label, so it is sized against that label's type: a form that scales its labels down
+    scales the mark with them, instead of leaving a circle that grows relative to the words next to
+    it. The rest of the family is there because the mark is drawn from CSS rather than an icon font —
+    `ng-hub-ui-icons` is not a dependency of that package — so every part of its appearance has to be
+    reachable from a token or it is not reachable at all.
 
-  Documentation-only, as always for another library's tokens.
+    Documentation-only, as always for another library's tokens.
 
 ## [22.8.3] - 2026-09-02
 
@@ -113,13 +124,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **docs (forms)** — `--hub-input-plaintext-color`, the value colour on a `plaintext` field
   (`ng-hub-ui-forms` 22.30.0), defaulting to `var(--hub-ref-color-gray-700, #495057)`.
 
-  It exists because of what a field loses along with its box. Measured on the documentation site:
-  label and value came out at exactly the same colour, separated only by 2px of size and one
-  weight step — fine inside a box, which does the separating, and not fine once the box is gone,
-  where a column of them reads as undifferentiated lines. The label is deliberately untouched, on
-  the same tokens as every other field's, because a form's labels have to keep one rhythm whatever
-  state each field is in; it is the value that steps back a shade. 8.18:1 against the page, so it
-  clears AAA, and it is a token rather than a literal.
+    It exists because of what a field loses along with its box. Measured on the documentation site:
+    label and value came out at exactly the same colour, separated only by 2px of size and one
+    weight step — fine inside a box, which does the separating, and not fine once the box is gone,
+    where a column of them reads as undifferentiated lines. The label is deliberately untouched, on
+    the same tokens as every other field's, because a form's labels have to keep one rhythm whatever
+    state each field is in; it is the value that steps back a shade. 8.18:1 against the page, so it
+    clears AAA, and it is a token rather than a literal.
 
 - **docs (forms)** — `--hub-input-plaintext-padding-block`
   (`0 calc(var(--hub-input-padding-y) * 2)`) and `--hub-input-plaintext-font-weight` (`300`), the
@@ -140,13 +151,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `--hub-table-filter-control-*` and `--hub-table-delete-filters-*`, which is what a consumer has
   to reach for to theme them — and the only way back to the old red-at-rest clear button.
 
-  The remaining eight cover the filter row itself (`--hub-table-filter-row-bg`,
-  `--hub-table-filter-cell-padding-x` / `-y`), the search box's new clear affordance
-  (`--hub-table-search-clear-*`) and the close glyph it uses (`--hub-table-icon-close`).
+    The remaining eight cover the filter row itself (`--hub-table-filter-row-bg`,
+    `--hub-table-filter-cell-padding-x` / `-y`), the search box's new clear affordance
+    (`--hub-table-search-clear-*`) and the close glyph it uses (`--hub-table-icon-close`).
 
-  Documentation-only, as always for another library's tokens: nothing in the ds's own tokens or
-  compiled CSS changes. It earns a release because this package ships its `docs/` folder, so the
-  reference table travels to consumers — and a token nobody can find is one nobody can theme.
+    Documentation-only, as always for another library's tokens: nothing in the ds's own tokens or
+    compiled CSS changes. It earns a release because this package ships its `docs/` folder, so the
+    reference table travels to consumers — and a token nobody can find is one nobody can theme.
 
 ## [22.8.1] - 2026-09-01
 
@@ -167,11 +178,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   mirror. Named into the `.font-*` family beside `.font-monospace`, because it is the same
   kind of decision — which shapes the glyphs take.
 
-  Proportional numerals give every digit its own width, so a 1 is narrower than a 0 and two
-  amounts in a column have their units in different places. Money is read by comparing it
-  downwards, and a column whose units do not line up has to be read figure by figure
-  instead. Consumers were writing the declaration by hand in their own sheets — five screens
-  of one product, which is what asked for this.
+    Proportional numerals give every digit its own width, so a 1 is narrower than a 0 and two
+    amounts in a column have their units in different places. Money is read by comparing it
+    downwards, and a column whose units do not line up has to be read figure by figure
+    instead. Consumers were writing the declaration by hand in their own sheets — five screens
+    of one product, which is what asked for this.
 
 - **docs (table)** — `--hub-table-action-disabled-opacity`, how far a refused action button is
   faded (`ng-hub-ui-paginable` 22.15.0), defaulting to `0.5`. Consumed-only. It exists because
@@ -217,7 +228,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- **The parity check no longer skips a declaration that wraps.** Its pattern needed the whole declaration, terminating `;` included, on a single line; a long `calc()` broken by the formatter therefore registered as *undeclared*, so value parity had nothing to compare and the documented value was free to drift in silence. Teaching it to read a wrapped declaration as one logical line immediately surfaced sixteen stale values — one in this spec and fifteen in the per-library reference docs of `avatar`, `board`, `modal`, `paginable`, `panels` and `stepper`, where for instance `--hub-modal-margin` was still documented as `1.75rem auto` long after the code had decomposed it into four per-side tokens. All sixteen are corrected.
+- **The parity check no longer skips a declaration that wraps.** Its pattern needed the whole declaration, terminating `;` included, on a single line; a long `calc()` broken by the formatter therefore registered as _undeclared_, so value parity had nothing to compare and the documented value was free to drift in silence. Teaching it to read a wrapped declaration as one logical line immediately surfaced sixteen stale values — one in this spec and fifteen in the per-library reference docs of `avatar`, `board`, `modal`, `paginable`, `panels` and `stepper`, where for instance `--hub-modal-margin` was still documented as `1.75rem auto` long after the code had decomposed it into four per-side tokens. All sixteen are corrected.
 
 ## [22.7.16] - 2026-08-24
 
@@ -340,9 +351,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **utilities — the Bootstrap-standard classes the sheets were missing.** The utility sheets promise Bootstrap-exact names; an audit against `bootstrap@5` found 74 base classes documented there but absent here. All of them now ship, emitted through the existing accent loops and the surface/typography mixins, so they follow a re-theme like everything else:
-  - `text.scss` — `.text-{accent}-emphasis` (the accent driven toward the theme's ink; legible as body copy on its own `-subtle` background), `.text-black-50` / `.text-white-50`, `.link-opacity-{10,25,50,75,100}`.
-  - `surfaces.scss` — `.bg-body-secondary` / `.bg-body-tertiary` (the **surface** de-emphasis ramp), `.border-{accent}-subtle`, `.border-black` / `.border-white`, `.border-opacity-{10,25,50,75,100}`, and the side-scoped radii `.rounded-{top,bottom,start,end}-{0..5,circle,pill}` — logical corners, so they flip correctly in RTL.
-  - `layout.scss` — `.d-inline-grid` (plus its `.d-print-` and responsive variants), `.focus-ring-{accent}`.
+    - `text.scss` — `.text-{accent}-emphasis` (the accent driven toward the theme's ink; legible as body copy on its own `-subtle` background), `.text-black-50` / `.text-white-50`, `.link-opacity-{10,25,50,75,100}`.
+    - `surfaces.scss` — `.bg-body-secondary` / `.bg-body-tertiary` (the **surface** de-emphasis ramp), `.border-{accent}-subtle`, `.border-black` / `.border-white`, `.border-opacity-{10,25,50,75,100}`, and the side-scoped radii `.rounded-{top,bottom,start,end}-{0..5,circle,pill}` — logical corners, so they flip correctly in RTL.
+    - `layout.scss` — `.d-inline-grid` (plus its `.d-print-` and responsive variants), `.focus-ring-{accent}`.
 - **tokens — `--hub-sys-text-secondary` and `--hub-sys-text-tertiary`.** Two rungs of the text de-emphasis ramp were consumed by `text-color()` through a fallback but never declared, so `.text-body-secondary` and `.text-body-tertiary` both silently collapsed onto `.text-muted`. They are now derived as alpha over each theme's own `--hub-sys-text-primary` (75% / 50%) — no per-theme value needed, and they survive any re-theme.
 - **mixins — `focus-ring-color($variant)`** (`_helpers.scss`), the public API behind `.focus-ring-*`. It re-tints `--hub-sys-focus-ring-color` and leaves the geometry to `focus-ring()`; set it on the element, not on its focus state.
 - **cascade knobs — `--hub-border-opacity`, `--hub-link-opacity`, `--hub-focus-ring-opacity`**, documented alongside the existing `--hub-bg-opacity` / `--hub-text-opacity` contract.
@@ -357,9 +368,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **docs (token catalogue) — hygiene wave for the Figma design-system sync.** Documentation-only; no token or compiled-CSS changes.
-  - The 41 foundational `sys` rows still flagged `PENDING` (shadows ×6, focus/accessibility ×5, zindex ×8, transitions & states ×10, breakpoints ×6, opacity ×6) were re-flagged **`IN_USE`** — every one of them has been compiled in `styles/tokens/hub-tokens.css` for a while; only the flags were stale. The parity guard now has a foundational shipped-PENDING check (A3) so this cannot drift silently again.
-  - The `metrics` token table moved from the Appendix to its canonical place in the Components chapter (`### metrics`), like every other library.
-  - The "Light / Dark theme" table is now explicitly marked as illustrative (`parity:ignore` region) — its rows re-document tokens whose canonical rows live in their own sections.
+    - The 41 foundational `sys` rows still flagged `PENDING` (shadows ×6, focus/accessibility ×5, zindex ×8, transitions & states ×10, breakpoints ×6, opacity ×6) were re-flagged **`IN_USE`** — every one of them has been compiled in `styles/tokens/hub-tokens.css` for a while; only the flags were stale. The parity guard now has a foundational shipped-PENDING check (A3) so this cannot drift silently again.
+    - The `metrics` token table moved from the Appendix to its canonical place in the Components chapter (`### metrics`), like every other library.
+    - The "Light / Dark theme" table is now explicitly marked as illustrative (`parity:ignore` region) — its rows re-document tokens whose canonical rows live in their own sections.
 - **docs (select)** — `--hub-select-dropdown-zindex` documented as the canonical spelling of the select dropdown stacking hook (`ng-hub-ui-forms` 22.8.0); the old `--hub-select-dropdown-z-index` row remains as the deprecated default carrier.
 
 ### Added
@@ -545,14 +556,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `--hub-sys-color-{variant}-dark` is kept as a back-compat alias of `-emphasis`.
 
-
 ## [22.0.0] - 2026-06-17
 
 ### Changed
 
 - Aligned with Angular 22.
 - README documentation standardized.
-
 
 ## [1.0.0] - 2026-06-16
 
