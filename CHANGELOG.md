@@ -11,10 +11,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **The token catalogue catches up with the release of 2026-09-07.** `docs/variables-css-library.en.md`
   travels inside the published package, so it is the one place a consumer can read what every
-  `--hub-*` token is for without cloning the repository. Six libraries moved their defaults off
-  their own element in that release, two calendar tokens are new, and the `Source` column pointed at
-  lines that had shifted. All of that is now in step with the code, which is what `npm run
-tokens:parity` checks on every build.
+  `--hub-*` token is for without cloning the repository. Six libraries moved their defaults off their
+  own element in that release, and the `Source` column pointed at lines that had shifted. All of that
+  is now in step with the code, which is what `npm run tokens:parity` checks on every build.
+
+- **Five calendar tokens documented, three of them new to the catalogue rather than to the code.**
+  `--hub-calendar-height` (the calendar's own height, written by its new `height` input),
+  `--hub-calendar-header-gap` (the floor on the distance between the header title and either button
+  group) and `--hub-calendar-event-time-font-size` (the hour at the end of a month chip) arrive with
+  `ng-hub-ui-calendar` 22.7.0. `--hub-calendar-event-gap` and `--hub-calendar-event-padding-x-timed`
+  were already read by the component and had never been written down — a hook a consumer could set
+  and never learn about — which is exactly the gap this file exists to close.
+
+- **Three calendar defaults corrected, because the code moved and the table did not.**
+  `--hub-calendar-event-font-size` now documents `var(--hub-ref-font-size-xs, 0.75rem)` and
+  `--hub-calendar-day-padding-x` / `-y` document `var(--hub-ref-space-1, 0.25rem)`: the month grid
+  was tightened in that same calendar release. The parity check cannot catch these on its own —
+  all three are consumed-only hooks with no declaration to compare against — so they are the kind
+  of row that goes stale silently.
 
 ## [22.9.1] - 2026-09-06
 
