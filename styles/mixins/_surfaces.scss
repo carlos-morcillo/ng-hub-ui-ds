@@ -48,11 +48,17 @@
 	color: var(--hub-sys-color-#{$variant}-on);
 }
 
-/// Solid border on all sides, token-driven colour. The colour is emitted through
-/// `--hub-border-opacity` (default 1), so `.border-opacity-*` fades it.
-/// @param {Number} $width  Border width.
+/// Solid border on all sides, token-driven colour AND width. The colour is emitted
+/// through `--hub-border-opacity` (default 1), so `.border-opacity-*` fades it; the
+/// width goes through `--hub-border-width`, which is what lets a theme flatten every
+/// boxed surface at once. Before this, the 1px was written into the rule, so a theme
+/// could recolour a border but never remove or thicken one.
+/// @param {Number} $width  Border width; defaults to the themable width chain.
 /// @param {String} $color  Any CSS colour; defaults to the canonical border token.
-@mixin border($width: 1px, $color: var(--hub-sys-border-color-default)) {
+@mixin border(
+	$width: var(--hub-border-width, var(--hub-ref-border-width, 1px)),
+	$color: var(--hub-sys-border-color-default)
+) {
 	border: $width solid color-mix(in srgb, #{$color} calc(var(--hub-border-opacity, 1) * 100%), transparent);
 }
 

@@ -517,6 +517,8 @@ Cascade knobs read by the opt-in utility sheets and their mixin equivalents. The
 | `--hub-link-opacity` | `1` | Opacity multiplier for the `.link-*` text colour (set by `.link-opacity-{10,25,50,75,100}`) | `IN_USE` | `ds/styles/utilities/text.scss:199` |
 | `--hub-border-opacity` | `1` | Opacity multiplier applied by `.border` / `.border-*` colour utilities (set by `.border-opacity-{10,25,50,75,100}`) | `IN_USE` | `ds/styles/utilities/surfaces.scss:117` |
 | `--hub-focus-ring-opacity` | `0.25` | Alpha the `.focus-ring-*` utilities mix the accent with when re-tinting `--hub-sys-focus-ring-color` | `IN_USE` | `ds/styles/mixins/_helpers.scss:70` |
+| `--hub-border-width` | `var(--hub-ref-border-width, 1px)` | Thickness of the box `.border` draws around a surface. A flat theme sets it to `0` and every boxed surface loses its outline at once, without a consumer rewriting a single rule | `IN_USE` | `ds/styles/mixins/_surfaces.scss:58` |
+| `--hub-border-side-width` | `var(--hub-ref-border-width, 1px)` | Thickness of the single-side rules (`.border-top`, `-bottom`, `-start`, `-end`). Deliberately separate from `--hub-border-width`: those rules separate one row from the next, and that is structure a flat theme should not erase along with its cards | `IN_USE` | `ds/styles/utilities/surfaces.scss:93` |
 
 ## `container` Variables (Inheritable base)
 
@@ -1304,7 +1306,7 @@ The `detail` token set is defined as a single, standardized collection that supp
 | `--hub-badge-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Badge transition | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:53` |
 | `--hub-badge-active-bg` | `var(--hub-badge-accent-emphasis)` | Active (pressed) background of an interactive badge (.hub-badge--active) | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:55` |
 | `--hub-badge-overlay-offset` | `-0.25rem` | Corner inset of the overlay status dot (dotOverlay) | `IN_USE` | `badges/src/lib/components/badge/badge.component.scss:57` |
-| `--hub-chip-set-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gap between chips inside a hub-chip-set | `IN_USE` | `badges/src/lib/components/chip-set/chip-set.component.scss:2` |
+| `--hub-chip-set-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gap between chips inside a hub-chip-set | `IN_USE` | `badges/src/lib/components/chip-set/chip-set.component.scss:5` |
 | `--hub-chip-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Chip transition | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:39` |
 | `--hub-chip-focus-ring-width` | `var(--hub-sys-focus-ring-width, 0.25rem)` | Chip focus ring width | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:38` |
 | `--hub-chip-border-radius` | `var(--hub-ref-radius-pill, 50rem)` | Chip shell radius | `IN_USE` | `badges/src/lib/components/chip/chip.component.scss:37` |
@@ -2188,7 +2190,7 @@ Neutral loading-placeholder tokens (no semantic colour variant). The base / high
 | `--hub-stepper-content-padding-y` | `0` | Content vertical padding | `IN_USE` | `stepper/src/lib/stepper/stepper.component.scss:60` |
 | `--hub-stepper-nav-padding-x` | `0` | Nav horizontal padding | `IN_USE` | `stepper/src/lib/stepper/stepper.component.scss:21` |
 | `--hub-stepper-nav-padding-y` | `0` | Nav vertical padding | `IN_USE` | `stepper/src/lib/stepper/stepper.component.scss:22` |
-| `--hub-stepper-nav-title-max-width` | `12rem` | Max width of a step nav title before ellipsis | `IN_USE` | `stepper/src/lib/stepper/stepper.component.scss:387` |
+| `--hub-stepper-nav-title-max-width` | `12rem` | Max width of a step nav title before ellipsis | `IN_USE` | `stepper/src/lib/stepper/stepper.component.scss:403` |
 
 ### `layout`
 
@@ -2276,6 +2278,7 @@ Neutral loading-placeholder tokens (no semantic colour variant). The base / high
 | `--hub-nav-accent-emphasis` | `color-mix(in oklch, var(--hub-nav-accent) 80%, var(--hub-sys-color-ink, #212529))` | Accent emphasis role — the accent mixed over the theme ink, so accent text reads with enough contrast | `IN_USE` | `nav/src/styles/nav-tokens.scss:43` |
 | `--hub-nav-accent-on` | `oklch(from var(--hub-nav-accent) clamp(0, (0.62 - l) * 1000, 1) 0 h)` | Accent on-color — text sitting on the accent, a grayscale flip driven by the accent's own lightness | `IN_USE` | `nav/src/styles/nav-tokens.scss:47` |
 | `--hub-nav-bg` | `color-mix(in oklch, var(--hub-nav-accent) 5%, var(--hub-sys-surface-page, #fff))` | Navigation surface background (faint accent tint, re-based per variant) | `IN_USE` | `nav/src/styles/nav-tokens.scss:50` |
+| `--hub-nav-bg-image` | `none` | Optional `<image>` layered over `--hub-nav-bg`. A gradient substituted into `background-color` computes to an invalid value and drops the declaration, so it travels on its own property with the colour underneath as the fallback | `CONSUMED` | `nav/src/components/nav/nav.component.scss:15` |
 | `--hub-nav-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Navigation border color | `IN_USE` | `nav/src/styles/nav-tokens.scss:52` |
 | `--hub-nav-border-style` | `solid` | Navigation border style | `IN_USE` | `nav/src/styles/nav-tokens.scss:54` |
 | `--hub-nav-border-width` | `1px` | Navigation border width | `IN_USE` | `nav/src/styles/nav-tokens.scss:53` |
@@ -2307,7 +2310,7 @@ Neutral loading-placeholder tokens (no semantic colour variant). The base / high
 | `--hub-nav-header-padding-y` | `var(--hub-ref-space-1, 0.25rem)` | Section header vertical padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:114` |
 | `--hub-nav-height` | `3.5rem` | Navigation bar height | `IN_USE` | `nav/src/styles/nav-tokens.scss:9` |
 | `--hub-nav-horizontal-items-justify` | `center` | Horizontal items justification | `IN_USE` | `nav/src/styles/nav-tokens.scss:16` |
-| `--hub-nav-collapsed-justify` | `space-between` | `justify-content` of items when the nav is collapsed (opt-in hook) | `IN_USE` | `nav/src/components/nav/nav.component.scss:69` |
+| `--hub-nav-collapsed-justify` | `space-between` | `justify-content` of items when the nav is collapsed (opt-in hook) | `IN_USE` | `nav/src/components/nav/nav.component.scss:75` |
 | `--hub-nav-horizontal-items-overflow-x` | `auto` | Horizontal items x-overflow | `IN_USE` | `nav/src/styles/nav-tokens.scss:17` |
 | `--hub-nav-horizontal-items-overflow-y` | `hidden` | Horizontal items y-overflow | `IN_USE` | `nav/src/styles/nav-tokens.scss:18` |
 | `--hub-nav-horizontal-padding-x` | `0` | Horizontal nav horizontal padding | `IN_USE` | `nav/src/styles/nav-tokens.scss:14` |
@@ -2562,11 +2565,11 @@ The navigation strip is **semantic-accent aware**: a single `--hub-panels-accent
 | `--hub-milestone-pending-color`        | `var(--hub-sys-text-muted, #6c757d)`           | Pending node text color                                                    | `IN_USE`   | `milestones/src/lib/milestones.component.scss:21`  |
 | `--hub-milestone-spacing`              | `1.75rem`                                      | Spacing between node and content                                           | `IN_USE`   | `milestones/src/lib/milestones.component.scss:27`  |
 | `--hub-milestone-pulse-color`          | `var(--hub-milestone-node-color)`              | Color of the active-node pulse ring                                        | `IN_USE`   | `milestones/src/lib/milestones.component.scss:80` |
-| `--hub-milestone-pulse-duration`       | `1.6s`                                         | Duration of the pulse animation                                            | `IN_USE`   | `milestones/src/lib/milestones.component.scss:204` |
-| `--hub-milestone-pulse-spread`         | `0.75rem`                                      | Spread radius of the pulse ring                                            | `IN_USE`   | `milestones/src/lib/milestones.component.scss:187` |
-| `--hub-milestone-reveal-duration`      | `0.5s`                                         | Duration of the connector reveal/fill animation                            | `IN_USE`   | `milestones/src/lib/milestones.component.scss:245` |
-| `--hub-milestone-reveal-stagger`       | `0.14s`                                        | Per-index delay of the staggered reveal                                    | `IN_USE`   | `milestones/src/lib/milestones.component.scss:246` |
-| `--hub-milestone-index` | runtime (0-based) | Node position used to stagger the reveal delay; set per node by the parent | `INTERNAL` | `milestones/src/lib/milestone.component.ts:29` |
+| `--hub-milestone-pulse-duration`       | `1.6s`                                         | Duration of the pulse animation                                            | `IN_USE`   | `milestones/src/lib/milestones.component.scss:248` |
+| `--hub-milestone-pulse-spread`         | `0.75rem`                                      | Spread radius of the pulse ring                                            | `IN_USE`   | `milestones/src/lib/milestones.component.scss:231` |
+| `--hub-milestone-reveal-duration`      | `0.5s`                                         | Duration of the connector reveal/fill animation                            | `IN_USE`   | `milestones/src/lib/milestones.component.scss:289` |
+| `--hub-milestone-reveal-stagger`       | `0.14s`                                        | Per-index delay of the staggered reveal                                    | `IN_USE`   | `milestones/src/lib/milestones.component.scss:290` |
+| `--hub-milestone-index` | runtime (0-based) | Node position used to stagger the reveal delay; set per node by the parent | `INTERNAL` | `milestones/src/lib/milestone.component.ts:54` |
 
 ### `icons`
 
@@ -2587,26 +2590,26 @@ Agnostic icon renderer (`ng-hub-ui-icons`). One token set themes any icon pack (
 
 | Token | Initial value | Usage | Status | Source |
 | ----- | ------------- | ----- | ------ | ------ |
-| `--hub-progress-track-bg` | `color-mix(in oklch, var(--hub-progress-accent) 16%, transparent)` | Progress track background (subtle accent tint) | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:11` |
-| `--hub-progress-indicator-bg` | `var(--hub-progress-accent)` | Filled progress indicator colour | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:12` |
-| `--hub-progress-height` | `var(--hub-ref-space-2, 0.5rem)` | Progress bar thickness (sm/md/lg override it) | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:13` |
-| `--hub-progress-radius` | `var(--hub-ref-radius-pill, 50rem)` | Progress bar corner radius | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:14` |
-| `--hub-progress-value` | `0%` | Internal runtime width of the indicator (set from the value input) | `INTERNAL` | `metrics/src/lib/components/progress/progress.component.scss:41` |
-| `--hub-meter-track-bg` | `color-mix(in oklch, var(--hub-sys-color-neutral, #6c757d) 16%, transparent)` | Meter track background | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:11` |
-| `--hub-meter-low-bg` | `var(--hub-sys-color-danger, #dc3545)` | Meter fill when the value is below target | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:12` |
-| `--hub-meter-optimum-bg` | `var(--hub-sys-color-success, #198754)` | Meter fill when the value is on target | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:13` |
-| `--hub-meter-high-bg` | `var(--hub-sys-color-warning, #ffc107)` | Meter fill when the value is above target | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:14` |
-| `--hub-meter-height` | `var(--hub-ref-space-2, 0.5rem)` | Meter bar thickness | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:15` |
-| `--hub-meter-radius` | `var(--hub-ref-radius-pill, 50rem)` | Meter bar corner radius | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:16` |
-| `--hub-meter-fill` | `var(--hub-meter-optimum-bg)` | Internal band-selected meter fill colour | `INTERNAL` | `metrics/src/lib/components/meter/meter.component.scss:18` |
-| `--hub-meter-value` | `0%` | Internal runtime width of the meter fill (set from the value input) | `INTERNAL` | `metrics/src/lib/components/meter/meter.component.scss:37` |
-| `--hub-ring-size` | `4rem` | Ring outer diameter (overridden per-instance from size) | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:12` |
-| `--hub-ring-thickness` | `var(--hub-ref-space-2, 0.5rem)` | Ring stroke width (overridden per-instance from thickness) | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:13` |
-| `--hub-ring-track` | `color-mix(in oklch, var(--hub-sys-color-neutral, #6c757d) 20%, transparent)` | Ring track stroke colour | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:14` |
-| `--hub-ring-indicator` | `var(--hub-sys-color-primary, #0d6efd)` | Ring indicator stroke colour (neutral band) | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:15` |
-| `--hub-ring-caption-color` | `var(--hub-sys-text-primary, #212529)` | Ring centre caption colour | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:16` |
-| `--hub-ring-low-color` | `var(--hub-sys-color-danger, #dc3545)` | Ring stroke below the low threshold | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:17` |
-| `--hub-ring-high-color` | `var(--hub-sys-color-success, #198754)` | Ring stroke at/above the high threshold | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:18` |
+| `--hub-progress-track-bg` | `color-mix(in oklch, var(--hub-progress-accent) 16%, transparent)` | Progress track background (subtle accent tint) | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:15` |
+| `--hub-progress-indicator-bg` | `var(--hub-progress-accent)` | Filled progress indicator colour | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:16` |
+| `--hub-progress-height` | `var(--hub-ref-space-2, 0.5rem)` | Progress bar thickness (sm/md/lg override it) | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:17` |
+| `--hub-progress-radius` | `var(--hub-ref-radius-pill, 50rem)` | Progress bar corner radius | `IN_USE` | `metrics/src/lib/components/progress/progress.component.scss:18` |
+| `--hub-progress-value` | `0%` | Internal runtime width of the indicator (set from the value input) | `INTERNAL` | `metrics/src/lib/components/progress/progress.component.scss:45` |
+| `--hub-meter-track-bg` | `color-mix(in oklch, var(--hub-sys-color-neutral, #6c757d) 16%, transparent)` | Meter track background | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:15` |
+| `--hub-meter-low-bg` | `var(--hub-sys-color-danger, #dc3545)` | Meter fill when the value is below target | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:16` |
+| `--hub-meter-optimum-bg` | `var(--hub-sys-color-success, #198754)` | Meter fill when the value is on target | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:17` |
+| `--hub-meter-high-bg` | `var(--hub-sys-color-warning, #ffc107)` | Meter fill when the value is above target | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:18` |
+| `--hub-meter-height` | `var(--hub-ref-space-2, 0.5rem)` | Meter bar thickness | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:19` |
+| `--hub-meter-radius` | `var(--hub-ref-radius-pill, 50rem)` | Meter bar corner radius | `IN_USE` | `metrics/src/lib/components/meter/meter.component.scss:20` |
+| `--hub-meter-fill` | `var(--hub-meter-optimum-bg)` | Internal band-selected meter fill colour | `INTERNAL` | `metrics/src/lib/components/meter/meter.component.scss:22` |
+| `--hub-meter-value` | `0%` | Internal runtime width of the meter fill (set from the value input) | `INTERNAL` | `metrics/src/lib/components/meter/meter.component.scss:41` |
+| `--hub-ring-size` | `4rem` | Ring outer diameter (overridden per-instance from size) | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:16` |
+| `--hub-ring-thickness` | `var(--hub-ref-space-2, 0.5rem)` | Ring stroke width (overridden per-instance from thickness) | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:17` |
+| `--hub-ring-track` | `color-mix(in oklch, var(--hub-sys-color-neutral, #6c757d) 20%, transparent)` | Ring track stroke colour | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:18` |
+| `--hub-ring-indicator` | `var(--hub-sys-color-primary, #0d6efd)` | Ring indicator stroke colour (neutral band) | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:19` |
+| `--hub-ring-caption-color` | `var(--hub-sys-text-primary, #212529)` | Ring centre caption colour | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:20` |
+| `--hub-ring-low-color` | `var(--hub-sys-color-danger, #dc3545)` | Ring stroke below the low threshold | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:21` |
+| `--hub-ring-high-color` | `var(--hub-sys-color-success, #198754)` | Ring stroke at/above the high threshold | `IN_USE` | `metrics/src/lib/components/ring/ring.component.scss:22` |
 
 ### `signature`
 
@@ -2614,17 +2617,17 @@ The signature field reuses the `.hub-field__*` shell from `ng-hub-ui-forms`, so 
 
 | Token | Initial value | Usage | Status | Source |
 | ----- | ------------- | ----- | ------ | ------ |
-| `--hub-signature-bg` | `var(--hub-input-bg, var(--hub-sys-surface, #fff))` | Drawing-surface background | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:2` |
-| `--hub-signature-color` | `var(--hub-input-color, var(--hub-sys-text-primary, #212529))` | Field text colour | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:3` |
-| `--hub-signature-border-color` | `var(--hub-input-border-color, var(--hub-sys-border, #ced4da))` | Drawing-surface border colour | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:4` |
-| `--hub-signature-border-width` | `var(--hub-input-border-width, 1px)` | Drawing-surface border thickness | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:5` |
-| `--hub-signature-border-radius` | `var(--hub-input-border-radius, var(--hub-ref-radius-md, 0.375rem))` | Drawing-surface corner radius | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:6` |
-| `--hub-signature-focus-border-color` | `var(--hub-input-focus-border-color, var(--hub-sys-color-primary, #0d6efd))` | Border colour while the surface holds keyboard focus | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:7` |
-| `--hub-signature-focus-shadow` | `var(--hub-input-focus-box-shadow, 0 0 0 0.25rem rgb(13 110 253 / 25%))` | Focus ring around the drawing surface | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:8` |
-| `--hub-signature-label-color` | `var(--hub-label-color, var(--hub-sys-text-primary, #212529))` | Field label colour | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:9` |
-| `--hub-signature-label-font-size` | `var(--hub-label-font-size, var(--hub-ref-font-size-sm, 0.875rem))` | Field label font size | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:10` |
-| `--hub-signature-font-size` | `var(--hub-input-font-size, 1rem)` | Field font size | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:11` |
-| `--hub-signature-actions-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gap between the clear / undo / redo actions | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:12` |
+| `--hub-signature-bg` | `var(--hub-input-bg, var(--hub-sys-surface, #fff))` | Drawing-surface background | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:7` |
+| `--hub-signature-color` | `var(--hub-input-color, var(--hub-sys-text-primary, #212529))` | Field text colour | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:8` |
+| `--hub-signature-border-color` | `var(--hub-input-border-color, var(--hub-sys-border, #ced4da))` | Drawing-surface border colour | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:9` |
+| `--hub-signature-border-width` | `var(--hub-input-border-width, 1px)` | Drawing-surface border thickness | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:10` |
+| `--hub-signature-border-radius` | `var(--hub-input-border-radius, var(--hub-ref-radius-md, 0.375rem))` | Drawing-surface corner radius | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:11` |
+| `--hub-signature-focus-border-color` | `var(--hub-input-focus-border-color, var(--hub-sys-color-primary, #0d6efd))` | Border colour while the surface holds keyboard focus | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:12` |
+| `--hub-signature-focus-shadow` | `var(--hub-input-focus-box-shadow, 0 0 0 0.25rem rgb(13 110 253 / 25%))` | Focus ring around the drawing surface | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:13` |
+| `--hub-signature-label-color` | `var(--hub-label-color, var(--hub-sys-text-primary, #212529))` | Field label colour | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:14` |
+| `--hub-signature-label-font-size` | `var(--hub-label-font-size, var(--hub-ref-font-size-sm, 0.875rem))` | Field label font size | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:15` |
+| `--hub-signature-font-size` | `var(--hub-input-font-size, 1rem)` | Field font size | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:16` |
+| `--hub-signature-actions-gap` | `var(--hub-ref-space-2, 0.5rem)` | Gap between the clear / undo / redo actions | `IN_USE` | `signature/src/lib/components/signature/signature.component.scss:17` |
 
 ### `loading`
 
@@ -2632,17 +2635,17 @@ One accent drives all five indicator variants, so recolouring the spinner recolo
 
 | Token | Initial value | Usage | Status | Source |
 | ----- | ------------- | ----- | ------ | ------ |
-| `--hub-loading-accent` | `var(--hub-sys-color-primary, #0d6efd)` | Indicator colour, shared by all five variants | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:7` |
-| `--hub-loading-size` | `2.5rem` | Indicator diameter; the `sm` / `lg` modifiers re-declare it | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:8` |
-| `--hub-loading-thickness` | `calc(var(--hub-ref-border-width, 1px) * 3)` | Stroke weight of the `spinner` and `ring` variants | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:9` |
-| `--hub-loading-speed` | `0.9s` | Period of one animation loop, for every variant | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:10` |
-| `--hub-loading-gap` | `var(--hub-sys-gap-2, var(--hub-ref-space-2, 0.5rem))` | Space between indicator, message and projected content | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:11` |
-| `--hub-loading-text-color` | `var(--hub-sys-text-primary, var(--hub-ref-color-gray-900, #212529))` | Message colour | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:12` |
-| `--hub-loading-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Message font size; the `sm` / `lg` modifiers re-declare it | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:13` |
-| `--hub-loading-backdrop-bg` | `color-mix(in srgb, var(--hub-sys-surface-page, #ffffff) 72%, transparent)` | Scrim painted behind the `overlay` and `fullscreen` modes | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:16` |
-| `--hub-loading-backdrop-blur` | `2px` | Blur radius applied to whatever the scrim covers | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:17` |
-| `--hub-loading-z-index` | `var(--hub-sys-zindex-modal, 1055)` | Stacking order of the `fullscreen` overlay | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:18` |
-| `--hub-loading-image-size` | `var(--hub-loading-size)` | Size of the branding image supplied through `image` | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:19` |
+| `--hub-loading-accent` | `var(--hub-sys-color-primary, #0d6efd)` | Indicator colour, shared by all five variants | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:11` |
+| `--hub-loading-size` | `2.5rem` | Indicator diameter; the `sm` / `lg` modifiers re-declare it | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:12` |
+| `--hub-loading-thickness` | `calc(var(--hub-ref-border-width, 1px) * 3)` | Stroke weight of the `spinner` and `ring` variants | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:13` |
+| `--hub-loading-speed` | `0.9s` | Period of one animation loop, for every variant | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:14` |
+| `--hub-loading-gap` | `var(--hub-sys-gap-2, var(--hub-ref-space-2, 0.5rem))` | Space between indicator, message and projected content | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:15` |
+| `--hub-loading-text-color` | `var(--hub-sys-text-primary, var(--hub-ref-color-gray-900, #212529))` | Message colour | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:16` |
+| `--hub-loading-font-size` | `var(--hub-ref-font-size-sm, 0.875rem)` | Message font size; the `sm` / `lg` modifiers re-declare it | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:17` |
+| `--hub-loading-backdrop-bg` | `color-mix(in srgb, var(--hub-sys-surface-page, #ffffff) 72%, transparent)` | Scrim painted behind the `overlay` and `fullscreen` modes | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:20` |
+| `--hub-loading-backdrop-blur` | `2px` | Blur radius applied to whatever the scrim covers | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:21` |
+| `--hub-loading-z-index` | `var(--hub-sys-zindex-modal, 1055)` | Stacking order of the `fullscreen` overlay | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:22` |
+| `--hub-loading-image-size` | `var(--hub-loading-size)` | Size of the branding image supplied through `image` | `IN_USE` | `loading/src/lib/components/loading/loading.component.scss:23` |
 
 ### `loading-bar`
 
@@ -2650,21 +2653,21 @@ The page-progress strip shares the library's philosophy but not its tokens: a ba
 
 | Token | Initial value | Usage | Status | Source |
 | ----- | ------------- | ----- | ------ | ------ |
-| `--hub-loading-bar-accent` | `var(--hub-sys-color-primary, #0d6efd)` | Fill colour of the bar | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:9` |
-| `--hub-loading-bar-height` | `3px` | Thickness of the strip | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:10` |
-| `--hub-loading-bar-track-bg` | `transparent` | Unfilled track; transparent so an idle bar draws no permanent line under the navbar | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:13` |
-| `--hub-loading-bar-radius` | `0` | Corner radius of the strip and its fill | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:14` |
-| `--hub-loading-bar-speed` | `200ms` | How long the fill takes to catch up with a new value | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:15` |
-| `--hub-loading-bar-fade` | `300ms` | Fade in and out of the whole strip | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:16` |
-| `--hub-loading-bar-easing` | `linear` | Easing of the fill; linear reads as steady progress rather than as a flourish | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:17` |
-| `--hub-loading-bar-glow-color` | `var(--hub-loading-bar-accent)` | Colour of the glow trailing the leading edge | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:18` |
-| `--hub-loading-bar-glow-blur` | `10px` | Blur radius of that glow | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:19` |
-| `--hub-loading-bar-glow-spread` | `1px` | Spread radius of that glow | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:20` |
-| `--hub-loading-bar-indeterminate-speed` | `1.6s` | Period of one `indeterminate` sweep; calmed under `prefers-reduced-motion` | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:21` |
-| `--hub-loading-bar-offset` | `0px` | Distance from the edge the `overlay` and `fixed` modes attach to | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:24` |
-| `--hub-loading-bar-z-index` | `var(--hub-sys-zindex-sticky, 1020)` | Stacking order of the positioned modes, at chrome level | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:27` |
-| `--hub-loading-bar-progress` | `0%` | Internal runtime fill, written by the component from its resolved value | `INTERNAL` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:29` |
-| `--hub-loading-bar-sweep-direction` | `1` | Internal runtime sign flipping the `indeterminate` sweep under `[dir='rtl']` | `INTERNAL` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:31` |
+| `--hub-loading-bar-accent` | `var(--hub-sys-color-primary, #0d6efd)` | Fill colour of the bar | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:13` |
+| `--hub-loading-bar-height` | `3px` | Thickness of the strip | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:14` |
+| `--hub-loading-bar-track-bg` | `transparent` | Unfilled track; transparent so an idle bar draws no permanent line under the navbar | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:17` |
+| `--hub-loading-bar-radius` | `0` | Corner radius of the strip and its fill | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:18` |
+| `--hub-loading-bar-speed` | `200ms` | How long the fill takes to catch up with a new value | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:19` |
+| `--hub-loading-bar-fade` | `300ms` | Fade in and out of the whole strip | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:20` |
+| `--hub-loading-bar-easing` | `linear` | Easing of the fill; linear reads as steady progress rather than as a flourish | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:21` |
+| `--hub-loading-bar-glow-color` | `var(--hub-loading-bar-accent)` | Colour of the glow trailing the leading edge | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:22` |
+| `--hub-loading-bar-glow-blur` | `10px` | Blur radius of that glow | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:23` |
+| `--hub-loading-bar-glow-spread` | `1px` | Spread radius of that glow | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:24` |
+| `--hub-loading-bar-indeterminate-speed` | `1.6s` | Period of one `indeterminate` sweep; calmed under `prefers-reduced-motion` | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:25` |
+| `--hub-loading-bar-offset` | `0px` | Distance from the edge the `overlay` and `fixed` modes attach to | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:28` |
+| `--hub-loading-bar-z-index` | `var(--hub-sys-zindex-sticky, 1020)` | Stacking order of the positioned modes, at chrome level | `IN_USE` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:31` |
+| `--hub-loading-bar-progress` | `0%` | Internal runtime fill, written by the component from its resolved value | `INTERNAL` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:33` |
+| `--hub-loading-bar-sweep-direction` | `1` | Internal runtime sign flipping the `indeterminate` sweep under `[dir='rtl']` | `INTERNAL` | `loading/src/lib/components/loading-bar/loading-bar.component.scss:35` |
 
 ## Appendix
 

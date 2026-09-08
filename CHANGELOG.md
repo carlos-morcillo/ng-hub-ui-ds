@@ -5,6 +5,25 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.10.0] - 2026-09-08
+
+### Added
+
+- **A theme can now flatten the boxes it draws.** `.border` carried its `1px` written into the
+  rule, so a theme could recolour a border but never remove or thicken one — which meant a
+  flat-surface theme was impossible to express through tokens no matter how the consumer wrote its
+  markup. The width now travels on `--hub-border-width`, and the single-side rules on
+  `--hub-border-side-width`. They are two chains on purpose: `.border` outlines a surface and a flat
+  theme wants that gone, while `.border-bottom` separates one row from the next and that is
+  structure. One variable for both would force a theme to choose between keeping its cards and
+  losing its separators. One consequence is worth reading before upgrading: a theme that had
+  already re-based `--hub-ref-border-width` now sees the border utilities follow it, where they
+  used to ignore it. See `BREAKING_CHANGES.md`.
+- **`theme()` takes surfaces and borders by name.** `$surfaces` sets `--hub-sys-surface-page` and
+  `-elevated`; `$borders` sets the border colour and the two width chains above. Both were reachable
+  through `$tokens` already, but a visual theme is mostly surfaces and borders, and routing the main
+  case through the escape hatch made the API read as if it only did colour and spacing.
+
 ## [22.9.3] - 2026-09-08
 
 ### Changed

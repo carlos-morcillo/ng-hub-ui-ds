@@ -32,6 +32,13 @@
 /// @param {Map} $gap          Gap step → value (`--hub-sys-gap-*`) — only to decouple gap from the spacing scale.
 /// @param {Map} $radius       Radius step (none…xxl|pill) → value (`--hub-ref-radius-*`).
 /// @param {Map} $shadow       Shadow size (sm|md|lg|inset) → value (`--hub-sys-shadow-*`).
+/// @param {Map} $surfaces     Surface role (page|elevated) → colour (`--hub-sys-surface-*`). Every accent
+///                            role family re-derives against it, so changing the page surface repaints
+///                            the tints without listing a single one of them.
+/// @param {Map} $borders      Border role → value. `color` sets `--hub-sys-border-color-default`; `width`
+///                            and `side-width` set the two chains the utilities read — the box drawn
+///                            around a surface and the rule that separates one row from the next. A flat
+///                            theme sets `width: 0` and leaves `side-width` alone.
 /// @param {Map} $font-family  Family (base|display|mono) → stack (`--hub-ref-font-family-*`).
 /// @param {Map} $font-size    Size step (xs|sm|base|lg) → value (`--hub-ref-font-size-*`; the fs-1…6 heading scale re-derives from base).
 /// @param {Map} $font-weight  Weight (light|base|medium|semibold|bold) → value (`--hub-ref-font-weight-*`).
@@ -43,6 +50,8 @@
 	$gap: (),
 	$radius: (),
 	$shadow: (),
+	$surfaces: (),
+	$borders: (),
 	$font-family: (),
 	$font-size: (),
 	$font-weight: (),
@@ -63,6 +72,16 @@
 	}
 	@each $size, $value in $shadow {
 		--hub-sys-shadow-#{$size}: #{$value};
+	}
+	@each $role, $value in $surfaces {
+		--hub-sys-surface-#{$role}: #{$value};
+	}
+	@each $role, $value in $borders {
+		@if $role == color {
+			--hub-sys-border-color-default: #{$value};
+		} @else {
+			--hub-border-#{$role}: #{$value};
+		}
 	}
 	@each $family, $value in $font-family {
 		--hub-ref-font-family-#{$family}: #{$value};

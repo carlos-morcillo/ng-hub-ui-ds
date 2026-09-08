@@ -74,7 +74,17 @@ $_accents: primary, secondary, success, danger, warning, info, neutral, light, d
 	}
 }
 
-/* ── Borders — additive sides ── */
+/* ── Borders — additive sides ──
+ *
+ * Width travels on two separate chains on purpose. `.border` draws the box around a
+ * surface, and a flat theme wants that gone; the single-side utilities draw the rule
+ * that separates one row from the next, and that is structure the theme has no
+ * business erasing. One variable for both would force a theme to choose between
+ * keeping its boxes and losing its separators.
+ *
+ *   --hub-border-width       the box   → set to 0 for a theme with no cards
+ *   --hub-border-side-width  the rule  → left alone by a flat theme
+ */
 .border {
 	@include surfaces.border();
 }
@@ -82,25 +92,29 @@ $_accents: primary, secondary, success, danger, warning, info, neutral, light, d
 	border: 0;
 }
 .border-top {
-	border-block-start: 1px solid var(--hub-sys-border-color-default);
+	border-block-start: var(--hub-border-side-width, var(--hub-ref-border-width, 1px)) solid
+		var(--hub-sys-border-color-default);
 }
 .border-top-0 {
 	border-block-start: 0;
 }
 .border-bottom {
-	border-block-end: 1px solid var(--hub-sys-border-color-default);
+	border-block-end: var(--hub-border-side-width, var(--hub-ref-border-width, 1px)) solid
+		var(--hub-sys-border-color-default);
 }
 .border-bottom-0 {
 	border-block-end: 0;
 }
 .border-start {
-	border-inline-start: 1px solid var(--hub-sys-border-color-default);
+	border-inline-start: var(--hub-border-side-width, var(--hub-ref-border-width, 1px)) solid
+		var(--hub-sys-border-color-default);
 }
 .border-start-0 {
 	border-inline-start: 0;
 }
 .border-end {
-	border-inline-end: 1px solid var(--hub-sys-border-color-default);
+	border-inline-end: var(--hub-border-side-width, var(--hub-ref-border-width, 1px)) solid
+		var(--hub-sys-border-color-default);
 }
 .border-end-0 {
 	border-inline-end: 0;

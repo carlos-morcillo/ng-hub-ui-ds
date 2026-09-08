@@ -48,7 +48,7 @@ mixin is therefore documented as a catalogue row plus a code snippet, and none h
 
 | Category | Functionality | Example Covered |
 | :--- | :--- | :---: |
-| **Theme** | `theme()` — partial theming from maps (`$accents`, `$space`, `$gap`, `$radius`, `$shadow`, `$font-*`, `$line-height`, `$tokens`) | ❌ |
+| **Theme** | `theme()` — partial theming from maps (`$accents`, `$space`, `$gap`, `$radius`, `$shadow`, `$surfaces`, `$borders`, `$font-*`, `$line-height`, `$tokens`) | ❌ |
 | **Breakpoints** | `media-breakpoint-up()` · `media-breakpoint-down()` | ❌ |
 | **Layout** | `stack()` · `cluster()` · `grid()` · `grid-fixed()` | ❌ |
 | | `row()` · `col()` · `offset()` · `center()` | ❌ |

@@ -2,6 +2,37 @@
 
 This document tracks all breaking changes in the `ng-hub-ui-ds` package.
 
+## v22.10.0
+
+### `.border` and the single-side utilities follow the border-width tokens
+
+- **Change**: `.border` had its `1px` written into the rule, and so did `.border-top`,
+  `.border-bottom`, `.border-start` and `.border-end`. The width now resolves through
+  `var(--hub-border-width, var(--hub-ref-border-width, 1px))` for the box and
+  `var(--hub-border-side-width, var(--hub-ref-border-width, 1px))` for the four side rules. The
+  `surfaces.border()` mixin's `$width` default moves with them; an explicit argument is unaffected.
+- **Impact**: only a theme that had already re-based `--hub-ref-border-width`. That token is
+  declared by this package and documented as themeable, but the border utilities ignored it, so a
+  theme setting it to `2px` or `0` saw its rules and its own components change while every `.border`
+  stayed at one pixel. They now follow it, which is the point — and it is a visible change nobody
+  asked for on the day they upgrade. Everything else renders identically: with none of the three
+  variables set, the chain still ends at `1px`.
+- **Migration**: nothing, if `--hub-ref-border-width` is untouched. To keep the old look while
+  keeping your ref value, pin the two utility chains instead of the primitive:
+
+    ```css
+    :root {
+    	--hub-border-width: 1px;
+    	--hub-border-side-width: 1px;
+    }
+    ```
+
+- **Why**: a token nobody reads is not a token. The width had to leave the rule for a flat theme to
+  be expressible at all, and the two chains are separate on purpose: `.border` outlines a surface
+  and a flat theme wants that gone, while `.border-bottom` separates one row from the next and that
+  is structure. One variable for both would force a theme to choose between keeping its cards and
+  losing its separators.
+
 ## v22.9.0
 
 ### The Bootstrap bridge is gone: Bootstrap no longer drives the semantic tokens
