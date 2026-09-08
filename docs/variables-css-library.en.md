@@ -1341,12 +1341,12 @@ The `detail` token set is defined as a single, standardized collection that supp
 | `--hub-button-spinner-duration` | `0.7s` | Button loading spinner spin duration | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:14` |
 | `--hub-button-spinner` | `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' d='M12 3a9 9 0 1 0 9 9'/%3E%3C/svg%3E")` | Button loading spinner glyph (swappable SVG) | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:19` |
 | `--hub-button-transition` | `var(--hub-sys-transition-fast, all 0.15s ease-in-out)` | Button transition | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:12` |
-| `--hub-btn-active-color` | `var(--hub-btn-accent-on)` | Pressed (:active) button text-color slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:52` |
-| `--hub-btn-active-border` | `transparent` | Pressed (:active) button border-color slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:51` |
-| `--hub-btn-active-bg` | `color-mix(in oklch, var(--hub-btn-accent) 70%, var(--hub-sys-color-ink, #212529))` | Pressed (:active) button background slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:50` |
-| `--hub-btn-hover-color` | `var(--hub-btn-accent-emphasis)` | Overridable button hover text-color slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:49` |
-| `--hub-btn-hover-border` | `transparent` | Overridable button hover border-color slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:48` |
-| `--hub-btn-hover-bg` | `var(--hub-btn-accent-subtle)` | Overridable button hover background slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:47` |
+| `--hub-btn-active-color` | `var(--hub-btn-accent-on)` | Pressed (:active) button text-color slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:63` |
+| `--hub-btn-active-border` | `transparent` | Pressed (:active) button border-color slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:62` |
+| `--hub-btn-active-bg` | `color-mix(in oklch, var(--hub-btn-accent) 70%, var(--hub-sys-color-ink, #212529))` | Pressed (:active) button background slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:61` |
+| `--hub-btn-hover-color` | `var(--hub-btn-accent-emphasis)` | Overridable button hover text-color slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:60` |
+| `--hub-btn-hover-border` | `transparent` | Overridable button hover border-color slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:59` |
+| `--hub-btn-hover-bg` | `var(--hub-btn-accent-subtle)` | Overridable button hover background slot | `IN_USE` | `buttons/src/lib/components/btn/button.component.scss:58` |
 | `--hub-dropdown-item-border-radius` | `var(--hub-sys-radius-sm, 0.25rem)` | Dropdown item border radius | `IN_USE` | `buttons/src/lib/components/dropdown-item/dropdown-item.component.scss:8` |
 | `--hub-dropdown-item-disabled-opacity` | `0.45` | Dropdown item disabled opacity | `IN_USE` | `buttons/src/lib/components/dropdown-item/dropdown-item.component.scss:9` |
 | `--hub-dropdown-item-hover-bg` | `var(--hub-sys-color-surface-subtle, #f8f9fa)` | Dropdown item hover bg | `IN_USE` | `buttons/src/lib/components/dropdown-item/dropdown-item.component.scss:7` |

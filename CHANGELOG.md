@@ -5,6 +5,24 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 22.11.0 — 2026-09-08
+
+### Fixed
+
+- **The `-emphasis` role could not carry text on a pale accent.** It was derived as
+  `color-mix(accent 80%, ink)`, and a percentage cannot darken a light hue: the shipped
+  amber came out at **2.5:1** on white and the shipped cyan at **2.9:1**. Every consumer
+  inherited unreadable text through `.text-warning-emphasis` and through any component
+  reading the role, and none of them could fix it, because the formula lives here.
+
+  The luminosity is capped instead of mixed — `oklch(from <accent> min(l, .45) c h)` —
+  which leaves an already-dark accent exactly where it was and pulls a light one down to
+  where it can carry a letter, keeping its hue and its chroma. Measured on white across the
+  nine defaults: nothing below 6.6:1 — info is the floor at 6.62, success next at 6.91 —
+  and no role moves by more than a point unless it was failing. `dark` is untouched, since
+  it already sat at L .26.
+
+  Themes that assign `--hub-sys-color-*-emphasis` by hand are unaffected.
 ## [22.10.0] - 2026-09-08
 
 ### Added

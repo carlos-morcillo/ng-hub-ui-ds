@@ -294,7 +294,7 @@ $hub-gap-steps: (0, 1, 2, 3, 4, 5) !default;
 
      -subtle        = 12% accent over surface   (tinted background)
      -border-subtle = 35% accent over surface   (hairline border)
-     -emphasis      = 80% accent over ink        (text / strong)
+     -emphasis      = accent with L capped at .45 (text / strong)
      -on            = grayscale contrast flip    (text on the accent)
    ============================================================ */
 
@@ -402,10 +402,24 @@ $hub-accents-terminal: (
 			var(--hub-sys-color-#{$name}) 35%,
 			var(--hub-sys-surface-page, #fff)
 		);
-		--hub-sys-color-#{$name}-emphasis: color-mix(
-			in oklch,
-			var(--hub-sys-color-#{$name}) 80%,
-			var(--hub-sys-color-ink, #212529)
+		/**
+		 * The emphasis role is what text is painted with, so its luminosity is capped
+		 * rather than mixed.
+		 *
+		 * This used to be `color-mix(accent 80%, ink)`, and a percentage cannot darken a
+		 * pale hue: the default amber `#ffc107` came out at 2.5:1 on white and the default
+		 * cyan at 2.9:1. Both are shipped colours, so every product using `.text-warning`
+		 * or a warning outline button inherited unreadable text — and no theme could fix
+		 * it, because the formula lives here.
+		 *
+		 * `min(l, 0.45)` leaves an already-dark accent exactly where it was and pulls a
+		 * light one down to where it can carry a letter, keeping hue and chroma. Measured
+		 * on white across the nine defaults: nothing below 6.6:1 — info is the floor at
+		 * 6.62, success next at 6.91 — and no role moves by more than a point unless it
+		 * was failing. `dark` is untouched, since it already sat at L .26.
+		 */
+		--hub-sys-color-#{$name}-emphasis: oklch(
+			from var(--hub-sys-color-#{$name}) min(l, 0.45) c h
 		);
 		// Contrast / on-color: a grayscale flip driven by the accent's own lightness.
 		// Dark accents (L < .62) resolve to white text; light accents to near-black.
