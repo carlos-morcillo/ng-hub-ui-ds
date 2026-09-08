@@ -5,6 +5,16 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.9.3] - 2026-09-08
+
+### Changed
+
+- **The six `--hub-icon-*` rows point at the line they actually live on.** `icons` 22.3.0 moved its
+  base rules into `:where(.hub-icon)` and wrote the reason above them, which pushed every token
+  declaration down the file. The catalogue travels inside this package, so a citation left behind
+  sends a reader to a line that now holds something else — the same failure this package has
+  already released for twice. No token is new, renamed, or worth a different value.
+
 ## [22.9.2] - 2026-09-07
 
 ### Changed
