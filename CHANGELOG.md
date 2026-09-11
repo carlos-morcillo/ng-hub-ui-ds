@@ -5,6 +5,17 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.11.1] - 2026-09-11
+
+### Changed
+
+- **The token catalogue covers what `ng-hub-ui-forms` 22.35.0 adds.**
+  `docs/variables-css-library.en.md` gains 74 rows: the file input's tile, viewer, counter and
+  file-family icon tokens, and the colour grid's `--hub-input-swatch-*`. The row for
+  `--hub-input-color-size` now gives its new default and says it sets the width of the classic
+  colour field's square. The `_tokens.scss` line references that moved with the new blocks point
+  at their lines again. No token, theme or stylesheet in this package changes.
+
 ## [22.11.0] - 2026-09-08
 
 ### Fixed
