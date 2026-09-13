@@ -5,6 +5,17 @@ All notable changes to `ng-hub-ui-ds` are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [22.11.3] - 2026-09-13
+
+### Changed
+
+- **The token catalogue covers the twelve variables of the new `<hub-side-panel>` in `ng-hub-ui-panels`.**
+  `docs/variables-css-library.en.md` gains rows in the `panels` section for `--hub-side-panel-width`,
+  `-bg`, `-color`, `-border-width`, `-border-color`, `-box-shadow`, `-zindex`, `-padding-x`,
+  `-padding-y`, `-body-padding`, `-transition-duration` and `-transition-easing`, each citing the line
+  of `side-panel.component.scss` where it is read. The folder ships with this package, so the rows
+  reach consumers only through a release of it. Documentation only — no token, style or value changes.
+
 ## [22.11.2] - 2026-09-13
 
 ### Changed

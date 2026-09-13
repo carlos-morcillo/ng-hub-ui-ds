@@ -2620,6 +2620,18 @@ The navigation strip is **semantic-accent aware**: a single `--hub-panels-accent
 | `--hub-panels-tab-padding-y` | `var(--hub-panels-nav-link-padding-y)` | Tab vertical padding | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:63` |
 | `--hub-panels-tab-transition` | `var(--hub-sys-transition-base, all 0.2s ease-in-out)` | Tab state transition | `IN_USE` | `panels/src/lib/components/panels/panels.variables.scss:85` |
 | `--hub-panels-multiple-vertical-panel-min-width` | runtime (`0px`) | Min content width per `multiple + vertical` block, from the measured header height | `INTERNAL` | `panels/src/lib/components/panels/panels.component.ts:765` |
+| `--hub-side-panel-bg` | `var(--hub-sys-surface-page, #fff)` | <hub-side-panel> surface background | `IN_USE` | `panels/src/lib/components/side-panel/side-panel.component.scss:41` |
+| `--hub-side-panel-body-padding` | `var(--hub-side-panel-padding-y) var(--hub-side-panel-padding-x)` | <hub-side-panel> scrolling body padding (`0` for a flush chat) | `IN_USE` | `panels/src/lib/components/side-panel/side-panel.component.scss:107` |
+| `--hub-side-panel-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | <hub-side-panel> edge and header/footer divider colour | `IN_USE` | `panels/src/lib/components/side-panel/side-panel.component.scss:20` |
+| `--hub-side-panel-border-width` | `var(--hub-ref-border-width, 1px)` | <hub-side-panel> edge and header/footer divider width | `IN_USE` | `panels/src/lib/components/side-panel/side-panel.component.scss:19` |
+| `--hub-side-panel-box-shadow` | `var(--hub-sys-shadow-lg, 0 1rem 3rem rgba(0, 0, 0, 0.175))` | <hub-side-panel> elevation in `over` mode | `IN_USE` | `panels/src/lib/components/side-panel/side-panel.component.scss:63` |
+| `--hub-side-panel-color` | `var(--hub-sys-text-primary, #212529)` | <hub-side-panel> text colour | `IN_USE` | `panels/src/lib/components/side-panel/side-panel.component.scss:40` |
+| `--hub-side-panel-padding-x` | `var(--hub-ref-space-3, 1rem)` | <hub-side-panel> horizontal padding of the header, body and footer | `IN_USE` | `panels/src/lib/components/side-panel/side-panel.component.scss:24` |
+| `--hub-side-panel-padding-y` | `var(--hub-ref-space-3, 1rem)` | <hub-side-panel> vertical padding of the header, body and footer | `IN_USE` | `panels/src/lib/components/side-panel/side-panel.component.scss:23` |
+| `--hub-side-panel-transition-duration` | `var(--hub-sys-transition-duration-base, 260ms)` | <hub-side-panel> open/close slide duration (off under reduced motion) | `IN_USE` | `panels/src/lib/components/side-panel/side-panel.component.scss:21` |
+| `--hub-side-panel-transition-easing` | `var(--hub-sys-transition-timing-function-base, ease)` | <hub-side-panel> open/close slide easing | `IN_USE` | `panels/src/lib/components/side-panel/side-panel.component.scss:22` |
+| `--hub-side-panel-width` | `24rem` (capped at `100cqi`) | <hub-side-panel> width, capped at the container's inline size | `IN_USE` | `panels/src/lib/components/side-panel/side-panel.component.scss:7` |
+| `--hub-side-panel-zindex` | `1` | <hub-side-panel> stacking in `over` mode, local to the isolated container | `IN_USE` | `panels/src/lib/components/side-panel/side-panel.component.scss:62` |
 | `--hub-tabs-gap` | `0` | Gap between tabs in the <hub-tab-nav> strip | `IN_USE` | `panels/src/lib/components/tab-nav/tab-nav.component.scss:18` |
 | `--hub-tabs-indicator-color` | `var(--hub-panels-accent, var(--hub-sys-color-primary, #0d6efd))` | Active-tab underline / active-pill fill colour for <hub-tab-nav> | `IN_USE` | `panels/src/lib/components/tab-nav/tab-nav.component.scss:16` |
 
