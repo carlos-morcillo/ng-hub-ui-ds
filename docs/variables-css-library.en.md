@@ -1769,6 +1769,10 @@ The standalone `tabs` proposal was **superseded**: the tabs UI shipped inside `n
 | `--hub-modal-header-gap` | `var(--hub-ref-space-2, 0.5rem)` | Header content gap | `IN_USE` | `modal/src/lib/modal.scss:182` |
 | `--hub-modal-header-border-color` | `var(--hub-sys-border-color-default, #dee2e6)` | Header bottom border color | `IN_USE` | `modal/src/lib/modal.scss:183` |
 | `--hub-modal-header-border-width` | `var(--hub-ref-border-width, 1px)` | Header bottom border width | `IN_USE` | `modal/src/lib/modal.scss:184` |
+| `--hub-modal-header-align-items` | `center` | Cross-axis alignment of the header's two children, the heading and the close button. `flex-start` pins the button to the top when the heading runs to two lines | `IN_USE` | `modal/src/lib/modal.scss:474` |
+| `--hub-modal-heading-direction` | `row` | Direction of the heading, the box holding every node projected into the header. `column` stacks a subtitle under its title while the close button stays beside the pair | `IN_USE` | `modal/src/lib/modal.scss:512` |
+| `--hub-modal-heading-align-items` | `center` | Cross-axis alignment of the projected nodes inside the heading. A `column` heading usually wants `stretch`, so each line starts at the edge instead of being centred | `IN_USE` | `modal/src/lib/modal.scss:513` |
+| `--hub-modal-heading-gap` | `var(--hub-modal-header-gap, var(--hub-ref-space-2, 0.5rem))` | Space between the projected header nodes. Follows `--hub-modal-header-gap` until it is set | `IN_USE` | `modal/src/lib/modal.scss:514` |
 | **Title**                                    |                                                                                                                                                                                             |                                                                 |          |                                |
 | `--hub-modal-title-font-size` | `var(--hub-ref-font-size-lg, 1.25rem)` | Modal title font size | `IN_USE` | `modal/src/lib/modal.scss:185` |
 | `--hub-modal-title-font-weight` | `var(--hub-ref-font-weight-medium, 500)` | Modal title font weight | `IN_USE` | `modal/src/lib/modal.scss:186` |
@@ -1791,10 +1795,10 @@ The standalone `tabs` proposal was **superseded**: the tabs UI shipped inside `n
 | `--hub-modal-close-line-height` | `1` | Close button line-height | `IN_USE` | `modal/src/lib/modal.scss:202` |
 | `--hub-modal-close-opacity` | `0.5` | Close button base opacity | `IN_USE` | `modal/src/lib/modal.scss:205` |
 | `--hub-modal-close-hover-opacity` | `0.75` | Close button hover/focus opacity | `IN_USE` | `modal/src/lib/modal.scss:206` |
-| `--hub-modal-close-focus-ring-width` | `2px` | Close button focus ring thickness | `IN_USE` | `modal/src/lib/modal.scss:582` |
-| `--hub-modal-close-focus-ring-color` | `var(--hub-modal-accent)` | Close button focus ring color; follows the dialog accent so a variant dialog does not draw the browser default blue | `IN_USE` | `modal/src/lib/modal.scss:583` |
-| `--hub-modal-close-focus-ring-offset` | `2px` | Gap between the close button and its focus ring | `IN_USE` | `modal/src/lib/modal.scss:584` |
-| `--hub-modal-close-focus-ring-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Corner radius of the close button focus ring | `IN_USE` | `modal/src/lib/modal.scss:585` |
+| `--hub-modal-close-focus-ring-width` | `2px` | Close button focus ring thickness | `IN_USE` | `modal/src/lib/modal.scss:600` |
+| `--hub-modal-close-focus-ring-color` | `var(--hub-modal-accent)` | Close button focus ring color; follows the dialog accent so a variant dialog does not draw the browser default blue | `IN_USE` | `modal/src/lib/modal.scss:601` |
+| `--hub-modal-close-focus-ring-offset` | `2px` | Gap between the close button and its focus ring | `IN_USE` | `modal/src/lib/modal.scss:602` |
+| `--hub-modal-close-focus-ring-radius` | `var(--hub-ref-radius-sm, 0.25rem)` | Corner radius of the close button focus ring | `IN_USE` | `modal/src/lib/modal.scss:603` |
 | **Backdrop**                                 |                                                                                                                                                                                             |                                                                 |          |                                |
 | `--hub-modal-backdrop-bg` | `var(--hub-ref-color-black, #000000)` | Backdrop background color | `IN_USE` | `modal/src/lib/modal.scss:56` |
 | `--hub-modal-backdrop-opacity` | `var(--hub-sys-opacity-50, 0.5)` | Backdrop visible opacity | `IN_USE` | `modal/src/lib/modal.scss:57` |
